@@ -1,14 +1,25 @@
-# Unificando JEV e LLM
+# Unificando JEV e LLM — laboratório de sistemas cognitivos
 
-Exploração em micro-escala: o que acontece quando se une um "Sistema 1"
-(decisão em uma passada, estilo modelo de decisão tipada), um "Sistema 2"
-(raciocínio iterativo num estado latente, sem gerar texto) e um "Sistema 3"
-(metacognição: quando parar, quando dizer "não sei").
+Laboratório autônomo que tenta unir, em máquinas minúsculas, os sistemas
+cognitivos: S0 substrato, S1 intuição (decisão em uma passada, estilo
+"modelo de decisão tipada"/JEV), S2 deliberação (raciocínio latente sem
+texto), S3 metacognição, S4 coletivo, S5 comunicação, S6 simulação do
+futuro. Tudo é medido com uma régua de evidência explícita.
 
-- [`PLANO.md`](PLANO.md) — contexto, reflexão, resultados e plano dos próximos experimentos
-- [`RESULTADOS.md`](RESULTADOS.md) — tabelas completas e robustez entre sementes
-- [`experimento/mlu.py`](experimento/mlu.py) — código (Python puro, sem dependências, ~30 s)
+| Arquivo | Para quê |
+|---|---|
+| [`CLAUDE.md`](CLAUDE.md) | Instruções de operação autônoma |
+| [`ESTADO.md`](ESTADO.md) | Placar de achados e fila de hipóteses |
+| [`DIARIO.md`](DIARIO.md) | Um registro por ciclo |
+| [`PLANO.md`](PLANO.md) | O laço de evolução, trilhas e portões |
+| [`docs/VALIDACAO.md`](docs/VALIDACAO.md) | Como medir se algo é real (e revolucionário) |
+| [`docs/SISTEMAS.md`](docs/SISTEMAS.md) | Cada sistema em átomos, matriz de sincronia, sínteses Σ |
+| [`lab/estat.py`](lab/estat.py) | Estatística da régua (Python puro) |
+| [`experimentos/`](experimentos/) | E001–E003 com pré-registros e relatórios |
 
 ```bash
-python3 experimento/mlu.py
+python3 -m unittest lab.test_estat
+python3 experimentos/E003_cristal_comum/e003.py
 ```
+
+No Claude Code: `/ciclo` roda um giro do laço.

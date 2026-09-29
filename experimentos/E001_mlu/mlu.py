@@ -25,6 +25,7 @@ import random
 import sys
 import time
 import json
+import os
 
 SEED = int(next((a.split("=")[1] for a in sys.argv if a.startswith("--seed=")), 7))
 N_TRAIN = 12         # nos no treino
@@ -467,7 +468,7 @@ def main():
                big={n: r for n, r in res_big if r is not None},
                roteamento_s1=route, passos_s2s3=steps, pensar_mais=longer, s3_big=dict(respondeu=ans, errou=wrong, absteve=abst),
                theta_s2=s2.theta)
-    with open(f"experimento/resultados_seed{SEED}.json", "w") as fh:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), f"resultados_seed{SEED}.json"), "w") as fh:
         json.dump(out, fh, indent=1, default=str)
 
 

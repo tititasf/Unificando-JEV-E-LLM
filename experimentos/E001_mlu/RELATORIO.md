@@ -1,4 +1,26 @@
-# Resultados — MLU (Motor Latente Unificado)
+# E001 — Relatório: MLU (Motor Latente Unificado)
+
+> **Nível: N1** (10 sementes com IC, controles; hipótese não pré-registrada).
+> **Novidade: baixa.** Replica em miniatura a extrapolação por iteração
+> (Deep Thinking, Bansal et al. 2022) e a parada adaptativa (ACT/PonderNet).
+>
+> ⚠️ **Correção (E002):** a seção sobre cristalização abaixo está **mal
+> atribuída**. O estado contínuo não "falhava" em grafos grandes: o argmax
+> acertava; quem falhava era o S3, com limiar absoluto de confiança que
+> não escala com N. Ver `experimentos/E002_cristalizacao/RELATORIO.md`.
+
+## Resumo validado (10 sementes, `reavaliacao.md`)
+
+| Afirmação | Evidência |
+|---|---|
+| Iterar o passo latente é a causa do ganho (não os atributos de aresta) | S2+S3 1,000 vs S1 com a mesma estrutura em 1 passada 0,200; P(A>B)=1, p=0,0002 |
+| S2+S3 supera o classificador de 1 passada | 1,000 vs 0,638 [0,629; 0,647] |
+| Colar S1 na frente (roteador por confiança) piora | 0,976 vs 1,000, p=0,0002. O S1 é mal calibrado (ECE 0,063; E-AURC 0,133) |
+| A parada do S3 economiza computação | −54,2% [54,1; 54,2] |
+| Sem *overthinking* | 100% após 200 passos (50× o necessário) |
+| O estado latente sabe quando não sabe (em N=12) | E-AURC = 0,000 vs 0,133 do S1 |
+
+## Primeira rodada (histórico)
 
 Saída completa da semente 7 (as sementes 1, 2 e 3 estão em `experimento/saida_seed*.txt`).
 `flops med.` = multiplicações estimadas por exemplo. `*` = houve abstenções.
