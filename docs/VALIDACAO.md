@@ -49,7 +49,9 @@ Todo experimento relata, por semente e agregadas:
 5. **Controle de vazamento.** Perguntar sempre: "existe um atalho trivial?" (no E001 existia: com só uma raiz, bastava achar o nó que aponta para si). Testar uma heurística boba contra a tarefa.
 6. **Resultados negativos são registrados.** Vão para o `DIARIO.md` com o mesmo destaque dos positivos.
 7. **Checagem de novidade antes de afirmar.** Buscar na literatura. Se já existe, o achado é **replicação** (valioso, mas não é novidade).
-8. **Um revisor hostil.** Antes de promover um nível, escrever os 3 argumentos mais fortes contra o resultado e respondê-los com dados.
+8. **Hierarquia de autoavaliação** (survey RSI 2607.07663): usamos só o topo, verificadores exatos com verdade calculável. Nada de juiz-LLM ou de o modelo avaliar a si mesmo como métrica.
+9. **Guarda do avaliador e reprodução limpa:** hashes no PREREG e reprodução de um checkout limpo antes de promover a N2+ (lições do DGM e do Heuresis; ver `docs/RSI.md`).
+10. **Um revisor hostil.** Antes de promover um nível, escrever os 3 argumentos mais fortes contra o resultado e respondê-los com dados.
 
 ## 4. Tarefas: a escada de dificuldade
 

@@ -11,24 +11,44 @@ termina produzindo as hipóteses do próximo.
 ## 1. O laço
 
 ```
-        ┌──────────────────────────────────────────────────────────┐
-        │ 0. LER    CLAUDE.md, ESTADO.md, fim do DIARIO.md         │
-        │ 1. ESCOLHER  hipótese do topo da fila (seção 3)          │
-        │ 2. CHECAR NOVIDADE  busca na literatura → registrar      │
-        │ 3. PRÉ-REGISTRAR   hipótese, previsão, critério de morte │
-        │ 4. CONSTRUIR  o mínimo que testa, reusando lab/          │
-        │ 5. RODAR   smoke → validação → teste congelado (1 vez)   │
-        │ 6. MEDIR   painel completo com lab/estat.py              │
-        │ 7. ATACAR  revisor hostil: 3 objeções + resposta         │
-        │ 8. DECIDIR  PROMOVER | MATAR | PIVOTAR                   │
-        │ 9. SEMEAR  1–3 novas hipóteses na fila                   │
-        │10. REGISTRAR ESTADO.md + DIARIO.md → commit → push       │
-        └───────────────────────────┬──────────────────────────────┘
-                                    └──► volta ao passo 0
+        ┌───────────────────────────────────────────────────────────────┐
+        │ 0. LER     CLAUDE.md, ESTADO.md, LICOES.md, fim do DIARIO,    │
+        │            EVOLUTION_LOG do tema, LIVRO.md (meta-métricas)    │
+        │ 1. ESCOLHER  política de busca (§3) → nó pai + operador       │
+        │            + alvo = degrau N+1; rejeitar duplicata na árvore  │
+        │ 2. CHECAR NOVIDADE  busca na literatura → registrar           │
+        │ 3. PRÉ-REGISTRAR  hipótese, previsões COM PROBABILIDADE,      │
+        │            critério de morte, hashes do avaliador → commit    │
+        │ 4. CONSTRUIR  só o degrau N+1, uma mudança atômica            │
+        │ 5. RODAR   smoke → completo (teste congelado, 1 vez)          │
+        │ 6. MEDIR   painel com lab/estat.py                            │
+        │ 7. ATACAR  revisor hostil + guarda (verificar) + reprodução   │
+        │            limpa se for promover a N2+                         │
+        │ 8. DECIDIR  PROMOVER | MATAR | PIVOTAR                        │
+        │ 9. ESCALAR  EVOLUTION_LOG: diagnóstico, 30 degraus, transição │
+        │10. SEMEAR  1–3 hipóteses na fila, cada uma com nó pai         │
+        │11. REGISTRAR  nó na árvore → LIVRO.md → LICOES.md →           │
+        │            ESTADO + DIARIO → commit → push                    │
+        └────────────────────────────────┬──────────────────────────────┘
+                                         └──► volta ao passo 0
 ```
 
 Um ciclo deve caber em **uma sessão** (idealmente < 30 min de CPU). Se não
-couber, a hipótese é grande demais: quebrá-la.
+couber, a hipótese é grande demais: quebrá-la. A inspiração de cada peça do
+laço (AIDE, AIDE², DGM, ShinkaEvolve, AI Scientist) está em
+[`docs/RSI.md`](docs/RSI.md).
+
+### Operadores (todo nó da árvore tem exatamente um)
+
+| Operador | Quando usar |
+|---|---|
+| RASCUNHO | hipótese nova, sem pai direto no mesmo mecanismo |
+| MELHORAR | **uma** mudança atômica sobre um nó (o efeito tem de ser atribuível) |
+| DEPURAR | o nó pai falhou por bug ou premissa errada, não pela hipótese |
+| REPLICAR | mesmo mecanismo em outra tarefa, escala ou família (sobe N1→N2→N3) |
+| ABLAR | remover uma peça para achar a causa |
+| DIAGNOSTICAR | pós-hoc; explica, nunca muda veredito |
+| META | muda o próprio processo; avaliado pelas meta-métricas dos ciclos seguintes |
 
 ## 2. Trilhas de pesquisa (as "direções")
 
@@ -43,13 +63,20 @@ couber, a hipótese é grande demais: quebrá-la.
 Cada trilha sobe a escada de tarefas T1→T6 (VALIDACAO.md §4). A trilha A
 é a espinha: B–E usam o motor que ela produzir.
 
-## 3. Como escolher a próxima hipótese
+## 3. Política de busca (como escolher o próximo nó)
 
-Prioridade = **(ganho se der certo × chance de dar certo) ÷ custo**, com duas regras:
+Inspirada no AIDE² ("seguir a linha promissora enquanto melhora; ao estagnar,
+ramificar a partir do melhor") e no arquivo do DGM:
 
-1. **Promover antes de explorar.** Se existe um achado em N1 que pode subir para N2, ele vem primeiro (~70% dos ciclos). Ideias novas ficam com ~30%.
-2. **Matar rápido.** Hipóteses com critério de morte barato vêm antes das caras.
+1. **Seguir a linha.** Se o último ciclo de um tema subiu degrau ou promoveu nível, o próximo ciclo continua no mesmo tema, no degrau N+1.
+2. **Ramificar ao estagnar.** Se um tema está há **≥2 ciclos sem subir** (`ciclos_sem_subir` no LIVRO), troque de tema: parta do nó de maior nível de outro tema, ou de um *stepping stone* morto cuja lição abre caminho.
+3. **Promover antes de explorar** (~70/30): um achado N1 que pode virar N2 vem antes de ideia nova.
+4. **Matar rápido:** entre candidatos equivalentes, o de critério de morte mais barato primeiro.
+5. **Infra desbloqueia:** se uma lição diz que a tarefa atual cega os testes (ex.: atrator), construir a tarefa nova vem antes.
+6. **Rejeitar duplicatas:** se a hipótese já está na árvore, só entra como REPLICAR/MELHORAR citando o nó.
+7. **Diversidade:** a cada 5 ciclos, pelo menos um em sistema ainda sem nenhum nó (S0, S4, S6…).
 
+Prioridade dentro dessas regras = (ganho se der certo × probabilidade) ÷ custo.
 A fila viva fica no [`ESTADO.md`](ESTADO.md).
 
 ## 4. Portões (quando mudar de fase)

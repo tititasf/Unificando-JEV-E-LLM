@@ -1,0 +1,124 @@
+# LIVRO DE ETAPAS
+
+*Gerado por `python3 -m lab.registro livro` a partir de `registro/arvore.jsonl`. Não editar à mão.*
+
+## Meta-métricas do laboratório (o laboratório medindo a si mesmo)
+
+| métrica | valor |
+|---|---|
+| ciclos | 4 |
+| nós na árvore | 9 (RASCUNHO 3, META 3, MELHORAR 1, DIAGNOSTICAR 2) |
+| taxa de morte de hipóteses | 0.50 |
+| taxa de promoção/replicação | 0.25 |
+| previsões avaliadas / acerto | 14 / 0.43 |
+| Brier das previsões (menor = pesquisador mais calibrado) | — |
+| degrau atual por tema | S2 D04, S3 D03, S5 D04 |
+| ciclos sem subir degrau | S2 3, S3 3, S5 1 |
+| novidade dos achados | replicacao 1, — 2, baixa 1 |
+| registros antigos corrigidos | 2 |
+| CPU médio por nó (s) | 221.67 |
+| guarda do avaliador | OK |
+
+## Árvore de experimentos
+
+▲ promover · ✖ matar · ↻ pivotar · ≡ replicado · · informativo · … pendente
+
+```
+▲ E001 [RASCUNHO, S2] MLU: S1+S2+S3 em miniatura → PROMOVER N1
+    ✖ E002 [MELHORAR, S2] Cristalizacao estabiliza o pensamento? → MATAR N2
+        ✖ E004 [RASCUNHO, S3] S3 invariante a escala → MATAR N2
+            · E004d [DIAGNOSTICAR, S2] Diagnostico: transicao de fase do S2 → INFORMATIVO N1
+    ↻ E003 [RASCUNHO, S5] Cristal Comum: mensagem simbolica vs analogica → PIVOTAR N2
+        · E003d [DIAGNOSTICAR, S5] Diagnostico: N fixo e bracos cruzados → INFORMATIVO N1
+· M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
+    · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
+        … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
+```
+
+## Etapas em ordem
+
+### E001 — MLU: S1+S2+S3 em miniatura (ciclo 1, 2026-09-29)
+- **Operador:** RASCUNHO · **pai:** — · **tema:** S2 · **degrau-alvo:** —
+- **Hipótese:** Unir S1 (1 passada), S2 (passo latente iterado) e S3 (parada/abstencao) supera cada um isolado.
+- **Veredito:** PROMOVER · **nível:** N1 · **novidade:** replicacao
+- **Métrica principal:** acc S2+S3 (N=12, d 0..9, 10 sementes) = 1.0
+- **Lição:** O primeiro gerador tinha um atalho (so uma raiz): sempre procurar o atalho trivial.
+- **Lição:** Colar S1 na frente por confianca piora (0,976 vs 1,000).
+- **Semeou:** E002
+- **Arquivos:** [relatorio](experimentos/E001_mlu/RELATORIO.md) · [reavaliacao](experimentos/E001_mlu/reavaliacao.md)
+- **Commits:** pré-registro `None` · resultado `3c3b874`
+
+### M001 — Regua de evidencia + estatistica (ciclo 1, 2026-09-29)
+- **Operador:** META · **pai:** — · **tema:** LAB · **degrau-alvo:** —
+- **Hipótese:** Uma regua explicita (N0-N5, IQM, IC, colapso) evita autoengano.
+- **Veredito:** INFORMATIVO · **nível:** — · **novidade:** —
+- **Lição:** A regua pegou um exagero ja no primeiro uso (cristalizacao p=0,46).
+- **Arquivos:** [regua](docs/VALIDACAO.md) · [codigo](lab/estat.py)
+- **Commits:** pré-registro `—` · resultado `bba72e5`
+
+### E002 — Cristalizacao estabiliza o pensamento? (ciclo 2, 2026-09-29)
+- **Operador:** MELHORAR · **pai:** E001 · **tema:** S2 · **degrau-alvo:** —
+- **Hipótese:** Colapsar o estado a cada passo reduz colapsos em extrapolacao extrema.
+- **Veredito:** MATAR · **nível:** N2 · **novidade:** —
+- **Métrica principal:** colapsos CONT d=128 (30 sementes) = 0/30
+- **Previsões:** P1 🟥; P3 🟥; P5 🟥
+- **Lição:** O 'colapso' do E001 era do S3 (limiar absoluto), nao do S2.
+- **Corrige:** E001: cristalizacao mal atribuida
+- **Semeou:** H-3.2a
+- **Arquivos:** [prereg](experimentos/E002_cristalizacao/PREREG.md) · [relatorio](experimentos/E002_cristalizacao/RELATORIO.md)
+- **Commits:** pré-registro `44dbaa3` · resultado `bba72e5`
+
+### E003 — Cristal Comum: mensagem simbolica vs analogica (ciclo 3, 2026-09-29)
+- **Operador:** RASCUNHO · **pai:** E001 · **tema:** S5 · **degrau-alvo:** —
+- **Hipótese:** O mesmo colapso discreto serve para pensar e para comunicar (Sigma1).
+- **Veredito:** PIVOTAR · **nível:** N2 · **novidade:** baixa
+- **Métrica principal:** SIMB-CONT d=32 sigma=2 = 0.78
+- **Previsões:** Q1 ✅; Q2 ✅; Q3 🟥; Q4 ✅
+- **Lição:** O ganho vem de codificar a mensagem, nao o estado.
+- **Lição:** Tarefas-atrator mascaram acumulo de erro.
+- **Semeou:** H-T2, H-Sigma1b, H-5.4
+- **Arquivos:** [prereg](experimentos/E003_cristal_comum/PREREG.md) · [relatorio](experimentos/E003_cristal_comum/RELATORIO.md)
+- **Commits:** pré-registro `b7861f2` · resultado `bba72e5`
+
+### E003d — Diagnostico: N fixo e bracos cruzados (ciclo 3, 2026-09-29)
+- **Operador:** DIAGNOSTICAR · **pai:** E003 · **tema:** S5 · **degrau-alvo:** —
+- **Hipótese:** Separar efeito de d e de N; qual metade do cristal importa.
+- **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** —
+- **Arquivos:** [diagnostico](experimentos/E003_cristal_comum/diagnostico.md)
+- **Commits:** pré-registro `—` · resultado `bba72e5`
+
+### M002 — Protocolo Scalata (escada de 30 degraus) (ciclo 4, 2026-09-29)
+- **Operador:** META · **pai:** M001 · **tema:** LAB · **degrau-alvo:** —
+- **Hipótese:** Imaginacao vertical ligada a regua orienta o proximo passo (disciplina N+1).
+- **Veredito:** INFORMATIVO · **nível:** — · **novidade:** —
+- **Arquivos:** [protocolo](docs/ESCALA.md) · [log](EVOLUTION_LOG.md)
+- **Commits:** pré-registro `—` · resultado `2cec81c`
+
+### E004 — S3 invariante a escala (ciclo 4, 2026-09-29)
+- **Operador:** RASCUNHO · **pai:** E002 · **tema:** S3 · **degrau-alvo:** S3:D04
+- **Hipótese:** Estabilidade do argmax e um sinal de 'terminei' que funciona de N=12 a N=128.
+- **Veredito:** MATAR · **nível:** N2 · **novidade:** —
+- **Métrica principal:** placar ESTAVEL N=128 = 0.537
+- **Previsões:** P1 🟥; P2 🟥; P3 ✅; P4 🟥; P5 ✅; P6 ✅; P7 🟥
+- **Lição:** Estabilidade do argmax = criterio publicado de ponto fixo.
+- **Lição:** Legibilidade do pensamento vem antes da metacognicao.
+- **Semeou:** H-S3-legivel, H-regime, H-hibrido
+- **Arquivos:** [prereg](experimentos/E004_s3_escala/PREREG.md) · [relatorio](experimentos/E004_s3_escala/RELATORIO.md)
+- **Commits:** pré-registro `2cec81c` · resultado `61ad865`
+
+### E004d — Diagnostico: transicao de fase do S2 (ciclo 4, 2026-09-29)
+- **Operador:** DIAGNOSTICAR · **pai:** E004 · **tema:** S2 · **degrau-alvo:** —
+- **Hipótese:** Em N grande o S2 continuo anda salto a salto ou chega em paralelo?
+- **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** possivelmente nova
+- **Lição:** Ate N=64 anda 1 salto/passo; em N=128 resolve por difusao ate o equilibrio, 12x mais rapido, 90% correto.
+- **Corrige:** E001/E002: extrapolacao por iteracao so vale ate N=64
+- **Arquivos:** [diagnostico](experimentos/E004_s3_escala/diagnostico.md)
+- **Commits:** pré-registro `—` · resultado `61ad865`
+
+### M003 — Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas (ciclo 4, 2026-09-29)
+- **Operador:** META · **pai:** M002 · **tema:** LAB · **degrau-alvo:** —
+- **Hipótese:** Arvore de experimentos (AIDE), politica seguir/ramificar (AIDE2), arquivo e guarda do avaliador (DGM), meta-caderno (ShinkaEvolve) e Brier do pesquisador aceleram a subida de degraus e melhoram a calibracao nos proximos ciclos.
+- **Veredito:** PENDENTE · **nível:** — · **novidade:** —
+- **Lição:** Linha de base das meta-metricas: acerto de previsoes 43% (sem probabilidades), morte 50%, degraus S2 D04 / S3 D03 / S5 D04.
+- **Arquivos:** [pesquisa](docs/RSI.md) · [codigo](lab/registro.py) · [licoes](LICOES.md)
+- **Commits:** pré-registro `—` · resultado `—`

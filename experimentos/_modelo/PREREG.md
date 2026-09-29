@@ -2,6 +2,7 @@
 
 **Escrito antes de rodar. Não editar depois da primeira execução completa.**
 Trilha: <A–E>. Átomos/sínteses: <ex.: 3.2, Σ1>. Nível de partida: <N0/N1>.
+Nó pai: <ENNN>. Operador: <RASCUNHO|MELHORAR|DEPURAR|REPLICAR|ABLAR>. Degrau-alvo: <tema DXX>.
 
 ## Hipótese
 <uma frase falsificável>
@@ -16,9 +17,14 @@ Trilha: <A–E>. Átomos/sínteses: <ex.: 3.2, Σ1>. Nível de partida: <N0/N1>.
 - Orçamento de ajuste por braço:
 
 ## Previsões e critérios de morte
-| # | Previsão numérica | Morte se |
-|---|---|---|
-| P1 | | |
+| # | Previsão numérica | Prob. que dou | Morte se |
+|---|---|---|---|
+| P1 | | 0.xx | |
+
+## Guarda do avaliador (hashes no momento do pré-registro)
+```
+<saída de python3 -m lab.registro hash gerador.py avaliador.py>
+```
 
 ## Ameaças conhecidas
 - Atalhos triviais possíveis:
