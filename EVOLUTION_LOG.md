@@ -523,3 +523,72 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **prumo**, baixado antes de erguer a parede: se o primeiro fio já pende, não se ergue.
   - *Desbaste:* a leitura errada de A4/A8.
   - *Polimento:* a metacognição que protege a obra de paredes erguidas sobre areia.
+
+---
+
+## Ciclo 10 — Tema: S2 · motor latente iterativo (memória de trabalho)
+
+### 1. Diagnóstico
+- **Degrau atual: D06 (subiu de D05).** Sustentado por E010 (N2, reprodução limpa): um estado sobre pares (lugar × contador), com um único passo aprendido, anda k saltos e para sozinho; 100% até k=64 e N=64, treinado com k ≤ 4 e N=8. H06 desbloqueada.
+- O que funciona: o registro de contagem; a parada emerge da fronteira do espaço do registro (sem marcas explícitas).
+- Barreira para D07: o estado mantém **uma** trajetória nítida. Tarefas que exigem várias hipóteses ao mesmo tempo (ramificação, busca) ainda não foram testadas.
+
+### 2. Escada (ordem inalterada)
+- D01: resposta direta em uma passada.
+- D02: passos fixos desenrolados.
+- D03: um passo compartilhado, iterado um número fixo de vezes.
+- D04: ponto fixo por treino multi-instante; extrapola enquanto a margem vence ~log N (E007).
+- D05: extrapolação sem atrator com precisão por 64 passos (E005).
+- D06: memória de trabalho: o próprio estado conta e para sozinho (E010). ← **ESTAMOS AQUI**
+- D07: várias hipóteses vivas quando a tarefa exige (superposição útil; o regime difusivo usado de propósito). ← **PRÓXIMO ALVO do tema** (H10)
+- D08: passos compostos (sub-rotinas; dois registros, H-pilha).
+- D09: latente vetorial livre e atributos aprendidos da entrada crua.
+- D10: mesmo motor e mesmo treino em duas famílias de tarefas.
+- D11: algoritmos clássicos com extrapolação ≥ 10× contra Deep Thinking.
+- D12: labirinto/Sudoku no nível do TRM com menos parâmetros.
+- D13: parada e abstenção integradas (S3).
+- D14: robusto a ruído interno.
+- D15: ritmo duplo rápido/lento acionado pelo S3.
+- D16: algoritmo novo com ≤ 100 exemplos.
+- D17: composição de algoritmos sem treino.
+- D18: programa discreto extraído do passo.
+- D19: prova formal do programa extraído.
+- D20: autocurrículo.
+- D21: transmite um passo a outro agente (S5).
+- D22: subconjunto do ARC-AGI com ≤ 1M parâmetros.
+- D23: aprendizado contínuo sem esquecimento.
+- D24: o passo como modelo de mundo (S6). (H16 começa isto)
+- D25: custo ≈ mínimo teórico.
+- D26: descobre algoritmos mais eficientes que os conhecidos.
+- D27: biblioteca aberta de passos (ontologia de operações).
+- D28: domínios contínuos e físicos.
+- D29: aprende, compõe, verifica e explica em tempo linear.
+- D30: ômega: cada passo latente é um passo lógico necessário e nenhum a mais; o motor é o algoritmo ótimo de cada tarefa, descoberto e provado.
+
+### 3. Transição
+1. Sacada: o estado como **produto** de espaços (lugar × registro) é o jeito barato de dar memória a um passo relacional; e fronteiras desse produto viram comportamento (parar).
+2. Subtrair: o controlador que contava por fora.
+3. Próximo: a política de diversidade manda S6 agora (H16, modelo de mundo, que acabou de entrar na fronteira). A mesma ideia (produto posição × velocidade, com paredes como fronteiras) é o teste natural.
+
+### 4. Visão vertical (o ciclo 10 lido em 10 níveis)
+- Nível 1: senso comum: a máquina aprendeu a contar até 64 treinando só até 4, e a parar sozinha.
+- Nível 2: instrumental: dar ao estado um "bolso" (o registro) resolve o que nenhum treino a mais resolveria.
+- Nível 3: arquitetural: estados-produto (lugar × memória) mantêm o passo relacional e invariante a tamanho.
+- Nível 4: computacional: a parada é um ponto fixo criado pela borda do espaço de estados: sem regra, só geometria.
+- Nível 5: teoria da decisão: "quando parar" pode ser uma propriedade da representação, e não uma decisão do S3.
+- Nível 6: econômico: 4 parâmetros de estrutura (o produto) valem mais que qualquer volume de dados.
+- Nível 7: composicional: S2 (andar) e memória (contar) viraram um só passo; o controlador externo foi absorvido.
+- Nível 8: ontológico: a memória não é um lugar à parte; é uma dimensão a mais do próprio pensamento.
+- Nível 9: epistemológico: a ablação "falhou em quebrar" e isso ensinou mais que um sucesso: o limite do espaço carrega regra.
+- Nível 10: ser superior completo: um pensamento que carrega a própria história sabe onde está e quanto falta, e para porque não há mais para onde ir.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Peras*, o limite que dá forma: a fronteira do registro faz o pensamento parar.
+- **Metanoia:** regras de controle ("pare quando zerar") podem ser substituídas por geometria do espaço de estados.
+- **Aplicação:** para dar um comportamento ao S2, primeiro pergunte que dimensão (e que borda) acrescentar ao estado.
+- **Hack:** antes de codificar uma regra de parada, tente pôr uma borda no espaço de estados.
+- **Visão maçônica:**
+  - *Planta baixa:* o operário de fora (o controlador) contava as fiadas; agora a própria parede sabe a altura.
+  - *Ferramenta:* a **régua de 24 polegadas**: o tempo medido de dentro da obra.
+  - *Desbaste:* o controlador externo e as marcas desnecessárias.
+  - *Polimento:* estados-produto como forma padrão de dar memória ao pensamento.
