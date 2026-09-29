@@ -1,0 +1,50 @@
+Treinando S1-MLP (classificador de uma passada)...
+  [S1-MLP] epoca 1: loss 1.163
+  [S1-MLP] epoca 2: loss 0.939
+  [S1-MLP] epoca 3: loss 0.866
+  [S1-MLP] epoca 4: loss 0.820
+Treinando S2 (passo latente recorrente, pesos compartilhados)...
+  parametros S2: 33  |  parametros S1-MLP: 8124
+  [S2] iter 50: loss 0.3681
+  [S2] iter 100: loss 0.0004
+  [S2] iter 150: loss 0.0003
+  [S2] iter 200: loss 0.0003
+  [S2] iter 250: loss 0.0002
+  [S2] iter 300: loss 0.0002
+  [S2] iter 350: loss 0.0002
+  [S2] iter 400: loss 0.0002
+  [S2] iter 450: loss 0.0002
+  [S2] iter 500: loss 0.0001
+  [S2] iter 550: loss 0.0001
+  [S2] iter 600: loss 0.0001
+
+=== N=12 nos (treino so viu d=0..4) ===
+modelo           d=0     d=1     d=2     d=3     d=4     d=5     d=6     d=7     d=8     d=9   flops med.
+S1-MLP           97%     59%     53%     56%     58%     63%     63%     64%     65%     70%        1200
+S2-fixo         100%    100%    100%    100%    100%    100%    100%    100%    100%    100%        1728
+S2+S3           100%    100%    100%    100%    100%    100%    100%    100%    100%    100%         792
+MLU             100%     94%     94%     97%     98%     97%     98%    100%    100%    100%        1901
+  (* = abstencoes: o modelo disse 'nao sei' em parte dos casos)
+
+Fracao em que o roteador do MLU confiou no S1 (atalho intuitivo):
+  d=0: 79%  d=1: 26%  d=2: 18%  d=3: 15%  d=4: 14%  d=5: 14%  d=6: 10%  d=7: 7%  d=8: 6%  d=9: 6%
+
+=== N=16 nos (tamanho nunca visto, T_MAX=12) ===
+modelo           d=0     d=2     d=4     d=8    d=11    d=13   flops med.
+S1-MLP        (nao aplicavel: tamanho de entrada fixo)
+S2-fixo         100%    100%    100%    100%    100%      0%        3072
+S2+S3           100%    100%    100%    100%    100%     0%*        1792
+  (* = abstencoes: o modelo disse 'nao sei' em parte dos casos)
+
+S3 em N=16: respondeu 1000, errou 0 das respondidas, se absteve 200.
+
+Passos latentes medios do S2+S3 por profundidade (N=12):
+  d=0: 1.0  d=1: 2.0  d=2: 3.0  d=3: 4.0  d=4: 5.0  d=5: 6.0  d=6: 7.0  d=7: 8.0  d=8: 9.0  d=9: 10.0
+
+Pensar mais tempo: mesmo modelo de 33 parametros, orcamento maior:
+  (continuo = estado latente difuso | cristalizado = colapso discreto a cada passo)
+  N= 16 d= 13 T_MAX= 24: continuo 100% | cristalizado 100%
+  N= 32 d= 25 T_MAX= 40: continuo 100% | cristalizado 100%
+  N= 64 d= 50 T_MAX= 64: continuo 100% | cristalizado 100%
+  N=128 d=100 T_MAX=128: continuo  97% | cristalizado 100%
+Tempo total: 33s
