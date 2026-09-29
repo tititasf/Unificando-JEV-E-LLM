@@ -45,3 +45,12 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Surpresa: o diagnóstico achou a lei corrigida. O vazamento de um passo **prevê** a transição, mas o limiar é **ε_c ≈ 0,07**, quase constante entre sementes, enquanto N_c varia 3×. Instância de Veličković et al. 2025.
 - Meta: Brier 0,25 (contra 0,42): as probabilidades moderadas protegeram.
 - Semeado: H-lei-eps (fora da amostra + "por passo × acumulado"), H-temperatura-adaptativa.
+
+## Ciclo 7 — 2026-09-29 — E007 lei de nitidez fora da amostra (pré-registrado) + controle de qualidade
+- Antes do ciclo: seis melhorias de processo (verificador de coerência `lab/checar.py`, sementes de teste derivadas do commit, cálculo de amostra, linhas de base Deep Thinking/PonderNet, protocolo CLRS, teto do Python medido em `docs/STACK.md`) e gancho de início de sessão. O verificador achou 2 afirmações obsoletas no primeiro uso.
+- Piloto com o modelo completo (lição 11b) achou um bug (bisseção abaixo do N mínimo) e uma métrica confundida (acurácia com "sorte de atrator"); a métrica primária virou o regime.
+- Hipótese: ε_c = 0,071 congelado prevê N_c em modelos novos; o efeito é por passo.
+- Veredito: **PROMOVER** (N2, reproduzido limpo). 25/30 dentro de 1,5×; p = 0,0002 contra a constante; R = 0,95 (por passo). **H04 desbloqueada**, a primeira habilidade conquistada pela bússola.
+- Surpresa: uma teoria de campo médio sem parâmetros (bifurcação sela-nó) prevê N_c com ~9% de erro. É a condição de separação das redes de Hopfield modernas: o S2 é uma memória associativa iterada. Novidade baixa, valor de projeto alto.
+- Meta: Brier 0,11, o primeiro abaixo de 0,25.
+- Semeado: H-temperatura-logN (→ H05), H-campo-médio-T2.

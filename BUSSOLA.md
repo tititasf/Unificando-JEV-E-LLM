@@ -9,11 +9,11 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 
 | goal | progresso | faltam | nível exigido |
 |---|---|---|---|
-| **G1** Pensador de tamanho livre, com prova | █░░░░░░░ 1/8 | H04, H05, H06, H11, H19, H22, H23 | N4 |
-| **G2** Saber exatamente quando nao sabe | █░░░░░ 1/6 | H04, H07, H08, H12, H22 | N3 |
+| **G1** Pensador de tamanho livre, com prova | ██░░░░░░ 2/8 | H05, H06, H11, H19, H22, H23 | N4 |
+| **G2** Saber exatamente quando nao sabe | ██░░░░ 2/6 | H07, H08, H12, H22 | N3 |
 | **G3** Uma lingua que nasce, ensina e pensa | ██░░░░ 2/6 | H06, H13, H14, H15 | N4 |
-| **G4** Descobrir regras de um mundo desconhecido | █░░░░░░░░░ 1/10 | H04, H06, H07, H08, H10, H16, H17, H20, H22 | N4 |
-| **G5** Pensar com o custo certo | █░░░░░ 1/6 | H04, H07, H12, H18, H22 | N3 |
+| **G4** Descobrir regras de um mundo desconhecido | ██░░░░░░░░ 2/10 | H06, H07, H08, H10, H16, H17, H20, H22 | N4 |
+| **G5** Pensar com o custo certo | ██░░░░ 2/6 | H07, H12, H18, H22 | N3 |
 | **G6** Auto-aperfeicoamento recursivo demonstrado | █░ 1/2 | H21 | N3 |
 
 ## Fronteira: o que atacar agora (maior prioridade primeiro)
@@ -22,18 +22,20 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 
 | # | habilidade | prioridade | abre | goals | hipóteses na fila |
 |---|---|---|---|---|---|
-| 1 | 🟨 **H04** Lei de nitidez validada (S2) | 22.0 | 9 | G1, G2, G4, G5 | H-lei-eps |
-| 2 | 🟨 **H22** Linhas de base publicadas validadas (LAB) | 19.0 | 6 | G1, G2, G4, G5 | H-baselines |
+| 1 | 🟨 **H22** Linhas de base publicadas validadas (LAB) | 19.0 | 6 | G1, G2, G4, G5 | H-baselines |
+| 2 | 🟨 **H07** Metacognicao legivel em qualquer escala (S3) | 14.0 | 4 | G2, G4, G5 | H-S3-legivel |
 | 3 | 🟨 **H06** Memoria de trabalho latente (S2) | 9.5 | 9 | G1, G3, G4 | H-memoria |
-| 4 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
-| 5 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 4 | 🟨 **H05** Nitidez em qualquer escala (S2) | 6.0 | 2 | G1 | H-temperatura-logN, H-precisao-treino |
+| 5 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
+| 6 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
 
 ## Linha do tempo de desbloqueios (meta-métrica do G6)
 
 - ciclo 3: **H02** Mensagem simbolica robusta
 - ciclo 4: **H03** Laboratorio com regua, laco e arvore
 - ciclo 5: **H01** Passo latente que extrapola
-- taxa: 3 habilidades em 6 ciclos = 0.50 por ciclo
+- ciclo 7: **H04** Lei de nitidez validada
+- taxa: 4 habilidades em 7 ciclos = 0.57 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -47,13 +49,13 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Deep Thinking (recall + progressive loss) e PonderNet reimplementados, com gradiente verificado, reproduzem qualitativamente os efeitos publicados: progressive loss reduz overthinking (acc com T>>treino) e PonderNet aprende passos que crescem com a dificuldade (≥ N1)
 - ⬜ **H23** Protocolo CLRS reimplementado com linha de base · LAB · T3 · requer: H22 + H06  
   critério: Geradores e resolvedores exatos (BFS, Bellman-Ford) testados; um motor aprendido e a linha de base Deep Thinking avaliados no protocolo n=16 -> n=64 com acuracia de ponteiros e IC (≥ N1)
-- 🟨 **H04** Lei de nitidez validada · S2 · fronteira S2 D04 · requer: H01  
+- 🟩 **H04** Lei de nitidez validada · S2 · fronteira S2 D04 · requer: H01 — por E007  
   critério: Limiar de vazamento eps_c congelado preve N_c de >=30 sementes novas dentro de 1,5x, e o papel de d (por passo x acumulado) decidido (≥ N2)
-- ⬜ **H05** Nitidez em qualquer escala · S2 · S2 D05+ · requer: H04  
+- 🟨 **H05** Nitidez em qualquer escala · S2 · S2 D05+ · requer: H04  
   critério: Um mecanismo (temperatura adaptativa, treino de precisao ou cristal) mantem eps < eps_c ate N=4096 sem re-treino, em T1 e T2 (≥ N2)
 - 🟨 **H06** Memoria de trabalho latente · S2 · S2 D06 · requer: H01  
   critério: O proprio estado carrega um contador/pilha: resolve T2 com k na entrada (sem controlador contando) e extrapola k 16x (≥ N2)
-- ⬜ **H07** Metacognicao legivel em qualquer escala · S3 · S3 D04 · requer: H04  
+- 🟨 **H07** Metacognicao legivel em qualquer escala · S3 · S3 D04 · requer: H04  
   critério: Mesmo sinal de parada, fixado em N=12, responde >=99% quando da e se abstem >=99% quando nao da, de N=12 a N=1024 (≥ N2)
 - ⬜ **H08** Metacognicao calibrada com garantia · S3 · S3 D05-D06 · requer: H07 + H22  
   critério: Risco seletivo <= alfa garantido (conformal) sob mudanca de escala e de tarefa; E-AURC ~0 em 2 familias (≥ N2)
@@ -96,11 +98,11 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
       · H20 Aprendiz de regras desconhecidas
     · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H18 Orcamento como sentido
-  ◐ H04 Lei de nitidez validada
-    · H05 Nitidez em qualquer escala
+  ✔ H04 Lei de nitidez validada
+    ◐ H05 Nitidez em qualquer escala
       · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
       · H19 Programa extraido e provado (↑ já mostrado)
-    · H07 Metacognicao legivel em qualquer escala
+    ◐ H07 Metacognicao legivel em qualquer escala
       · H08 Metacognicao calibrada com garantia (↑ já mostrado)
       · H12 Chutar e verificar
         · H18 Orcamento como sentido (↑ já mostrado)

@@ -81,7 +81,9 @@
    "prereqs": [
     "H01"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E007"
+   ],
    "custo": 1,
    "hipoteses": [
     "H-lei-eps"
@@ -100,7 +102,7 @@
    "desbloqueada_por": [],
    "custo": 1,
    "hipoteses": [
-    "H-temperatura-adaptativa",
+    "H-temperatura-logN",
     "H-precisao-treino"
    ]
   },

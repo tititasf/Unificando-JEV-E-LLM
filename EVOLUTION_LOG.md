@@ -315,3 +315,72 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **prumo**, para descer até o ponto exato em que a parede começa a ceder (ε_c).
   - *Desbaste:* a fórmula e^margem e o limiar 0,5.
   - *Polimento:* a especificação ε(N) < ε_c em todo S2, e um teste fora da amostra que separa "por passo" de "acumulado".
+
+---
+
+## Ciclo 7 — Tema: S2 · motor latente iterativo (a fronteira D04 fechada: lei de nitidez)
+
+### 1. Diagnóstico
+- **Degrau atual: D05 (mantido); a fronteira do D04 agora tem lei validada.** E007 (N2, fora da amostra, 30 sementes, sementes de teste derivadas do commit, reprodução limpa): o vazamento de um passo, com limiar congelado, prevê N_c em 25/30 modelos; o efeito é por passo (R = 0,95). Habilidade H04 desbloqueada.
+- E007d (N1): teoria de campo médio (bifurcação sela-nó) prevê N_c com ~9% de erro sem nenhum parâmetro ajustado. É a condição de separação das redes de Hopfield modernas: **o S2 é uma memória associativa iterada.**
+- Barreira para D06 (inalterada): o estado só representa "onde estou".
+
+### 2. Escada (ordem inalterada; D04 com a lei explícita)
+- D01: resposta direta em uma passada.
+- D02: passos fixos desenrolados.
+- D03: um passo compartilhado, iterado um número fixo de vezes.
+- D04: ponto fixo por treino multi-instante; extrapola enquanto a margem m vence ~log(N−1) (ε < ε_c(m) ≈ 0,05–0,07; E007).
+- D05: extrapolação sem atrator com precisão por 64 passos. ← **ESTAMOS AQUI** (E005)
+- D06: memória de trabalho (contador, pilha, marcador) no próprio estado. ← **PRÓXIMO ALVO** (H06)
+- D07: várias hipóteses vivas quando a tarefa exige; o regime difusivo como estado metaestável de Hopfield (média de padrões) usado de propósito.
+- D08: passos compostos (sub-rotinas).
+- D09: latente vetorial livre e atributos aprendidos da entrada crua.
+- D10: mesmo motor e mesmo treino em duas famílias de tarefas.
+- D11: algoritmos clássicos com extrapolação ≥ 10× contra Deep Thinking.
+- D12: labirinto/Sudoku no nível do TRM com menos parâmetros.
+- D13: parada e abstenção integradas (S3).
+- D14: robusto a ruído interno.
+- D15: ritmo duplo rápido/lento acionado pelo S3.
+- D16: algoritmo novo com ≤ 100 exemplos.
+- D17: composição de algoritmos sem treino.
+- D18: programa discreto extraído do passo.
+- D19: prova formal do programa extraído.
+- D20: autocurrículo.
+- D21: transmite um passo a outro agente (S5).
+- D22: subconjunto do ARC-AGI com ≤ 1M parâmetros.
+- D23: aprendizado contínuo sem esquecimento.
+- D24: o passo como modelo de mundo (S6).
+- D25: custo ≈ mínimo teórico.
+- D26: descobre algoritmos mais eficientes que os conhecidos.
+- D27: biblioteca aberta de passos (ontologia de operações).
+- D28: domínios contínuos e físicos.
+- D29: aprende, compõe, verifica e explica em tempo linear.
+- D30: ômega: cada passo latente é um passo lógico necessário e nenhum a mais; o motor é o algoritmo ótimo de cada tarefa, descoberto e provado.
+
+### 3. Transição
+1. Sacada: se o S2 é Hopfield, a nitidez em qualquer escala tem receita conhecida: a temperatura (β) cresce com log N. Isso é **H05** (nitidez em qualquer escala), barato e agora com teoria por trás.
+2. Subtrair: a busca empírica por limiares; a teoria dá ε_c(m).
+3. Testar (por ordem da bússola): H22 (linhas de base publicadas), H07 (S3 legível, agora com um S2 cujo regime é previsível), H06 (memória de trabalho, D06), H05 (β ∝ log N).
+
+### 4. Visão vertical (o ciclo 7 lido em 10 níveis)
+- Nível 1: senso comum: conseguimos prever em que tamanho o pensamento da máquina "embaça", antes de testar.
+- Nível 2: instrumental: meça um passo, preveja mil; o teste custa minutos.
+- Nível 3: arquitetural: todo S2 recebe uma especificação verificável (m > m_c(log N)); a temperatura vira parâmetro de projeto.
+- Nível 4: computacional: o pensamento iterado é recuperação de memória associativa; dissolver é cair num estado metaestável.
+- Nível 5: teoria da decisão: a escolha certa da métrica (regime, não acurácia) decidiu metade do experimento; o piloto evitou uma conclusão errada.
+- Nível 6: econômico: uma teoria de uma linha substitui grades inteiras de experimentos.
+- Nível 7: composicional: o que o S3 precisa ler (legibilidade) agora tem uma condição conhecida vinda do S2. Os dois sistemas passam a ter um contrato.
+- Nível 8: ontológico: identidade (um lugar nítido) e dissolução (um campo) são as duas fases de um mesmo processo, separadas por uma bifurcação.
+- Nível 9: epistemológico: o ciclo foi da refutação (E006) ao limiar empírico (E006d), à validação fora da amostra (E007) e à teoria (E007d), e terminou numa teoria que já existia. Chegar sozinho a uma teoria conhecida é sinal de que o método funciona.
+- Nível 10: ser superior completo: saber a própria fase é saber quanto do mundo cabe num pensamento nítido. Quem conhece a própria bifurcação escolhe a temperatura antes de pensar.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Anamnese*, recordar o que já se sabia: o S2 "pensa" recuperando um padrão, como uma memória.
+- **Metanoia:** paramos de tratar o S2 como algo novo e passamos a tratá-lo como uma memória associativa. Isso importa um corpo inteiro de teoria (capacidade, temperatura, metaestabilidade).
+- **Aplicação:** todo motor S2 reporta m e ε_c(m); a temperatura em inferência segue β(N) ∝ log N.
+- **Hack:** antes de treinar mais, aplique a condição de separação: m > log(N−1) + folga. Se falhar, ajuste β, não os pesos.
+- **Visão maçônica:**
+  - *Planta baixa:* o edifício (S2) tinha uma lei de estabilidade escondida, a mesma de outro templo já construído (Hopfield).
+  - *Ferramenta:* o **nível**: a condição m ≈ log N mostra se o piso está plano na escala da obra.
+  - *Desbaste:* os limiares empíricos soltos (0,5; 0,071) viram casos de uma fórmula.
+  - *Polimento:* a especificação m > m_c(log N) em todo S2, e a temperatura adaptativa como ferramenta de obra.

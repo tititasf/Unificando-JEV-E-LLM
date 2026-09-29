@@ -34,7 +34,7 @@ Status dos átomos: ⬜ não testado · 🟨 em teste · 🟩 evidência N1+ · 
 
 | Átomo | Biologia | IA hoje | Átomo testável | Métrica | Status |
 |---|---|---|---|---|---|
-| 2.1 Passo reutilizável | circuitos recorrentes corticais | recorrentes com pesos compartilhados, TRM | mesmo passo aplicado T vezes | razão de extrapolação | 🟩 N2 em T1 (E002) e T2 (E005, sem atrator, 16× em k); regime muda quando N > e^margem (A11, N1) |
+| 2.1 Passo reutilizável | circuitos recorrentes corticais | recorrentes com pesos compartilhados, TRM | mesmo passo aplicado T vezes | razão de extrapolação | 🟩 N2 em T1 (E002) e T2 (E005, sem atrator, 16× em k); regime muda quando a margem deixa de vencer ~log N (lei de nitidez, E007, N2; tipo Hopfield) |
 | 2.2 Memória de trabalho | córtex pré-frontal | *recall* (Deep Thinking), contexto | reinjetar o problema a cada passo | overthinking | 🟩 E001: sem overthinking até T=200 |
 | 2.3 Múltiplas hipóteses | exploração mental paralela | beam search, superposição latente | tarefa com ambiguidade (ciclos, vários caminhos) | acc contínuo vs. cristalizado | ⬜ E004 |
 | 2.4 Composição | *chunking* | subrotinas, programas | passos que chamam passos | extrapolação composicional | ⬜ |

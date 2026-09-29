@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 6 |
-| nós na árvore | 15 (RASCUNHO 3, META 5, MELHORAR 1, DIAGNOSTICAR 4, REPLICAR 2) |
-| taxa de morte de hipóteses | 0.50 |
-| taxa de promoção/replicação | 0.17 |
-| previsões avaliadas / acerto | 25 / 0.36 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.36 |
+| ciclos | 7 |
+| nós na árvore | 17 (RASCUNHO 3, META 5, MELHORAR 1, DIAGNOSTICAR 5, REPLICAR 3) |
+| taxa de morte de hipóteses | 0.43 |
+| taxa de promoção/replicação | 0.29 |
+| previsões avaliadas / acerto | 31 / 0.45 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.27 |
 | degrau atual por tema | S2 D05, S3 D03, S5 D04 |
-| ciclos sem subir degrau | S2 1, S3 5, S5 3 |
-| novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1 |
+| ciclos sem subir degrau | S2 2, S3 6, S5 4 |
+| novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1 |
 | registros antigos corrigidos | 4 |
-| CPU médio por nó (s) | 203.70 |
+| CPU médio por nó (s) | 215.67 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -34,6 +34,8 @@
         · E005d [DIAGNOSTICAR, S2] Diagnostico: margem aprendida e lei N*=e^margem → INFORMATIVO N1
             ↻ E006 [REPLICAR, S2] Lei N*: o vazamento de um passo preve a dissolucao? → PIVOTAR N2 (negativo)
                 · E006d [DIAGNOSTICAR, S2] Diagnostico: limiar real eps_c ~ 0,07 → INFORMATIVO N1
+                    ▲ E007 [REPLICAR, S2] Lei de nitidez fora da amostra (eps_c congelado) → PROMOVER N2
+                        · E007d [DIAGNOSTICAR, S2] Diagnostico: teoria de campo medio (bifurcacao sela-no) → INFORMATIVO N1
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -188,4 +190,26 @@
 - **Lição:** O verificador achou 2 afirmacoes obsoletas no ESTADO no primeiro uso.
 - **Lição:** Teto do Python puro medido: 2,9e7 op/s; gatilho de stack previsto em H09/H11.
 - **Arquivos:** [checar](lab/checar.py) · [sementes](lab/sementes.py) · [baselines](lab/baselines.py) · [clrs](lab/tarefas_clrs.py) · [stack](docs/STACK.md)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### E007 — Lei de nitidez fora da amostra (eps_c congelado) (ciclo 7, 2026-09-29)
+- **Operador:** REPLICAR · **pai:** E006d · **tema:** S2 · **degrau-alvo:** H04
+- **Hipótese:** O vazamento de um passo com limiar congelado 0,071 preve o N em que o S2 se dissolve, e o efeito e por passo (independe de d).
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** baixa (teoria de Hopfield moderno)
+- **Métrica principal:** N_c dentro de 1,5x (30 sementes novas) = 25/30
+- **Previsões:** P1 ✅ (p=0.65); P2 ✅ (p=0.7); P3 ✅ (p=0.7); P4 ✅ (p=0.65); P5 🟥 (p=0.15); P6 ✅ (p=0.55)
+- **Lição:** Um numero medido num passo preve a transicao de fase do pensamento fora da amostra.
+- **Lição:** Em tarefa-atrator, meca o regime (nitidez), nao a acuracia.
+- **Lição:** O piloto com o modelo completo achou um bug e uma metrica confundida antes do pre-registro.
+- **Semeou:** H-campo-medio-T2, H-temperatura-logN
+- **Arquivos:** [prereg](experimentos/E007_lei_eps/PREREG.md) · [relatorio](experimentos/E007_lei_eps/RELATORIO.md)
+- **Commits:** pré-registro `13d7855` · resultado `—`
+
+### E007d — Diagnostico: teoria de campo medio (bifurcacao sela-no) (ciclo 7, 2026-09-29)
+- **Operador:** DIAGNOSTICAR · **pai:** E007 · **tema:** S2 · **degrau-alvo:** —
+- **Hipótese:** Uma teoria sem parametros ajustados preve eps_c e N_c por modelo?
+- **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** baixa (condicao de separacao de Hopfield)
+- **Lição:** Teoria de campo medio: erro de ~9% (29/30 dentro de 1,5x) contra 22% do limiar fixo, p=0,0004.
+- **Lição:** O S2 e uma memoria associativa iterada tipo Hopfield: margem precisa vencer ~log N.
+- **Arquivos:** [diagnostico](experimentos/E007_lei_eps/diagnostico.md)
 - **Commits:** pré-registro `—` · resultado `—`
