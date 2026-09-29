@@ -384,3 +384,72 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **nível**: a condição m ≈ log N mostra se o piso está plano na escala da obra.
   - *Desbaste:* os limiares empíricos soltos (0,5; 0,071) viram casos de uma fórmula.
   - *Polimento:* a especificação m > m_c(log N) em todo S2, e a temperatura adaptativa como ferramenta de obra.
+
+---
+
+## Ciclo 8 — Tema: S3 · metacognição (quanto pensar e quando não sabe)
+
+### 1. Diagnóstico
+- **Degrau atual: D03 (mantido).** O ciclo validou a infraestrutura de comparação: a linha de base publicada (PonderNet) funciona (E008, N2; H22 desbloqueada).
+- O que funciona: em N=12, tanto a parada por ponto fixo (CONV) quanto a PonderNet acertam 100%; o CONV custa ~1,9× menos.
+- Barreira para D04 (inalterada, mas agora atacável): um sinal de "terminei" que funcione de N=12 a N=1024. O E007 deu a chave: o regime do S2 é previsível pela margem (lei de nitidez), então o S3 pode **saber de antemão** se o pensamento vai ser legível naquela escala.
+
+### 2. Escada (versão reescrita no ciclo 4; inalterada)
+- D01: sem metacognição: sempre responde após um número fixo de passos.
+- D02: limiar fixo de confiança na saída.
+- D03: parada por convergência + confiança absoluta, ajustadas na escala do treino. ← **ESTAMOS AQUI** (E001; PonderNet validada como comparação, E008)
+- D04: sinal de "terminei" invariante à escala **sobre um pensamento legível**: de N=12 a N=1024. ← **PRÓXIMO ALVO** (H07, prioridade 14)
+- D05: calibração com garantia de risco (conformal).
+- D06: distinguir tipos de dúvida e regimes do próprio pensamento ("não terminei" × "ambíguo" × "fora da distribuição" × "pensamento difuso").
+- D07: parada aprendida ponta a ponta com custo explícito, comparada à regra (E008 começou: PonderNet ≈ CONV em acerto, ~1,9× mais cara em N=12).
+- D08: previsão de custo antes de pensar.
+- D09: verificação por invariante barato (Σ3).
+- D10: alocação por valor da informação (S1, S2, verificar, abster).
+- D11: energia restante (S0) como sentido (Σ5).
+- D12: autodiagnóstico do componente que falhou.
+- D13: autocorreção de limiares online.
+- D14: o mesmo S3 em tarefas diferentes sem re-treino.
+- D15: certificado curto de correção junto de cada resposta.
+- D16: "não sei" coletivo calibrado (S4).
+- D17: pergunta ativa: a pergunta mínima que resolveria a dúvida.
+- D18: modelo de si: prever o próprio desempenho antes de tentar.
+- D19: curiosidade dirigida.
+- D20: detectar o próprio autoengano (a régua do laboratório, automatizada).
+- D21: autoexperimentação (um `/ciclo` interno).
+- D22: mudar a própria arquitetura com base em evidência.
+- D23: calibração que acompanha mudanças do mundo sem rótulos.
+- D24: saber quando a pergunta está mal posta.
+- D25: introspecção verificável.
+- D26: planejar o próprio aprendizado em horizonte longo.
+- D27: um único sinal de "valor de pensar mais" governa S0–S6.
+- D28: metacognição amortizada (custo ≈ 0).
+- D29: toda confiança calibrada e explicável, sem custo extra.
+- D30: ômega: conhecer exatamente o limite do próprio conhecimento; nunca erra ao responder, nunca se abstém quando poderia saber, e gasta em pensar exatamente o que a resposta vale.
+
+### 3. Transição D03 → D04
+1. Sacada: o S3 não precisa adivinhar se o pensamento é legível; a lei de nitidez (E007) diz isso **antes** de pensar: se m < m_c(log N), o pensamento vai se dissolver, e o S3 deve se abster (ou pedir temperatura maior) já no início.
+2. Subtrair: a tentativa de achar um único limiar sobre o estado final (E004 mostrou que não existe).
+3. Testar (E009, H07): S3 = "prever o regime pela margem" + "parada por ponto fixo quando o regime é nítido"; de N=12 a N=1024; contra CONV puro e PonderNet.
+
+### 4. Visão vertical (o ciclo 8 lido em 10 níveis)
+- Nível 1: senso comum: testamos a "régua de quando parar" de outros pesquisadores, e ela funciona.
+- Nível 2: instrumental: antes de dizer que o nosso método é melhor, é preciso ter o concorrente funcionando de verdade.
+- Nível 3: arquitetural: a PonderNet espera ~5 passos a mais: segurança comprada com custo.
+- Nível 4: computacional: um prior geométrico impõe uma espera mínima; a regra de ponto fixo usa a própria convergência como sinal.
+- Nível 5: teoria da decisão: aprender a parar e ter uma regra de parada empatam em acerto quando o sinal é limpo; a diferença aparece no custo.
+- Nível 6: econômico: 1,9× de custo para o mesmo acerto é o tamanho do espaço para o G5.
+- Nível 7: composicional: o S3 fica bem melhor quando consulta o S2 (a lei de nitidez) antes de pensar, em vez de só olhar o estado final.
+- Nível 8: ontológico: parar é reconhecer que se chegou; reconhecer exige que o lugar de chegada seja nítido.
+- Nível 9: epistemológico: validar a ferramenta do concorrente é parte de saber; sem isso, toda vitória é contra um espantalho.
+- Nível 10: ser superior completo: a metacognição perfeita sabe, antes de começar, se vai conseguir ver o fim.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Prognosis*: conhecer de antemão o curso do próprio pensamento.
+- **Metanoia:** a metacognição não precisa só observar o pensamento; ela pode **prever** o regime dele a partir do motor (a margem) e do problema (N).
+- **Aplicação:** o S3 do E009 decide em dois tempos: antes de pensar (lei de nitidez) e durante (ponto fixo).
+- **Hack:** meça o concorrente no seu terreno antes de se comparar a ele.
+- **Visão maçônica:**
+  - *Planta baixa:* a régua alheia (PonderNet) foi assentada e está reta; agora a comparação é honesta.
+  - *Ferramenta:* o **esquadro**, que confere se a nossa régua e a publicada medem a mesma coisa.
+  - *Desbaste:* a vitória fácil contra linhas de base falsas.
+  - *Polimento:* o S3 que consulta o S2 antes de pensar.

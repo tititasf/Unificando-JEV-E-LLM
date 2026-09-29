@@ -1,0 +1,922 @@
+[
+ {
+  "seed": 800,
+  "w": [
+   -0.1335008655227023,
+   -0.9980406045212117,
+   -2.20169107264504,
+   -0.9977870522089644
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.171442985534668
+ },
+ {
+  "seed": 801,
+  "w": [
+   -0.1137641897758765,
+   -1.0513244260016676,
+   -2.2777458934530923,
+   -1.0129039363686059
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 16.03296422958374
+ },
+ {
+  "seed": 802,
+  "w": [
+   0.005447939733354566,
+   -0.9372543301037782,
+   -2.22594369389788,
+   -1.0174605628276945
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.050806999206543
+ },
+ {
+  "seed": 803,
+  "w": [
+   -0.2164436708196925,
+   -1.0109942865830464,
+   -2.1082168539482202,
+   -1.0914482511148564
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 11.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.240655660629272
+ },
+ {
+  "seed": 804,
+  "w": [
+   0.059599002148381784,
+   -0.9668542899774907,
+   -2.274822338460272,
+   -0.9840244461024358
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.066666666666667,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.066666666666666,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.066666666666666,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.889878034591675
+ },
+ {
+  "seed": 805,
+  "w": [
+   -0.13362852570555603,
+   -0.8982102060432682,
+   -2.162549813320623,
+   -1.0657734749215593
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.295394897460938
+ },
+ {
+  "seed": 806,
+  "w": [
+   0.06211177870483715,
+   -1.0818466460190381,
+   -2.2620882148928225,
+   -0.7970485465047971
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 5.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.383638620376587
+ },
+ {
+  "seed": 807,
+  "w": [
+   -0.10499147200093273,
+   -0.9684699210261303,
+   -2.1949581819302564,
+   -1.0809499170383572
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.3666666666666667,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.433333333333334,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.6,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.633333333333334,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.4,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.366666666666667,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.166666666666666,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.764331102371216
+ },
+ {
+  "seed": 808,
+  "w": [
+   -0.0482325894674937,
+   -1.0367654271730111,
+   -2.1517634707125763,
+   -1.0445701417051196
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.306222915649414
+ },
+ {
+  "seed": 809,
+  "w": [
+   -0.0855364549106739,
+   -0.9871818834307359,
+   -2.088581663243356,
+   -1.0906551440529184
+  ],
+  "por_d": {
+   "0": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 6.0,
+    "acc_conv": 1.0,
+    "passos_conv": 1.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "1": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 7.0,
+    "acc_conv": 1.0,
+    "passos_conv": 2.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "2": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 8.0,
+    "acc_conv": 1.0,
+    "passos_conv": 3.033333333333333,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "3": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 9.0,
+    "acc_conv": 1.0,
+    "passos_conv": 4.2,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "4": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 10.0,
+    "acc_conv": 1.0,
+    "passos_conv": 5.166666666666667,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "5": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 11.0,
+    "acc_conv": 1.0,
+    "passos_conv": 6.233333333333333,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "6": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 12.0,
+    "acc_conv": 1.0,
+    "passos_conv": 7.033333333333333,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "7": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 13.0,
+    "acc_conv": 1.0,
+    "passos_conv": 8.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "8": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 14.0,
+    "acc_conv": 1.0,
+    "passos_conv": 9.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   },
+   "9": {
+    "acc_ponder": 1.0,
+    "passos_ponder": 15.0,
+    "acc_conv": 1.0,
+    "passos_conv": 10.0,
+    "abst_conv": 0.0,
+    "acc_fixo": 1.0
+   }
+  },
+  "cpu_s": 15.260345697402954
+ }
+]

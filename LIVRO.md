@@ -7,16 +7,16 @@
 | métrica | valor |
 |---|---|
 | ciclos | 8 |
-| nós na árvore | 18 (RASCUNHO 3, META 6, MELHORAR 1, DIAGNOSTICAR 5, REPLICAR 3) |
-| taxa de morte de hipóteses | 0.43 |
-| taxa de promoção/replicação | 0.29 |
-| previsões avaliadas / acerto | 31 / 0.45 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.27 |
+| nós na árvore | 19 (RASCUNHO 3, META 6, MELHORAR 1, DIAGNOSTICAR 5, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.38 |
+| taxa de promoção/replicação | 0.38 |
+| previsões avaliadas / acerto | 35 / 0.49 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.23 |
 | degrau atual por tema | S2 D05, S3 D03, S5 D04 |
 | ciclos sem subir degrau | S2 3, S3 7, S5 5 |
-| novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1 |
+| novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1 |
 | registros antigos corrigidos | 4 |
-| CPU médio por nó (s) | 203.69 |
+| CPU médio por nó (s) | 200.14 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -36,6 +36,7 @@
                 · E006d [DIAGNOSTICAR, S2] Diagnostico: limiar real eps_c ~ 0,07 → INFORMATIVO N1
                     ▲ E007 [REPLICAR, S2] Lei de nitidez fora da amostra (eps_c congelado) → PROMOVER N2
                         · E007d [DIAGNOSTICAR, S2] Diagnostico: teoria de campo medio (bifurcacao sela-no) → INFORMATIVO N1
+    ≡ E008 [REPLICAR, S3] PonderNet reimplementada como linha de base → REPLICADO N2
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -222,3 +223,15 @@
 - **Lição:** Sem overthinking (100% em T=200 com treino so no instante final, 3 sementes): o ponto fixo da raiz ja cumpre o papel do progressive loss.
 - **Lição:** Criterio de H22 revisado ANTES do pre-registro; versao anterior guardada em criterio_anterior.
 - **Commits:** pré-registro `—` · resultado `—`
+
+### E008 — PonderNet reimplementada como linha de base (ciclo 8, 2026-09-29)
+- **Operador:** REPLICAR · **pai:** E001 · **tema:** S3 · **degrau-alvo:** H22
+- **Hipótese:** A cabeca de parada estilo PonderNet aprende passos crescentes com a dificuldade mantendo o acerto.
+- **Veredito:** REPLICADO · **nível:** N2 · **novidade:** nenhuma (replicacao)
+- **Métrica principal:** Spearman(d, passos) mediano = 1.0
+- **Previsões:** P1 ✅ (p=0.85); P2 ✅ (p=0.85); P3 ✅ (p=0.75); P4 🟥 (p=0.2)
+- **Lição:** PonderNet reimplementada: passos = d+6 e 100% (inclusive fora da distribuicao).
+- **Lição:** Em N=12 a parada por ponto fixo e ~1,9x mais barata com o mesmo acerto (PonderNet nao ajustada).
+- **Semeou:** H-custo-ponder
+- **Arquivos:** [prereg](experimentos/E008_ponder/PREREG.md) · [relatorio](experimentos/E008_ponder/RELATORIO.md)
+- **Commits:** pré-registro `487586f` · resultado `—`

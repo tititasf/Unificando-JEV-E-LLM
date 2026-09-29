@@ -9,11 +9,11 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 
 | goal | progresso | faltam | nível exigido |
 |---|---|---|---|
-| **G1** Pensador de tamanho livre, com prova | ██░░░░░░ 2/8 | H05, H06, H11, H19, H22, H23 | N4 |
-| **G2** Saber exatamente quando nao sabe | ██░░░░ 2/6 | H07, H08, H12, H22 | N3 |
+| **G1** Pensador de tamanho livre, com prova | ███░░░░░ 3/8 | H05, H06, H11, H19, H23 | N4 |
+| **G2** Saber exatamente quando nao sabe | ███░░░ 3/6 | H07, H08, H12 | N3 |
 | **G3** Uma lingua que nasce, ensina e pensa | ██░░░░ 2/6 | H06, H13, H14, H15 | N4 |
-| **G4** Descobrir regras de um mundo desconhecido | ██░░░░░░░░ 2/10 | H06, H07, H08, H10, H16, H17, H20, H22 | N4 |
-| **G5** Pensar com o custo certo | ██░░░░ 2/6 | H07, H12, H18, H22 | N3 |
+| **G4** Descobrir regras de um mundo desconhecido | ███░░░░░░░ 3/10 | H06, H07, H08, H10, H16, H17, H20 | N4 |
+| **G5** Pensar com o custo certo | ███░░░ 3/6 | H07, H12, H18 | N3 |
 | **G6** Auto-aperfeicoamento recursivo demonstrado | █░ 1/2 | H21 | N3 |
 
 ## Fronteira: o que atacar agora (maior prioridade primeiro)
@@ -22,12 +22,11 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 
 | # | habilidade | prioridade | abre | goals | hipóteses na fila |
 |---|---|---|---|---|---|
-| 1 | 🟨 **H22** Linhas de base publicadas validadas (LAB) | 19.0 | 6 | G1, G2, G4, G5 | H-baselines |
-| 2 | 🟨 **H07** Metacognicao legivel em qualquer escala (S3) | 14.0 | 4 | G2, G4, G5 | H-S3-legivel |
-| 3 | 🟨 **H06** Memoria de trabalho latente (S2) | 9.5 | 9 | G1, G3, G4 | H-memoria |
-| 4 | 🟨 **H05** Nitidez em qualquer escala (S2) | 6.0 | 2 | G1 | H-temperatura-logN, H-precisao-treino |
-| 5 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
-| 6 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 1 | 🟨 **H07** Metacognicao legivel em qualquer escala (S3) | 14.0 | 4 | G2, G4, G5 | H-S3-legivel |
+| 2 | 🟨 **H06** Memoria de trabalho latente (S2) | 9.5 | 9 | G1, G3, G4 | H-memoria |
+| 3 | 🟨 **H05** Nitidez em qualquer escala (S2) | 6.0 | 2 | G1 | H-temperatura-logN, H-precisao-treino |
+| 4 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
+| 5 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
 
 ## Linha do tempo de desbloqueios (meta-métrica do G6)
 
@@ -35,7 +34,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 4: **H03** Laboratorio com regua, laco e arvore
 - ciclo 5: **H01** Passo latente que extrapola
 - ciclo 7: **H04** Lei de nitidez validada
-- taxa: 4 habilidades em 8 ciclos = 0.50 por ciclo
+- ciclo 8: **H22** Linhas de base publicadas validadas
+- taxa: 5 habilidades em 8 ciclos = 0.62 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -45,7 +45,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Mensagem discreta vence a analogica sob ruido por >=20 pontos, p<0,01, conhecimento fragmentado entre agentes (≥ N2)
 - 🟩 **H03** Laboratorio com regua, laco e arvore · LAB · - · requer: raiz — por M001, M003  
   critério: Pre-registro, guarda por hash, arvore de experimentos, meta-metricas funcionando (≥ N0)
-- 🟨 **H22** Linhas de base publicadas validadas · LAB · - · requer: H01  
+- 🟩 **H22** Linhas de base publicadas validadas · LAB · - · requer: H01 — por E008  
   critério: PonderNet reimplementada reproduz o efeito publicado (passos aprendidos crescem com a dificuldade, Spearman >= 0,8, com acuracia mantida). Deep Thinking (progressive loss) implementado e testado; overthinking AUSENTE no motor estruturado (piloto M006: 100% com T=200 com e sem progressive loss), efeito a reavaliar quando o latente for livre (H09). (≥ N1)
 - ⬜ **H23** Protocolo CLRS reimplementado com linha de base · LAB · T3 · requer: H22 + H06  
   critério: Geradores e resolvedores exatos (BFS, Bellman-Ford) testados; um motor aprendido e a linha de base Deep Thinking avaliados no protocolo n=16 -> n=64 com acuracia de ponteiros e IC (≥ N1)
@@ -90,7 +90,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 
 ```
 ✔ H01 Passo latente que extrapola
-  ◐ H22 Linhas de base publicadas validadas
+  ✔ H22 Linhas de base publicadas validadas
     · H23 Protocolo CLRS reimplementado com linha de base
       · H11 Algoritmos classicos extrapolam (T3)
         · H19 Programa extraido e provado

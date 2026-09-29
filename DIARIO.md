@@ -54,3 +54,11 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Surpresa: uma teoria de campo médio sem parâmetros (bifurcação sela-nó) prevê N_c com ~9% de erro. É a condição de separação das redes de Hopfield modernas: o S2 é uma memória associativa iterada. Novidade baixa, valor de projeto alto.
 - Meta: Brier 0,11, o primeiro abaixo de 0,25.
 - Semeado: H-temperatura-logN (→ H05), H-campo-médio-T2.
+
+## Ciclo 8 — 2026-09-29 — E008 PonderNet como linha de base (pré-registrado)
+- Piloto M006: nenhum overthinking no motor estruturado (100% em T=200, com e sem progressive loss). Critério de H22 revisado **antes** do pré-registro, com a versão antiga guardada.
+- Hipótese: a PonderNet reimplementada aprende passos crescentes com a dificuldade, mantendo o acerto.
+- Veredito: **REPLICADO** (N2, reproduzido limpo). Passos = d+6 (Spearman 1,0), 100% inclusive d = 5..9. **H22 desbloqueada.**
+- Surpresa: em N=12 a parada por ponto fixo acerta igual e custa ~1,9× menos que a PonderNet não ajustada.
+- Meta: Brier 0,04. O S3 está parado desde o ciclo 1 e agora é o topo da bússola (H07).
+- Semeado: H-custo-ponder.

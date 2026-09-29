@@ -51,7 +51,9 @@
    "prereqs": [
     "H01"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E008"
+   ],
    "custo": 1,
    "hipoteses": [
     "H-baselines"
@@ -306,7 +308,8 @@
    "desbloqueada_por": [],
    "custo": 2,
    "hipoteses": [
-    "H-Sigma5"
+    "H-Sigma5",
+    "H-custo-ponder"
    ]
   },
   {
