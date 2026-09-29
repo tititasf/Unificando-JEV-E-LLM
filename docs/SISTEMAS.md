@@ -104,11 +104,27 @@ de S6           -          -          meta a atingir   custo previsto   planos  
 | Id | Nome | Afirmação | Experimento |
 |---|---|---|---|
 | **Σ1** | Cristal Comum | ~~O mesmo colapso discreto estabiliza o pensamento e a comunicação.~~ **Parcial:** discretizar a *mensagem* dá robustez enorme (E003, N2); discretizar o *pensamento* não ajudou em T1 (E002). Aberto: com ruído interno (H-Σ1b) e em tarefa sem atrator (H-T2). | E002, E003 |
-| **Σ2** | Ciclo de Amortização | Um sistema que destila o S2 no S1 durante a "vida" fica mais barato sem perder acerto, como o especialista humano. | E005 |
+| **Σ2** | Ciclo de Amortização (o S2 como compilador) | Um sistema que destila o S2 no S1 durante a "vida" fica mais barato sem perder acerto, como o especialista humano. | E005 |
 | **Σ3** | Verificar é mais barato que gerar | S1 chuta, S3 verifica com uma invariante O(1), S2 só entra se falhar. Deve dominar o roteador por confiança do E001. | E006 |
 | **Σ4** | Atrator | Pensar a partir da meta (S6) com o mesmo passo do S2 reduz os passos de *d* para ~*d*/2. | E007 |
 | **Σ5** | Orçamento como sentido | Dar ao S3 a "sensação" de energia restante (S0) produz alocação melhor que um limiar fixo. | E008 |
 | **Σ6** | Ontologia emergente | Agentes que precisam coordenar inventam um código discreto, e esse código vira a representação interna do pensamento de cada um. | E009 (depende de Σ1) |
+
+## O S2 como meta-arquiteto (princípio orientador, ciclo 10)
+
+O S2 mais forte não é o que pensa tudo; é o que **compila** o próprio pensamento
+nos outros sistemas e se retira. Tradução testável para cada sistema:
+
+| Sistema | O que o S2 faz por ele | Habilidade / átomo |
+|---|---|---|
+| S1 | resolve uma vez, destila a resposta num reflexo O(1) | **H24** (amortização verificada), 1.2 |
+| S3 | ergue invariantes intocáveis que verificam o S1 e o próprio S2 | H12 (chutar e verificar), H19 (prova) |
+| S0 | projeta o orçamento para que a autorregulação não precise pensar | H18 (orçamento como sentido) |
+| S4 | desenha regras de coexistência em que a cooperação emerge sem controle central | **H25** (regra cooperativa emergente) |
+| S5–S7 | *metáfora* (regra 8). Sombra testável: saber **quando parar de deliberar** e entregar ao reflexo | H24, S3 D08 |
+
+O risco medido: um S1 compilado sem verificação erra com confiança (E001, A3). Por isso
+a H24 exige a corte do S3.
 
 ## Protocolo Σ: a mensagem universal (ontologia comum)
 

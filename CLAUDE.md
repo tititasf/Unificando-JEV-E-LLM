@@ -57,6 +57,7 @@ a escada completa de 30 degraus do tema e a transição para o próximo degrau.
 15. **Sementes de teste ninguém escolhe.** O teste congelado usa `lab.sementes.derivar(lab.sementes.base_teste(__file__), n)`: sementes derivadas do hash do commit do PREREG. O PREREG tem exatamente um commit (verificado). O tamanho das células é justificado no PREREG com `lab.estat.n_para_diferenca` ou `n_para_largura`.
 16. **Controle de qualidade antes de todo commit:** `python3 -m lab.checar` tem de dar 0 erros (coerência entre árvore, habilidades, ESTADO, DIARIO, EVOLUTION_LOG, LIVRO, BUSSOLA e afirmações obsoletas em `registro/obsoletos.txt`). Afirmação refutada entra em `obsoletos.txt`.
 17. **Linha de base publicada = `lab/baselines.py`** (Deep Thinking com progressive loss; PonderNet) sempre que a pergunta envolver extrapolação ou parada. Declarar que são reimplementações mínimas.
+18. **Decisão compilada.** Todo procedimento manual que o pesquisador repetiu 2 vezes vira ferramenta em `lab/` na terceira (ex.: a reprodução limpa virou `python3 -m lab.reproduzir experimentos/ENNN_x`). O S2 do laboratório gasta deliberação para compilar reflexos, não para repetir.
 
 ## Ambiente e restrições
 
@@ -88,6 +89,7 @@ lab/bussola.py             bússola: estado das habilidades, fronteira e priorid
 lab/checar.py              controle de qualidade (coerência entre todos os registros)
 lab/sementes.py            sementes de teste derivadas do commit do PREREG
 lab/baselines.py           Deep Thinking (progressive loss) e PonderNet reimplementados
+lab/reproduzir.py          reprodução limpa a partir do commit do PREREG (decisão compilada)
 lab/tarefas_clrs.py        BFS e Bellman-Ford no protocolo CLRS (n=16 → 64), resolvedores exatos
 registro/obsoletos.txt     afirmações refutadas (não podem reaparecer sem riscar)
 docs/STACK.md              teto do Python puro e gatilho para pedir outra stack

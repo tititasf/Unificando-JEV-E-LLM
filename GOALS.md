@@ -35,6 +35,13 @@ de forma estreita.
 | **G5 · Pensar com o custo certo** | Computação é alocada por limiar fixo ou por aprendizado caro; não existe um "sentido de energia" governando quanto pensar. | Um S0+S3 que domina a fronteira de Pareto acerto × custo de PonderNet e de limiar fixo em 3 famílias, com o mesmo mecanismo. | N3 | S0 + S3 |
 | **G6 · Auto-aperfeiçoamento recursivo demonstrado** | AIDE² (set/2026) é a primeira evidência de RSI em P&D de IA, estreita e auto-relatada; medição confiável de RSI é o nicho mais vazio (survey 2607.07663). | O próprio laboratório mostra, com avaliação oculta, que suas mudanças de processo **aceleram a descoberta**: ciclos-por-degrau cai pela metade e o Brier do pesquisador < 0,15, com a causa atribuída a nós META. | N3 | LAB |
 
+### Princípio orientador: o S2 como compilador
+
+O caminho para as estrelas não é um S2 que pense mais; é um S2 que **compila** o que
+descobre nos outros sistemas: reflexos verificados no S1 (H24), invariantes no S3 (H12,
+H19), orçamentos no S0 (H18) e regras de coexistência no S4 (H25). Detalhes em
+`docs/SISTEMAS.md`. O laboratório segue o mesmo princípio (regra 18 do `CLAUDE.md`).
+
 ## 2. Os quatro patamares de "uau" (honestidade primeiro)
 
 Um marco só é anunciado no patamar que a evidência sustenta:

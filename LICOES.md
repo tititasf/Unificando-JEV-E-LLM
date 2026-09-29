@@ -34,3 +34,4 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 11d. **Em tarefa-atrator, meça o regime (nitidez), não a acurácia**: a acurácia acerta "por sorte" com o estado dissolvido (E007: 25/30 pelo regime contra 16/30 pela acurácia).
 11e. **Antes de chamar algo de lei nova, procure a teoria clássica com a mesma forma** (E007d era Hopfield moderno).
 12. Quando um resultado contradisser um registro antigo, **corrija o registro antigo** na hora.
+13. **Decisão compilada:** o que foi feito à mão 2 vezes vira ferramenta na terceira. O S2 (o pesquisador) compila reflexos para o laboratório; não repete deliberação.

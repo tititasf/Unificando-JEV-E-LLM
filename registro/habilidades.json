@@ -215,7 +215,8 @@
    "criterio": "S1 chuta, S3 verifica com invariante barato, S2 so quando falha: domina a fronteira de Pareto acc x custo do S2 sozinho",
    "nivel_minimo": 2,
    "prereqs": [
-    "H07"
+    "H07",
+    "H24"
    ],
    "desbloqueada_por": [],
    "custo": 1,
@@ -358,6 +359,39 @@
    ],
    "desbloqueada_por": [],
    "custo": 2
+  },
+  {
+   "id": "H24",
+   "nome": "S2 compila S1 sob a corte do S3 (amortizacao verificada)",
+   "sistema": "S1+S2+S3",
+   "escada": "S1 1.2 / S3 D08",
+   "criterio": "Um S1 de uma passada destilado das respostas do S2 responde com latencia O(1); o S3 verifica/roteia e so aciona o S2 quando o S1 nao e confiavel. Custo medio >= 5x menor que o S2 sozinho, mantendo 0 erros confiantes (inclusive fora da distribuicao), em 2 familias de tarefas",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H01",
+    "H07"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2,
+   "hipoteses": [
+    "H-compilar"
+   ]
+  },
+  {
+   "id": "H25",
+   "nome": "Coexistencia: regra cooperativa emergente (S4)",
+   "sistema": "S4+S5",
+   "escada": "S4 4.4",
+   "criterio": "N agentes com recurso comum limitado e mensagens simbolicas convergem para uma regra de uso que atinge >= 90% do bem-estar social otimo, contra agentes egoistas (tragedia dos comuns), sem controle central",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H02"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2,
+   "hipoteses": [
+    "H-comuns"
+   ]
   }
  ],
  "goals": [
@@ -406,7 +440,8 @@
    "id": "G5",
    "nome": "Pensar com o custo certo",
    "requer": [
-    "H18"
+    "H18",
+    "H24"
    ],
    "lacuna": "Sistemas atuais alocam computacao por limiar fixo ou por aprendizado caro; nao ha 'sentido de energia' que governe quanto pensar.",
    "marco": "Um S0+S3 que domina a fronteira de Pareto acc x custo de PonderNet/limiar fixo em 3 familias, com o mesmo mecanismo.",
