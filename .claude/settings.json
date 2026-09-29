@@ -1,4 +1,6 @@
 {
+  "autoCompactEnabled": true,
+  "autoCompactWindow": 400000,
   "hooks": {
     "SessionStart": [
       {
@@ -6,6 +8,18 @@
           {
             "type": "command",
             "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 -m lab.checar --resumo 2>&1 | tail -20 || true"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && find . -name __pycache__ -prune -exec rm -rf {} + ; git add -A && (git diff --cached --quiet || git commit -qm \"auto: salvamento antes de compactar a sessao\") && git push -q origin HEAD && echo \"{\\\"systemMessage\\\": \\\"Pre-compactacao: tudo commitado e publicado ($(git log --oneline -1 | cut -c1-7))\\\"}\" || echo '{\"systemMessage\": \"Pre-compactacao: falha ao commitar/publicar; verificar git\"}'",
+            "timeout": 120,
+            "statusMessage": "Salvando e publicando antes de compactar..."
           }
         ]
       }
