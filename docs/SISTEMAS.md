@@ -44,7 +44,7 @@ Status dos átomos: ⬜ não testado · 🟨 em teste · 🟩 evidência N1+ · 
 | Átomo | Biologia | IA hoje | Átomo testável | Métrica | Status |
 |---|---|---|---|---|---|
 | 3.1 Parada | sensação de "já sei" | ACT, PonderNet | parar quando o estado converge | economia de compute | 🟩 E001: −54% (regra fixa) |
-| 3.2 Saber que não sabe | sentimento de dúvida | predição seletiva | abster-se se não convergiu | E-AURC, erros/respondidas | 🟨 E001: E-AURC≈0 em N=12; E002/E004: nenhum sinal fixado em N=12 escala (nitidez nunca responde; convergência responde cedo) → H-S3-legível |
+| 3.2 Saber que não sabe | sentimento de dúvida | predição seletiva | abster-se se não convergiu | E-AURC, erros/respondidas | 🟩 E009 (N2): S3 em dois tempos, 0/600 erros no regime dissolvido de N=12 a N=1024, sem ajuste |
 | 3.3 Verificação | checar a conta | verificadores, provas | invariante barato ("a raiz aponta para si") | acc de chutar-e-verificar vs. S2 | ⬜ |
 | 3.4 Alocação | escolher estratégia | roteamento | quanto S1, quanto S2, dado o orçamento S0 | Pareto | ⬜ |
 | 3.5 Aprender a aprender | plasticidade dirigida | meta-learning | ajustar o próprio limiar por experiência | regret | ⬜ |

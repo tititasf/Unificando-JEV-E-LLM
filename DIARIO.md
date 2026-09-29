@@ -62,3 +62,11 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Surpresa: em N=12 a parada por ponto fixo acerta igual e custa ~1,9× menos que a PonderNet não ajustada.
 - Meta: Brier 0,04. O S3 está parado desde o ciclo 1 e agora é o topo da bússola (H07).
 - Semeado: H-custo-ponder.
+
+## Ciclo 9 — 2026-09-29 — E009 S3 em dois tempos (pré-registrado)
+- Piloto: sem S3, o S2 erra ~47% no regime dissolvido; o limiar absoluto (ABS) também não erra ali → a métrica do regime dissolvido virou "erros" (o G2 pede zero erros confiantes) e acrescentei custo em passos.
+- Hipótese: prever o regime pela lei de nitidez antes de pensar + ponto fixo durante → metacognição que funciona de N=12 a N=1024 sem ajuste.
+- Veredito: **PROMOVER** (N2, reproduzido limpo). 8/8 previsões certas. Cobertura 100% onde dá, abstenção 100% sem orçamento, **0/600 erros** no regime dissolvido; PonderNet e ponto fixo erram ~51% ali. **H07 desbloqueada; S3 sobe para D04** (parado desde o ciclo 1).
+- Surpresa: o ABS também passa. O que resolve é tratar a dissolução como "não sei"; o tempo 1 economiza 19× em passos. A4/A8 foram reinterpretados e registrados como obsoletos.
+- Meta: Brier 0,07.
+- Semeado: H-S3-fronteira (→ H08), H-S3-T2.

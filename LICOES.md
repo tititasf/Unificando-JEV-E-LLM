@@ -15,7 +15,8 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 5c. Nosso "contínuo" é uma distribuição sobre nós, quase simbólica. Conclusões sobre latente contínuo *livre* ainda não foram testadas.
 
 ## Sobre o S3 (metacognição)
-6. **Limiares absolutos não escalam** (E002, E004). Nenhum sinal fixado em N=12 funcionou em N≥64.
+6. **"Não sei" no lugar certo resolve a escala** (E009, N2). No regime dissolvido o S2 acerta só por sorte (~50%): o S3 tem de se abster ali. A antiga lição "limiares fixos param de funcionar em N grande" era leitura errada: a métrica contava acertos de sorte (A4/A8 reinterpretados).
+6b. **Meça erros confiantes, não só acurácia.** PonderNet e ponto fixo acertam 100% no regime legível e erram 51% no dissolvido.
 7. **Legibilidade antes de metacognição.** O S3 só lê "terminei" com segurança se o regime do S2 for estável.
 8. Um sinal que força confiança (cristalizar) pode **esconder** a dúvida em vez de medi-la.
 
@@ -26,7 +27,7 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 9. **Discretizar a mensagem dá robustez enorme; discretizar o pensamento não ajudou** (E003 vs E002).
 
 ## Sobre o processo
-10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25; no ciclo 7, com piloto, 0,11; no ciclo 8, 0,04. **Pilotos com o modelo completo são o que mais melhorou a calibração.** Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
+10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25; no ciclo 7, com piloto, 0,11; no ciclo 8, 0,04; no ciclo 9, 0,07. **Pilotos com o modelo completo são o que mais melhorou a calibração.** Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
 11. Diagnósticos pós-hoc baratos (minutos) explicaram todas as surpresas até agora. Faça-os sempre que um resultado contradisser a expectativa.
 11b. **Grades que dependem de uma quantidade estimada (como N*) precisam de um smoke com o modelo completo antes de congelar** (E006: a grade começou alta demais e P5 nunca rodou).
 11c. Variáveis vêm da teoria; constantes vêm dos dados. Não congele um limiar intuitivo (0,5) sem medi-lo.

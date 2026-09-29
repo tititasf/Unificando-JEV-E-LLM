@@ -453,3 +453,73 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **esquadro**, que confere se a nossa régua e a publicada medem a mesma coisa.
   - *Desbaste:* a vitória fácil contra linhas de base falsas.
   - *Polimento:* o S3 que consulta o S2 antes de pensar.
+
+---
+
+## Ciclo 9 — Tema: S3 · metacognição (quanto pensar e quando não sabe)
+
+### 1. Diagnóstico
+- **Degrau atual: D04 (subiu de D03, parado desde o ciclo 1).** Sustentado por E009 (N2, reprodução limpa): o S3 em dois tempos responde 100% onde o pensamento é legível, se abstém 100% sem orçamento e tem 0/600 erros no regime dissolvido, de N=12 a N=1024, sem ajuste por escala.
+- O que funciona: legibilidade prevista pela lei de nitidez (tempo 1) + ponto fixo (tempo 2). Economia de 19× no regime dissolvido.
+- Correção: A4/A8 estavam mal interpretados; o limiar absoluto se abstinha com razão de um S2 que acertava por sorte.
+- Barreira para D05: a zona de transição (N̂/1,5 a 1,5N̂) foi excluída. Falta garantia de risco lá (calibração conformal).
+
+### 2. Escada (inalterada desde o ciclo 4; D04 atingido)
+- D01: sem metacognição: sempre responde após um número fixo de passos.
+- D02: limiar fixo de confiança na saída.
+- D03: parada por convergência + confiança absoluta, ajustadas na escala do treino.
+- D04: sinal de "terminei" invariante à escala sobre um pensamento legível, de N=12 a N=1024. ← **ESTAMOS AQUI** (E009)
+- D05: calibração com garantia de risco (conformal), inclusive na zona de transição. ← **PRÓXIMO ALVO** (H08)
+- D06: distinguir tipos de dúvida e regimes do próprio pensamento.
+- D07: parada aprendida com custo explícito, comparada à regra.
+- D08: previsão de custo antes de pensar (o tempo 1 do E009 é a semente disso).
+- D09: verificação por invariante barato (Σ3).
+- D10: alocação por valor da informação.
+- D11: energia restante (S0) como sentido.
+- D12: autodiagnóstico do componente que falhou.
+- D13: autocorreção de limiares online.
+- D14: o mesmo S3 em tarefas diferentes sem re-treino.
+- D15: certificado curto de correção junto de cada resposta.
+- D16: "não sei" coletivo calibrado (S4).
+- D17: pergunta ativa.
+- D18: modelo de si: prever o próprio desempenho antes de tentar.
+- D19: curiosidade dirigida.
+- D20: detectar o próprio autoengano.
+- D21: autoexperimentação.
+- D22: mudar a própria arquitetura com base em evidência.
+- D23: calibração sob mudança do mundo sem rótulos.
+- D24: saber quando a pergunta está mal posta.
+- D25: introspecção verificável.
+- D26: planejar o próprio aprendizado em horizonte longo.
+- D27: um único sinal de "valor de pensar mais" governa S0–S6.
+- D28: metacognição amortizada (custo ≈ 0).
+- D29: toda confiança calibrada e explicável, sem custo extra.
+- D30: ômega: conhecer exatamente o limite do próprio conhecimento; nunca erra ao responder, nunca se abstém quando poderia saber, e gasta em pensar exatamente o que a resposta vale.
+
+### 3. Transição D04 → D05
+1. Sacada: a zona de transição é onde "legível" deixa de ser binário. Precisamos de risco **garantido** (≤ α) em vez de regra.
+2. Subtrair: a exclusão da zona de transição.
+3. Testar: H-S3-fronteira (predição conformal sobre um escore, por exemplo ε_inst/ε_c e a mudança final, calibrado em N pequeno e testado na fronteira). Em paralelo, a bússola abriu **H12** (chutar e verificar) e **H08**.
+
+### 4. Visão vertical (o ciclo 9 lido em 10 níveis)
+- Nível 1: senso comum: a máquina agora sabe quando não sabe, em qualquer tamanho de problema, e não chuta.
+- Nível 2: instrumental: dois testes baratos (um passo antes, estabilidade durante) substituem um treino de parada.
+- Nível 3: arquitetural: o S3 consulta uma lei do S2 (nitidez) e um sinal do S2 (ponto fixo): um contrato entre sistemas.
+- Nível 4: computacional: decidir no primeiro passo se vale a pena iterar é uma poda: O(1) em vez de O(d) quando a resposta seria ruído.
+- Nível 5: teoria da decisão: "não errar" e "não se abster" são objetivos diferentes; o G2 pede o primeiro, e a métrica tem de refletir isso.
+- Nível 6: econômico: 19× menos pensamento desperdiçado onde pensar não adianta.
+- Nível 7: composicional: S2 (lei de nitidez) + S3 (dois tempos) resolvem juntos o que nenhum resolvia sozinho (E002, E004).
+- Nível 8: ontológico: saber que não se sabe é reconhecer que o próprio pensamento perdeu a forma.
+- Nível 9: epistemológico: o fracasso "do limiar absoluto" era um fracasso da métrica. Reler os resultados antigos com uma teoria nova é parte do método.
+- Nível 10: ser superior completo: a humildade perfeita não é duvidar de tudo; é saber, antes de começar, onde o próprio pensamento vai se manter nítido.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Aporia reconhecida*: o impasse admitido no lugar certo, antes de gastar o caminho.
+- **Metanoia:** o problema nunca foi o limiar; foi chamar de "acerto" uma resposta dada por sorte.
+- **Aplicação:** todo sistema do laboratório responde "não sei" quando o regime do seu pensamento é dissolvido; métricas de sucesso contam erros confiantes, não só acurácia.
+- **Hack:** meça o primeiro passo; se ele já vaza mais que ε_c(m), não pense: abstenha-se.
+- **Visão maçônica:**
+  - *Planta baixa:* culpávamos a régua (o limiar) por medir torto, quando era o piso (o S2 dissolvido) que não tinha nível.
+  - *Ferramenta:* o **prumo**, baixado antes de erguer a parede: se o primeiro fio já pende, não se ergue.
+  - *Desbaste:* a leitura errada de A4/A8.
+  - *Polimento:* a metacognição que protege a obra de paredes erguidas sobre areia.

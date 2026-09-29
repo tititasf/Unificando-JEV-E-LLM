@@ -136,7 +136,9 @@
    "prereqs": [
     "H04"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E009"
+   ],
    "custo": 1,
    "hipoteses": [
     "H-S3-legivel"
@@ -154,7 +156,10 @@
     "H22"
    ],
    "desbloqueada_por": [],
-   "custo": 2
+   "custo": 2,
+   "hipoteses": [
+    "H-S3-fronteira"
+   ]
   },
   {
    "id": "H09",

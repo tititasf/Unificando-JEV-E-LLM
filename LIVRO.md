@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 8 |
-| nós na árvore | 19 (RASCUNHO 3, META 6, MELHORAR 1, DIAGNOSTICAR 5, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.38 |
-| taxa de promoção/replicação | 0.38 |
-| previsões avaliadas / acerto | 35 / 0.49 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.23 |
-| degrau atual por tema | S2 D05, S3 D03, S5 D04 |
-| ciclos sem subir degrau | S2 3, S3 7, S5 5 |
-| novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1 |
-| registros antigos corrigidos | 4 |
-| CPU médio por nó (s) | 200.14 |
+| ciclos | 9 |
+| nós na árvore | 20 (RASCUNHO 3, META 6, MELHORAR 2, DIAGNOSTICAR 5, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.33 |
+| taxa de promoção/replicação | 0.44 |
+| previsões avaliadas / acerto | 43 / 0.58 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.18 |
+| degrau atual por tema | S2 D05, S3 D04, S5 D04 |
+| ciclos sem subir degrau | S2 4, S3 0, S5 6 |
+| novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
+| registros antigos corrigidos | 5 |
+| CPU médio por nó (s) | 197.13 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -28,6 +28,7 @@
     ✖ E002 [MELHORAR, S2] Cristalizacao estabiliza o pensamento? → MATAR N2
         ✖ E004 [RASCUNHO, S3] S3 invariante a escala → MATAR N2
             · E004d [DIAGNOSTICAR, S2] Diagnostico: transicao de fase do S2 → INFORMATIVO N1
+            ▲ E009 [MELHORAR, S3] S3 em dois tempos: metacognicao legivel em qualquer escala → PROMOVER N2
     ↻ E003 [RASCUNHO, S5] Cristal Comum: mensagem simbolica vs analogica → PIVOTAR N2
         · E003d [DIAGNOSTICAR, S5] Diagnostico: N fixo e bracos cruzados → INFORMATIVO N1
     ✖ E005 [REPLICAR, S2] Motor S2 na tarefa T2 sem atrator → MATAR N2
@@ -235,3 +236,17 @@
 - **Semeou:** H-custo-ponder
 - **Arquivos:** [prereg](experimentos/E008_ponder/PREREG.md) · [relatorio](experimentos/E008_ponder/RELATORIO.md)
 - **Commits:** pré-registro `487586f` · resultado `—`
+
+### E009 — S3 em dois tempos: metacognicao legivel em qualquer escala (ciclo 9, 2026-09-29)
+- **Operador:** MELHORAR · **pai:** E004 · **tema:** S3 · **degrau-alvo:** S3:D04
+- **Hipótese:** S3 que preve o regime pela lei de nitidez antes de pensar e para por ponto fixo durante responde quando da, se abstem sem orcamento e nunca erra no regime dissolvido, de N=12 a N=1024.
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** baixa-media
+- **Métrica principal:** erros no regime dissolvido (DOIS_TEMPOS) = 0/600
+- **Previsões:** P1 ✅ (p=0.55); P2 ✅ (p=0.85); P3 ✅ (p=0.8); P4 ✅ (p=0.8); P5 ✅ (p=0.8); P6 ✅ (p=0.9); P7 ✅ (p=0.6); P8 ✅ (p=0.85)
+- **Lição:** Tratar o pensamento dissolvido como 'nao sei' elimina os erros confiantes em qualquer escala; PonderNet e ponto fixo erram ~51% ali.
+- **Lição:** Prever o regime antes de pensar economiza 19x no regime dissolvido.
+- **Lição:** A4/A8 estavam mal interpretados: o limiar absoluto se abstinha com razao.
+- **Corrige:** A4/A8: o limiar absoluto nao 'falhava ao escalar'; o S2 so acertava por sorte de atrator
+- **Semeou:** H-S3-fronteira, H-S3-T2
+- **Arquivos:** [prereg](experimentos/E009_s3_legivel/PREREG.md) · [relatorio](experimentos/E009_s3_legivel/RELATORIO.md)
+- **Commits:** pré-registro `b1804f8` · resultado `—`

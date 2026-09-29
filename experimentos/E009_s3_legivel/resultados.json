@@ -1,0 +1,4544 @@
+[
+ {
+  "seed": 900,
+  "m": 7.067312500876196,
+  "eps_c": 0.05802720589864888,
+  "n_hat": 77,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 193
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 93
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 93
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 193
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 193
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 93
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 52
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 52
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 52
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 52
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 52
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 52
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 328
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 228
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 228
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 328
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 328
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 228
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 131
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 131
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 131
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 131
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 131
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 131
+     }
+    }
+   ],
+   [
+    38,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 466
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 366
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 366
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 466
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 457
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 366
+     }
+    }
+   ],
+   [
+    38,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 278
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 278
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 278
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 278
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 278
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 278
+     }
+    }
+   ],
+   [
+    51,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 378
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 278
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 278
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 378
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 372
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 278
+     }
+    }
+   ],
+   [
+    51,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 272
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 272
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 272
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 272
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 272
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 272
+     }
+    }
+   ],
+   [
+    116,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 15,
+      "passos": 442
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 4,
+      "ok": 4,
+      "passos": 425
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 16,
+      "passos": 168
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 30
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 16,
+      "passos": 186
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    231,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 441
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 4,
+      "ok": 4,
+      "passos": 428
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 9,
+      "passos": 118
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 26
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 9,
+      "passos": 131
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 22
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 432
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 428
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 80
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 102
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ]
+  ],
+  "cpu_s": 15.118468046188354
+ },
+ {
+  "seed": 901,
+  "m": 7.428794489969415,
+  "eps_c": 0.05484523483630812,
+  "n_hat": 107,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 201
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 101
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 101
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 201
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 201
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 101
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 55
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 55
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 55
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 55
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 55
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 55
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 314
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 214
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 214
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 314
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 314
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 214
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 172
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 172
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 172
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 172
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 172
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 172
+     }
+    }
+   ],
+   [
+    53,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 424
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 324
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 324
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 424
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 424
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 324
+     }
+    }
+   ],
+   [
+    53,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 322
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 322
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 322
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 322
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 322
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 322
+     }
+    }
+   ],
+   [
+    71,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 288
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 288
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 288
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     }
+    }
+   ],
+   [
+    71,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 314
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 314
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 314
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 314
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 314
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 314
+     }
+    }
+   ],
+   [
+    161,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 11,
+      "passos": 383
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 6,
+      "ok": 6,
+      "passos": 359
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 167
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 26
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 197
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 21
+     }
+    }
+   ],
+   [
+    321,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 11,
+      "passos": 333
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 323
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 111
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 30
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 138
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 502
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 498
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 19,
+      "ok": 7,
+      "passos": 83
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 26
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 105
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 22
+     }
+    }
+   ]
+  ],
+  "cpu_s": 16.2132830619812
+ },
+ {
+  "seed": 902,
+  "m": 8.076813966216063,
+  "eps_c": 0.049949411056922764,
+  "n_hat": 195,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 186
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 86
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 86
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 186
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 186
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 86
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 54
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 54
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 54
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 54
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 54
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 54
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 322
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 222
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 222
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 322
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 322
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 222
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 166
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 166
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 166
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 166
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 166
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 166
+     }
+    }
+   ],
+   [
+    97,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 479
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 379
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 379
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 479
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 479
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 379
+     }
+    }
+   ],
+   [
+    97,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 244
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 244
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 244
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 244
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 244
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 244
+     }
+    }
+   ],
+   [
+    130,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 458
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 361
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 361
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 458
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 458
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 361
+     }
+    }
+   ],
+   [
+    130,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 316
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 316
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 316
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 316
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 316
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 316
+     }
+    }
+   ],
+   [
+    293,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 427
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 5,
+      "ok": 5,
+      "passos": 408
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 163
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 25
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 193
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    585,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 11,
+      "passos": 453
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 4,
+      "ok": 4,
+      "passos": 437
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 11,
+      "passos": 110
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 31
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 11,
+      "passos": 142
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 22
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 362
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 4,
+      "ok": 4,
+      "passos": 349
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 99
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 26
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 127
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 22
+     }
+    }
+   ]
+  ],
+  "cpu_s": 15.699277877807617
+ },
+ {
+  "seed": 903,
+  "m": 7.961821476139442,
+  "eps_c": 0.05075230355682279,
+  "n_hat": 228,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 180
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 80
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 80
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 180
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 180
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 80
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 54
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 54
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 54
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 54
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 54
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 54
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 328
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 228
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 228
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 328
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 328
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 228
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 186
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 186
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 186
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 186
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 186
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 186
+     }
+    }
+   ],
+   [
+    114,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 429
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 329
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 329
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 429
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 429
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 329
+     }
+    }
+   ],
+   [
+    114,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 245
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 245
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 245
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 245
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 245
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 245
+     }
+    }
+   ],
+   [
+    152,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 413
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 314
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 314
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 413
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 413
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 314
+     }
+    }
+   ],
+   [
+    152,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 316
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 316
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 316
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 316
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 316
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 316
+     }
+    }
+   ],
+   [
+    342,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 412
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 4,
+      "ok": 4,
+      "passos": 396
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 163
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 25
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 184
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    684,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 431
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 423
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 115
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 26
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 123
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 22
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 378
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 370
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 99
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 117
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ]
+  ],
+  "cpu_s": 15.675841569900513
+ },
+ {
+  "seed": 904,
+  "m": 6.8416677512524995,
+  "eps_c": 0.0602125541664919,
+  "n_hat": 92,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 193
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 93
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 93
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 193
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 193
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 93
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 42
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 42
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 42
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 42
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 42
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 42
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 295
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 195
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 195
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 295
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 295
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 195
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 153
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 153
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 153
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 153
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 153
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 153
+     }
+    }
+   ],
+   [
+    46,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 368
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 285
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 285
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 368
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 368
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 285
+     }
+    }
+   ],
+   [
+    46,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 300
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 300
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 300
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 300
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 300
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 300
+     }
+    }
+   ],
+   [
+    61,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 427
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 347
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 347
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 427
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 427
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 347
+     }
+    }
+   ],
+   [
+    61,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 324
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 324
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 324
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 324
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 324
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 324
+     }
+    }
+   ],
+   [
+    138,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 9,
+      "passos": 421
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 3,
+      "ok": 3,
+      "passos": 410
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 9,
+      "passos": 186
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 9,
+      "passos": 199
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    276,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 11,
+      "passos": 388
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 388
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 11,
+      "passos": 124
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 138
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 5,
+      "passos": 421
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 416
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 6,
+      "passos": 77
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 25
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 5,
+      "passos": 101
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 20
+     }
+    }
+   ]
+  ],
+  "cpu_s": 15.35827898979187
+ },
+ {
+  "seed": 905,
+  "m": 7.848188596372991,
+  "eps_c": 0.05157189918653935,
+  "n_hat": 197,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 173
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 73
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 73
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 173
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 153
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 73
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 49
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 49
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 49
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 49
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 49
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 49
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 338
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 238
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 238
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 338
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 318
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 238
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 166
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 166
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 166
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 166
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 166
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 166
+     }
+    }
+   ],
+   [
+    98,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 389
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 289
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 289
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 389
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 369
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 289
+     }
+    }
+   ],
+   [
+    98,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 310
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 310
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 310
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 310
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 310
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 310
+     }
+    }
+   ],
+   [
+    131,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 443
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 357
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 357
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 443
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 423
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 357
+     }
+    }
+   ],
+   [
+    131,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 257
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 257
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 257
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 257
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 257
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 257
+     }
+    }
+   ],
+   [
+    296,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 13,
+      "passos": 319
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 8,
+      "ok": 8,
+      "passos": 287
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 13,
+      "passos": 139
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 5,
+      "ok": 5,
+      "passos": 49
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 14,
+      "passos": 172
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 5,
+      "ok": 5,
+      "passos": 28
+     }
+    }
+   ],
+   [
+    591,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 473
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 469
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 122
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 144
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 10,
+      "passos": 365
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 3,
+      "ok": 3,
+      "passos": 357
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 10,
+      "passos": 100
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 10,
+      "passos": 125
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ]
+  ],
+  "cpu_s": 16.029040098190308
+ },
+ {
+  "seed": 906,
+  "m": 7.908036372670235,
+  "eps_c": 0.05113691161224986,
+  "n_hat": 190,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 189
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 89
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 89
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 189
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 189
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 89
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 48
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 48
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 48
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 48
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 48
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 48
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 329
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 229
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 229
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 329
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 320
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 229
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 170
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 170
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 170
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 170
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 170
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 170
+     }
+    }
+   ],
+   [
+    95,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 415
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 321
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 321
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 415
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 404
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 321
+     }
+    }
+   ],
+   [
+    95,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 250
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 250
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 250
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 250
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 250
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 250
+     }
+    }
+   ],
+   [
+    126,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 322
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 239
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 239
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 322
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 316
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 239
+     }
+    }
+   ],
+   [
+    126,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 283
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 283
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 283
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 283
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 283
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 283
+     }
+    }
+   ],
+   [
+    285,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 386
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 5,
+      "ok": 5,
+      "passos": 367
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 149
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 26
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 181
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 22
+     }
+    }
+   ],
+   [
+    570,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 384
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 382
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 120
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 138
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 463
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 3,
+      "ok": 3,
+      "passos": 451
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 92
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 30
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 121
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 22
+     }
+    }
+   ]
+  ],
+  "cpu_s": 16.095446348190308
+ },
+ {
+  "seed": 907,
+  "m": 5.660033040167514,
+  "eps_c": 0.07515221886091027,
+  "n_hat": 25,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 198
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 98
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 98
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 198
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 178
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 98
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 56
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 56
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 56
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 56
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 56
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 56
+     }
+    }
+   ],
+   [
+    16,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 243
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 148
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 148
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 243
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 223
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 148
+     }
+    }
+   ],
+   [
+    16,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 105
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 105
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 105
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 105
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 105
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 105
+     }
+    }
+   ],
+   [
+    38,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 380
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 11,
+      "ok": 11,
+      "passos": 325
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 158
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 4,
+      "ok": 4,
+      "passos": 42
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 164
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 4,
+      "ok": 4,
+      "passos": 24
+     }
+    }
+   ],
+   [
+    75,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 14,
+      "passos": 430
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 3,
+      "ok": 3,
+      "passos": 418
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 14,
+      "passos": 112
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 31
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 14,
+      "passos": 125
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 22
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 5,
+      "passos": 500
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 500
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 5,
+      "passos": 60
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 5,
+      "passos": 80
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ]
+  ],
+  "cpu_s": 15.548835754394531
+ },
+ {
+  "seed": 908,
+  "m": 6.971561780796793,
+  "eps_c": 0.05893438161703317,
+  "n_hat": 79,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 88
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 88
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 88
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 62
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 62
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 62
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 62
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 62
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 62
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 291
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 191
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 191
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 291
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 291
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 191
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 196
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 196
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 196
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 196
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 196
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 196
+     }
+    }
+   ],
+   [
+    39,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 448
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 355
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 355
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 448
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 448
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 355
+     }
+    }
+   ],
+   [
+    39,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 297
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 297
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 297
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 297
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 297
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 297
+     }
+    }
+   ],
+   [
+    52,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 391
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 309
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 309
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 391
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 391
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 309
+     }
+    }
+   ],
+   [
+    52,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 236
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 236
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 236
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 19,
+      "ok": 0,
+      "passos": 232
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 236
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 232
+     }
+    }
+   ],
+   [
+    119,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 13,
+      "passos": 385
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 5,
+      "ok": 5,
+      "passos": 363
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 13,
+      "passos": 163
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 3,
+      "ok": 3,
+      "passos": 36
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 13,
+      "passos": 186
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 3,
+      "ok": 3,
+      "passos": 22
+     }
+    }
+   ],
+   [
+    237,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 13,
+      "passos": 440
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 3,
+      "ok": 3,
+      "passos": 429
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 13,
+      "passos": 120
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 13,
+      "passos": 144
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 10,
+      "passos": 441
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 437
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 10,
+      "passos": 78
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 25
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 10,
+      "passos": 101
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 21
+     }
+    }
+   ]
+  ],
+  "cpu_s": 14.690759658813477
+ },
+ {
+  "seed": 909,
+  "m": 7.0933794071805405,
+  "eps_c": 0.05778516756369154,
+  "n_hat": 96,
+  "celulas": [
+   [
+    12,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 179
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 79
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 79
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 179
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 179
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 79
+     }
+    }
+   ],
+   [
+    12,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 52
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 52
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 52
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 52
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 52
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 52
+     }
+    }
+   ],
+   [
+    24,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 288
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 288
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 288
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 188
+     }
+    }
+   ],
+   [
+    24,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 190
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 190
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 190
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 190
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 190
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 190
+     }
+    }
+   ],
+   [
+    48,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 439
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 347
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 347
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 439
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 439
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 347
+     }
+    }
+   ],
+   [
+    48,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 245
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 245
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 245
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 245
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 245
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 245
+     }
+    }
+   ],
+   [
+    64,
+    "DENTRO",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 351
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 269
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 269
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 351
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 351
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 20,
+      "ok": 20,
+      "passos": 269
+     }
+    }
+   ],
+   [
+    64,
+    "FORA_ORC",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 271
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 271
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 271
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 271
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 0,
+      "passos": 271
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 0,
+      "ok": 0,
+      "passos": 271
+     }
+    }
+   ],
+   [
+    144,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 11,
+      "passos": 405
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 5,
+      "ok": 5,
+      "passos": 386
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 165
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 32
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 12,
+      "passos": 187
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 2,
+      "ok": 2,
+      "passos": 24
+     }
+    }
+   ],
+   [
+    288,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 423
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 4,
+      "ok": 4,
+      "passos": 407
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 8,
+      "passos": 111
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 25
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 7,
+      "passos": 143
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 20
+     }
+    }
+   ],
+   [
+    1024,
+    "FORA_REG",
+    {
+     "SEMPRE": {
+      "n": 20,
+      "resp": 20,
+      "ok": 1,
+      "passos": 441
+     },
+     "ABS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 437
+     },
+     "CONV": {
+      "n": 20,
+      "resp": 20,
+      "ok": 1,
+      "passos": 78
+     },
+     "SO_ANTES": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 25
+     },
+     "PONDER": {
+      "n": 20,
+      "resp": 20,
+      "ok": 1,
+      "passos": 101
+     },
+     "DOIS_TEMPOS": {
+      "n": 20,
+      "resp": 1,
+      "ok": 1,
+      "passos": 21
+     }
+    }
+   ]
+  ],
+  "cpu_s": 14.74868631362915
+ }
+]
