@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 4 |
-| nós na árvore | 9 (RASCUNHO 3, META 3, MELHORAR 1, DIAGNOSTICAR 2) |
-| taxa de morte de hipóteses | 0.50 |
-| taxa de promoção/replicação | 0.25 |
-| previsões avaliadas / acerto | 14 / 0.43 |
-| Brier das previsões (menor = pesquisador mais calibrado) | — |
-| degrau atual por tema | S2 D04, S3 D03, S5 D04 |
-| ciclos sem subir degrau | S2 3, S3 3, S5 1 |
-| novidade dos achados | replicacao 1, — 2, baixa 1 |
-| registros antigos corrigidos | 2 |
-| CPU médio por nó (s) | 221.67 |
+| ciclos | 5 |
+| nós na árvore | 11 (RASCUNHO 3, META 3, MELHORAR 1, DIAGNOSTICAR 3, REPLICAR 1) |
+| taxa de morte de hipóteses | 0.60 |
+| taxa de promoção/replicação | 0.20 |
+| previsões avaliadas / acerto | 21 / 0.38 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.42 |
+| degrau atual por tema | S2 D05, S3 D03, S5 D04 |
+| ciclos sem subir degrau | S2 0, S3 4, S5 2 |
+| novidade dos achados | replicacao 1, — 2, baixa 2 |
+| registros antigos corrigidos | 3 |
+| CPU médio por nó (s) | 195.00 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -30,6 +30,8 @@
             · E004d [DIAGNOSTICAR, S2] Diagnostico: transicao de fase do S2 → INFORMATIVO N1
     ↻ E003 [RASCUNHO, S5] Cristal Comum: mensagem simbolica vs analogica → PIVOTAR N2
         · E003d [DIAGNOSTICAR, S5] Diagnostico: N fixo e bracos cruzados → INFORMATIVO N1
+    ✖ E005 [REPLICAR, S2] Motor S2 na tarefa T2 sem atrator → MATAR N2
+        · E005d [DIAGNOSTICAR, S2] Diagnostico: margem aprendida e lei N*=e^margem → INFORMATIVO N1
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -121,4 +123,27 @@
 - **Veredito:** PENDENTE · **nível:** — · **novidade:** —
 - **Lição:** Linha de base das meta-metricas: acerto de previsoes 43% (sem probabilidades), morte 50%, degraus S2 D04 / S3 D03 / S5 D04.
 - **Arquivos:** [pesquisa](docs/RSI.md) · [codigo](lab/registro.py) · [licoes](LICOES.md)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### E005 — Motor S2 na tarefa T2 sem atrator (ciclo 5, 2026-09-29)
+- **Operador:** REPLICAR · **pai:** E001 · **tema:** S2 · **degrau-alvo:** S2:D05
+- **Hipótese:** O passo S2 extrapola em T2 (sem atrator) so se o estado for cristalizado; o continuo acumula erro.
+- **Veredito:** MATAR · **nível:** N2 · **novidade:** baixa
+- **Métrica principal:** CONT acc N=128 k=64 (10 sementes) = 1.0
+- **Previsões:** P1 ✅ (p=0.75); P2 🟥 (p=0.75); P3 ✅ (p=0.5); P4 🟥 (p=0.45); P5 🟥 (p=0.95); P6 🟥 (p=0.7); P7 🟥 (p=0.7)
+- **Lição:** A softmax ja e um cristalizador suave: com margem ~10 o estado nao acumula erro por 64 passos.
+- **Lição:** Lei candidata: regime difusivo quando N > e^margem (unifica A4, A9, E005).
+- **Lição:** Tarefas-atrator no treino produzem margens pequenas (pensadores imprecisos).
+- **Lição:** Nosso 'continuo' e uma distribuicao sobre nos, nao um vetor livre: nao testa Sigma1 de verdade.
+- **Corrige:** A9: regime difusivo depende de N relativo a e^margem, nao de N grande
+- **Semeou:** H-lei-margem, H-latente-livre, H-precisao-treino
+- **Arquivos:** [prereg](experimentos/E005_t2_salto/PREREG.md) · [relatorio](experimentos/E005_t2_salto/RELATORIO.md)
+- **Commits:** pré-registro `f4dfd67` · resultado `—`
+
+### E005d — Diagnostico: margem aprendida e lei N*=e^margem (ciclo 5, 2026-09-29)
+- **Operador:** DIAGNOSTICAR · **pai:** E005 · **tema:** S2 · **degrau-alvo:** —
+- **Hipótese:** Por que o continuo nao acumula erro em T2?
+- **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** possivelmente nova (lei quantitativa)
+- **Lição:** Margem T2 ~10 vs T1 ~4-7; continuo 100% ate N=1024.
+- **Arquivos:** [diagnostico](experimentos/E005_t2_salto/diagnostico.md)
 - **Commits:** pré-registro `—` · resultado `—`

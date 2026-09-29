@@ -30,3 +30,11 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Veredito: **MATAR**. Em N=128 nenhum sinal funciona nas duas direções; o proposto é idêntico ao critério publicado (ponto fixo).
 - Surpresa: **transição de fase do S2**. Até N=64 anda 1 salto/passo; em N=128 resolve por difusão até o equilíbrio, 12× mais rápido e 90% correto. A condição "fora do orçamento" deixou de ser impossível. A escada do S3 foi reordenada: legibilidade do pensamento antes da metacognição.
 - Semeado: H-S3-legível, H-regime, H-híbrido.
+
+## Ciclo 5 — 2026-09-29 — E005 motor S2 na tarefa T2 sem atrator (pré-registrado) + integração RSI
+- Antes do ciclo: pesquisa RSI (AIDE, AIDE², DGM, ShinkaEvolve, AI Scientist v2, Heuresis, survey). Adotados: árvore de experimentos, operadores, política seguir/ramificar, guarda do avaliador por hash, reprodução limpa, meta-caderno (LICOES.md), livro de etapas gerado (LIVRO.md) e Brier do pesquisador.
+- Hipótese: sem atrator, o estado contínuo acumula erro e só o cristalizado extrapola.
+- Veredito: **MATAR** a hipótese, mas **S2 sobe para D05** (N2, reproduzido de checkout limpo): o contínuo acerta 100% até k=64 e N=128 (1024 no diagnóstico). Portão da Fase 1 formalmente atingido (mecanismo conhecido).
+- Surpresa: a softmax já é um cristalizador suave; a margem aprendida em T2 (~10) é bem maior que em T1 (~4–7). Lei candidata N* = e^margem unifica A4, A9 e E005. P5 falhou nas células pequenas (ciclos curtos em permutações), que ficaram inválidas.
+- Meta: Brier 0,42, pior que chutar 50%. Estou superconfiante; lição registrada.
+- Semeado: H-lei-margem, H-latente-livre, H-precisão-treino, H-memória.

@@ -1,12 +1,12 @@
 # ESTADO — onde estamos
 
-Atualizado no fim de cada ciclo. Última atualização: ciclo 4 (2026-09-29).
+Atualizado no fim de cada ciclo. Última atualização: ciclo 5 (2026-09-29).
 
 ## Fase atual
 
-**Fase 1 — Micro (T1–T2).** Portão para sair: um mecanismo com **N2 em ≥2 famílias de tarefas**.
-Progresso: 1 resultado N2 (E003, comunicação simbólica), numa família só (T1).
-Bloqueio descoberto: a tarefa T1 é um atrator (autocorrige erros) → precisamos da T2 sem atrator.
+**Fase 1 — Micro (T1–T2): portão formalmente atingido no ciclo 5.** O passo latente iterado tem N2 em duas famílias (T1: E002; T2: E005). Ressalva: é um mecanismo **conhecido** (replicação). Antes de ir para a Fase 2 (T3, algoritmos contra Deep Thinking), consolidar a lei N* = e^margem (H-lei-margem), que é o único candidato a achado próprio.
+Tarefa T2 (`experimentos/E005_t2_salto/tarefa_t2.py`) disponível: sem atrator, todo erro é fatal.
+Livro de etapas e meta-métricas: `LIVRO.md`. Calibração do pesquisador: Brier 0,42 (superconfiante).
 
 ## Placar de achados
 
@@ -20,25 +20,29 @@ Bloqueio descoberto: a tarefa T1 é um atrator (autocorrige erros) → precisamo
 | A6 | **Mensagens simbólicas > analógicas** sob ruído, com conhecimento fragmentado entre 2 agentes, sem re-treino: +0,59 a +0,81, p<1e-45, ~200× menos dados por passo | N2 | baixa (comunicação digital) | E003 |
 | A7 | Tarefas-atrator mascaram o acúmulo de erros | N1 (diagnóstico) | metodológica | E003 |
 | A8 | Nenhum sinal de parada fixado em N=12 funciona em N≥64; "estabilidade do argmax" = critério publicado de ponto fixo, sem ganho | N2 (negativo) | — | E004 |
-| A9 | **Transição de fase do S2:** até N=64 o pensamento anda 1 salto/passo; em N=128 resolve por difusão até o equilíbrio, 12× mais rápido e 90% correto | N1 (diagnóstico) | possivelmente nova; pode ser artefato do atrator | E004 |
+| A9 | **Transição de fase do S2:** até N=64 o pensamento anda 1 salto/passo; em N=128 resolve por difusão até o equilíbrio, 12× mais rápido e 90% correto | N1 (diagnóstico) | possivelmente nova; ver A11 | E004 |
+| A10 | **S2 extrapola sem atrator:** T2, treino k≤4 e N=12 → 100% até k=64 e N=128 (e N=1024 no diagnóstico), sem cristalização | N2 (reproduzido limpo) | baixa (replicação) | E005 |
+| A11 | **Lei candidata N* = e^margem:** o regime difusivo aparece quando N > e^margem; T2 aprende margem ~10, T1 ~4–7 | N1 | possivelmente nova | E005d |
 
 ## Fila de hipóteses (topo = próximo)
 
-Alvos N+1 atuais (EVOLUTION_LOG): S2 → D05 (H-T2) · S3 → D04 novo (H-S3-legível) · S5 → D05 (H-5.4).
+Alvos N+1 atuais (EVOLUTION_LOG): S2 → D06 (memória de trabalho) · S3 → D04 (H-S3-legível) · S5 → D05 (H-5.4).
+Política: S2 acabou de subir → seguir a linha, mas promover A11 (N1→N2) vem antes (regra 3). S3 está há 4 ciclos parado → ramificar para ele logo depois.
 
-| Pri | Id | Hipótese | Átomo/Σ | Degrau-alvo | Custo |
+| Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
-| 1 | **H-T2** | Tarefa T2 "salto exato" (permutação, k saltos dados, sem atrator, erro fatal); re-testar A1, A6, A9 nela | 2.1, 1.4, 5.1 | S2 D05 | médio |
-| 2 | **H-S3-legível** | Com S2 cristalizado, CONV/ESTAVEL cumprem os critérios da P2 do E004 em N=12…128 | 3.1, 3.2 | S3 D04 | baixo |
-| 3 | **H-regime** | O regime difusivo (A9) é capacidade ou artefato? Prever o limiar de N pela margem aprendida; testar com d ≪ N | 2.1, 2.3 | S2 (D07) | baixo |
-| 4 | H-5.4 | Código mínimo: bits por passo × robustez; one-hot × binário × código com distância | 5.4 | S5 D05 | médio |
-| 5 | H-híbrido | S3 detecta o regime e alterna leitura de convergência / cristalização | 3.x, Σ1 | S3 D06 | médio |
-| 6 | H-Σ1b | Ruído interno no estado: cristalizar ajuda o pensamento? (em T2) | 1.4, Σ1 | S2 D14 | baixo |
-| 7 | H-Σ3 | Chutar (S1) e verificar com invariante O(1) (S3) domina o roteador por confiança | 3.3, Σ3 | S3 D09 | baixo |
-| 8 | H-Σ4 | Busca bidirecional (da meta e do início): passos ≈ d/2 | 6.3, Σ4 | — | médio |
-| 9 | H-Σ2 | Destilar S2→S1 ao longo da "vida" | 1.2, Σ2 | — | médio |
-| 10 | H-Σ5 | Energia restante (S0) como entrada do S3 | 0.1, 0.3, Σ5 | S3 D11 | médio |
-| 11 | H-Σ6 | Agentes inventam o próprio código discreto | 5.2, Σ6 | S5 D11 | alto |
+| 1 | **H-lei-margem** | Para cada semente de T1, prever N* = e^margem e testar N ∈ {N*/4, N*, 4N*}: sequencial abaixo, difusivo acima | E005d · REPLICAR | consolida S2 D04/D05 | baixo |
+| 2 | **H-S3-legível** | Com S2 de margem alta (T2) ou cristalizado, CONV/ESTAVEL cumprem a P2 do E004 em N=12…128 | E004 · MELHORAR | S3 D04 | baixo |
+| 3 | **H-memória** | Estado = distribuição × registro de contagem; o passo aprende a contar (k na entrada, não no controlador) | E005 · RASCUNHO | S2 D06 | médio |
+| 4 | H-latente-livre | Latente vetorial livre: aí o acúmulo de ruído aparece e a quantização volta a importar (Σ1 de verdade) | E005 · RASCUNHO | S2 D09 | médio |
+| 5 | H-precisão-treino | Penalidade de margem ou mistura com T2 elimina o regime difusivo em T1 | E005d · MELHORAR | — | baixo |
+| 6 | H-5.4 | Código mínimo: bits por passo × robustez | E003 · MELHORAR | S5 D05 | médio |
+| 7 | H-Σ3 | Chutar (S1) e verificar com invariante O(1) (S3) | E001 · RASCUNHO | S3 D09 | baixo |
+| 8 | H-Σ4 | Busca bidirecional (da meta e do início) | — · RASCUNHO | S6 | médio |
+| 9 | H-Σ5 | Energia restante (S0) como entrada do S3 | — · RASCUNHO | S0/S3 | médio |
+| 10 | H-Σ6 | Agentes inventam o próprio código discreto | E003 · RASCUNHO | S5 D11 | alto |
+
+Diversidade: nenhum nó ainda em **S0, S4 (além de E003), S6**. Pela regra 7 da política, um deles entra até o ciclo 8.
 
 ## Átomos por status
 
