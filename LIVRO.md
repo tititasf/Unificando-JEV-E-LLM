@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 10 |
-| nós na árvore | 21 (RASCUNHO 4, META 6, MELHORAR 2, DIAGNOSTICAR 5, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.30 |
-| taxa de promoção/replicação | 0.50 |
-| previsões avaliadas / acerto | 48 / 0.62 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.16 |
-| degrau atual por tema | S2 D06, S3 D04, S5 D04 |
-| ciclos sem subir degrau | S2 0, S3 1, S5 7 |
-| novidade dos achados | replicacao 1, — 2, baixa 3, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
+| ciclos | 11 |
+| nós na árvore | 22 (RASCUNHO 5, META 6, MELHORAR 2, DIAGNOSTICAR 5, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.27 |
+| taxa de promoção/replicação | 0.55 |
+| previsões avaliadas / acerto | 52 / 0.65 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.15 |
+| degrau atual por tema | S2 D06, S3 D04, S5 D04, S6 D01 |
+| ciclos sem subir degrau | S2 1, S3 2, S5 8, S6 0 |
+| novidade dos achados | replicacao 1, — 2, baixa 4, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
 | registros antigos corrigidos | 5 |
-| CPU médio por nó (s) | 409.94 |
+| CPU médio por nó (s) | 473.71 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -38,6 +38,7 @@
                     ▲ E007 [REPLICAR, S2] Lei de nitidez fora da amostra (eps_c congelado) → PROMOVER N2
                         · E007d [DIAGNOSTICAR, S2] Diagnostico: teoria de campo medio (bifurcacao sela-no) → INFORMATIVO N1
         ▲ E010 [RASCUNHO, S2] Memoria de trabalho latente: pares (no x contador) → PROMOVER N2
+            ▲ E011 [RASCUNHO, S6] Modelo de mundo com o mesmo passo: particula numa caixa → PROMOVER N2
     ≡ E008 [REPLICAR, S3] PonderNet reimplementada como linha de base → REPLICADO N2
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
@@ -264,3 +265,16 @@
 - **Semeou:** H-pilha, H-fronteira-geometrica
 - **Arquivos:** [prereg](experimentos/E010_memoria/PREREG.md) · [relatorio](experimentos/E010_memoria/RELATORIO.md)
 - **Commits:** pré-registro `6802ec9` · resultado `—`
+
+### E011 — Modelo de mundo com o mesmo passo: particula numa caixa (ciclo 11, 2026-09-29)
+- **Operador:** RASCUNHO · **pai:** E010 · **tema:** S6 · **degrau-alvo:** S6:D01
+- **Hipótese:** O passo relacional do S2 sobre (posicao x velocidade) aprende a fisica de uma caixa com paredes e preve 16 passos com erro < 1% em caixas 8x maiores; o rebote precisa do atributo 'distancia a parede'.
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** baixa
+- **Métrica principal:** erro por passo MUNDO em L=64 = 0.0000 (10/10 sementes)
+- **Previsões:** P1 ✅ (p=0.8); P2 ✅ (p=0.8); P3 ✅ (p=0.8); P4 ✅ (p=0.9)
+- **Lição:** Raciocinio (S2) e fisica (S6) cabem no mesmo passo; muda o espaco de estados e as bordas.
+- **Lição:** Atalho: atributos dados tornam a fisica uma tabela local de 12 casos; a extrapolacao em L vem do desenho.
+- **Lição:** Sem a distancia a parede, 13-15% de erro concentrado nos choques.
+- **Semeou:** H-mundo-cru, H-mundo-2p, H-imaginar
+- **Arquivos:** [prereg](experimentos/E011_mundo/PREREG.md) · [relatorio](experimentos/E011_mundo/RELATORIO.md)
+- **Commits:** pré-registro `078a745` · resultado `—`

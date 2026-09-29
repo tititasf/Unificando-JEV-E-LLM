@@ -87,11 +87,21 @@ H03 Laboratório ✔ ─ H21 RSI medido ─► G6
 7. **Radar de lacunas.** A cada 5 ciclos, uma busca na literatura por goal: a lacuna ainda existe? Alguém já chegou? Se alguém chegou, o goal sobe a barra ou é substituído, e o registro diz por quê.
 8. **O RSI mede o caminho.** As meta-métricas passam a incluir habilidades desbloqueadas por ciclo; o G6 é alcançado quando essa taxa sobe por causa de mudanças META.
 
-## 5. Onde estamos (ciclo 6)
+## 5. Onde estamos (ciclo 11)
 
-- Verdes: H01 (passo que extrapola), H02 (mensagem simbólica), H03 (laboratório).
-- Fronteira, na ordem da bússola: **H04 lei de nitidez** (abre 9 habilidades e 4 goals) → **H06 memória de trabalho** (abre 8 e 3 goals) → H13 código mínimo → H21 RSI medido.
-- Isso bate com a fila do `ESTADO.md` (H-lei-eps no topo), mas agora com uma razão calculada: H04 é o gargalo de G1, G2, G4 e G5 ao mesmo tempo.
+- Verdes: H01, H02, H03, H04 (lei de nitidez), H06 (memória de trabalho), H07 (S3 legível), H16 (modelo de mundo, com ressalva de atributos dados), H22 (linhas de base).
+- Fronteira: ver `BUSSOLA.md` (topo: H05, H24, H08). H26 (JEV real) espera a rede.
+
+## 5b. Radar de lacunas (ciclo 11)
+
+| Goal | A lacuna ainda existe? | Mudança |
+|---|---|---|
+| G1 | Sim: Veličković et al. (ICML 2025) segue sendo a referência; nada achado com prova automática para todo N | — |
+| G2 | Sim, parcialmente atacada: SCoRE (risco seletivo conformal com e-valores, extensível a mudança de distribuição); estudos de 2026 mostram seletores ficando confiantemente errados sob mudança | o marco "zero erros confiantes sob 10×" continua sem dono; comparar com SCoRE em H08 |
+| G3 | Sim | — |
+| G4 | Mudou: no ARC-AGI-3 oficial o topo é ~30% (set/2026); relatos de ~99,9% com adaptador de provedor dependem do harness e de modelos gigantes | a lacuna para **≤ 1M parâmetros** continua; o marco fica |
+| G5 | Sim | — |
+| G6 | Parcialmente preenchida: AI4AI-Bench (2608.20318) mede RSI em 10 repositórios congelados; AIDE² (2609.26457) | medir nosso G6 também contra uma tarefa congelada externa, não só meta-métricas internas |
 
 ## Fontes das lacunas
 
@@ -100,4 +110,5 @@ H03 Laboratório ✔ ─ H21 RSI medido ─► G6
 - Estimadores de confiança "quebrados" (84 classificadores ImageNet) — https://arxiv.org/pdf/2305.15508v2
 - Comunicação emergente composicional em aberto — https://arxiv.org/pdf/2012.05011 · https://papers.neurips.cc/paper_files/paper/2021/file/9597353e41e6957b5e7aa79214fcb256-Paper.pdf
 - ARC-AGI-3 — https://arcprize.org/results
-- AIDE² — https://arxiv.org/abs/2609.26457 · Survey RSI — https://arxiv.org/abs/2607.07663
+- AIDE² — https://arxiv.org/abs/2609.26457 · Survey RSI — https://arxiv.org/abs/2607.07663 · AI4AI-Bench — https://arxiv.org/pdf/2608.20318
+- Radar do ciclo 11: SCoRE / seleção sob mudança — https://arxiv.org/pdf/2508.07556 · https://arxiv.org/pdf/2608.16614 · ARC-AGI-3 — https://arcprize.org/results/anthropic-claude-opus-5 · https://www.datalearner.com/en/benchmarks/arc-agi-3

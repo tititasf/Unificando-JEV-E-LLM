@@ -26,6 +26,7 @@ Status dos átomos: ⬜ não testado · 🟨 em teste · 🟩 evidência N1+ · 
 | Átomo | Biologia | IA hoje | Átomo testável | Métrica | Status |
 |---|---|---|---|---|---|
 | 1.1 Reconhecimento | córtex visual feedforward | classificadores, "modelos de decisão" tipo JEV | MLP de 1 passada | acc por dificuldade | 🟩 E001: bom só em d=0 |
+| 1.5 S1 externo real (JEV) | — | JEV (TypeSafe System One) | JEV respondendo T1/T2 como Choice, respostas gravadas | acc × tamanho, ECE, erros confiantes | ⬜ H26 (SDK e wrapper prontos; rede bloqueada, `docs/JEV.md`) |
 | 1.2 Hábito / amortização | prática vira automático (gânglios da base) | destilação | S2 ensina S1 ao longo da "vida" | custo médio × tempo de vida | ⬜ |
 | 1.3 Saliência | amígdala, pulvinar | roteadores MoE | decidir o que merece S2 | E-AURC do roteador | 🟥 E001: roteador por confiança piora |
 | 1.4 Categorização / colapso | percepção categórica | argmax, VQ | cristalização do estado | colapso de sementes, ruído | 🟥 E002: não estabiliza o pensamento em T1 (retestar com ruído interno, H-Σ1b) |
@@ -71,7 +72,7 @@ Status dos átomos: ⬜ não testado · 🟨 em teste · 🟩 evidência N1+ · 
 
 | Átomo | Biologia | IA hoje | Átomo testável | Métrica | Status |
 |---|---|---|---|---|---|
-| 6.1 Modelo de mundo | hipocampo prevê | world models, JEPA | prever o próximo estado do ambiente | erro de previsão × horizonte | ⬜ |
+| 6.1 Modelo de mundo | hipocampo prevê | world models, JEPA | prever o próximo estado do ambiente | erro de previsão × horizonte | 🟩 E011: caixa com paredes, 0 erros em 16 passos, L 8→64 (atributos dados) |
 | 6.2 Rollout | imaginar antes de agir | MCTS, MuZero | simular k futuros latentes e escolher | acc × k | ⬜ |
 | 6.3 "Voz de atrator" (do fim para o começo) | planejar pela meta | busca bidirecional, *backward chaining* | na tarefa da raiz: busca vinda da meta encontra a vinda do início | passos até resolver | ⬜ |
 | 6.4 Crédito temporal | dopamina e atraso | TD-learning | recompensa atrasada k passos | acc × k | ⬜ |
@@ -125,6 +126,25 @@ nos outros sistemas e se retira. Tradução testável para cada sistema:
 
 O risco medido: um S1 compilado sem verificação erra com confiança (E001, A3). Por isso
 a H24 exige a corte do S3.
+
+## O Ultra-Sistema 1 (orientação do ciclo 11): o que é testável
+
+A orientação propõe inverter a hierarquia: o S1 como **hiper-heurística não-local** (vê o
+padrão inteiro de uma vez), e o S2 rebaixado a **compilador/tradutor a posteriori** (explica e
+verifica o que o S1 já viu). Tradução para átomos (regra 8: o resto fica como metáfora):
+
+| Ideia | Átomo testável | Onde |
+|---|---|---|
+| S1 não-local vê a resposta inteira | um S1 de uma passada (JEV real ou MLP) acerta T1/T2 em que tamanhos? Onde para de ver? | H26 (E-JEV), 1.1, 1.5 |
+| S2 como tradutor a posteriori | o S2 só verifica/corrige o chute do S1; custo total e erros confiantes contra o S2 sozinho | H12, H24 |
+| S3 como repulsa somática (ética como invariante) | invariante O(1) que veta a resposta sem deliberar (E009 é a versão mínima: "dissolvido = não sei") | H07 ✔, H12 |
+| S0 corpo como instrumento | orçamento como entrada do S3 (H-Σ5) | H18 |
+| S4 sincronia estigmérgica | agentes coordenam por marcas no ambiente, sem mensagem direta | H25 (variante) |
+| S5–S7 vantagem nativa, Mushin | **metáfora**. Sombra testável: menos deliberação com o mesmo acerto (Pareto acerto × custo) | G5 |
+
+Aposta registrável: se o Ultra-S1 existe em miniatura, a união S1(JEV)+S3 cobre boa parte
+das instâncias em O(1), e o S2 entra só no resto, dominando a fronteira de Pareto do S2
+sozinho **com zero erros confiantes**. É o experimento H24/H26 assim que o JEV responder.
 
 ## Protocolo Σ: a mensagem universal (ontologia comum)
 

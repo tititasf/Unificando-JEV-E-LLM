@@ -12,7 +12,7 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 | **G1** Pensador de tamanho livre, com prova | ████░░░░ 4/8 | H05, H11, H19, H23 | N4 |
 | **G2** Saber exatamente quando nao sabe | ████░░░ 4/7 | H08, H12, H24 | N3 |
 | **G3** Uma lingua que nasce, ensina e pensa | ███░░░ 3/6 | H13, H14, H15 | N4 |
-| **G4** Descobrir regras de um mundo desconhecido | █████░░░░░ 5/10 | H08, H10, H16, H17, H20 | N4 |
+| **G4** Descobrir regras de um mundo desconhecido | ██████░░░░ 6/10 | H08, H10, H17, H20 | N4 |
 | **G5** Pensar com o custo certo | ████░░░ 4/7 | H12, H18, H24 | N3 |
 | **G6** Auto-aperfeicoamento recursivo demonstrado | █░ 1/2 | H21 | N3 |
 
@@ -28,11 +28,10 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 | 4 | 🟨 **H23** Protocolo CLRS reimplementado com linha de base (LAB) | 3.0 | 2 | G1 | — |
 | 5 | 🟨 **H10** Varias hipoteses vivas (busca latente) (S2) | 3.0 | 2 | G4 | — |
 | 6 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
-| 7 | 🟨 **H16** Modelo de mundo com o mesmo passo (S6) | 3.0 | 2 | G4 | — |
-| 8 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
-| 9 | 🟨 **H26** JEV medido como S1 externo real (S1(JEV)+S2) | 1.0 | 0 | — | E-JEV |
-| 10 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
-| 11 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
+| 7 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 8 | 🟨 **H26** JEV medido como S1 externo real (S1(JEV)+S2) | 1.0 | 0 | — | E-JEV |
+| 9 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
+| 10 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
 
 ## Linha do tempo de desbloqueios (meta-métrica do G6)
 
@@ -43,7 +42,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 8: **H22** Linhas de base publicadas validadas
 - ciclo 9: **H07** Metacognicao legivel em qualquer escala
 - ciclo 10: **H06** Memoria de trabalho latente
-- taxa: 7 habilidades em 10 ciclos = 0.70 por ciclo
+- ciclo 11: **H16** Modelo de mundo com o mesmo passo
+- taxa: 8 habilidades em 11 ciclos = 0.73 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -81,7 +81,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Agentes inventam do zero um codigo discreto que generaliza a combinacoes nunca vistas (>=90% zero-shot) (≥ N2)
 - ⬜ **H15** Ensinar um passo por mensagens · S5+S2 · S5 D16 / S2 D21 · requer: H14 + H06  
   critério: Agente A transmite seu passo latente a B so por mensagens discretas; B atinge >=95% com 10x menos exemplos que aprendendo sozinho (≥ N2)
-- 🟨 **H16** Modelo de mundo com o mesmo passo · S6 · S6.1 / S2 D24 · requer: H06  
+- 🟩 **H16** Modelo de mundo com o mesmo passo · S6 · S6.1 / S2 D24 · requer: H06 — por E011  
   critério: O passo aprendido preve o proximo estado de um ambiente simples com erro < 1% por 16 passos (≥ N2)
 - ⬜ **H17** Planejar a partir da meta · S6 · S6.2-6.3 · requer: H16 + H10  
   critério: Busca bidirecional/rollouts latentes: passos ~d/2 e >=95% em tarefas de planejamento com efeito atrasado (≥ N2)
@@ -132,7 +132,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
       · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
     · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H15 Ensinar um passo por mensagens
-    ◐ H16 Modelo de mundo com o mesmo passo
+    ✔ H16 Modelo de mundo com o mesmo passo
       · H17 Planejar a partir da meta (↑ já mostrado)
   ◐ H24 S2 compila S1 sob a corte do S3 (amortizacao verificada) (↑ já mostrado)
   ◐ H26 JEV medido como S1 externo real

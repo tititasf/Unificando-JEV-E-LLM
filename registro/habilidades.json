@@ -282,7 +282,9 @@
    "prereqs": [
     "H06"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E011"
+   ],
    "custo": 2
   },
   {
@@ -476,5 +478,5 @@
    "nivel_exigido": 3
   }
  ],
- "ultimo_radar_ciclo": 6
+ "ultimo_radar_ciclo": 11
 }

@@ -592,3 +592,70 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* a **régua de 24 polegadas**: o tempo medido de dentro da obra.
   - *Desbaste:* o controlador externo e as marcas desnecessárias.
   - *Polimento:* estados-produto como forma padrão de dar memória ao pensamento.
+
+## Ciclo 11 — Tema: S6 · hipertempo / modelo de mundo (tema novo)
+
+### 1. Diagnóstico
+- **Degrau atual: D01 (primeiro nó do tema).** Sustentado por E011 (N2, reprodução limpa): o mesmo passo relacional do S2, sobre (posição × velocidade), aprende a física de uma caixa com paredes e prevê 16 passos sem erro em caixas 8× maiores. H16 desbloqueada.
+- Ressalva que define o degrau: os atributos (distância à parede truncada) tornam a física uma tabela local de 12 casos; a extrapolação em L vem do desenho. Por isso é D01 e não D02.
+- Barreira para D02: atributos aprendidos da posição crua (sem "distância à parede" dada).
+
+### 2. Escada de 30 degraus (S6)
+- D01: um passo aprende a dinâmica local de um mundo determinístico e extrapola em tamanho com atributos dados (E011). ← **ESTAMOS AQUI**
+- D02: o mesmo, com atributos aprendidos da posição crua (H-mundo-cru). ← **PRÓXIMO ALVO do tema**
+- D03: várias entidades que interagem (colisões; H-mundo-2p).
+- D04: mundo 2D com obstáculos.
+- D05: mundo estocástico: o estado vira distribuição e a incerteza é calibrada (S3 lê o modelo de mundo).
+- D06: horizonte longo (≥ 256 passos) sem acúmulo de erro, com a lei de nitidez governando o horizonte.
+- D07: imaginar para planejar: alcançar uma meta por rollout interno (H-imaginar → H17).
+- D08: planejar para trás, da meta (H17).
+- D09: descobrir a regra oculta de um mundo novo por exploração ativa (H20).
+- D10: o modelo de mundo e o raciocínio (S2) como o mesmo passo, compartilhado entre tarefas.
+- D11: contrafactuais: "e se a parede não estivesse lá?" respondido sem treino novo.
+- D12: abstração temporal: passos que pulam k instantes (macroações) aprendidos.
+- D13: tempo como dimensão do estado: prever e retrodizer com o mesmo passo.
+- D14: partes parciais observáveis (POMDP) com memória (H06) mantendo a crença.
+- D15: transferência entre físicas (mesmo motor, regras diferentes, poucos exemplos).
+- D16: subconjunto de ambientes do tipo ARC-AGI-3 em miniatura.
+- D17: o modelo de mundo explica suas regras como programa extraído (ponte para H19).
+- D18: o modelo de mundo de outro agente (teoria da mente mínima, S4).
+- D19: mundos com leis de conservação descobertas (invariantes do S3 como física).
+- D20: simulação mais barata que a física original (compressão do mundo).
+- D21: agentes que compartilham modelos de mundo por mensagem (S5).
+- D22: ARC-AGI-3 público com ≤ 1M parâmetros (G4).
+- D23: aprendizado contínuo de mundos sem esquecer os anteriores.
+- D24: hipertempo operacional: avaliar muitos futuros em paralelo no mesmo estado (superposição útil).
+- D25: escolher quanto futuro simular pelo custo (S0).
+- D26: descobrir leis de mundos reais simples a partir de dados crus.
+- D27: biblioteca de mundos (ontologia de dinâmicas) componível.
+- D28: domínios contínuos e físicos com a mesma forma de passo.
+- D29: aprender, prever, planejar e explicar um mundo novo em tempo linear.
+- D30: ômega: o modelo de mundo é a própria lei do mundo, descoberta, comprimida e provada, e o pensamento é simulação exata do que pode acontecer.
+
+### 3. Transição
+1. Sacada: o raciocínio (S2) e a física (S6) couberam no mesmo passo; o que muda é o espaço de estados e as bordas.
+2. Subtrair: os atributos dados à mão (a distância à parede).
+3. Próximo: H-mundo-cru (D02). Mas a bússola põe H05/H24 no topo; S6 volta quando a política de diversidade ou a fronteira mandar.
+
+### 4. Visão vertical (o ciclo 11 lido em 10 níveis)
+- Nível 1: senso comum: a máquina aprendeu a bola quicando numa caixa pequena e acertou numa caixa 8× maior.
+- Nível 2: instrumental: o mesmo motor serve para pensar e para prever o mundo.
+- Nível 3: arquitetural: estado-produto + atributos locais dá invariância de tamanho de graça.
+- Nível 4: computacional: o rebote é a borda do espaço de estados (como a parada do E010).
+- Nível 5: teoria da decisão: um modelo de mundo exato abre o planejamento por imaginação.
+- Nível 6: econômico: 12 casos locais valem uma física inteira; o custo está nos atributos certos.
+- Nível 7: composicional: S2 e S6 viraram a mesma peça.
+- Nível 8: ontológico: "pensar" e "simular" são o mesmo verbo sobre espaços diferentes.
+- Nível 9: epistemológico: quando os atributos entregam a resposta, o sucesso mede pouco; o próximo degrau é tirar a muleta.
+- Nível 10: ser superior completo: um pensamento que carrega as leis do mundo pode imaginar antes de agir.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Mimesis*: imitar o mundo por dentro.
+- **Metanoia:** a física de brinquedo e o raciocínio de brinquedo são o mesmo problema; a diferença está nas bordas do espaço.
+- **Aplicação:** todo mundo novo começa pela pergunta "que produto de espaços e que bordas?".
+- **Hack:** desconfie de extrapolação perfeita: procure o atributo que a garante.
+- **Visão maçônica:**
+  - *Planta baixa:* a caixa é a loja; as paredes, os limites que dão forma ao movimento.
+  - *Ferramenta:* o **nível**: a mesma regra vale em qualquer comprimento.
+  - *Desbaste:* os atributos dados à mão (próximo degrau).
+  - *Polimento:* raciocinar e simular com a mesma pedra.

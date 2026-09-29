@@ -78,3 +78,13 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Surpresa: a ablação SEM_MARCAS não quebrou nada: a parada emerge da fronteira do espaço de estados (no contador 0 não há "decrementar").
 - Meta: Brier 0,05. Paralelo ao ciclo: JEV instalado (SDK oficial, wrapper, skill), acesso ainda bloqueado pela rede; nenhum resultado deste ciclo usa o JEV.
 - Semeado: H-pilha, H-fronteira-geometrica (→ H16, testada no E011).
+
+## Ciclo 11 — 2026-09-29 — E011 modelo de mundo com o mesmo passo (pré-registrado)
+- Escolha pela regra de diversidade: S6 não tinha nós; H16 entrou na fronteira com H06.
+- Hipótese: o passo relacional do S2 sobre (posição × velocidade) aprende a física de uma caixa com paredes e extrapola 8× em tamanho; o rebote precisa do atributo "distância à parede".
+- Veredito: **PROMOVER** (N2, reproduzido limpo). 4/4 previsões. 0 erros em 16 passos em L=8, 32 e 64; sem parede 13–15%; sem rebote 81%. **H16 desbloqueada; S6 → D01.**
+- Atalho trivial achado no ATACAR: com os atributos dados, a física é uma tabela local de 12 casos; a extrapolação vem do desenho. Declarado no RELATORIO e no degrau (D01, não D02).
+- Radar de lacunas (atrasado desde o ciclo 6) feito: G4 segue aberto para ≤ 1M parâmetros; G6 ganhou um benchmark externo (AI4AI-Bench). GOALS §5b.
+- JEV: SDK oficial `typesafe-sdk`, `lab/jev.py` e skill `/jev` prontos; o usuário forneceu a chave (fora do git). **Bloqueio: a rede nega `api.typesafe.ai`.** Nenhum resultado usa o JEV. Orientação "Ultra-Sistema 1" traduzida em átomos (SISTEMAS), H26 criada.
+- Meta: Brier 0,03.
+- Semeado: H-mundo-cru, H-mundo-2p, H-imaginar.
