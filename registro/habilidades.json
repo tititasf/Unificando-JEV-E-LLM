@@ -120,7 +120,9 @@
    "prereqs": [
     "H01"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E010"
+   ],
    "custo": 2,
    "hipoteses": [
     "H-memoria"

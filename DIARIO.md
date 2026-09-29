@@ -70,3 +70,11 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Surpresa: o ABS também passa. O que resolve é tratar a dissolução como "não sei"; o tempo 1 economiza 19× em passos. A4/A8 foram reinterpretados e registrados como obsoletos.
 - Meta: Brier 0,07.
 - Semeado: H-S3-fronteira (→ H08), H-S3-T2.
+
+## Ciclo 10 — 2026-09-29 — E010 memória de trabalho latente (pré-registrado)
+- Piloto com o modelo completo antes de congelar (lição 11b); passo acelerado de O(N·K²) para O(N·K), verificado exato.
+- Hipótese: um passo relacional sobre pares (nó × contador), com k na entrada, anda exatamente k saltos e para sozinho.
+- Veredito: **PROMOVER** (N2, reproduzido limpo). 5/5 previsões. 100% em todas as 9 células até k=64, N=64 (treino k≤4, N=8); sem registro, 6%. **H06 desbloqueada; S2 sobe para D06.**
+- Surpresa: a ablação SEM_MARCAS não quebrou nada: a parada emerge da fronteira do espaço de estados (no contador 0 não há "decrementar").
+- Meta: Brier 0,05. Paralelo ao ciclo: JEV instalado (SDK oficial, wrapper, skill), acesso ainda bloqueado pela rede; nenhum resultado deste ciclo usa o JEV.
+- Semeado: H-pilha, H-fronteira-geometrica (→ H16, testada no E011).

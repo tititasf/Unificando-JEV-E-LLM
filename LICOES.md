@@ -23,6 +23,8 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 8b. **Valide o concorrente antes de se comparar a ele** (E008: PonderNet reimplementada reproduz o artigo; só então a comparação de custo vale).
 8c. Um pré-requisito do concorrente pode não existir na sua arquitetura (M006: sem overthinking, o progressive loss não tem o que corrigir). Pilote antes de pré-registrar.
 
+8d. **Comportamentos de parada podem emergir de fronteiras do espaço de estados** (E010: sem marcas de "zero", o contador para igual). Antes de ensinar uma regra, veja se a geometria do registro já a impõe.
+
 ## Sobre comunicação (S5)
 9. **Discretizar a mensagem dá robustez enorme; discretizar o pensamento não ajudou** (E003 vs E002).
 

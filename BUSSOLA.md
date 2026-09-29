@@ -9,10 +9,10 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 
 | goal | progresso | faltam | nível exigido |
 |---|---|---|---|
-| **G1** Pensador de tamanho livre, com prova | ███░░░░░ 3/8 | H05, H06, H11, H19, H23 | N4 |
+| **G1** Pensador de tamanho livre, com prova | ████░░░░ 4/8 | H05, H11, H19, H23 | N4 |
 | **G2** Saber exatamente quando nao sabe | ████░░░ 4/7 | H08, H12, H24 | N3 |
-| **G3** Uma lingua que nasce, ensina e pensa | ██░░░░ 2/6 | H06, H13, H14, H15 | N4 |
-| **G4** Descobrir regras de um mundo desconhecido | ████░░░░░░ 4/10 | H06, H08, H10, H16, H17, H20 | N4 |
+| **G3** Uma lingua que nasce, ensina e pensa | ███░░░ 3/6 | H13, H14, H15 | N4 |
+| **G4** Descobrir regras de um mundo desconhecido | █████░░░░░ 5/10 | H08, H10, H16, H17, H20 | N4 |
 | **G5** Pensar com o custo certo | ████░░░ 4/7 | H12, H18, H24 | N3 |
 | **G6** Auto-aperfeicoamento recursivo demonstrado | █░ 1/2 | H21 | N3 |
 
@@ -22,14 +22,17 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 
 | # | habilidade | prioridade | abre | goals | hipóteses na fila |
 |---|---|---|---|---|---|
-| 1 | 🟨 **H06** Memoria de trabalho latente (S2) | 9.5 | 9 | G1, G3, G4 | H-memoria |
-| 2 | 🟨 **H05** Nitidez em qualquer escala (S2) | 6.0 | 2 | G1 | H-temperatura-logN, H-precisao-treino |
-| 3 | 🟨 **H24** S2 compila S1 sob a corte do S3 (amortizacao verificada) (S1+S2+S3) | 4.5 | 2 | G2, G5 | H-compilar |
-| 4 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
-| 5 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
-| 6 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
-| 7 | 🟨 **H26** JEV medido como S1 externo real (S1(JEV)+S2) | 1.0 | 0 | — | E-JEV |
-| 8 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
+| 1 | 🟨 **H05** Nitidez em qualquer escala (S2) | 6.0 | 2 | G1 | H-temperatura-logN, H-precisao-treino |
+| 2 | 🟨 **H24** S2 compila S1 sob a corte do S3 (amortizacao verificada) (S1+S2+S3) | 4.5 | 2 | G2, G5 | H-compilar |
+| 3 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
+| 4 | 🟨 **H23** Protocolo CLRS reimplementado com linha de base (LAB) | 3.0 | 2 | G1 | — |
+| 5 | 🟨 **H10** Varias hipoteses vivas (busca latente) (S2) | 3.0 | 2 | G4 | — |
+| 6 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
+| 7 | 🟨 **H16** Modelo de mundo com o mesmo passo (S6) | 3.0 | 2 | G4 | — |
+| 8 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 9 | 🟨 **H26** JEV medido como S1 externo real (S1(JEV)+S2) | 1.0 | 0 | — | E-JEV |
+| 10 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
+| 11 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
 
 ## Linha do tempo de desbloqueios (meta-métrica do G6)
 
@@ -39,7 +42,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 7: **H04** Lei de nitidez validada
 - ciclo 8: **H22** Linhas de base publicadas validadas
 - ciclo 9: **H07** Metacognicao legivel em qualquer escala
-- taxa: 6 habilidades em 9 ciclos = 0.67 por ciclo
+- ciclo 10: **H06** Memoria de trabalho latente
+- taxa: 7 habilidades em 10 ciclos = 0.70 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -51,21 +55,21 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Pre-registro, guarda por hash, arvore de experimentos, meta-metricas funcionando (≥ N0)
 - 🟩 **H22** Linhas de base publicadas validadas · LAB · - · requer: H01 — por E008  
   critério: PonderNet reimplementada reproduz o efeito publicado (passos aprendidos crescem com a dificuldade, Spearman >= 0,8, com acuracia mantida). Deep Thinking (progressive loss) implementado e testado; overthinking AUSENTE no motor estruturado (piloto M006: 100% com T=200 com e sem progressive loss), efeito a reavaliar quando o latente for livre (H09). (≥ N1)
-- ⬜ **H23** Protocolo CLRS reimplementado com linha de base · LAB · T3 · requer: H22 + H06  
+- 🟨 **H23** Protocolo CLRS reimplementado com linha de base · LAB · T3 · requer: H22 + H06  
   critério: Geradores e resolvedores exatos (BFS, Bellman-Ford) testados; um motor aprendido e a linha de base Deep Thinking avaliados no protocolo n=16 -> n=64 com acuracia de ponteiros e IC (≥ N1)
 - 🟩 **H04** Lei de nitidez validada · S2 · fronteira S2 D04 · requer: H01 — por E007  
   critério: Limiar de vazamento eps_c congelado preve N_c de >=30 sementes novas dentro de 1,5x, e o papel de d (por passo x acumulado) decidido (≥ N2)
 - 🟨 **H05** Nitidez em qualquer escala · S2 · S2 D05+ · requer: H04  
   critério: Um mecanismo (temperatura adaptativa, treino de precisao ou cristal) mantem eps < eps_c ate N=4096 sem re-treino, em T1 e T2 (≥ N2)
-- 🟨 **H06** Memoria de trabalho latente · S2 · S2 D06 · requer: H01  
+- 🟩 **H06** Memoria de trabalho latente · S2 · S2 D06 · requer: H01 — por E010  
   critério: O proprio estado carrega um contador/pilha: resolve T2 com k na entrada (sem controlador contando) e extrapola k 16x (≥ N2)
 - 🟩 **H07** Metacognicao legivel em qualquer escala · S3 · S3 D04 · requer: H04 — por E009  
   critério: Mesmo sinal de parada, fixado em N=12, responde >=99% quando da e se abstem >=99% quando nao da, de N=12 a N=1024 (≥ N2)
 - 🟨 **H08** Metacognicao calibrada com garantia · S3 · S3 D05-D06 · requer: H07 + H22  
   critério: Risco seletivo <= alfa garantido (conformal) sob mudanca de escala e de tarefa; E-AURC ~0 em 2 familias (≥ N2)
-- ⬜ **H09** Latente vetorial livre · S2 · S2 D09 · requer: H04 + H06  
+- 🟨 **H09** Latente vetorial livre · S2 · S2 D09 · requer: H04 + H06  
   critério: Estado = vetor livre (nao distribuicao sobre nos); mede-se acumulo de ruido e o ganho da quantizacao em T2 (≥ N2)
-- ⬜ **H10** Varias hipoteses vivas (busca latente) · S2 · S2 D07 · requer: H06  
+- 🟨 **H10** Varias hipoteses vivas (busca latente) · S2 · S2 D07 · requer: H06  
   critério: Tarefa com ramificacao (ex.: alcancabilidade com varios caminhos): o estado mantem >1 candidato e acerta onde o cristal falha (≥ N2)
 - ⬜ **H11** Algoritmos classicos extrapolam (T3) · S2 · S2 D11 · requer: H05 + H06 + H22 + H23  
   critério: BFS e caminho minimo: >=95% em 10x o tamanho do treino, batendo a linha de base Deep Thinking com IC (≥ N2)
@@ -77,7 +81,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Agentes inventam do zero um codigo discreto que generaliza a combinacoes nunca vistas (>=90% zero-shot) (≥ N2)
 - ⬜ **H15** Ensinar um passo por mensagens · S5+S2 · S5 D16 / S2 D21 · requer: H14 + H06  
   critério: Agente A transmite seu passo latente a B so por mensagens discretas; B atinge >=95% com 10x menos exemplos que aprendendo sozinho (≥ N2)
-- ⬜ **H16** Modelo de mundo com o mesmo passo · S6 · S6.1 / S2 D24 · requer: H06  
+- 🟨 **H16** Modelo de mundo com o mesmo passo · S6 · S6.1 / S2 D24 · requer: H06  
   critério: O passo aprendido preve o proximo estado de um ambiente simples com erro < 1% por 16 passos (≥ N2)
 - ⬜ **H17** Planejar a partir da meta · S6 · S6.2-6.3 · requer: H16 + H10  
   critério: Busca bidirecional/rollouts latentes: passos ~d/2 e >=95% em tarefas de planejamento com efeito atrasado (≥ N2)
@@ -101,7 +105,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 ```
 ✔ H01 Passo latente que extrapola
   ✔ H22 Linhas de base publicadas validadas
-    · H23 Protocolo CLRS reimplementado com linha de base
+    ◐ H23 Protocolo CLRS reimplementado com linha de base
       · H11 Algoritmos classicos extrapolam (T3)
         · H19 Programa extraido e provado
     ◐ H08 Metacognicao calibrada com garantia
@@ -118,17 +122,17 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
         · H18 Orcamento como sentido (↑ já mostrado)
       ◐ H24 S2 compila S1 sob a corte do S3 (amortizacao verificada)
         · H12 Chutar e verificar (↑ já mostrado)
-    · H09 Latente vetorial livre
-  ◐ H06 Memoria de trabalho latente
-    · H23 Protocolo CLRS reimplementado com linha de base (↑ já mostrado)
-    · H09 Latente vetorial livre (↑ já mostrado)
-    · H10 Varias hipoteses vivas (busca latente)
+    ◐ H09 Latente vetorial livre
+  ✔ H06 Memoria de trabalho latente
+    ◐ H23 Protocolo CLRS reimplementado com linha de base (↑ já mostrado)
+    ◐ H09 Latente vetorial livre (↑ já mostrado)
+    ◐ H10 Varias hipoteses vivas (busca latente)
       · H17 Planejar a partir da meta
         · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
       · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
     · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H15 Ensinar um passo por mensagens
-    · H16 Modelo de mundo com o mesmo passo
+    ◐ H16 Modelo de mundo com o mesmo passo
       · H17 Planejar a partir da meta (↑ já mostrado)
   ◐ H24 S2 compila S1 sob a corte do S3 (amortizacao verificada) (↑ já mostrado)
   ◐ H26 JEV medido como S1 externo real

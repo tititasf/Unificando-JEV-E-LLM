@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 9 |
-| nós na árvore | 20 (RASCUNHO 3, META 6, MELHORAR 2, DIAGNOSTICAR 5, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.33 |
-| taxa de promoção/replicação | 0.44 |
-| previsões avaliadas / acerto | 43 / 0.58 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.18 |
-| degrau atual por tema | S2 D05, S3 D04, S5 D04 |
-| ciclos sem subir degrau | S2 4, S3 0, S5 6 |
-| novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
+| ciclos | 10 |
+| nós na árvore | 21 (RASCUNHO 4, META 6, MELHORAR 2, DIAGNOSTICAR 5, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.30 |
+| taxa de promoção/replicação | 0.50 |
+| previsões avaliadas / acerto | 48 / 0.62 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.16 |
+| degrau atual por tema | S2 D06, S3 D04, S5 D04 |
+| ciclos sem subir degrau | S2 0, S3 1, S5 7 |
+| novidade dos achados | replicacao 1, — 2, baixa 3, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
 | registros antigos corrigidos | 5 |
-| CPU médio por nó (s) | 197.13 |
+| CPU médio por nó (s) | 409.94 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -37,6 +37,7 @@
                 · E006d [DIAGNOSTICAR, S2] Diagnostico: limiar real eps_c ~ 0,07 → INFORMATIVO N1
                     ▲ E007 [REPLICAR, S2] Lei de nitidez fora da amostra (eps_c congelado) → PROMOVER N2
                         · E007d [DIAGNOSTICAR, S2] Diagnostico: teoria de campo medio (bifurcacao sela-no) → INFORMATIVO N1
+        ▲ E010 [RASCUNHO, S2] Memoria de trabalho latente: pares (no x contador) → PROMOVER N2
     ≡ E008 [REPLICAR, S3] PonderNet reimplementada como linha de base → REPLICADO N2
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
@@ -250,3 +251,16 @@
 - **Semeou:** H-S3-fronteira, H-S3-T2
 - **Arquivos:** [prereg](experimentos/E009_s3_legivel/PREREG.md) · [relatorio](experimentos/E009_s3_legivel/RELATORIO.md)
 - **Commits:** pré-registro `b1804f8` · resultado `—`
+
+### E010 — Memoria de trabalho latente: pares (no x contador) (ciclo 10, 2026-09-29)
+- **Operador:** RASCUNHO · **pai:** E005 · **tema:** S2 · **degrau-alvo:** S2:D06
+- **Hipótese:** Um passo relacional sobre pares (no x contador), com k na entrada e sem controlador contando, anda exatamente k saltos e para sozinho, extrapolando de k<=4,N=8 para k=64,N=64.
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** baixa
+- **Métrica principal:** acerto MEMORIA em (N=64,k=64) = 1.00 (0/10 colapsos)
+- **Previsões:** P1 ✅ (p=0.75); P2 ✅ (p=0.75); P3 ✅ (p=0.7); P4 ✅ (p=0.9); P5 ✅ (p=0.9)
+- **Lição:** A parada emerge da fronteira do espaco de estados: no contador 0 nao ha transicao 'decrementar'.
+- **Lição:** Sem registro (SEM_MEMORIA) o mesmo ponteiro fica no acaso (6%).
+- **Lição:** A lei de nitidez se manteve num espaco de 4.160 estados.
+- **Semeou:** H-pilha, H-fronteira-geometrica
+- **Arquivos:** [prereg](experimentos/E010_memoria/PREREG.md) · [relatorio](experimentos/E010_memoria/RELATORIO.md)
+- **Commits:** pré-registro `6802ec9` · resultado `—`
