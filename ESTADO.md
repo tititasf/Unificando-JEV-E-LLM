@@ -1,6 +1,6 @@
 # ESTADO — onde estamos
 
-Atualizado no fim de cada ciclo. Última atualização: ciclo 3 (2026-09-29).
+Atualizado no fim de cada ciclo. Última atualização: ciclo 4 (2026-09-29).
 
 ## Fase atual
 
@@ -19,21 +19,26 @@ Bloqueio descoberto: a tarefa T1 é um atrator (autocorrige erros) → precisamo
 | A5 | Cristalizar o estado **não** estabiliza o pensamento em T1 (0/30 colapsos sem ela) | N2 (negativo) | — | E002 |
 | A6 | **Mensagens simbólicas > analógicas** sob ruído, com conhecimento fragmentado entre 2 agentes, sem re-treino: +0,59 a +0,81, p<1e-45, ~200× menos dados por passo | N2 | baixa (comunicação digital) | E003 |
 | A7 | Tarefas-atrator mascaram o acúmulo de erros | N1 (diagnóstico) | metodológica | E003 |
+| A8 | Nenhum sinal de parada fixado em N=12 funciona em N≥64; "estabilidade do argmax" = critério publicado de ponto fixo, sem ganho | N2 (negativo) | — | E004 |
+| A9 | **Transição de fase do S2:** até N=64 o pensamento anda 1 salto/passo; em N=128 resolve por difusão até o equilíbrio, 12× mais rápido e 90% correto | N1 (diagnóstico) | possivelmente nova; pode ser artefato do atrator | E004 |
 
 ## Fila de hipóteses (topo = próximo)
 
-| Pri | Id | Hipótese | Átomo/Σ | Tipo | Custo |
+Alvos N+1 atuais (EVOLUTION_LOG): S2 → D05 (H-T2) · S3 → D04 novo (H-S3-legível) · S5 → D05 (H-5.4).
+
+| Pri | Id | Hipótese | Átomo/Σ | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
-| 1 | **H-T2** | Criar a tarefa T2 "salto exato" (seguir exatamente k ponteiros numa permutação: sem atrator, qualquer erro é fatal) e re-testar A1, A5, A6 nela | infra + 2.1, 1.4, 5.1 | promover para N3 (2ª família) | médio |
-| 2 | **H-3.2a** | Confiança relativa (entropia normalizada por log N, ou margem top1−top2) mantém E-AURC≈0 e zero abstenções indevidas de N=12 a N=128 | 3.2 | conserta A4 | baixo |
-| 3 | H-Σ1b | Com ruído **interno** no estado do S2, cristalizar ajuda o pensamento? (em T2) | 1.4, Σ1 | nova | baixo |
-| 4 | H-Σ3 | Chutar (S1) e verificar com invariante O(1) (S3) domina o roteador por confiança | 3.3, Σ3 | nova | baixo |
-| 5 | H-5.4 | Código mínimo: bits por passo × robustez; códigos corretores aprendidos vs one-hot | 5.4 | nova | médio |
-| 6 | H-Σ4 | Busca bidirecional (da meta e do início) com o mesmo passo: passos ≈ d/2 | 6.3, Σ4 | nova | médio |
-| 7 | H-Σ2 | Destilar S2→S1 ao longo da "vida" reduz o custo médio mantendo acc | 1.2, Σ2 | nova | médio |
-| 8 | H-Σ5 | Energia restante (S0) como entrada do S3 → melhor Pareto que limiar fixo | 0.1, 0.3, Σ5 | nova | médio |
-| 9 | H-Σ6 | Agentes inventam o próprio código discreto (comunicação emergente) | 5.2, Σ6 | nova | alto |
-| 10 | H-2.3 | Tarefa com várias hipóteses vivas: quando a superposição (contínuo) vence o cristal? | 2.3 | nova | médio |
+| 1 | **H-T2** | Tarefa T2 "salto exato" (permutação, k saltos dados, sem atrator, erro fatal); re-testar A1, A6, A9 nela | 2.1, 1.4, 5.1 | S2 D05 | médio |
+| 2 | **H-S3-legível** | Com S2 cristalizado, CONV/ESTAVEL cumprem os critérios da P2 do E004 em N=12…128 | 3.1, 3.2 | S3 D04 | baixo |
+| 3 | **H-regime** | O regime difusivo (A9) é capacidade ou artefato? Prever o limiar de N pela margem aprendida; testar com d ≪ N | 2.1, 2.3 | S2 (D07) | baixo |
+| 4 | H-5.4 | Código mínimo: bits por passo × robustez; one-hot × binário × código com distância | 5.4 | S5 D05 | médio |
+| 5 | H-híbrido | S3 detecta o regime e alterna leitura de convergência / cristalização | 3.x, Σ1 | S3 D06 | médio |
+| 6 | H-Σ1b | Ruído interno no estado: cristalizar ajuda o pensamento? (em T2) | 1.4, Σ1 | S2 D14 | baixo |
+| 7 | H-Σ3 | Chutar (S1) e verificar com invariante O(1) (S3) domina o roteador por confiança | 3.3, Σ3 | S3 D09 | baixo |
+| 8 | H-Σ4 | Busca bidirecional (da meta e do início): passos ≈ d/2 | 6.3, Σ4 | — | médio |
+| 9 | H-Σ2 | Destilar S2→S1 ao longo da "vida" | 1.2, Σ2 | — | médio |
+| 10 | H-Σ5 | Energia restante (S0) como entrada do S3 | 0.1, 0.3, Σ5 | S3 D11 | médio |
+| 11 | H-Σ6 | Agentes inventam o próprio código discreto | 5.2, Σ6 | S5 D11 | alto |
 
 ## Átomos por status
 

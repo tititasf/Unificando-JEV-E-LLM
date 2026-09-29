@@ -34,7 +34,7 @@ Status dos átomos: ⬜ não testado · 🟨 em teste · 🟩 evidência N1+ · 
 
 | Átomo | Biologia | IA hoje | Átomo testável | Métrica | Status |
 |---|---|---|---|---|---|
-| 2.1 Passo reutilizável | circuitos recorrentes corticais | recorrentes com pesos compartilhados, TRM | mesmo passo aplicado T vezes | razão de extrapolação | 🟩 E001/E002: ≥32× (d=128, 30 sementes; replicação) |
+| 2.1 Passo reutilizável | circuitos recorrentes corticais | recorrentes com pesos compartilhados, TRM | mesmo passo aplicado T vezes | razão de extrapolação | 🟩 E001/E002: sequencial até N=64 (replicação); ⚠️ E004: em N=128 o mecanismo muda para difusão até o equilíbrio (A9) |
 | 2.2 Memória de trabalho | córtex pré-frontal | *recall* (Deep Thinking), contexto | reinjetar o problema a cada passo | overthinking | 🟩 E001: sem overthinking até T=200 |
 | 2.3 Múltiplas hipóteses | exploração mental paralela | beam search, superposição latente | tarefa com ambiguidade (ciclos, vários caminhos) | acc contínuo vs. cristalizado | ⬜ E004 |
 | 2.4 Composição | *chunking* | subrotinas, programas | passos que chamam passos | extrapolação composicional | ⬜ |
@@ -44,7 +44,7 @@ Status dos átomos: ⬜ não testado · 🟨 em teste · 🟩 evidência N1+ · 
 | Átomo | Biologia | IA hoje | Átomo testável | Métrica | Status |
 |---|---|---|---|---|---|
 | 3.1 Parada | sensação de "já sei" | ACT, PonderNet | parar quando o estado converge | economia de compute | 🟩 E001: −54% (regra fixa) |
-| 3.2 Saber que não sabe | sentimento de dúvida | predição seletiva | abster-se se não convergiu | E-AURC, erros/respondidas | 🟨 E001: E-AURC≈0 em N=12; E002: limiar absoluto **não escala** (abstém 100% em N≥64) → H-3.2a |
+| 3.2 Saber que não sabe | sentimento de dúvida | predição seletiva | abster-se se não convergiu | E-AURC, erros/respondidas | 🟨 E001: E-AURC≈0 em N=12; E002/E004: nenhum sinal fixado em N=12 escala (nitidez nunca responde; convergência responde cedo) → H-S3-legível |
 | 3.3 Verificação | checar a conta | verificadores, provas | invariante barato ("a raiz aponta para si") | acc de chutar-e-verificar vs. S2 | ⬜ |
 | 3.4 Alocação | escolher estratégia | roteamento | quanto S1, quanto S2, dado o orçamento S0 | Pareto | ⬜ |
 | 3.5 Aprender a aprender | plasticidade dirigida | meta-learning | ajustar o próprio limiar por experiência | regret | ⬜ |

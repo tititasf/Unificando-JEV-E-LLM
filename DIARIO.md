@@ -23,3 +23,10 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Veredito: **PIVOTAR**. Mensagens simbólicas vencem analógicas sob ruído por até +0,81 (N2). Mas o ganho vem de codificar a *mensagem*, não o estado → Σ1 "pensamento = símbolo" não suportada; "comunicação = símbolo" suportada.
 - Surpresa: com N fixo, a profundidade não importa. A tarefa da raiz é um atrator que autocorrige erros, então não mede acúmulo de erro. Isso bloqueia testes de robustez em T1.
 - Semeado: H-T2 (tarefa sem atrator, prioridade 1), H-Σ1b, H-5.4.
+
+## Ciclo 4 — 2026-09-29 — E004 S3 invariante à escala (pré-registrado) + protocolo Scalata
+- Novo: protocolo de 30 degraus (`docs/ESCALA.md`, `EVOLUTION_LOG.md`) integrado ao laço como passo ESCALAR, com disciplina N+1 e a regra "degrau atingido só com evidência ≥ N1".
+- Hipótese: estabilidade do argmax é um sinal de "terminei" que funciona de N=12 a N=128.
+- Veredito: **MATAR**. Em N=128 nenhum sinal funciona nas duas direções; o proposto é idêntico ao critério publicado (ponto fixo).
+- Surpresa: **transição de fase do S2**. Até N=64 anda 1 salto/passo; em N=128 resolve por difusão até o equilíbrio, 12× mais rápido e 90% correto. A condição "fora do orçamento" deixou de ser impossível. A escada do S3 foi reordenada: legibilidade do pensamento antes da metacognição.
+- Semeado: H-S3-legível, H-regime, H-híbrido.

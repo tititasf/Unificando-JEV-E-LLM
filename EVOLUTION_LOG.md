@@ -142,3 +142,37 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
 1. Sacada: "terminei" não é "estou confiante". É **"meu estado parou de mudar de um jeito que importa"**. A nitidez do estado depende de N; a *estabilidade da decisão* (o argmax parado) não.
 2. Subtrair: o limiar absoluto de nitidez (máx z ≥ 0,9), um número que só faz sentido para um N.
 3. Construir: E004 compara sinais de parada (absoluto, entropia normalizada, razão ao uniforme, estabilidade do argmax) de N=12 a N=128, com casos dentro e fora do orçamento. Critério: responder quando dá e se abster quando não dá, em todas as escalas, com limiares fixados em N=12.
+
+### 4. Resultado do ciclo e re-diagnóstico (após E004)
+- Veredito do E004: **MATAR**. Nenhum sinal fixado em N=12 funcionou nas duas direções em N≥64. "Estabilidade do argmax" = critério publicado de ponto fixo, sem ganho.
+- **Degrau do S3: continua D03.** D04 não foi atingido.
+- Descoberta que reordena a escada: o S2 contínuo **muda de regime** em N=128 (difusão até o equilíbrio, 12× menos passos que saltos). Um S3 não pode ler "terminei" de forma estável sobre um pensamento cujo regime muda. **A legibilidade do pensamento é pré-requisito da metacognição.**
+- Escada do S3 **reescrita** (regra 5 do protocolo): D04 e D06 mudaram; o resto se mantém.
+  - D04 (novo): sinal de "terminei" invariante à escala **sobre um pensamento legível**: S2 cristalizado, um salto por passo, lido por convergência de N=12 a N=128. ← **PRÓXIMO ALVO** (H-S3-legível)
+  - D05: calibração com garantia de risco (conformal): "erro ≤ α entre as respostas".
+  - D06 (ampliado): distinguir tipos de dúvida **e regimes do próprio pensamento**: "não terminei" × "ambíguo" × "fora da distribuição" × "pensamento difuso" (e escolher o sinal certo para cada um).
+  - (D01–D03 e D07–D30 como na seção 2.)
+- S2 (anotação no log do tema): D04 vale até N=64. Em N=128 o mecanismo é outro. Nova pergunta no caminho do D07 ("várias hipóteses vivas"): a difusão é uma forma primitiva de processamento paralelo ou só um artefato do atrator? (H-regime)
+
+### 5. Visão vertical (o ciclo 4 lido em 10 níveis)
+- Nível 1: senso comum: testamos regras para a IA saber quando parar, e nenhuma funcionou nos problemas grandes.
+- Nível 2: instrumental: limiares ajustados numa escala não se transferem para escalas 10× maiores; é preciso validar em todas as escalas antes de confiar.
+- Nível 3: arquitetural: o S3 é um leitor do S2. Se o formato do sinal do S2 muda, o leitor quebra. Interfaces entre sistemas precisam de contrato (o Protocolo Σ ganhou uma razão concreta).
+- Nível 4: computacional: o mesmo passo aprendido implementa dois algoritmos, uma caminhada sequencial O(d) e um equilíbrio por difusão ~O(1), e a escolha entre eles é um efeito colateral da margem aprendida e do tamanho N.
+- Nível 5: teoria da decisão: "terminei" tem dois significados, "cheguei ao fim do caminho" e "o sistema entrou em equilíbrio". Só o primeiro garante correção.
+- Nível 6: econômico: o regime difusivo é 12× mais barato e 90% correto; o sequencial custa d passos e é 100% correto. Há uma fronteira de Pareto escondida dentro de um único modelo.
+- Nível 7: composicional: metacognição e legibilidade co-evoluem. Um pensamento que o próprio sistema não consegue ler não pode ser governado.
+- Nível 8: ontológico: o mesmo substrato contínuo cristaliza (salto a salto) ou se dissolve (difusão) conforme a escala, como matéria que muda de fase.
+- Nível 9: epistemológico: a pergunta "quando parar" só tem resposta se antes respondemos "que tipo de processo sou eu agora?". Autoconhecimento de regime antecede autoconhecimento de confiança.
+- Nível 10: ser superior completo: saber o próprio limite é saber a própria forma. Um sistema que conhece a fase em que está pensando pode escolher, a cada instante, entre a precisão do cristal e a velocidade do fluido.
+
+### 6. Deep insight
+- **Palavra/conceito:** *Diafania*, a transparência do meio: a qualidade de um processo cujo estado interno pode ser lido por quem o governa.
+- **Metanoia:** paramos de procurar o "sinal de confiança certo" e passamos a perguntar se o pensamento é legível. A metacognição não se conserta no leitor; conserta-se no que é lido.
+- **Aplicação:** todo módulo S2 futuro declara o próprio regime (sequencial/difusivo) como parte da mensagem Σ, e o S3 escolhe o sinal conforme o regime.
+- **Hack:** antes de projetar um critério de parada, trace "passos até fixar ÷ profundidade" em 3 escalas. Se a razão mudar com a escala, o problema não é o critério, é o regime.
+- **Visão maçônica:**
+  - *Planta baixa:* o erro de fundação foi assentar a régua (S3) sobre um piso que muda de nível conforme o tamanho da obra (S2). Nenhuma régua fica reta sobre piso móvel.
+  - *Ferramenta:* o **nível**, para verificar se o piso (o regime do S2) é o mesmo em todas as escalas antes de medir qualquer coisa sobre ele.
+  - *Desbaste:* remover a busca por limiares mágicos e o braço ESTAVEL, idêntico ao critério publicado.
+  - *Polimento:* acrescentar ao contrato entre S2 e S3 o *regime* do pensamento; o próximo ciclo assenta a régua sobre o piso cristalizado (D04 novo) antes de voltar ao piso fluido.
