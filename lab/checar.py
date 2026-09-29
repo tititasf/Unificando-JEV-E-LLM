@@ -126,6 +126,17 @@ def verificar():
             for texto in _ler(arq).splitlines():
                 if frase.lower() in texto.lower() and "~~" not in texto:
                     erros.append(f"{arq}: afirmacao obsoleta sem riscar: '{frase}'")
+    # 9. peso: o GitHub recusa arquivos > 100 MB; acima de 20 MB, usar git-lfs
+    for linha in (_git("ls-files", "-z") or "").split("\0"):
+        if not linha:
+            continue
+        caminho = os.path.join(RAIZ, linha)
+        if os.path.isfile(caminho):
+            mb = os.path.getsize(caminho) / 2 ** 20
+            if mb > 90:
+                erros.append(f"{linha}: {mb:.0f} MB (limite do GitHub e 100 MB): mover para git-lfs")
+            elif mb > 20:
+                avisos.append(f"{linha}: {mb:.0f} MB: considerar git-lfs (git lfs track)")
     return erros, avisos
 
 
