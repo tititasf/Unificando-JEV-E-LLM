@@ -19,13 +19,18 @@ rigor nas conclusões.
 3. `docs/VALIDACAO.md` — a régua (escada N0–N5, métricas, regras contra o autoengano).
 4. `docs/SISTEMAS.md` — os átomos de cada sistema, a matriz de sincronia e as sínteses Σ.
 5. `PLANO.md` — o laço, as trilhas e os portões.
+6. `EVOLUTION_LOG.md` (última entrada do tema) + `docs/ESCALA.md` — a escada de 30 degraus e o alvo N+1.
 
 ## O laço (um ciclo por sessão, no mínimo)
 
 Execute `/ciclo` ou siga `PLANO.md §1`:
 LER → ESCOLHER → CHECAR NOVIDADE → PRÉ-REGISTRAR (commit antes de rodar) →
-CONSTRUIR → RODAR (smoke → completo) → MEDIR → ATACAR → DECIDIR → SEMEAR →
-REGISTRAR → commit → push. Se sobrar tempo, comece outro ciclo.
+CONSTRUIR → RODAR (smoke → completo) → MEDIR → ATACAR → DECIDIR → **ESCALAR** →
+SEMEAR → REGISTRAR → commit → push. Se sobrar tempo, comece outro ciclo.
+
+**ESCALAR** = protocolo Scalata (`docs/ESCALA.md`): no fim de todo ciclo,
+escrever no `EVOLUTION_LOG.md` o diagnóstico do degrau atual (D01–D30),
+a escada completa de 30 degraus do tema e a transição para o próximo degrau.
 
 ## Regras invioláveis
 
@@ -37,6 +42,7 @@ REGISTRAR → commit → push. Se sobrar tempo, comece outro ciclo.
 6. **Nunca diga "revolucionário", "novo" ou "descoberta"** sem o nível exigido em `docs/VALIDACAO.md §1` e sem checagem de novidade na literatura. Diga o nível: "N1, replicação de X".
 7. **Procure o atalho trivial** antes de celebrar (no E001, com uma só raiz, bastava achar o nó que aponta para si).
 8. **Não confunda metáfora com mecanismo.** Os sistemas 5–7 nasceram como metáforas; aqui só entram como átomos testáveis.
+9. **Disciplina N+1.** Só escreva código que implemente o degrau imediatamente acima do atual no `EVOLUTION_LOG.md`. Um degrau só conta como atingido com evidência ≥ N1. Imaginação acima disso é projeção, não afirmação.
 
 ## Ambiente e restrições
 
@@ -51,9 +57,11 @@ REGISTRAR → commit → push. Se sobrar tempo, comece outro ciclo.
 CLAUDE.md                  este arquivo
 ESTADO.md                  estado vivo: fila, placar, portões
 DIARIO.md                  um registro por ciclo (mais recente embaixo)
+EVOLUTION_LOG.md           escada de 30 degraus por tema, diagnóstico e alvo N+1
 PLANO.md                   o laço, trilhas, portões
 docs/VALIDACAO.md          a régua
 docs/SISTEMAS.md           átomos, matriz de sincronia, sínteses Σ, Protocolo Σ
+docs/ESCALA.md             protocolo Scalata (imaginação vertical ligada à régua)
 lab/estat.py               estatística (IQM, bootstrap, Fisher, AURC, ECE, Pareto)
 lab/test_estat.py          testes da régua
 experimentos/_modelo/      modelo de PREREG.md e RELATORIO.md
