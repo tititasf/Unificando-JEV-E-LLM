@@ -38,3 +38,10 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Surpresa: a softmax já é um cristalizador suave; a margem aprendida em T2 (~10) é bem maior que em T1 (~4–7). Lei candidata N* = e^margem unifica A4, A9 e E005. P5 falhou nas células pequenas (ciclos curtos em permutações), que ficaram inválidas.
 - Meta: Brier 0,42, pior que chutar 50%. Estou superconfiante; lição registrada.
 - Semeado: H-lei-margem, H-latente-livre, H-precisão-treino, H-memória.
+
+## Ciclo 6 — 2026-09-29 — E006 lei N* (pré-registrado)
+- Hipótese: o vazamento de um passo (= 0,5) prevê o N em que o S2 se dissolve.
+- Veredito: **PIVOTAR** (N2 negativo). Em N*/4 já estava tudo dissolvido (0/30). Falhas de desenho minhas: a grade começou alta e a grade B nunca rodou.
+- Surpresa: o diagnóstico achou a lei corrigida. O vazamento de um passo **prevê** a transição, mas o limiar é **ε_c ≈ 0,07**, quase constante entre sementes, enquanto N_c varia 3×. Instância de Veličković et al. 2025.
+- Meta: Brier 0,25 (contra 0,42): as probabilidades moderadas protegeram.
+- Semeado: H-lei-eps (fora da amostra + "por passo × acumulado"), H-temperatura-adaptativa.

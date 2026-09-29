@@ -246,3 +246,72 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **compasso**, para medir o raio (e^margem) dentro do qual a obra se mantém e fora do qual ela se dissolve.
   - *Desbaste:* retirar a cristalização como "solução" obrigatória e a teoria de acúmulo aplicada sem checar a premissa.
   - *Polimento:* acrescentar a lei N* = e^margem ao contrato de todo motor S2, e preparar o próximo degrau: um pensamento que carrega mais que o lugar onde está (memória de trabalho).
+
+---
+
+## Ciclo 6 — Tema: S2 · motor latente iterativo (consolidação da lei de dissolução)
+
+### 1. Diagnóstico
+- **Degrau atual: D05 (mantido).** O ciclo não visava subir degrau, e sim consolidar a fronteira do D04/D05: até onde o pensamento contínuo se mantém nítido.
+- E006 (N2, negativo): o limiar pré-registrado (vazamento de um passo = 0,5) errou por um fator > 4. E006d (N1): a transição ocorre em **ε ≈ 0,07** por passo, com N_c variando 3× entre sementes.
+- Barreira para D06 (inalterada): o estado só representa "onde estou".
+
+### 2. Escada (sem mudança de ordem desde o ciclo 5; D04 com escopo atualizado)
+- D01: resposta direta em uma passada.
+- D02: passos fixos desenrolados.
+- D03: um passo compartilhado, iterado um número fixo de vezes.
+- D04: ponto fixo por treino multi-instante; extrapola em tarefa-atrator **enquanto o vazamento por passo ε < ~0,07** (E006d).
+- D05: extrapolação sem atrator com precisão por 64 passos. ← **ESTAMOS AQUI** (E005)
+- D06: memória de trabalho (contador, pilha, marcador) no próprio estado. ← **PRÓXIMO ALVO** (depois de fechar a lei: H-lei-eps)
+- D07: várias hipóteses vivas quando a tarefa exige (superposição útil).
+- D08: passos compostos (sub-rotinas).
+- D09: latente vetorial livre e atributos aprendidos da entrada crua.
+- D10: mesmo motor e mesmo treino em duas famílias de tarefas.
+- D11: algoritmos clássicos com extrapolação ≥ 10× contra Deep Thinking.
+- D12: labirinto/Sudoku no nível do TRM com menos parâmetros.
+- D13: parada e abstenção integradas (S3).
+- D14: robusto a ruído interno.
+- D15: ritmo duplo rápido/lento acionado pelo S3.
+- D16: algoritmo novo com ≤ 100 exemplos.
+- D17: composição de algoritmos sem treino.
+- D18: programa discreto extraído do passo.
+- D19: prova formal do programa extraído.
+- D20: autocurrículo.
+- D21: transmite um passo a outro agente (S5).
+- D22: subconjunto do ARC-AGI com ≤ 1M parâmetros.
+- D23: aprendizado contínuo sem esquecimento.
+- D24: o passo como modelo de mundo (S6).
+- D25: custo ≈ mínimo teórico.
+- D26: descobre algoritmos mais eficientes que os conhecidos.
+- D27: biblioteca aberta de passos (ontologia de operações).
+- D28: domínios contínuos e físicos.
+- D29: aprende, compõe, verifica e explica em tempo linear.
+- D30: ômega: cada passo latente é um passo lógico necessário e nenhum a mais; o motor é o algoritmo ótimo de cada tarefa, descoberto e provado.
+
+### 3. Transição (fechar a fronteira antes de subir)
+1. Sacada: a nitidez do pensamento tem um orçamento por passo (ε_c ≈ 0,07). Isso é uma **condição de projeto**: qualquer S2 que precise escalar tem de manter ε(N) < ε_c, seja por margem (treino), temperatura adaptativa ou cristalização.
+2. Subtrair: a fórmula e^margem (errada) e o limiar 0,5 (errado).
+3. Testar: H-lei-eps (ε_c congelado, fora da amostra, e d ∈ {10, 20, 40} para decidir "por passo" × "acumulado"). Depois, D06.
+
+### 4. Visão vertical (o ciclo 6 lido em 10 níveis)
+- Nível 1: senso comum: tentamos prever em que tamanho o pensamento "embaça", e o número estava errado.
+- Nível 2: instrumental: a ideia (medir o vazamento de um passo) estava certa; o limiar escolhido a priori estava errado. Separar "a variável certa" de "o valor certo".
+- Nível 3: arquitetural: todo S2 recebe uma especificação: ε(N) < ε_c no maior N esperado.
+- Nível 4: computacional: um mapa iterado perde o ponto fixo nítido muito antes de um único passo "falhar". A estabilidade de um sistema dinâmico não é a precisão de um passo.
+- Nível 5: teoria da decisão: previsões moderadas (0,45–0,6) custaram pouco quando erraram (Brier 0,25 contra 0,42). A humildade calibrada é mensurável.
+- Nível 6: econômico: um diagnóstico de 30 s valeu mais que o experimento de 6 min, porque a grade do experimento estava mal posicionada.
+- Nível 7: composicional: o limiar ε_c conecta S2 (nitidez), S3 (legibilidade, E004) e S5 (ruído de canal, E003): três sistemas limitados pela mesma razão sinal/vazamento.
+- Nível 8: ontológico: a dissolução é uma transição de fase. Abaixo de ε_c o pensamento tem identidade (um lugar); acima, é um campo.
+- Nível 9: epistemológico: a lei nasceu errada, foi refutada e renasceu mais precisa no mesmo ciclo. O conhecimento aqui avança por refutação e correção, não por confirmação.
+- Nível 10: ser superior completo: conhecer o próprio limiar de dissolução é saber até onde se pode pensar com nitidez sem se perder. Quem mede o próprio vazamento escolhe quando se concentrar e quando se espalhar.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Limen*, o limiar: o ponto em que uma quantidade pequena (ε ≈ 0,07) decide entre identidade e dissolução.
+- **Metanoia:** o erro não foi escolher a variável errada; foi confiar numa constante intuitiva (0,5). Variáveis vêm da teoria; constantes vêm dos dados.
+- **Aplicação:** todo motor S2 passa a reportar ε(N) na maior escala de teste; ε > 0,07 é um alerta vermelho antes de rodar qualquer coisa.
+- **Hack:** para prever se um modelo iterado vai extrapolar em tamanho, meça um passo, não mil: ε(N) contra 0,07.
+- **Visão maçônica:**
+  - *Planta baixa:* assentamos a régua (N*) num nível arbitrário (0,5) e ela ficou acima do piso real.
+  - *Ferramenta:* o **prumo**, para descer até o ponto exato em que a parede começa a ceder (ε_c).
+  - *Desbaste:* a fórmula e^margem e o limiar 0,5.
+  - *Polimento:* a especificação ε(N) < ε_c em todo S2, e um teste fora da amostra que separa "por passo" de "acumulado".

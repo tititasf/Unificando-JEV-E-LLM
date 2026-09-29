@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 5 |
-| nós na árvore | 11 (RASCUNHO 3, META 3, MELHORAR 1, DIAGNOSTICAR 3, REPLICAR 1) |
-| taxa de morte de hipóteses | 0.60 |
-| taxa de promoção/replicação | 0.20 |
-| previsões avaliadas / acerto | 21 / 0.38 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.42 |
+| ciclos | 6 |
+| nós na árvore | 13 (RASCUNHO 3, META 3, MELHORAR 1, DIAGNOSTICAR 4, REPLICAR 2) |
+| taxa de morte de hipóteses | 0.50 |
+| taxa de promoção/replicação | 0.17 |
+| previsões avaliadas / acerto | 25 / 0.36 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.36 |
 | degrau atual por tema | S2 D05, S3 D03, S5 D04 |
-| ciclos sem subir degrau | S2 0, S3 4, S5 2 |
-| novidade dos achados | replicacao 1, — 2, baixa 2 |
-| registros antigos corrigidos | 3 |
-| CPU médio por nó (s) | 195.00 |
+| ciclos sem subir degrau | S2 1, S3 5, S5 3 |
+| novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1 |
+| registros antigos corrigidos | 4 |
+| CPU médio por nó (s) | 203.70 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -32,6 +32,8 @@
         · E003d [DIAGNOSTICAR, S5] Diagnostico: N fixo e bracos cruzados → INFORMATIVO N1
     ✖ E005 [REPLICAR, S2] Motor S2 na tarefa T2 sem atrator → MATAR N2
         · E005d [DIAGNOSTICAR, S2] Diagnostico: margem aprendida e lei N*=e^margem → INFORMATIVO N1
+            ↻ E006 [REPLICAR, S2] Lei N*: o vazamento de um passo preve a dissolucao? → PIVOTAR N2 (negativo)
+                · E006d [DIAGNOSTICAR, S2] Diagnostico: limiar real eps_c ~ 0,07 → INFORMATIVO N1
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -146,4 +148,25 @@
 - **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** possivelmente nova (lei quantitativa)
 - **Lição:** Margem T2 ~10 vs T1 ~4-7; continuo 100% ate N=1024.
 - **Arquivos:** [diagnostico](experimentos/E005_t2_salto/diagnostico.md)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### E006 — Lei N*: o vazamento de um passo preve a dissolucao? (ciclo 6, 2026-09-29)
+- **Operador:** REPLICAR · **pai:** E005d · **tema:** S2 · **degrau-alvo:** consolida S2 D04/D05
+- **Hipótese:** O N em que o S2 se dissolve e previsto por N* = N com vazamento de um passo = 0,5.
+- **Veredito:** PIVOTAR · **nível:** N2 (negativo) · **novidade:** baixa-media (instancia de Velickovic 2025)
+- **Métrica principal:** acc>=0,95 em N*/4 (30 sementes) = 0/30
+- **Previsões:** P1 🟥 (p=0.6); P2 ✅ (p=0.55); P3 🟥 (p=0.45); P4 🟥 (p=0.5); P5 — (p=0.5)
+- **Lição:** O limiar de dissolucao e vazamento ~0,07 por passo, nao 0,5.
+- **Lição:** Grades que dependem de uma quantidade estimada precisam de smoke com o modelo completo antes de congelar.
+- **Corrige:** A11: lei N*=e^margem substituida por limiar de vazamento eps_c~0,07
+- **Semeou:** H-lei-eps, H-temperatura-adaptativa
+- **Arquivos:** [prereg](experimentos/E006_lei_margem/PREREG.md) · [relatorio](experimentos/E006_lei_margem/RELATORIO.md)
+- **Commits:** pré-registro `1ee79ba` · resultado `—`
+
+### E006d — Diagnostico: limiar real eps_c ~ 0,07 (ciclo 6, 2026-09-29)
+- **Operador:** DIAGNOSTICAR · **pai:** E006 · **tema:** S2 · **degrau-alvo:** —
+- **Hipótese:** Onde fica a transicao real e qual o vazamento nela?
+- **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** possivelmente nova
+- **Lição:** N_c varia 3x entre sementes, mas eps(N_c) fica ~0,07 (8 de 12 entre 0,061 e 0,083).
+- **Arquivos:** [diagnostico](experimentos/E006_lei_margem/diagnostico.md)
 - **Commits:** pré-registro `—` · resultado `—`

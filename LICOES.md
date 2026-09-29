@@ -9,7 +9,7 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 3. **Varie uma coisa por vez.** E003: d e N variavam juntos e a conclusão Q3 saiu confundida.
 
 ## Sobre o S2 (pensamento latente)
-4. **O regime do pensamento depende de N relativo a e^margem** (E004d, E005d, N1). Abaixo de N* = e^margem, o S2 anda um salto por passo; acima, dissolve em difusão. Sempre reporte a margem aprendida e N*.
+4. **O pensamento se dissolve quando o vazamento de um passo ε passa de ~0,07** (E006d, N1; a forma e^margem e o limiar 0,5 estavam errados). Sempre reporte ε(N) na maior escala de teste.
 5. **A softmax já é um cristalizador suave.** Antes de adicionar um mecanismo, teste se o sistema já o tem embutido (E005: a cristalização explícita foi desnecessária).
 5b. **A tarefa de treino decide a precisão.** Tarefas-atrator produzem margens pequenas (erro não custa nada no treino).
 5c. Nosso "contínuo" é uma distribuição sobre nós, quase simbólica. Conclusões sobre latente contínuo *livre* ainda não foram testadas.
@@ -23,6 +23,8 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 9. **Discretizar a mensagem dá robustez enorme; discretizar o pensamento não ajudou** (E003 vs E002).
 
 ## Sobre o processo
-10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25). Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
+10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25. Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
 11. Diagnósticos pós-hoc baratos (minutos) explicaram todas as surpresas até agora. Faça-os sempre que um resultado contradisser a expectativa.
+11b. **Grades que dependem de uma quantidade estimada (como N*) precisam de um smoke com o modelo completo antes de congelar** (E006: a grade começou alta demais e P5 nunca rodou).
+11c. Variáveis vêm da teoria; constantes vêm dos dados. Não congele um limiar intuitivo (0,5) sem medi-lo.
 12. Quando um resultado contradisser um registro antigo, **corrija o registro antigo** na hora.
