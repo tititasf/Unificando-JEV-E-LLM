@@ -7,7 +7,7 @@
 | métrica | valor |
 |---|---|
 | ciclos | 6 |
-| nós na árvore | 13 (RASCUNHO 3, META 3, MELHORAR 1, DIAGNOSTICAR 4, REPLICAR 2) |
+| nós na árvore | 14 (RASCUNHO 3, META 4, MELHORAR 1, DIAGNOSTICAR 4, REPLICAR 2) |
 | taxa de morte de hipóteses | 0.50 |
 | taxa de promoção/replicação | 0.17 |
 | previsões avaliadas / acerto | 25 / 0.36 |
@@ -37,6 +37,7 @@
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
+            … M004 [META, LAB] Bussola: goals, arvore de habilidades e fronteira priorizada → PENDENTE 
 ```
 
 ## Etapas em ordem
@@ -169,4 +170,12 @@
 - **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** possivelmente nova
 - **Lição:** N_c varia 3x entre sementes, mas eps(N_c) fica ~0,07 (8 de 12 entre 0,061 e 0,083).
 - **Arquivos:** [diagnostico](experimentos/E006_lei_margem/diagnostico.md)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### M004 — Bussola: goals, arvore de habilidades e fronteira priorizada (ciclo 6, 2026-09-29)
+- **Operador:** META · **pai:** M003 · **tema:** LAB · **degrau-alvo:** —
+- **Hipótese:** Uma arvore de habilidades com goals ancorados em lacunas reais e prioridade calculada direciona os ciclos para o que desbloqueia mais descobertas.
+- **Veredito:** PENDENTE · **nível:** — · **novidade:** —
+- **Lição:** A bussola calculada concordou com a fila manual (H04 no topo): checagem de consistencia.
+- **Arquivos:** [goals](GOALS.md) · [bussola](BUSSOLA.md) · [dados](registro/habilidades.json)
 - **Commits:** pré-registro `—` · resultado `—`

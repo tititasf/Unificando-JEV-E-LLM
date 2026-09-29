@@ -2,6 +2,8 @@
 
 Atualizado no fim de cada ciclo. Última atualização: ciclo 6 (2026-09-29).
 
+> Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H04 → H06 → H13 → H21).
+
 ## Fase atual
 
 **Fase 1 — Micro (T1–T2): portão formalmente atingido no ciclo 5.** O passo latente iterado tem N2 em duas famílias (T1: E002; T2: E005). Ressalva: é um mecanismo **conhecido** (replicação). Antes de ir para a Fase 2 (T3, algoritmos contra Deep Thinking), consolidar a lei N* = e^margem (H-lei-margem), que é o único candidato a achado próprio.
@@ -31,9 +33,9 @@ Política: S2 acabou de subir → seguir a linha, mas promover A11 (N1→N2) vem
 
 | Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
-| 1 | **H-lei-eps** | ε_c = 0,071 congelado prevê N_c de 30 sementes novas (±1,5×); d ∈ {10, 20, 40} decide entre "ε_c constante" e "ε_c·d constante" | E006d · REPLICAR | fecha a fronteira do D04 | baixo |
-| 2 | **H-S3-legível** | Com S2 de ε baixo (T2) ou cristalizado, CONV/ESTAVEL cumprem a P2 do E004 em N=12…128 | E004 · MELHORAR | S3 D04 | baixo |
-| 3 | **H-memória** | Estado = distribuição × registro de contagem; o passo aprende a contar | E005 · RASCUNHO | S2 D06 | médio |
+| 1 | **H-lei-eps** (→ H04) | ε_c = 0,071 congelado prevê N_c de 30 sementes novas (±1,5×); d ∈ {10, 20, 40} decide entre "ε_c constante" e "ε_c·d constante" | E006d · REPLICAR | fecha a fronteira do D04 | baixo |
+| 2 | **H-S3-legível** (→ H07, precisa H04) | Com S2 de ε baixo (T2) ou cristalizado, CONV/ESTAVEL cumprem a P2 do E004 em N=12…128 | E004 · MELHORAR | S3 D04 | baixo |
+| 3 | **H-memória** (→ H06) | Estado = distribuição × registro de contagem; o passo aprende a contar | E005 · RASCUNHO | S2 D06 | médio |
 | 4 | H-temperatura-adaptativa | Temperatura crescente com N (Veličković 2025) mantém ε < ε_c e evita a dissolução em T1 | E006 · MELHORAR | — | baixo |
 | 5 | H-latente-livre | Latente vetorial livre: acúmulo de ruído e quantização (Σ1 de verdade) | E005 · RASCUNHO | S2 D09 | médio |
 | 6 | H-5.4 | Código mínimo: bits por passo × robustez | E003 · MELHORAR | S5 D05 | médio |

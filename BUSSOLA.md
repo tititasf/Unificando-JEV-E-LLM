@@ -1,0 +1,112 @@
+# BÚSSOLA — árvore de habilidades e goals
+
+*Gerado por `python3 -m lab.bussola` a partir de `registro/habilidades.json` e da árvore de experimentos. Não editar à mão.*
+Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
+
+🟩 desbloqueada (com evidência) · 🟨 na fronteira (pode ser atacada agora) · ⬜ trancada
+
+## Goals (estrelas-guia)
+
+| goal | progresso | faltam | nível exigido |
+|---|---|---|---|
+| **G1** Pensador de tamanho livre, com prova | █░░░░░ 1/6 | H04, H05, H06, H11, H19 | N4 |
+| **G2** Saber exatamente quando nao sabe | █░░░░ 1/5 | H04, H07, H08, H12 | N3 |
+| **G3** Uma lingua que nasce, ensina e pensa | ██░░░░ 2/6 | H06, H13, H14, H15 | N4 |
+| **G4** Descobrir regras de um mundo desconhecido | █░░░░░░░░ 1/9 | H04, H06, H07, H08, H10, H16, H17, H20 | N4 |
+| **G5** Pensar com o custo certo | █░░░░ 1/5 | H04, H07, H12, H18 | N3 |
+| **G6** Auto-aperfeicoamento recursivo demonstrado | █░ 1/2 | H21 | N3 |
+
+## Fronteira: o que atacar agora (maior prioridade primeiro)
+
+Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ custo.
+
+| # | habilidade | prioridade | abre | goals | hipóteses na fila |
+|---|---|---|---|---|---|
+| 1 | 🟨 **H04** Lei de nitidez validada (S2) | 22.0 | 9 | G1, G2, G4, G5 | H-lei-eps |
+| 2 | 🟨 **H06** Memoria de trabalho latente (S2) | 9.0 | 8 | G1, G3, G4 | H-memoria |
+| 3 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
+| 4 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+
+## Árvore (pré-requisitos → habilidade)
+
+- 🟩 **H01** Passo latente que extrapola · S2 · S2 D05 · requer: raiz — por E005  
+  critério: Passo iterado treinado em N<=12, k<=4 acerta >=95% em k>=16x e N>=10x, numa tarefa sem atrator, 10 sementes (≥ N2)
+- 🟩 **H02** Mensagem simbolica robusta · S5 · S5 D04 · requer: raiz — por E003  
+  critério: Mensagem discreta vence a analogica sob ruido por >=20 pontos, p<0,01, conhecimento fragmentado entre agentes (≥ N2)
+- 🟩 **H03** Laboratorio com regua, laco e arvore · LAB · - · requer: raiz — por M001, M003  
+  critério: Pre-registro, guarda por hash, arvore de experimentos, meta-metricas funcionando (≥ N0)
+- 🟨 **H04** Lei de nitidez validada · S2 · fronteira S2 D04 · requer: H01  
+  critério: Limiar de vazamento eps_c congelado preve N_c de >=30 sementes novas dentro de 1,5x, e o papel de d (por passo x acumulado) decidido (≥ N2)
+- ⬜ **H05** Nitidez em qualquer escala · S2 · S2 D05+ · requer: H04  
+  critério: Um mecanismo (temperatura adaptativa, treino de precisao ou cristal) mantem eps < eps_c ate N=4096 sem re-treino, em T1 e T2 (≥ N2)
+- 🟨 **H06** Memoria de trabalho latente · S2 · S2 D06 · requer: H01  
+  critério: O proprio estado carrega um contador/pilha: resolve T2 com k na entrada (sem controlador contando) e extrapola k 16x (≥ N2)
+- ⬜ **H07** Metacognicao legivel em qualquer escala · S3 · S3 D04 · requer: H04  
+  critério: Mesmo sinal de parada, fixado em N=12, responde >=99% quando da e se abstem >=99% quando nao da, de N=12 a N=1024 (≥ N2)
+- ⬜ **H08** Metacognicao calibrada com garantia · S3 · S3 D05-D06 · requer: H07  
+  critério: Risco seletivo <= alfa garantido (conformal) sob mudanca de escala e de tarefa; E-AURC ~0 em 2 familias (≥ N2)
+- ⬜ **H09** Latente vetorial livre · S2 · S2 D09 · requer: H04 + H06  
+  critério: Estado = vetor livre (nao distribuicao sobre nos); mede-se acumulo de ruido e o ganho da quantizacao em T2 (≥ N2)
+- ⬜ **H10** Varias hipoteses vivas (busca latente) · S2 · S2 D07 · requer: H06  
+  critério: Tarefa com ramificacao (ex.: alcancabilidade com varios caminhos): o estado mantem >1 candidato e acerta onde o cristal falha (≥ N2)
+- ⬜ **H11** Algoritmos classicos extrapolam (T3) · S2 · S2 D11 · requer: H05 + H06  
+  critério: BFS e caminho minimo: >=95% em 10x o tamanho do treino, batendo a linha de base Deep Thinking com IC (≥ N2)
+- ⬜ **H12** Chutar e verificar · S1+S3 · S3 D09 · requer: H07  
+  critério: S1 chuta, S3 verifica com invariante barato, S2 so quando falha: domina a fronteira de Pareto acc x custo do S2 sozinho (≥ N2)
+- 🟨 **H13** Codigo minimo corretor · S5 · S5 D05 · requer: H02  
+  critério: Codigo com menos bits por passo que o one-hot e >= robustez sob ruido; curva bits x acc medida (≥ N2)
+- ⬜ **H14** Lingua emergente composicional · S5 · S5 D11-D12 · requer: H13  
+  critério: Agentes inventam do zero um codigo discreto que generaliza a combinacoes nunca vistas (>=90% zero-shot) (≥ N2)
+- ⬜ **H15** Ensinar um passo por mensagens · S5+S2 · S5 D16 / S2 D21 · requer: H14 + H06  
+  critério: Agente A transmite seu passo latente a B so por mensagens discretas; B atinge >=95% com 10x menos exemplos que aprendendo sozinho (≥ N2)
+- ⬜ **H16** Modelo de mundo com o mesmo passo · S6 · S6.1 / S2 D24 · requer: H06  
+  critério: O passo aprendido preve o proximo estado de um ambiente simples com erro < 1% por 16 passos (≥ N2)
+- ⬜ **H17** Planejar a partir da meta · S6 · S6.2-6.3 · requer: H16 + H10  
+  critério: Busca bidirecional/rollouts latentes: passos ~d/2 e >=95% em tarefas de planejamento com efeito atrasado (≥ N2)
+- ⬜ **H18** Orcamento como sentido · S0+S3 · S3 D11 · requer: H12  
+  critério: Energia restante como entrada do S3 domina o limiar fixo na fronteira de Pareto acc x custo (≥ N2)
+- ⬜ **H19** Programa extraido e provado · S2 · S2 D18-D19 · requer: H05 + H11  
+  critério: Extracao automatica do automato equivalente ao passo aprendido + prova (verificador exaustivo/indutivo) de correcao para todo N (≥ N3)
+- ⬜ **H20** Aprendiz de regras desconhecidas · S2+S3+S6 · T6 · requer: H17 + H08 + H10  
+  critério: Em ambientes interativos de brinquedo com regras ocultas (estilo ARC-AGI-3), descobre a regra e resolve >=80% com <=1M parametros (≥ N3)
+- 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) · LAB · - · requer: H03  
+  critério: Em >=10 ciclos, mudancas META causam queda mensuravel de ciclos-por-degrau e Brier < 0,15, avaliadas em ciclos posteriores (≥ N0)
+
+## Mapa de dependências
+
+```
+✔ H01 Passo latente que extrapola
+  ◐ H04 Lei de nitidez validada
+    · H05 Nitidez em qualquer escala
+      · H11 Algoritmos classicos extrapolam (T3)
+        · H19 Programa extraido e provado
+      · H19 Programa extraido e provado (↑ já mostrado)
+    · H07 Metacognicao legivel em qualquer escala
+      · H08 Metacognicao calibrada com garantia
+        · H20 Aprendiz de regras desconhecidas
+      · H12 Chutar e verificar
+        · H18 Orcamento como sentido
+    · H09 Latente vetorial livre
+  ◐ H06 Memoria de trabalho latente
+    · H09 Latente vetorial livre (↑ já mostrado)
+    · H10 Varias hipoteses vivas (busca latente)
+      · H17 Planejar a partir da meta
+        · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
+      · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
+    · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
+    · H15 Ensinar um passo por mensagens
+    · H16 Modelo de mundo com o mesmo passo
+      · H17 Planejar a partir da meta (↑ já mostrado)
+✔ H02 Mensagem simbolica robusta
+  ◐ H13 Codigo minimo corretor
+    · H14 Lingua emergente composicional
+      · H15 Ensinar um passo por mensagens (↑ já mostrado)
+✔ H03 Laboratorio com regua, laco e arvore
+  ◐ H21 Laboratorio que se aperfeicoa (RSI medido)
+★ G1 Pensador de tamanho livre, com prova ⇐ H19
+★ G2 Saber exatamente quando nao sabe ⇐ H08, H12
+★ G3 Uma lingua que nasce, ensina e pensa ⇐ H15
+★ G4 Descobrir regras de um mundo desconhecido ⇐ H20
+★ G5 Pensar com o custo certo ⇐ H18
+★ G6 Auto-aperfeicoamento recursivo demonstrado ⇐ H21
+```

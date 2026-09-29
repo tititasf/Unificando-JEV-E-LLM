@@ -14,6 +14,7 @@ rigor nas conclusões.
 
 ## Leia sempre, nesta ordem
 
+0. `GOALS.md` + `BUSSOLA.md` — as estrelas-guia, a árvore de habilidades e a fronteira (o que atacar agora).
 1. `ESTADO.md` — onde estamos, fila de hipóteses, placar dos átomos.
 2. Fim do `DIARIO.md` — o que o último ciclo aprendeu.
 3. `docs/VALIDACAO.md` — a régua (escada N0–N5, métricas, regras contra o autoengano).
@@ -51,6 +52,7 @@ a escada completa de 30 degraus do tema e a transição para o próximo degrau.
 11. **Todo experimento vira um nó** em `registro/arvore.jsonl` (via `lab.registro.adicionar`), com operador, pai, previsões e veredito. O `LIVRO.md` é gerado, nunca editado à mão.
 12. **Só verificadores exatos.** Toda métrica vem de verdade calculável (topo da hierarquia de autoavaliação). Nada de juiz-LLM nem autoavaliação do modelo como métrica.
 13. **Previsões com probabilidade.** Cada previsão do PREREG leva a probabilidade que você dá a ela. É assim que se mede a calibração do pesquisador (Brier no LIVRO).
+14. **Todo ciclo ataca uma habilidade da fronteira da bússola** (`python3 -m lab.bussola fronteira`) e declara `Habilidade: Hxx` no PREREG. Quando o critério é cumprido no nível mínimo, o id do experimento entra em `desbloqueada_por` em `registro/habilidades.json` e a `BUSSOLA.md` é regerada. Marcos só são anunciados no patamar que a evidência sustenta (`GOALS.md §2`).
 
 ## Ambiente e restrições
 
@@ -63,6 +65,9 @@ a escada completa de 30 degraus do tema e a transição para o próximo degrau.
 
 ```
 CLAUDE.md                  este arquivo
+GOALS.md                   estrelas-guia (goals), patamares de "uau", regras de convergência
+BUSSOLA.md                 GERADO: árvore de habilidades, progresso dos goals, fronteira priorizada
+registro/habilidades.json  a árvore de habilidades e os goals (fonte da BUSSOLA)
 ESTADO.md                  estado vivo: fila, placar, portões
 DIARIO.md                  um registro por ciclo (mais recente embaixo)
 EVOLUTION_LOG.md           escada de 30 degraus por tema, diagnóstico e alvo N+1
@@ -75,6 +80,7 @@ docs/SISTEMAS.md           átomos, matriz de sincronia, sínteses Σ, Protocolo
 docs/ESCALA.md             protocolo Scalata (imaginação vertical ligada à régua)
 docs/RSI.md                pesquisa RSI e o que adotamos (AIDE, AIDE², DGM, ...)
 lab/registro.py            árvore, livro, meta-métricas, guarda por hash
+lab/bussola.py             bússola: estado das habilidades, fronteira e prioridade
 lab/estat.py               estatística (IQM, bootstrap, Fisher, AURC, ECE, Pareto)
 lab/test_estat.py          testes da régua
 experimentos/_modelo/      modelo de PREREG.md e RELATORIO.md
@@ -87,5 +93,5 @@ experimentos/ENNN_nome/    PREREG.md, código, resultados.{md,json}, RELATORIO.m
 - Documentação em português. Código com identificadores e comentários em português, sem acentos nos `.py`.
 - Experimentos numerados em sequência (`E004_...`). Cada um roda com um comando e aceita `--quick` para o smoke.
 - Sementes: faixa própria por experimento, anotada no PREREG (E002: 200–229; E003: 300–309; teste = faixa + deslocamento fixo).
-- Antes de commitar: `python3 -m unittest lab.test_estat lab.test_registro` e `python3 -m lab.registro verificar`.
+- Antes de commitar: `python3 -m unittest lab.test_estat lab.test_registro lab.test_bussola` e `python3 -m lab.registro verificar`.
 - Git: trabalhe no branch designado pela sessão; commits pequenos; o pré-registro vai num commit próprio **antes** dos resultados.

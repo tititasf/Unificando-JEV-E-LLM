@@ -8,6 +8,8 @@ futuro. Tudo é medido com uma régua de evidência explícita.
 
 | Arquivo | Para quê |
 |---|---|
+| [`GOALS.md`](GOALS.md) | **O norte:** 6 estrelas-guia, patamares de "uau", árvore de habilidades |
+| [`BUSSOLA.md`](BUSSOLA.md) | Gerado: progresso dos goals e o que atacar agora |
 | [`CLAUDE.md`](CLAUDE.md) | Instruções de operação autônoma |
 | [`ESTADO.md`](ESTADO.md) | Placar de achados e fila de hipóteses |
 | [`DIARIO.md`](DIARIO.md) | Um registro por ciclo |

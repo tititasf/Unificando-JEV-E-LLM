@@ -2,7 +2,7 @@
 
 **Escrito antes de rodar. Não editar depois da primeira execução completa.**
 Trilha: <A–E>. Átomos/sínteses: <ex.: 3.2, Σ1>. Nível de partida: <N0/N1>.
-Nó pai: <ENNN>. Operador: <RASCUNHO|MELHORAR|DEPURAR|REPLICAR|ABLAR>. Degrau-alvo: <tema DXX>.
+Habilidade-alvo: <Hxx> (fronteira da BUSSOLA). Nó pai: <ENNN>. Operador: <RASCUNHO|MELHORAR|DEPURAR|REPLICAR|ABLAR>. Degrau-alvo: <tema DXX>.
 
 ## Hipótese
 <uma frase falsificável>

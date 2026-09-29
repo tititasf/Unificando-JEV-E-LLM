@@ -14,7 +14,8 @@ termina produzindo as hipóteses do próximo.
         ┌───────────────────────────────────────────────────────────────┐
         │ 0. LER     CLAUDE.md, ESTADO.md, LICOES.md, fim do DIARIO,    │
         │            EVOLUTION_LOG do tema, LIVRO.md (meta-métricas)    │
-        │ 1. ESCOLHER  política de busca (§3) → nó pai + operador       │
+        │ 1. ESCOLHER  bússola (fronteira) + política (§3) → habilidade │
+        │            alvo, nó pai, operador                             │
         │            + alvo = degrau N+1; rejeitar duplicata na árvore  │
         │ 2. CHECAR NOVIDADE  busca na literatura → registrar           │
         │ 3. PRÉ-REGISTRAR  hipótese, previsões COM PROBABILIDADE,      │
@@ -27,7 +28,8 @@ termina produzindo as hipóteses do próximo.
         │ 8. DECIDIR  PROMOVER | MATAR | PIVOTAR                        │
         │ 9. ESCALAR  EVOLUTION_LOG: diagnóstico, 30 degraus, transição │
         │10. SEMEAR  1–3 hipóteses na fila, cada uma com nó pai         │
-        │11. REGISTRAR  nó na árvore → LIVRO.md → LICOES.md →           │
+        │11. REGISTRAR  nó na árvore → habilidades (se desbloqueou) →   │
+        │            BUSSOLA.md → LIVRO.md → LICOES.md →                │
         │            ESTADO + DIARIO → commit → push                    │
         └────────────────────────────────┬──────────────────────────────┘
                                          └──► volta ao passo 0
@@ -68,6 +70,7 @@ Cada trilha sobe a escada de tarefas T1→T6 (VALIDACAO.md §4). A trilha A
 Inspirada no AIDE² ("seguir a linha promissora enquanto melhora; ao estagnar,
 ramificar a partir do melhor") e no arquivo do DGM:
 
+0. **A bússola primeiro.** Ataque uma habilidade 🟨 da fronteira (`python3 -m lab.bussola fronteira`), de preferência a de maior prioridade. As regras abaixo podem sobrepor a ordem, sempre com justificativa escrita. O norte está em [`GOALS.md`](GOALS.md).
 1. **Seguir a linha.** Se o último ciclo de um tema subiu degrau ou promoveu nível, o próximo ciclo continua no mesmo tema, no degrau N+1.
 2. **Ramificar ao estagnar.** Se um tema está há **≥2 ciclos sem subir** (`ciclos_sem_subir` no LIVRO), troque de tema: parta do nó de maior nível de outro tema, ou de um *stepping stone* morto cuja lição abre caminho.
 3. **Promover antes de explorar** (~70/30): um achado N1 que pode virar N2 vem antes de ideia nova.
