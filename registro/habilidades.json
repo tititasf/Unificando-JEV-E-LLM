@@ -392,6 +392,22 @@
    "hipoteses": [
     "H-comuns"
    ]
+  },
+  {
+   "id": "H26",
+   "nome": "JEV medido como S1 externo real",
+   "sistema": "S1(JEV)+S2",
+   "escada": "S1 1.x",
+   "criterio": "JEV respondendo T1 (raiz) e T2 (k saltos) codificadas como Choice, com respostas brutas gravadas, em >= 3 tamanhos e >= 10 sementes: curva acerto x tamanho, ECE e erros confiantes medidos por verificador exato, comparados ao S2 iterado e ao S1-MLP interno",
+   "nivel_minimo": 1,
+   "prereqs": [
+    "H01"
+   ],
+   "desbloqueada_por": [],
+   "custo": 1,
+   "hipoteses": [
+    "E-JEV"
+   ]
   }
  ],
  "goals": [

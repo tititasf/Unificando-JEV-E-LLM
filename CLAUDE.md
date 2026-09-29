@@ -62,6 +62,7 @@ a escada completa de 30 degraus do tema e a transição para o próximo degrau.
 ## Ambiente e restrições
 
 - **Python 3 puro, só biblioteca padrão.** O usuário recusou `pip install` (numpy/torch). Não instale nada sem pedir. Use `multiprocessing` para paralelizar (4 CPUs).
+- **Exceção autorizada: `typesafe-sdk`** (SDK oficial do JEV). Em sessão nova: `pip install typesafe-sdk`; depois `python3 -m lab.jev`. Uso só pela skill `/jev` e pelas regras de `docs/JEV.md` (sob teste ou triagem; nunca métrica). A chave nunca entra no git.
 - Ciclo típico: < 30 min de CPU. Experimento que não cabe → quebre-o.
 - Quando a estimativa de um experimento passar de 30 min de CPU (fórmula e tabela em `docs/STACK.md`; deve acontecer em H09/H11), **pergunte** ao usuário antes de mudar de stack.
 - Experimentos de S0 (autopreservação, orçamento) são **simulações fechadas**: agentes de brinquedo dentro de um script. Nada de ação real no mundo, aquisição de recursos, rede ou persistência fora do repositório.

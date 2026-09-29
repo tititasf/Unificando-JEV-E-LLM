@@ -28,7 +28,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 | 4 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
 | 5 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
 | 6 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
-| 7 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
+| 7 | 🟨 **H26** JEV medido como S1 externo real (S1(JEV)+S2) | 1.0 | 0 | — | E-JEV |
+| 8 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
 
 ## Linha do tempo de desbloqueios (meta-métrica do G6)
 
@@ -92,6 +93,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Um S1 de uma passada destilado das respostas do S2 responde com latencia O(1); o S3 verifica/roteia e so aciona o S2 quando o S1 nao e confiavel. Custo medio >= 5x menor que o S2 sozinho, mantendo 0 erros confiantes (inclusive fora da distribuicao), em 2 familias de tarefas (≥ N2)
 - 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) · S4+S5 · S4 4.4 · requer: H02  
   critério: N agentes com recurso comum limitado e mensagens simbolicas convergem para uma regra de uso que atinge >= 90% do bem-estar social otimo, contra agentes egoistas (tragedia dos comuns), sem controle central (≥ N2)
+- 🟨 **H26** JEV medido como S1 externo real · S1(JEV)+S2 · S1 1.x · requer: H01  
+  critério: JEV respondendo T1 (raiz) e T2 (k saltos) codificadas como Choice, com respostas brutas gravadas, em >= 3 tamanhos e >= 10 sementes: curva acerto x tamanho, ECE e erros confiantes medidos por verificador exato, comparados ao S2 iterado e ao S1-MLP interno (≥ N1)
 
 ## Mapa de dependências
 
@@ -128,6 +131,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
     · H16 Modelo de mundo com o mesmo passo
       · H17 Planejar a partir da meta (↑ já mostrado)
   ◐ H24 S2 compila S1 sob a corte do S3 (amortizacao verificada) (↑ já mostrado)
+  ◐ H26 JEV medido como S1 externo real
 ✔ H02 Mensagem simbolica robusta
   ◐ H13 Codigo minimo corretor
     · H14 Lingua emergente composicional
