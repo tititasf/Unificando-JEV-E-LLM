@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 7 |
-| nós na árvore | 17 (RASCUNHO 3, META 5, MELHORAR 1, DIAGNOSTICAR 5, REPLICAR 3) |
+| ciclos | 8 |
+| nós na árvore | 18 (RASCUNHO 3, META 6, MELHORAR 1, DIAGNOSTICAR 5, REPLICAR 3) |
 | taxa de morte de hipóteses | 0.43 |
 | taxa de promoção/replicação | 0.29 |
 | previsões avaliadas / acerto | 31 / 0.45 |
 | Brier das previsões (menor = pesquisador mais calibrado) | 0.27 |
 | degrau atual por tema | S2 D05, S3 D03, S5 D04 |
-| ciclos sem subir degrau | S2 2, S3 6, S5 4 |
+| ciclos sem subir degrau | S2 3, S3 7, S5 5 |
 | novidade dos achados | replicacao 1, — 2, baixa 2, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1 |
 | registros antigos corrigidos | 4 |
-| CPU médio por nó (s) | 215.67 |
+| CPU médio por nó (s) | 203.69 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -41,6 +41,7 @@
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
             … M004 [META, LAB] Bussola: goals, arvore de habilidades e fronteira priorizada → PENDENTE 
                 … M005 [META, LAB] Controle de qualidade: checar, sementes do commit, poder, baselines, CLRS, stack → PENDENTE 
+                    · M006 [META, LAB] Piloto: overthinking ausente no motor estruturado; criterio de H22 revisado → INFORMATIVO N0
 ```
 
 ## Etapas em ordem
@@ -212,4 +213,12 @@
 - **Lição:** Teoria de campo medio: erro de ~9% (29/30 dentro de 1,5x) contra 22% do limiar fixo, p=0,0004.
 - **Lição:** O S2 e uma memoria associativa iterada tipo Hopfield: margem precisa vencer ~log N.
 - **Arquivos:** [diagnostico](experimentos/E007_lei_eps/diagnostico.md)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### M006 — Piloto: overthinking ausente no motor estruturado; criterio de H22 revisado (ciclo 8, 2026-09-29)
+- **Operador:** META · **pai:** M005 · **tema:** LAB · **degrau-alvo:** —
+- **Hipótese:** O motor S2 estruturado sofre overthinking que o progressive loss (Deep Thinking) corrige?
+- **Veredito:** INFORMATIVO · **nível:** N0 · **novidade:** —
+- **Lição:** Sem overthinking (100% em T=200 com treino so no instante final, 3 sementes): o ponto fixo da raiz ja cumpre o papel do progressive loss.
+- **Lição:** Criterio de H22 revisado ANTES do pre-registro; versao anterior guardada em criterio_anterior.
 - **Commits:** pré-registro `—` · resultado `—`

@@ -46,7 +46,7 @@
    "nome": "Linhas de base publicadas validadas",
    "sistema": "LAB",
    "escada": "-",
-   "criterio": "Deep Thinking (recall + progressive loss) e PonderNet reimplementados, com gradiente verificado, reproduzem qualitativamente os efeitos publicados: progressive loss reduz overthinking (acc com T>>treino) e PonderNet aprende passos que crescem com a dificuldade",
+   "criterio": "PonderNet reimplementada reproduz o efeito publicado (passos aprendidos crescem com a dificuldade, Spearman >= 0,8, com acuracia mantida). Deep Thinking (progressive loss) implementado e testado; overthinking AUSENTE no motor estruturado (piloto M006: 100% com T=200 com e sem progressive loss), efeito a reavaliar quando o latente for livre (H09).",
    "nivel_minimo": 1,
    "prereqs": [
     "H01"
@@ -55,7 +55,9 @@
    "custo": 1,
    "hipoteses": [
     "H-baselines"
-   ]
+   ],
+   "criterio_anterior": "Deep Thinking (recall + progressive loss) e PonderNet reimplementados, com gradiente verificado, reproduzem qualitativamente os efeitos publicados: progressive loss reduz overthinking (acc com T>>treino) e PonderNet aprende passos que crescem com a dificuldade",
+   "revisao": "ciclo 8, antes do pre-registro, por evidencia do piloto M006"
   },
   {
    "id": "H23",

@@ -35,7 +35,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 4: **H03** Laboratorio com regua, laco e arvore
 - ciclo 5: **H01** Passo latente que extrapola
 - ciclo 7: **H04** Lei de nitidez validada
-- taxa: 4 habilidades em 7 ciclos = 0.57 por ciclo
+- taxa: 4 habilidades em 8 ciclos = 0.50 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -46,7 +46,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - 🟩 **H03** Laboratorio com regua, laco e arvore · LAB · - · requer: raiz — por M001, M003  
   critério: Pre-registro, guarda por hash, arvore de experimentos, meta-metricas funcionando (≥ N0)
 - 🟨 **H22** Linhas de base publicadas validadas · LAB · - · requer: H01  
-  critério: Deep Thinking (recall + progressive loss) e PonderNet reimplementados, com gradiente verificado, reproduzem qualitativamente os efeitos publicados: progressive loss reduz overthinking (acc com T>>treino) e PonderNet aprende passos que crescem com a dificuldade (≥ N1)
+  critério: PonderNet reimplementada reproduz o efeito publicado (passos aprendidos crescem com a dificuldade, Spearman >= 0,8, com acuracia mantida). Deep Thinking (progressive loss) implementado e testado; overthinking AUSENTE no motor estruturado (piloto M006: 100% com T=200 com e sem progressive loss), efeito a reavaliar quando o latente for livre (H09). (≥ N1)
 - ⬜ **H23** Protocolo CLRS reimplementado com linha de base · LAB · T3 · requer: H22 + H06  
   critério: Geradores e resolvedores exatos (BFS, Bellman-Ford) testados; um motor aprendido e a linha de base Deep Thinking avaliados no protocolo n=16 -> n=64 com acuracia de ponteiros e IC (≥ N1)
 - 🟩 **H04** Lei de nitidez validada · S2 · fronteira S2 D04 · requer: H01 — por E007  
