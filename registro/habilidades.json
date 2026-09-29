@@ -1,95 +1,415 @@
 {
  "_doc": "Arvore de habilidades e goals. Editar a mao; a bussola (python3 -m lab.bussola) calcula estado, fronteira e prioridades e gera BUSSOLA.md. Uma habilidade so e desbloqueada se 'desbloqueada_por' aponta para nos da arvore de experimentos com nivel >= nivel_minimo.",
  "habilidades": [
-  {"id": "H01", "nome": "Passo latente que extrapola", "sistema": "S2", "escada": "S2 D05",
+  {
+   "id": "H01",
+   "nome": "Passo latente que extrapola",
+   "sistema": "S2",
+   "escada": "S2 D05",
    "criterio": "Passo iterado treinado em N<=12, k<=4 acerta >=95% em k>=16x e N>=10x, numa tarefa sem atrator, 10 sementes",
-   "nivel_minimo": 2, "prereqs": [], "desbloqueada_por": ["E005"], "custo": 1},
-  {"id": "H02", "nome": "Mensagem simbolica robusta", "sistema": "S5", "escada": "S5 D04",
+   "nivel_minimo": 2,
+   "prereqs": [],
+   "desbloqueada_por": [
+    "E005"
+   ],
+   "custo": 1
+  },
+  {
+   "id": "H02",
+   "nome": "Mensagem simbolica robusta",
+   "sistema": "S5",
+   "escada": "S5 D04",
    "criterio": "Mensagem discreta vence a analogica sob ruido por >=20 pontos, p<0,01, conhecimento fragmentado entre agentes",
-   "nivel_minimo": 2, "prereqs": [], "desbloqueada_por": ["E003"], "custo": 1},
-  {"id": "H03", "nome": "Laboratorio com regua, laco e arvore", "sistema": "LAB", "escada": "-",
+   "nivel_minimo": 2,
+   "prereqs": [],
+   "desbloqueada_por": [
+    "E003"
+   ],
+   "custo": 1
+  },
+  {
+   "id": "H03",
+   "nome": "Laboratorio com regua, laco e arvore",
+   "sistema": "LAB",
+   "escada": "-",
    "criterio": "Pre-registro, guarda por hash, arvore de experimentos, meta-metricas funcionando",
-   "nivel_minimo": 0, "prereqs": [], "desbloqueada_por": ["M001", "M003"], "custo": 1},
-
-  {"id": "H04", "nome": "Lei de nitidez validada", "sistema": "S2", "escada": "fronteira S2 D04",
+   "nivel_minimo": 0,
+   "prereqs": [],
+   "desbloqueada_por": [
+    "M001",
+    "M003"
+   ],
+   "custo": 1
+  },
+  {
+   "id": "H22",
+   "nome": "Linhas de base publicadas validadas",
+   "sistema": "LAB",
+   "escada": "-",
+   "criterio": "Deep Thinking (recall + progressive loss) e PonderNet reimplementados, com gradiente verificado, reproduzem qualitativamente os efeitos publicados: progressive loss reduz overthinking (acc com T>>treino) e PonderNet aprende passos que crescem com a dificuldade",
+   "nivel_minimo": 1,
+   "prereqs": [
+    "H01"
+   ],
+   "desbloqueada_por": [],
+   "custo": 1,
+   "hipoteses": [
+    "H-baselines"
+   ]
+  },
+  {
+   "id": "H23",
+   "nome": "Protocolo CLRS reimplementado com linha de base",
+   "sistema": "LAB",
+   "escada": "T3",
+   "criterio": "Geradores e resolvedores exatos (BFS, Bellman-Ford) testados; um motor aprendido e a linha de base Deep Thinking avaliados no protocolo n=16 -> n=64 com acuracia de ponteiros e IC",
+   "nivel_minimo": 1,
+   "prereqs": [
+    "H22",
+    "H06"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2
+  },
+  {
+   "id": "H04",
+   "nome": "Lei de nitidez validada",
+   "sistema": "S2",
+   "escada": "fronteira S2 D04",
    "criterio": "Limiar de vazamento eps_c congelado preve N_c de >=30 sementes novas dentro de 1,5x, e o papel de d (por passo x acumulado) decidido",
-   "nivel_minimo": 2, "prereqs": ["H01"], "desbloqueada_por": [], "custo": 1, "hipoteses": ["H-lei-eps"]},
-  {"id": "H05", "nome": "Nitidez em qualquer escala", "sistema": "S2", "escada": "S2 D05+",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H01"
+   ],
+   "desbloqueada_por": [],
+   "custo": 1,
+   "hipoteses": [
+    "H-lei-eps"
+   ]
+  },
+  {
+   "id": "H05",
+   "nome": "Nitidez em qualquer escala",
+   "sistema": "S2",
+   "escada": "S2 D05+",
    "criterio": "Um mecanismo (temperatura adaptativa, treino de precisao ou cristal) mantem eps < eps_c ate N=4096 sem re-treino, em T1 e T2",
-   "nivel_minimo": 2, "prereqs": ["H04"], "desbloqueada_por": [], "custo": 1, "hipoteses": ["H-temperatura-adaptativa", "H-precisao-treino"]},
-  {"id": "H06", "nome": "Memoria de trabalho latente", "sistema": "S2", "escada": "S2 D06",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H04"
+   ],
+   "desbloqueada_por": [],
+   "custo": 1,
+   "hipoteses": [
+    "H-temperatura-adaptativa",
+    "H-precisao-treino"
+   ]
+  },
+  {
+   "id": "H06",
+   "nome": "Memoria de trabalho latente",
+   "sistema": "S2",
+   "escada": "S2 D06",
    "criterio": "O proprio estado carrega um contador/pilha: resolve T2 com k na entrada (sem controlador contando) e extrapola k 16x",
-   "nivel_minimo": 2, "prereqs": ["H01"], "desbloqueada_por": [], "custo": 2, "hipoteses": ["H-memoria"]},
-  {"id": "H07", "nome": "Metacognicao legivel em qualquer escala", "sistema": "S3", "escada": "S3 D04",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H01"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2,
+   "hipoteses": [
+    "H-memoria"
+   ]
+  },
+  {
+   "id": "H07",
+   "nome": "Metacognicao legivel em qualquer escala",
+   "sistema": "S3",
+   "escada": "S3 D04",
    "criterio": "Mesmo sinal de parada, fixado em N=12, responde >=99% quando da e se abstem >=99% quando nao da, de N=12 a N=1024",
-   "nivel_minimo": 2, "prereqs": ["H04"], "desbloqueada_por": [], "custo": 1, "hipoteses": ["H-S3-legivel"]},
-  {"id": "H08", "nome": "Metacognicao calibrada com garantia", "sistema": "S3", "escada": "S3 D05-D06",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H04"
+   ],
+   "desbloqueada_por": [],
+   "custo": 1,
+   "hipoteses": [
+    "H-S3-legivel"
+   ]
+  },
+  {
+   "id": "H08",
+   "nome": "Metacognicao calibrada com garantia",
+   "sistema": "S3",
+   "escada": "S3 D05-D06",
    "criterio": "Risco seletivo <= alfa garantido (conformal) sob mudanca de escala e de tarefa; E-AURC ~0 em 2 familias",
-   "nivel_minimo": 2, "prereqs": ["H07"], "desbloqueada_por": [], "custo": 2},
-  {"id": "H09", "nome": "Latente vetorial livre", "sistema": "S2", "escada": "S2 D09",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H07",
+    "H22"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2
+  },
+  {
+   "id": "H09",
+   "nome": "Latente vetorial livre",
+   "sistema": "S2",
+   "escada": "S2 D09",
    "criterio": "Estado = vetor livre (nao distribuicao sobre nos); mede-se acumulo de ruido e o ganho da quantizacao em T2",
-   "nivel_minimo": 2, "prereqs": ["H04", "H06"], "desbloqueada_por": [], "custo": 2, "hipoteses": ["H-latente-livre"]},
-  {"id": "H10", "nome": "Varias hipoteses vivas (busca latente)", "sistema": "S2", "escada": "S2 D07",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H04",
+    "H06"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2,
+   "hipoteses": [
+    "H-latente-livre"
+   ]
+  },
+  {
+   "id": "H10",
+   "nome": "Varias hipoteses vivas (busca latente)",
+   "sistema": "S2",
+   "escada": "S2 D07",
    "criterio": "Tarefa com ramificacao (ex.: alcancabilidade com varios caminhos): o estado mantem >1 candidato e acerta onde o cristal falha",
-   "nivel_minimo": 2, "prereqs": ["H06"], "desbloqueada_por": [], "custo": 2},
-  {"id": "H11", "nome": "Algoritmos classicos extrapolam (T3)", "sistema": "S2", "escada": "S2 D11",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H06"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2
+  },
+  {
+   "id": "H11",
+   "nome": "Algoritmos classicos extrapolam (T3)",
+   "sistema": "S2",
+   "escada": "S2 D11",
    "criterio": "BFS e caminho minimo: >=95% em 10x o tamanho do treino, batendo a linha de base Deep Thinking com IC",
-   "nivel_minimo": 2, "prereqs": ["H05", "H06"], "desbloqueada_por": [], "custo": 3},
-  {"id": "H12", "nome": "Chutar e verificar", "sistema": "S1+S3", "escada": "S3 D09",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H05",
+    "H06",
+    "H22",
+    "H23"
+   ],
+   "desbloqueada_por": [],
+   "custo": 3
+  },
+  {
+   "id": "H12",
+   "nome": "Chutar e verificar",
+   "sistema": "S1+S3",
+   "escada": "S3 D09",
    "criterio": "S1 chuta, S3 verifica com invariante barato, S2 so quando falha: domina a fronteira de Pareto acc x custo do S2 sozinho",
-   "nivel_minimo": 2, "prereqs": ["H07"], "desbloqueada_por": [], "custo": 1, "hipoteses": ["H-Sigma3"]},
-  {"id": "H13", "nome": "Codigo minimo corretor", "sistema": "S5", "escada": "S5 D05",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H07"
+   ],
+   "desbloqueada_por": [],
+   "custo": 1,
+   "hipoteses": [
+    "H-Sigma3"
+   ]
+  },
+  {
+   "id": "H13",
+   "nome": "Codigo minimo corretor",
+   "sistema": "S5",
+   "escada": "S5 D05",
    "criterio": "Codigo com menos bits por passo que o one-hot e >= robustez sob ruido; curva bits x acc medida",
-   "nivel_minimo": 2, "prereqs": ["H02"], "desbloqueada_por": [], "custo": 2, "hipoteses": ["H-5.4"]},
-  {"id": "H14", "nome": "Lingua emergente composicional", "sistema": "S5", "escada": "S5 D11-D12",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H02"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2,
+   "hipoteses": [
+    "H-5.4"
+   ]
+  },
+  {
+   "id": "H14",
+   "nome": "Lingua emergente composicional",
+   "sistema": "S5",
+   "escada": "S5 D11-D12",
    "criterio": "Agentes inventam do zero um codigo discreto que generaliza a combinacoes nunca vistas (>=90% zero-shot)",
-   "nivel_minimo": 2, "prereqs": ["H13"], "desbloqueada_por": [], "custo": 3, "hipoteses": ["H-Sigma6"]},
-  {"id": "H15", "nome": "Ensinar um passo por mensagens", "sistema": "S5+S2", "escada": "S5 D16 / S2 D21",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H13"
+   ],
+   "desbloqueada_por": [],
+   "custo": 3,
+   "hipoteses": [
+    "H-Sigma6"
+   ]
+  },
+  {
+   "id": "H15",
+   "nome": "Ensinar um passo por mensagens",
+   "sistema": "S5+S2",
+   "escada": "S5 D16 / S2 D21",
    "criterio": "Agente A transmite seu passo latente a B so por mensagens discretas; B atinge >=95% com 10x menos exemplos que aprendendo sozinho",
-   "nivel_minimo": 2, "prereqs": ["H14", "H06"], "desbloqueada_por": [], "custo": 3},
-  {"id": "H16", "nome": "Modelo de mundo com o mesmo passo", "sistema": "S6", "escada": "S6.1 / S2 D24",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H14",
+    "H06"
+   ],
+   "desbloqueada_por": [],
+   "custo": 3
+  },
+  {
+   "id": "H16",
+   "nome": "Modelo de mundo com o mesmo passo",
+   "sistema": "S6",
+   "escada": "S6.1 / S2 D24",
    "criterio": "O passo aprendido preve o proximo estado de um ambiente simples com erro < 1% por 16 passos",
-   "nivel_minimo": 2, "prereqs": ["H06"], "desbloqueada_por": [], "custo": 2},
-  {"id": "H17", "nome": "Planejar a partir da meta", "sistema": "S6", "escada": "S6.2-6.3",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H06"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2
+  },
+  {
+   "id": "H17",
+   "nome": "Planejar a partir da meta",
+   "sistema": "S6",
+   "escada": "S6.2-6.3",
    "criterio": "Busca bidirecional/rollouts latentes: passos ~d/2 e >=95% em tarefas de planejamento com efeito atrasado",
-   "nivel_minimo": 2, "prereqs": ["H16", "H10"], "desbloqueada_por": [], "custo": 2, "hipoteses": ["H-Sigma4"]},
-  {"id": "H18", "nome": "Orcamento como sentido", "sistema": "S0+S3", "escada": "S3 D11",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H16",
+    "H10"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2,
+   "hipoteses": [
+    "H-Sigma4"
+   ]
+  },
+  {
+   "id": "H18",
+   "nome": "Orcamento como sentido",
+   "sistema": "S0+S3",
+   "escada": "S3 D11",
    "criterio": "Energia restante como entrada do S3 domina o limiar fixo na fronteira de Pareto acc x custo",
-   "nivel_minimo": 2, "prereqs": ["H12"], "desbloqueada_por": [], "custo": 2, "hipoteses": ["H-Sigma5"]},
-  {"id": "H19", "nome": "Programa extraido e provado", "sistema": "S2", "escada": "S2 D18-D19",
+   "nivel_minimo": 2,
+   "prereqs": [
+    "H12",
+    "H22"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2,
+   "hipoteses": [
+    "H-Sigma5"
+   ]
+  },
+  {
+   "id": "H19",
+   "nome": "Programa extraido e provado",
+   "sistema": "S2",
+   "escada": "S2 D18-D19",
    "criterio": "Extracao automatica do automato equivalente ao passo aprendido + prova (verificador exaustivo/indutivo) de correcao para todo N",
-   "nivel_minimo": 3, "prereqs": ["H05", "H11"], "desbloqueada_por": [], "custo": 3},
-  {"id": "H20", "nome": "Aprendiz de regras desconhecidas", "sistema": "S2+S3+S6", "escada": "T6",
+   "nivel_minimo": 3,
+   "prereqs": [
+    "H05",
+    "H11"
+   ],
+   "desbloqueada_por": [],
+   "custo": 3
+  },
+  {
+   "id": "H20",
+   "nome": "Aprendiz de regras desconhecidas",
+   "sistema": "S2+S3+S6",
+   "escada": "T6",
    "criterio": "Em ambientes interativos de brinquedo com regras ocultas (estilo ARC-AGI-3), descobre a regra e resolve >=80% com <=1M parametros",
-   "nivel_minimo": 3, "prereqs": ["H17", "H08", "H10"], "desbloqueada_por": [], "custo": 3},
-  {"id": "H21", "nome": "Laboratorio que se aperfeicoa (RSI medido)", "sistema": "LAB", "escada": "-",
+   "nivel_minimo": 3,
+   "prereqs": [
+    "H17",
+    "H08",
+    "H10"
+   ],
+   "desbloqueada_por": [],
+   "custo": 3
+  },
+  {
+   "id": "H21",
+   "nome": "Laboratorio que se aperfeicoa (RSI medido)",
+   "sistema": "LAB",
+   "escada": "-",
    "criterio": "Em >=10 ciclos, mudancas META causam queda mensuravel de ciclos-por-degrau e Brier < 0,15, avaliadas em ciclos posteriores",
-   "nivel_minimo": 0, "prereqs": ["H03"], "desbloqueada_por": [], "custo": 2}
+   "nivel_minimo": 0,
+   "prereqs": [
+    "H03"
+   ],
+   "desbloqueada_por": [],
+   "custo": 2
+  }
  ],
  "goals": [
-  {"id": "G1", "nome": "Pensador de tamanho livre, com prova", "requer": ["H19"],
+  {
+   "id": "G1",
+   "nome": "Pensador de tamanho livre, com prova",
+   "requer": [
+    "H19"
+   ],
    "lacuna": "Circuitos de softmax aprendidos precisam se dispersar com o tamanho (Velickovic et al., ICML 2025); prova de generalizacao de tamanho so existe com alinhamento algoritmico feito a mao (Wang/UCSD 2025).",
    "marco": "Um motor aprendido do zero, sem alinhamento manual, cujo programa e extraido e PROVADO correto para todo N automaticamente pelo laboratorio, em 2+ familias de tarefas.",
-   "nivel_exigido": 4},
-  {"id": "G2", "nome": "Saber exatamente quando nao sabe", "requer": ["H08", "H12"],
+   "nivel_exigido": 4
+  },
+  {
+   "id": "G2",
+   "nome": "Saber exatamente quando nao sabe",
+   "requer": [
+    "H08",
+    "H12"
+   ],
    "lacuna": "Estimadores de confianca estao 'quebrados' mesmo em classificadores fortes (estudo com 84 modelos ImageNet); limiares nao transferem entre escalas (nosso E004).",
    "marco": "Zero respostas erradas com confianca, sob mudanca de escala 10x e de familia de tarefa, sem reajuste, mantendo cobertura >=95% onde e possivel acertar.",
-   "nivel_exigido": 3},
-  {"id": "G3", "nome": "Uma lingua que nasce, ensina e pensa", "requer": ["H15"],
+   "nivel_exigido": 3
+  },
+  {
+   "id": "G3",
+   "nome": "Uma lingua que nasce, ensina e pensa",
+   "requer": [
+    "H15"
+   ],
    "lacuna": "Nao se sabe que condicoes geram linguagem emergente composicional, e quase nao ha transferencia de habilidades multi-passo por ela.",
    "marco": "Agentes inventam do zero um codigo que transmite um ALGORITMO (o passo latente) de um agente para outro, e esse codigo passa a ser a representacao interna do pensamento de quem aprende.",
-   "nivel_exigido": 4},
-  {"id": "G4", "nome": "Descobrir regras de um mundo desconhecido", "requer": ["H20"],
+   "nivel_exigido": 4
+  },
+  {
+   "id": "G4",
+   "nome": "Descobrir regras de um mundo desconhecido",
+   "requer": [
+    "H20"
+   ],
    "lacuna": "ARC-AGI-3 (2026): humanos resolvem 100%; o melhor sistema publico ~30%. Explorar e aprender regras em tempo real continua em aberto.",
    "marco": "Um sistema minusculo (<=1M parametros) que descobre regras ocultas de ambientes interativos novos e depois vence um subconjunto publico do ARC-AGI-3.",
-   "nivel_exigido": 4},
-  {"id": "G5", "nome": "Pensar com o custo certo", "requer": ["H18"],
+   "nivel_exigido": 4
+  },
+  {
+   "id": "G5",
+   "nome": "Pensar com o custo certo",
+   "requer": [
+    "H18"
+   ],
    "lacuna": "Sistemas atuais alocam computacao por limiar fixo ou por aprendizado caro; nao ha 'sentido de energia' que governe quanto pensar.",
    "marco": "Um S0+S3 que domina a fronteira de Pareto acc x custo de PonderNet/limiar fixo em 3 familias, com o mesmo mecanismo.",
-   "nivel_exigido": 3},
-  {"id": "G6", "nome": "Auto-aperfeicoamento recursivo demonstrado", "requer": ["H21"],
+   "nivel_exigido": 3
+  },
+  {
+   "id": "G6",
+   "nome": "Auto-aperfeicoamento recursivo demonstrado",
+   "requer": [
+    "H21"
+   ],
    "lacuna": "AIDE2 (2026) e a primeira evidencia de RSI em P&D de IA, estreita e auto-relatada; medicao de nivel governanca e o nicho mais vazio (survey 2607.07663).",
    "marco": "O proprio laboratorio mostra, com avaliacao oculta, que suas mudancas de processo aceleram a descoberta: ciclos-por-degrau cai pela metade e a calibracao do pesquisador melhora, com causalidade atribuida a nos META.",
-   "nivel_exigido": 3}
- ]
+   "nivel_exigido": 3
+  }
+ ],
+ "ultimo_radar_ciclo": 6
 }

@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 -m lab.checar --resumo 2>&1 | tail -20 || true"
+          }
+        ]
+      }
+    ]
+  }
+}

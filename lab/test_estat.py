@@ -51,6 +51,13 @@ class TestEstat(unittest.TestCase):
     def test_colapso(self):
         self.assertEqual(estat.taxa_colapso([1, 1, 0, 0.2]), 0.5)
 
+    def test_tamanho_amostra(self):
+        n = estat.n_para_diferenca(0.5, 0.95, alfa=0.01, poder=0.8)
+        self.assertTrue(10 <= n <= 30)                       # diferenca grande: poucos
+        self.assertGreater(estat.n_para_diferenca(0.90, 0.95), 500)  # pequena: muitos
+        self.assertLessEqual(estat.n_para_largura(0.5, 0.1), 100)
+        self.assertGreater(estat.n_para_largura(0.5, 0.1), 50)
+
 
 if __name__ == "__main__":
     unittest.main()

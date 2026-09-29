@@ -12,7 +12,6 @@ Habilidade-alvo: <Hxx> (fronteira da BUSSOLA). Nó pai: <ENNN>. Operador: <RASCU
 
 ## Montagem
 - Tarefa(s) e degrau (T1–T6):
-- Sementes de treino: <faixa>; teste congelado: <faixa + deslocamento>
 - Braços: método, linha de base simples, linha de base publicada mais próxima, ablação(ões)
 - Orçamento de ajuste por braço:
 
@@ -20,6 +19,11 @@ Habilidade-alvo: <Hxx> (fronteira da BUSSOLA). Nó pai: <ENNN>. Operador: <RASCU
 | # | Previsão numérica | Prob. que dou | Morte se |
 |---|---|---|---|
 | P1 | | 0.xx | |
+
+## Sementes e poder
+- Sementes de treino: <faixa>. Sementes de teste: `lab.sementes.derivar(base_teste(__file__), n)` (derivadas do commit deste PREREG).
+- Tamanho das células: <n>, justificado por `lab.estat.n_para_diferenca(p0, p1)` = <valor> para distinguir <p0> de <p1>.
+- Custo estimado (docs/STACK.md): <segundos de CPU>.
 
 ## Guarda do avaliador (hashes no momento do pré-registro)
 ```

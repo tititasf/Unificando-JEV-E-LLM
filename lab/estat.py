@@ -166,3 +166,36 @@ def fisher_exato(a_sim, a_n, b_sim, b_n):
         if pk <= p_obs * (1 + 1e-9):
             p += pk
     return min(1.0, p)
+
+
+# ------------------------------------------------ tamanho de amostra
+def _z(p):
+    """Quantil da normal padrao (aproximacao de Acklam simplificada via bissecao)."""
+    lo, hi = -10.0, 10.0
+    for _ in range(100):
+        m = (lo + hi) / 2
+        if 0.5 * (1 + math.erf(m / math.sqrt(2))) < p:
+            lo = m
+        else:
+            hi = m
+    return (lo + hi) / 2
+
+
+def n_para_diferenca(p0, p1, alfa=0.01, poder=0.8):
+    """Exemplos POR BRACO para distinguir duas taxas p0 e p1 (teste bilateral
+    de duas proporcoes). Use no PREREG para justificar o tamanho das celulas."""
+    za, zb = _z(1 - alfa / 2), _z(poder)
+    pm = (p0 + p1) / 2
+    num = (za * math.sqrt(2 * pm * (1 - pm)) + zb * math.sqrt(p0 * (1 - p0) + p1 * (1 - p1))) ** 2
+    return math.ceil(num / (p0 - p1) ** 2) if p0 != p1 else float("inf")
+
+
+def n_para_largura(p, meia_largura, z=1.96):
+    """Exemplos para o IC de Wilson de uma taxa ~p ter meia-largura <= meia_largura."""
+    n = 1
+    while n < 10 ** 7:
+        lo, hi = ic_proporcao(round(p * n), n, z)
+        if (hi - lo) / 2 <= meia_largura:
+            return n
+        n = max(n + 1, int(n * 1.1))
+    return n

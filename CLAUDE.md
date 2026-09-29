@@ -54,11 +54,15 @@ a escada completa de 30 degraus do tema e a transição para o próximo degrau.
 13. **Previsões com probabilidade.** Cada previsão do PREREG leva a probabilidade que você dá a ela. É assim que se mede a calibração do pesquisador (Brier no LIVRO).
 14. **Todo ciclo ataca uma habilidade da fronteira da bússola** (`python3 -m lab.bussola fronteira`) e declara `Habilidade: Hxx` no PREREG. Quando o critério é cumprido no nível mínimo, o id do experimento entra em `desbloqueada_por` em `registro/habilidades.json` e a `BUSSOLA.md` é regerada. Marcos só são anunciados no patamar que a evidência sustenta (`GOALS.md §2`).
 
+15. **Sementes de teste ninguém escolhe.** O teste congelado usa `lab.sementes.derivar(lab.sementes.base_teste(__file__), n)`: sementes derivadas do hash do commit do PREREG. O PREREG tem exatamente um commit (verificado). O tamanho das células é justificado no PREREG com `lab.estat.n_para_diferenca` ou `n_para_largura`.
+16. **Controle de qualidade antes de todo commit:** `python3 -m lab.checar` tem de dar 0 erros (coerência entre árvore, habilidades, ESTADO, DIARIO, EVOLUTION_LOG, LIVRO, BUSSOLA e afirmações obsoletas em `registro/obsoletos.txt`). Afirmação refutada entra em `obsoletos.txt`.
+17. **Linha de base publicada = `lab/baselines.py`** (Deep Thinking com progressive loss; PonderNet) sempre que a pergunta envolver extrapolação ou parada. Declarar que são reimplementações mínimas.
+
 ## Ambiente e restrições
 
 - **Python 3 puro, só biblioteca padrão.** O usuário recusou `pip install` (numpy/torch). Não instale nada sem pedir. Use `multiprocessing` para paralelizar (4 CPUs).
 - Ciclo típico: < 30 min de CPU. Experimento que não cabe → quebre-o.
-- Quando uma trilha atingir T4+ e o Python puro virar o gargalo, **pergunte** ao usuário antes de mudar de stack.
+- Quando a estimativa de um experimento passar de 30 min de CPU (fórmula e tabela em `docs/STACK.md`; deve acontecer em H09/H11), **pergunte** ao usuário antes de mudar de stack.
 - Experimentos de S0 (autopreservação, orçamento) são **simulações fechadas**: agentes de brinquedo dentro de um script. Nada de ação real no mundo, aquisição de recursos, rede ou persistência fora do repositório.
 
 ## Estrutura
@@ -81,6 +85,13 @@ docs/ESCALA.md             protocolo Scalata (imaginação vertical ligada à r�
 docs/RSI.md                pesquisa RSI e o que adotamos (AIDE, AIDE², DGM, ...)
 lab/registro.py            árvore, livro, meta-métricas, guarda por hash
 lab/bussola.py             bússola: estado das habilidades, fronteira e prioridade
+lab/checar.py              controle de qualidade (coerência entre todos os registros)
+lab/sementes.py            sementes de teste derivadas do commit do PREREG
+lab/baselines.py           Deep Thinking (progressive loss) e PonderNet reimplementados
+lab/tarefas_clrs.py        BFS e Bellman-Ford no protocolo CLRS (n=16 → 64), resolvedores exatos
+registro/obsoletos.txt     afirmações refutadas (não podem reaparecer sem riscar)
+docs/STACK.md              teto do Python puro e gatilho para pedir outra stack
+.claude/settings.json      gancho de início de sessão: roda lab.checar --resumo
 lab/estat.py               estatística (IQM, bootstrap, Fisher, AURC, ECE, Pareto)
 lab/test_estat.py          testes da régua
 experimentos/_modelo/      modelo de PREREG.md e RELATORIO.md
@@ -93,5 +104,5 @@ experimentos/ENNN_nome/    PREREG.md, código, resultados.{md,json}, RELATORIO.m
 - Documentação em português. Código com identificadores e comentários em português, sem acentos nos `.py`.
 - Experimentos numerados em sequência (`E004_...`). Cada um roda com um comando e aceita `--quick` para o smoke.
 - Sementes: faixa própria por experimento, anotada no PREREG (E002: 200–229; E003: 300–309; teste = faixa + deslocamento fixo).
-- Antes de commitar: `python3 -m unittest lab.test_estat lab.test_registro lab.test_bussola` e `python3 -m lab.registro verificar`.
+- Antes de commitar: `python3 -m unittest discover -s lab -t .` e `python3 -m lab.checar` (0 erros).
 - Git: trabalhe no branch designado pela sessão; commits pequenos; o pré-registro vai num commit próprio **antes** dos resultados.

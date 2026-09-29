@@ -7,7 +7,7 @@
 | métrica | valor |
 |---|---|
 | ciclos | 6 |
-| nós na árvore | 14 (RASCUNHO 3, META 4, MELHORAR 1, DIAGNOSTICAR 4, REPLICAR 2) |
+| nós na árvore | 15 (RASCUNHO 3, META 5, MELHORAR 1, DIAGNOSTICAR 4, REPLICAR 2) |
 | taxa de morte de hipóteses | 0.50 |
 | taxa de promoção/replicação | 0.17 |
 | previsões avaliadas / acerto | 25 / 0.36 |
@@ -38,6 +38,7 @@
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
             … M004 [META, LAB] Bussola: goals, arvore de habilidades e fronteira priorizada → PENDENTE 
+                … M005 [META, LAB] Controle de qualidade: checar, sementes do commit, poder, baselines, CLRS, stack → PENDENTE 
 ```
 
 ## Etapas em ordem
@@ -178,4 +179,13 @@
 - **Veredito:** PENDENTE · **nível:** — · **novidade:** —
 - **Lição:** A bussola calculada concordou com a fila manual (H04 no topo): checagem de consistencia.
 - **Arquivos:** [goals](GOALS.md) · [bussola](BUSSOLA.md) · [dados](registro/habilidades.json)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### M005 — Controle de qualidade: checar, sementes do commit, poder, baselines, CLRS, stack (ciclo 6, 2026-09-29)
+- **Operador:** META · **pai:** M004 · **tema:** LAB · **degrau-alvo:** —
+- **Hipótese:** Verificador de coerencia, sementes que ninguem escolhe, calculo de amostra, linhas de base publicadas e protocolo externo reduzem erros de processo e desbloqueiam a Fase 2.
+- **Veredito:** PENDENTE · **nível:** — · **novidade:** —
+- **Lição:** O verificador achou 2 afirmacoes obsoletas no ESTADO no primeiro uso.
+- **Lição:** Teto do Python puro medido: 2,9e7 op/s; gatilho de stack previsto em H09/H11.
+- **Arquivos:** [checar](lab/checar.py) · [sementes](lab/sementes.py) · [baselines](lab/baselines.py) · [clrs](lab/tarefas_clrs.py) · [stack](docs/STACK.md)
 - **Commits:** pré-registro `—` · resultado `—`

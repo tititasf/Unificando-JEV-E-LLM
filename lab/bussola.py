@@ -130,6 +130,14 @@ def gerar():
         h = hab[r["id"]]
         L.append(f"| {n} | {icone(r['id'])} **{r['id']}** {h['nome']} ({h['sistema']}) | {r['prio']:.1f} | {r['desc']} | "
                  f"{', '.join(r['goals']) or '—'} | {', '.join(h.get('hipoteses', [])) or '—'} |")
+    # linha do tempo: ciclo em que cada habilidade foi desbloqueada (meta-metrica do G6)
+    por_id = {n["id"]: n for n in registro.carregar()}
+    linha = sorted((max(por_id[e]["ciclo"] for e in hab[i]["desbloqueada_por"]), i) for i in ok)
+    L += ["", "## Linha do tempo de desbloqueios (meta-métrica do G6)", ""]
+    ciclo_max = max((n["ciclo"] for n in por_id.values()), default=0)
+    for c, i in linha:
+        L.append(f"- ciclo {c}: **{i}** {hab[i]['nome']}")
+    L.append(f"- taxa: {len(linha)} habilidades em {ciclo_max} ciclos = {len(linha) / max(1, ciclo_max):.2f} por ciclo")
     L += ["", "## Árvore (pré-requisitos → habilidade)", ""]
     for i, h in hab.items():
         pre = " + ".join(hab[p]["id"] for p in h["prereqs"]) or "raiz"

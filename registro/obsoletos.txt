@@ -1,0 +1,5 @@
+# Afirmacoes refutadas. Se reaparecerem sem ~~riscadas~~ em ESTADO, LICOES, GOALS, SISTEMAS ou PLANO, lab.checar acusa erro.
+consolidar a lei N* = e^margem
+Lei candidata N* = e^margem
+cristalização → 100% em 128 nós
+Calibração do pesquisador: Brier 0,42

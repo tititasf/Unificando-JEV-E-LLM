@@ -6,9 +6,10 @@ Atualizado no fim de cada ciclo. Última atualização: ciclo 6 (2026-09-29).
 
 ## Fase atual
 
-**Fase 1 — Micro (T1–T2): portão formalmente atingido no ciclo 5.** O passo latente iterado tem N2 em duas famílias (T1: E002; T2: E005). Ressalva: é um mecanismo **conhecido** (replicação). Antes de ir para a Fase 2 (T3, algoritmos contra Deep Thinking), consolidar a lei N* = e^margem (H-lei-margem), que é o único candidato a achado próprio.
-Tarefa T2 (`experimentos/E005_t2_salto/tarefa_t2.py`) disponível: sem atrator, todo erro é fatal.
-Livro de etapas e meta-métricas: `LIVRO.md`. Calibração do pesquisador: Brier 0,42 (superconfiante).
+**Fase 1 — Micro (T1–T2): portão formalmente atingido no ciclo 5** (passo latente iterado com N2 em T1 e T2). Ressalva: mecanismo **conhecido** (replicação).
+Antes da Fase 2 (T3, algoritmos contra Deep Thinking): fechar a lei de nitidez (H04), validar as linhas de base publicadas (H22) e o protocolo CLRS reimplementado (H23).
+Infra disponível: T2 sem atrator (`experimentos/E005_t2_salto/tarefa_t2.py`), passo O(N) (`experimentos/E006_lei_margem/passo_rapido.py`), linhas de base (`lab/baselines.py`), tarefas CLRS (`lab/tarefas_clrs.py`), sementes derivadas do commit (`lab/sementes.py`), controle de qualidade (`lab/checar.py`).
+Calibração do pesquisador: ver `LIVRO.md` (Brier do último ciclo: 0,25).
 
 ## Placar de achados
 
@@ -29,13 +30,14 @@ Livro de etapas e meta-métricas: `LIVRO.md`. Calibração do pesquisador: Brier
 ## Fila de hipóteses (topo = próximo)
 
 Alvos N+1 atuais (EVOLUTION_LOG): S2 → D06 (memória de trabalho) · S3 → D04 (H-S3-legível) · S5 → D05 (H-5.4).
-Política: S2 acabou de subir → seguir a linha, mas promover A11 (N1→N2) vem antes (regra 3). S3 está há 4 ciclos parado → ramificar para ele logo depois.
+Política: a bússola põe H04 no topo (gargalo de 4 goals); depois H06 e H22. S3 está parado desde o ciclo 1 → H-S3-legível logo após H04.
 
 | Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
 | 1 | **H-lei-eps** (→ H04) | ε_c = 0,071 congelado prevê N_c de 30 sementes novas (±1,5×); d ∈ {10, 20, 40} decide entre "ε_c constante" e "ε_c·d constante" | E006d · REPLICAR | fecha a fronteira do D04 | baixo |
 | 2 | **H-S3-legível** (→ H07, precisa H04) | Com S2 de ε baixo (T2) ou cristalizado, CONV/ESTAVEL cumprem a P2 do E004 em N=12…128 | E004 · MELHORAR | S3 D04 | baixo |
 | 3 | **H-memória** (→ H06) | Estado = distribuição × registro de contagem; o passo aprende a contar | E005 · RASCUNHO | S2 D06 | médio |
+| 3b | **H-baselines** (→ H22) | Deep Thinking (progressive loss) e PonderNet reimplementados reproduzem os efeitos publicados: progressive loss evita overthinking; PonderNet aprende passos que crescem com d | E001 · REPLICAR | infra | baixo |
 | 4 | H-temperatura-adaptativa | Temperatura crescente com N (Veličković 2025) mantém ε < ε_c e evita a dissolução em T1 | E006 · MELHORAR | — | baixo |
 | 5 | H-latente-livre | Latente vetorial livre: acúmulo de ruído e quantização (Σ1 de verdade) | E005 · RASCUNHO | S2 D09 | médio |
 | 6 | H-5.4 | Código mínimo: bits por passo × robustez | E003 · MELHORAR | S5 D05 | médio |
