@@ -102,7 +102,7 @@ experimentos/ENNN_nome/    PREREG.md, código, resultados.{md,json}, RELATORIO.m
 ## Persistência (a sessão pode ser compactada ou o contêiner reciclado)
 
 - A memória do laboratório é o **repositório**, não a conversa. Tudo que importa (decisões, resultados, lições, estado, próximos passos) vive em arquivos versionados.
-- **Commit + push ao fim de cada ciclo e antes de qualquer compactação.** Nada fica só no contêiner.
+- **Commit + push a cada ciclo** (pré-registro e resultado), feitos pelo pesquisador como parte do laço, não por gancho automático. A sessão compacta sozinha em ~400k tokens (`autoCompactWindow` em `.claude/settings.json`); como tudo já está publicado a cada ciclo, nada se perde.
 - Tudo é publicado; `.gitignore` só exclui `__pycache__/` (bytecode regenerável, sem informação). Arquivos > 20 MB vão para git-lfs (`lab.checar` avisa; > 90 MB é erro).
 - Ao retomar após compactação: o gancho de início roda `lab.checar --resumo`; depois ler a ordem de "Leia sempre".
 
