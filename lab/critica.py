@@ -25,6 +25,8 @@ PERGUNTAS = [
     "7. Norte: o goal/foco atual ainda e o melhor uso do tempo, dada a literatura (docs/LITERATURA_*.md)?",
     "8. Meta (RSI da propria critica): a decisao da critica anterior foi seguida e deu resultado? "
     "Se a critica errou, que pergunta ou alerta faltou? Edite lab/critica.py para inclui-la.",
+    "9. Atalho nao neural: qual e a solucao simbolica/enumerativa direta (sintese, busca, resolvedor) e ela ja foi "
+    "rodada como braco? (licao do E018: a sintese direta achou o programa sem rede)",
 ]
 
 

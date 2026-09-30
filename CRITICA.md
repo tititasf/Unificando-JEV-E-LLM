@@ -28,3 +28,29 @@ Mudanças de processo decididas agora:
 - (d) todo nó com comparação a um número publicado leva `externo: true`.
 
 Decisão: PIVOTAR
+
+## Ciclo 19 — 2026-09-30
+Painel: 23 experimentos, a última candidata a nova foi no ciclo 6, **0/23 externos**, Brier dos últimos 5 ciclos 0,107 (inflado: as previsões do E018 foram todas pós-piloto).
+
+1. **Novo para o mundo?** Não. O E018 mostrou que, em SP e WP, a síntese direta acha o programa sem rede (10/10 contra 5/10). O acerto da rota da rede no SP é real, mas não serve para nada que a síntese não faça.
+2. **Trabalho mais próximo:**
+   - Rodionov & Prokhorenkova (NeurIPS 2023): sem dicas, com regularização autossupervisionada;
+   - MINAR: circuitos;
+   - Cranmer 2020: regressão simbólica das mensagens, supervisionada.
+   Nenhum deles descobre, sem supervisão, **qual variável oculta** a rede inventou e a regra que ela segue. Nós também ainda não.
+3. **Escolha honesta:** o E018 importava, porque respondeu à objeção nº 1 de qualquer revisor. A pergunta seguinte tem de ser uma em que a síntese direta **não** baste. O caso natural é o protocolo do CLRS, em que a saída é **só o ponteiro** e a distância é estado oculto: a síntese precisa inventar a variável.
+4. **Profundidade:**
+   - o foco G1 ainda tem hipótese viva: a rede inventa a variável oculta, que pode ser lida sem supervisão por fechamento dinâmico, z^{t+1} ≈ R(z^t);
+   - chance estimada de resultado novo: 20–30%;
+   - conta como avanço mensurável: o E018 deu SP 5/5;
+   - APROFUNDAR.
+5. **Autoengano:**
+   - as previsões pós-piloto inflam o Brier. Neste ciclo, **as previsões do PREREG saem antes de qualquer piloto da rota nova, e o piloto fica separado**;
+   - atalho trivial: a síntese com ponteiro só também pode achar o programa por enumeração conjunta. Ela entra de novo como braço, e o custo de busca é medido.
+6. **Revisor hostil:**
+   - "a variável lida é a distância porque vocês procuraram a distância". Resposta: a leitura não conhece a verdade; o reconhecimento compara com a verdade só depois;
+   - "controle negativo?". O WP tem ponteiro trivial (a aresta mais pesada), então a rede não precisa de estado oculto ali. A leitura **não** deve achar max-min no WP.
+7. **Norte:** mantido (G1), com a pergunta refinada para "a rede como geradora das dicas que o CLRS escreve à mão".
+8. **Crítica anterior** (PIVOTAR para o G1): foi seguida e deu um resultado claro em um ciclo. Faltava uma pergunta que teria antecipado o E018: **"qual é o atalho não neural (síntese/enumeração) e ele já foi rodado?"**. Acrescentada ao `lab/critica.py` (pergunta 9).
+
+Decisão: APROFUNDAR
