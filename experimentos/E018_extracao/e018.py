@@ -12,22 +12,20 @@ Rede (identica nas duas familias; nada do algoritmo e dado):
   Treino so com entrada -> saida (valor + ponteiro), SEM dicas (sem trajetoria do algoritmo);
   n = 16, T ~ U{8..24}, Adam 5e-4, corte de gradiente 1,0, 4000 passos, lote 32 (100 lotes fixos).
 
-Extracao automatica (sem olhar a familia):
-  1. sonda: o valor decodificado do estado a cada passo, x^t = Linear(h^t), vira o estado simbolico;
-  2. linguagem de regras: x_v' = OUT( x_v, AGG_u f(x_u, w_uv) ), OUT/AGG em {min, max, media},
-     f em {a*x_u + b*w + c, min(a*x_u, b*w) + c, max(a*x_u, b*w) + c}  -> 18 formas, 3 coeficientes;
-  3. ajuste dos coeficientes nas transicoes observadas da rede (n = 16 e 32);
-  4. arredondamento de Occam: coeficientes para o multiplo de 1/2 mais proximo;
-  5. escolha em CIRCUITO FECHADO: cada regra arredondada e executada a partir do estado inicial exato
-     (fonte = x_fonte decodificado, demais = valor decodificado de h0) por n passos em grafos novos; vence o
-     menor erro contra a saida final da propria rede. (A verdade do algoritmo NAO entra na escolha.)
-  6. ponteiro extraido: argmin/argmax_u g(x_u, w) com g na mesma linguagem, escolhido pela concordancia com
-     os ponteiros da rede.
-Programa extraido = (inicio, regra, ponteiro). Avaliado contra o resolvedor exato em n = 16, 64, 256.
-"Prova para todo n": se a regra arredondada e SINTATICAMENTE a relaxacao do semianel da familia
-((min,+) ou (max,min)) com inicio correto, vale o teorema classico (Bellman-Ford generalizado em semianel);
-o reconhecimento e automatico (comparacao de forma e coeficientes exatos). Isto e prova por reducao a
-teorema conhecido, nao prova formal em assistente de provas (declarado).
+Tres rotas de extracao, mesma linguagem de regras x_v' = OUT(x_v, AGG_u f(x_u, w_uv)) (18 formas; OUT/AGG em
+{min, max, media}; f em {a*x_u + b*w + c, min(a*x_u, b*w) + c, max(a*x_u, b*w) + c}; com/sem manter x_v), inicio
+x_fonte = saida arredondada a 1/2, demais em {-inf, +inf, 0, 1}, escolha em circuito fechado (64 passos, n = 32):
+  mecanistica:    coeficientes ajustados nas transicoes x^t -> x^t+1 decodificadas da rede (x^t = Linear(h^t)),
+                  arredondados a 1/2 (Occam); vence o menor erro contra a saida final da rede;
+  comportamental: grade de coeficientes {0,.5,1,1.5,2}^2 x {-.5,0,.5}; alvo = saida final da rede;
+  sintese direta: a mesma grade, alvo = a VERDADE (sem rede) -- o atalho trivial que um revisor proporia.
+Empate: inicio que nada supoe (+-inf) primeiro, depois menor soma |coef|.
+Ponteiro: argmin/argmax_u g(x_u, w) na mesma linguagem, pela concordancia com a rede (ou com os pais validos, na sintese).
+Programa = (inicio, regra, ponteiro), executado em Python puro contra o resolvedor exato em n = 16, 64, 256.
+"Prova para todo n": se o programa e SINTATICAMENTE a relaxacao do semianel da familia com inicio correto
+(SP: fonte 0, demais +inf; WP: fonte 1, demais 0 ou -inf), vale o teorema classico (ponto fixo de Bellman-Ford
+generalizado em semianel; convergencia monotona). Reconhecimento automatico por forma e coeficientes exatos.
+E prova por reducao a teorema conhecido, nao prova formal em assistente de provas (declarado).
 Uso: python3 e018.py [--quick] [--procs=4]
 """
 import itertools
@@ -200,7 +198,37 @@ def executar(regra, th, x0, S, W, A0, T):
     return x
 
 
-def extrair(net, fam, rng):
+BIG = 1e4
+INICIOS = (-BIG, BIG, 0.0, 1.0)  # ordem = preferencia no empate: inicio que nada supoe (+-infinito) primeiro
+GRADE = [(a, b, c) for a in (0, .5, 1, 1.5, 2) for b in (0, .5, 1, 1.5, 2) for c in (-.5, 0, .5)]
+PONTEIROS = [(sel, f, ab) for sel in ("argmin", "argmax") for f in ("lin", "minf", "maxf")
+             for ab in ((1.0, 1.0), (1.0, 0.0), (0.0, 1.0))]
+
+
+def snap(v):
+    return round(v * 2) / 2
+
+
+def erro_prog(regra, th, fonte, ini, S, W, A0, alvo, T):
+    x0 = torch.where(S > 0, torch.full_like(S, fonte), torch.full_like(S, ini))
+    x = executar(regra, torch.tensor(th, dtype=torch.float), x0, S, W, A0, T)
+    return (x - alvo).abs().clamp(max=10).mean().item()
+
+
+def escolher(cands, fonte, S, W, A0, alvo, T):
+    """Circuito fechado: menor erro contra o alvo; empate -> inicio preferido, depois menor soma |coef|."""
+    melhor = None
+    for regra, th in cands:
+        for i, ini in enumerate(INICIOS):
+            e = round(erro_prog(regra, th, fonte, ini, S, W, A0, alvo, T), 6)
+            k = (e, i, sum(abs(v) for v in th))
+            if melhor is None or k < melhor[0]:
+                melhor = (k, regra, [float(v) for v in th], ini)
+    return {"erro": melhor[0][0], "regra": melhor[1], "th": melhor[2], "ini": melhor[3], "fonte": fonte}
+
+
+def ajusta_transicoes(net, fam, rng):
+    """Extracao mecanistica: coeficientes ajustados nas transicoes x^t -> x^t+1 decodificadas da rede."""
     trans = []
     with torch.no_grad():
         for n in (16, 32):
@@ -209,74 +237,64 @@ def extrair(net, fam, rng):
             A0 = A - torch.eye(n)
             for t in range(1, len(xs) - 1):
                 trans.append((xs[t], xs[t + 1], W, A0, S))
-
-    def mse(regra, th):
-        e, k = 0.0, 0
-        for x, xn, W, A0, S in trans:
-            m = S == 0
-            e = e + ((aplica(regra, th, x, W, A0) - xn)[m] ** 2).sum()
-            k += int(m.sum())
-        return e / k
-
     cands = []
     for regra in REGRAS:
         th = torch.tensor([1.0, 1.0, 0.0], requires_grad=True)
         opt = torch.optim.Adam([th], 0.02)
         for _ in range(150):
-            l = mse(regra, th)
+            e, k = 0.0, 0
+            for x, xn, W, A0, S in trans:
+                m = S == 0
+                e = e + ((aplica(regra, th, x, W, A0) - xn)[m] ** 2).sum()
+                k += int(m.sum())
             opt.zero_grad()
-            l.backward()
+            (e / k).backward()
             opt.step()
-        arred = [round(float(v) * 2) / 2 for v in th.detach()]
-        cands.append((regra, arred))
-    # escolha em circuito fechado contra a saida final da rede (grafos novos, n = 32)
-    with torch.no_grad():
-        W, A, S, Y, V, _ = lote(fam, 16, 32, rng)
-        _, yfin, xs = net(W, A, S, 32, trilha=True)
-        x0 = torch.where(S > 0, xs[0], xs[0][S == 0].mean())
-        A0 = A - torch.eye(32)
-        placar = []
-        for regra, th in cands:
-            e = ((executar(regra, torch.tensor(th), x0, S, W, A0, 32) - yfin) ** 2).mean().item()
-            placar.append((e, regra, th))
-        placar.sort(key=lambda z: z[0])
-        # ponteiro: argmin/argmax de g(x_u, w) concordando com a rede
-        lg, _, _ = net(W, A, S, 32)
-        pr = lg.argmax(-1)
-        melhor_p = None
-        for sel, f in itertools.product(("argmin", "argmax"), ("lin", "minf", "maxf")):
-            for a, b in ((1.0, 1.0), (1.0, 0.0), (0.0, 1.0)):
-                g = termo(f, (a, b, 0.0), yfin.unsqueeze(1).expand_as(W), W)
-                g = g.masked_fill(A == 0, INF if sel == "argmin" else -INF)
-                p = g.argmin(-1) if sel == "argmin" else g.argmax(-1)
-                conc = (p == pr).float().mean().item()
-                if melhor_p is None or conc > melhor_p[0]:
-                    melhor_p = (conc, sel, f, (a, b))
-    x0val = float(xs[0][S == 0].mean())
-    xs_fonte = float(xs[0][S > 0].mean())
-    return placar, melhor_p, x0val, xs_fonte
+        cands.append((regra, [snap(float(v)) for v in th.detach()]))
+    return cands
 
 
-def reconhece(fam, regra, th, ptr):
-    """Reconhecimento automatico da relaxacao do semianel da familia (coeficientes exatos)."""
+def escolher_ptr(valores, A0, W, S, bom):
+    """bom(p) -> fracao de acerto do ponteiro p (contra a rede ou contra os pais validos).
+    Como no programa: a fonte aponta para si; os demais escolhem entre os vizinhos."""
+    melhor = None
+    eu = torch.arange(W.shape[1]).expand_as(S)
+    for sel, f, (a, b) in PONTEIROS:
+        g = termo(f, (a, b, 0.0), valores.unsqueeze(1).expand_as(W), W)
+        g = g.masked_fill(A0 == 0, INF if sel == "argmin" else -INF)
+        p = g.argmin(-1) if sel == "argmin" else g.argmax(-1)
+        p = torch.where(S > 0, eu, p)
+        c = round(bom(p), 6)
+        if melhor is None or c > melhor[0]:
+            melhor = (c, sel, f, (a, b))
+    return melhor
+
+
+def reconhece(fam, prog, ptr):
+    """Reconhecimento automatico da relaxacao do semianel da familia, com inicio que a torna correta para todo grafo:
+    SP (min,+): x_s = 0, demais = +inf;  WP (max,min): x_s = 1, demais = 0 ou -inf (pesos em (0,1))."""
+    r, th, ini, fonte = prog["regra"], prog["th"], prog["ini"], prog["fonte"]
     if fam == "SP":
-        ok_r = regra == ("min", "lin", True) and th == [1.0, 1.0, 0.0]
-        ok_p = ptr[1:] == ("argmin", "lin", (1.0, 1.0))
+        ok_r = tuple(r[:2]) == ("min", "lin") and th == [1.0, 1.0, 0.0] and fonte == 0.0 and ini == BIG
+        ok_p = tuple(ptr[1:3]) == ("argmin", "lin") and tuple(ptr[3]) == (1.0, 1.0)
     else:
-        ok_r = regra == ("max", "minf", True) and th == [1.0, 1.0, 0.0]
-        ok_p = ptr[1:] == ("argmax", "minf", (1.0, 1.0))
+        ok_r = tuple(r[:2]) == ("max", "minf") and th == [1.0, 1.0, 0.0] and fonte == 1.0 and ini in (0.0, -BIG)
+        # argmax min(x_u, w) ou argmax w: a aresta mais pesada de v sempre leva a um pai valido
+        # (c_v <= w_max e c_u* >= min(c_v, w_max) = c_v); e o atalho da arvore geradora maxima
+        ok_p = (tuple(ptr[1:3]) == ("argmax", "minf") and tuple(ptr[3]) == (1.0, 1.0)) or \
+            (ptr[1] == "argmax" and ptr[2] in ("lin", "maxf") and tuple(ptr[3]) == (0.0, 1.0))
     return ok_r, ok_p
 
 
-def programa(regra, th, ptr, x0val, xfonte, adj, s):
+def programa(prog, ptr, adj, s):
     """Executa o programa extraido em Python puro (sem a rede) ate o ponto fixo."""
     n = len(adj)
-    o, f, k = regra
-    x = [x0val] * n
-    x[s] = xfonte  # valor da fonte decodificado da rede e arredondado (Occam), nao dado pela familia
-    a, b, c = th
+    o, f, k = prog["regra"]
+    a, b, c = prog["th"]
+    x = [prog["ini"]] * n
+    x[s] = prog["fonte"]
 
-    def t(xu, w):
+    def t(xu, w, a=a, b=b, c=c, f=f):
         return a * xu + b * w + c if f == "lin" else (min(a * xu, b * w) + c if f == "minf" else max(a * xu, b * w) + c)
     for _ in range(4 * n):
         nx = list(x)
@@ -285,7 +303,9 @@ def programa(regra, th, ptr, x0val, xfonte, adj, s):
                 continue
             ts = [t(x[u], w) for u, w in adj[v]]
             r = min(ts) if o == "min" else (max(ts) if o == "max" else sum(ts) / len(ts))
-            nx[v] = (min(r, x[v]) if o == "min" else max(r, x[v]) if o == "max" else (r + x[v]) / 2) if k else r
+            if k:
+                r = min(r, x[v]) if o == "min" else (max(r, x[v]) if o == "max" else (r + x[v]) / 2)
+            nx[v] = r
         if max(abs(p - q) for p, q in zip(nx, x)) < 1e-12:
             break
         x = nx
@@ -294,91 +314,125 @@ def programa(regra, th, ptr, x0val, xfonte, adj, s):
     for v in range(n):
         if v == s or not adj[v]:
             continue
-        sc = [(t2 if True else 0, u) for u, t2 in ((u, (pa * x[u] + pb * w) if fp == "lin" else
-                                                     (min(pa * x[u], pb * w) if fp == "minf" else max(pa * x[u], pb * w)))
-                                                    for u, w in adj[v])]
-        pi[v] = (min(sc) if sel == "argmin" else max(sc, key=lambda z: (z[0], -z[1])))[1]
+        sc = [(t(x[u], w, pa, pb, 0.0, fp), u) for u, w in adj[v]]
+        pi[v] = min(sc)[1] if sel == "argmin" else max(sc, key=lambda z: (z[0], -z[1]))[1]
     return x, pi
 
 
+METODOS = ("mecanistica", "comportamental", "sintese")
+
+
 def uma(arg):
-    seed, sem_teste = arg
+    seed, fam, sem_teste = arg
     torch.set_num_threads(1)
     t0 = time.time()
-    r = {"seed": seed}
-    for fam in FAMILIAS:
-        net = treinar(fam, seed * 10 + FAMILIAS.index(fam))
-        trng = random.Random(sem_teste * 10 + FAMILIAS.index(fam))
-        with torch.no_grad():
-            for n in NS_REDE:
-                W, A, S, Y, V, _ = lote(fam, N_TESTE, n, trng)
-                lg, y, _ = net(W, A, S, n)
-                r[f"{fam}|rede|{n}|ptr"] = acuracia_ptr(lg.argmax(-1), V)
-                r[f"{fam}|rede|{n}|erro_val"] = (y - Y).abs().mean().item()
-        placar, ptr, x0val, xf = extrair(net, fam, random.Random(sem_teste * 10 + 5 + FAMILIAS.index(fam)))
-        e, regra, th = placar[0]
-        ok_r, ok_p = reconhece(fam, regra, th, ptr)
-        r[f"{fam}|regra"] = [list(regra), th, e]
-        r[f"{fam}|segunda"] = [list(placar[1][1]), placar[1][2], placar[1][0]]
-        r[f"{fam}|ptr_extraido"] = [ptr[0], ptr[1], ptr[2], list(ptr[3])]
-        r[f"{fam}|reconhece_regra"] = ok_r
-        r[f"{fam}|reconhece_ptr"] = ok_p
-        r[f"{fam}|inicio"] = [x0val, xf]
+    r = {"seed": seed, "fam": fam}
+    net = treinar(fam, seed * 10 + FAMILIAS.index(fam))
+    trng = random.Random(sem_teste * 10 + FAMILIAS.index(fam))
+    with torch.no_grad():
+        for n in NS_REDE:
+            W, A, S, Y, V, _ = lote(fam, N_TESTE, n, trng)
+            lg, y, _ = net(W, A, S, n)
+            r[f"rede|{n}|ptr"] = acuracia_ptr(lg.argmax(-1), V)
+            r[f"rede|{n}|erro_val"] = (y - Y).abs().mean().item()
+    xrng = random.Random(sem_teste * 10 + 5 + FAMILIAS.index(fam))
+    cands = ajusta_transicoes(net, fam, xrng)
+    W, A, S, Y, V, _ = lote(fam, 8, 32, xrng)  # lote de escolha (n = 32, fora do treino)
+    A0 = A - torch.eye(32)
+    with torch.no_grad():
+        lg, yfin, _ = net(W, A, S, 32)
+    pr = lg.argmax(-1)
+    fonte_rede = snap(float(yfin[S > 0].mean()))
+    todos = [(rg, list(g)) for rg in REGRAS for g in GRADE]
+    progs = {
+        "mecanistica": escolher(cands, fonte_rede, S, W, A0, yfin, 64),
+        "comportamental": escolher(todos, fonte_rede, S, W, A0, yfin, 64),
+        "sintese": escolher(todos, snap(float(Y[S > 0].mean())), S, W, A0, Y, 64),  # sem rede: verdade direta
+    }
+    ptr_rede = escolher_ptr(yfin, A0, W, S, lambda p: (p == pr).float().mean().item())
+    ptr_sint = escolher_ptr(Y, A0, W, S, lambda p: acuracia_ptr(p, V))
+    # diagnostico: erro do programa do semianel contra a saida da rede (fidelidade rede -> algoritmo)
+    certo = ({"regra": ("min", "lin", True), "th": [1.0, 1.0, 0.0], "ini": BIG, "fonte": 0.0} if fam == "SP" else
+             {"regra": ("max", "minf", True), "th": [1.0, 1.0, 0.0], "ini": 0.0, "fonte": 1.0})
+    r["erro_semianel_vs_rede"] = erro_prog(certo["regra"], certo["th"], certo["fonte"], certo["ini"], S, W, A0, yfin, 64)
+    for m in METODOS:
+        ptr = ptr_sint if m == "sintese" else ptr_rede
+        ok_r, ok_p = reconhece(fam, progs[m], ptr)
+        pg = progs[m]
+        r[f"{m}|prog"] = [list(pg["regra"]), pg["th"], pg["ini"], pg["fonte"], pg["erro"]]
+        r[f"{m}|ptr"] = [ptr[0], ptr[1], ptr[2], list(ptr[3])]
+        r[f"{m}|reconhece"] = bool(ok_r and ok_p)
+        r[f"{m}|reconhece_regra"] = bool(ok_r)
+        prng = random.Random(sem_teste * 10 + 7 + FAMILIAS.index(fam))
         for n in NS_PROG:
             accs = []
             for _ in range(N_PROG):
-                adj = C.grafo_er(n, 0.5, trng, pesos=True)
-                s = trng.randrange(n)
-                y, val = verdade(fam, adj, s)
-                _, pi = programa(regra, th, ptr, x0val, round(xf * 2) / 2, adj, s)
+                adj = C.grafo_er(n, 0.5, prng, pesos=True)
+                s = prng.randrange(n)
+                _, val = verdade(fam, adj, s)
+                _, pi = programa(pg, ptr, adj, s)
                 accs.append(sum(pi[v] in val[v] for v in range(n)) / n)
-            r[f"{fam}|prog|{n}|ptr"] = sum(accs) / len(accs)
+            r[f"{m}|{n}|ptr"] = sum(accs) / len(accs)
     r["cpu_s"] = time.time() - t0
-    print(f"semente {seed} ok ({r['cpu_s']:.0f}s)", flush=True)
+    print(f"{fam} semente {seed} ok ({r['cpu_s']:.0f}s)", flush=True)
     return r
 
 
 def main():
     procs = next((int(a.split("=")[1]) for a in sys.argv if a.startswith("--procs=")), 4)
     teste = [1895, 1896] if QUICK else sementes.derivar(sementes.base_teste(__file__), len(SEMENTES))
+    jobs = [(sd, fam, st) for sd, st in zip(SEMENTES, teste) for fam in FAMILIAS]
     with Pool(procs) as pool:
-        res = pool.map(uma, list(zip(SEMENTES, teste)))
+        res = pool.map(uma, jobs)
     json.dump(res, open(os.path.join(AQUI, f"resultados{SUF}.json"), "w"), indent=1, sort_keys=True)
-
-    def col(c):
-        return [x[c] for x in res]
-    L = [f"# E018 - resultados {'(SMOKE, nao vale)' if QUICK else ''}", "",
-         f"{len(SEMENTES)} sementes; rede: {N_TESTE} grafos por n; programa: {N_PROG} grafos por n.", "",
-         "| família | quem | n | ponteiro IQM [IC95%] |", "|---|---|---|---|"]
-    for fam in FAMILIAS:
-        for n in NS_REDE:
-            a = col(f"{fam}|rede|{n}|ptr")
-            lo, hi = estat.bootstrap_ic(a, estat.iqm)
-            L.append(f"| {fam} | rede | {n} | {estat.iqm(a):.3f} [{lo:.3f},{hi:.3f}] |")
-        for n in NS_PROG:
-            a = col(f"{fam}|prog|{n}|ptr")
-            lo, hi = estat.bootstrap_ic(a, estat.iqm)
-            L.append(f"| {fam} | programa extraído | {n} | {estat.iqm(a):.3f} [{lo:.3f},{hi:.3f}] |")
-    L.append("")
-    for fam in FAMILIAS:
-        for x in res:
-            L.append(f"- {fam} semente {x['seed']}: regra {x[f'{fam}|regra']} | 2a {x[f'{fam}|segunda']} | "
-                     f"ponteiro {x[f'{fam}|ptr_extraido']} | reconhece regra {x[f'{fam}|reconhece_regra']} ptr {x[f'{fam}|reconhece_ptr']}")
-    L += ["", "## Checagem das previsões", ""]
     k = len(SEMENTES)
-    rec = {fam: sum(x[f"{fam}|reconhece_regra"] and x[f"{fam}|reconhece_ptr"] for x in res) for fam in FAMILIAS}
+    L = [f"# E018 - resultados {'(SMOKE, nao vale)' if QUICK else ''}", "",
+         f"{k} sementes por familia; rede: {N_TESTE} grafos por n; programa: {N_PROG} grafos por n.", "",
+         "| família | quem | n | ponteiro IQM [IC95%] |", "|---|---|---|---|"]
+
+    def linha(fam, quem, n, a):
+        lo, hi = estat.bootstrap_ic(a, estat.iqm)
+        L.append(f"| {fam} | {quem} | {n} | {estat.iqm(a):.3f} [{lo:.3f},{hi:.3f}] |")
+    rec = {}
     for fam in FAMILIAS:
-        L.append(f"- P1 {fam} {'OK' if rec[fam] >= 0.8 * k else 'FALHOU'}: regra e ponteiro reconhecidos como a relaxação do semianel em >= 80% das sementes: {rec[fam]}/{k}")
+        rf = [x for x in res if x["fam"] == fam]
+        for n in NS_REDE:
+            linha(fam, "rede", n, [x[f"rede|{n}|ptr"] for x in rf])
+        for m in METODOS:
+            for n in NS_PROG:
+                linha(fam, f"programa ({m})", n, [x[f"{m}|{n}|ptr"] for x in rf])
+            rec[fam, m] = sum(x[f"{m}|reconhece"] for x in rf)
+    L += ["", "| família | método | reconhecido (regra+ponteiro+início) | só a regra |", "|---|---|---|---|"]
     for fam in FAMILIAS:
-        prog = [x[f"{fam}|prog|256|ptr"] for x in res if x[f"{fam}|reconhece_regra"] and x[f"{fam}|reconhece_ptr"]]
-        ok = bool(prog) and min(prog) == 1.0
-        L.append(f"- P2 {fam} {'OK' if ok else 'FALHOU'}: programa reconhecido acerta 1,000 em n=256 em toda semente reconhecida: {prog}")
+        rf = [x for x in res if x["fam"] == fam]
+        for m in METODOS:
+            L.append(f"| {fam} | {m} | {rec[fam, m]}/{k} | {sum(x[f'{m}|reconhece_regra'] for x in rf)}/{k} |")
+    L.append("")
+    for x in res:
+        L.append(f"- {x['fam']} {x['seed']}: " + " | ".join(f"{m}: {x[f'{m}|prog']} ptr {x[f'{m}|ptr']}" for m in METODOS)
+                 + f" | erro do semianel contra a rede {x['erro_semianel_vs_rede']:.4f}")
+    L += ["", "## Checagem das previsões", ""]
+
+    def chk(nome, ok, txt):
+        L.append(f"- {nome} {'OK' if ok else 'FALHOU'}: {txt}")
     for fam in FAMILIAS:
-        a64 = estat.iqm(col(f"{fam}|rede|64|ptr"))
-        L.append(f"- P3 {fam} {'OK' if a64 < 0.99 else 'FALHOU'}: a própria rede fica < 0,99 em n=64 (o programa extraído supera a rede): {a64:.3f}")
-    sp_ok = estat.iqm(col("SP|rede|64|ptr"))
-    L.append(f"- P4 {'OK' if sp_ok >= 0.75 else 'FALHOU'}: rede SP em n=64 >= 0,75 (a rede genérica aprendeu algo extrapolável): {sp_ok:.3f}")
-    L.append(f"- CPU total: {sum(col('cpu_s')):.0f}s")
+        chk(f"P1 {fam}", rec[fam, "sintese"] >= 0.8 * k, f"síntese direta (sem rede) reconhecida em >= 80%: {rec[fam, 'sintese']}/{k}")
+    for fam in FAMILIAS:
+        chk(f"P2 {fam}", rec[fam, "comportamental"] >= 0.8 * k, f"extração comportamental da rede reconhecida em >= 80%: {rec[fam, 'comportamental']}/{k}")
+    for fam in FAMILIAS:
+        chk(f"P3 {fam}", rec[fam, "mecanistica"] >= 0.8 * k, f"extração mecanística da rede reconhecida em >= 80%: {rec[fam, 'mecanistica']}/{k}")
+    reconh = [x[f"{m}|256|ptr"] for x in res for m in METODOS if x[f"{m}|reconhece"]]
+    chk("P4", bool(reconh) and min(reconh) == 1.0, f"todo programa reconhecido acerta 1,000 em n=256: min {min(reconh) if reconh else '-'} ({len(reconh)} programas)")
+    for fam in FAMILIAS:
+        a64 = estat.iqm([x["rede|64|ptr"] for x in res if x["fam"] == fam])
+        chk(f"P5 {fam}", a64 < 0.99, f"a própria rede fica < 0,99 em n=64: {a64:.3f}")
+    rn = sum(rec[f, m] for f in FAMILIAS for m in ("comportamental", "mecanistica")) / 2
+    rs = sum(rec[f, "sintese"] for f in FAMILIAS)
+    p = estat.fisher_exato(rs, 2 * k, sum(rec[f, "comportamental"] for f in FAMILIAS), 2 * k)
+    chk("P6", rs > sum(rec[f, "comportamental"] for f in FAMILIAS),
+        f"a síntese direta reconhece mais que a melhor extração da rede (comportamental), somando as famílias: "
+        f"{rs}/{2 * k} contra {sum(rec[f, 'comportamental'] for f in FAMILIAS)}/{2 * k} (Fisher p = {p:.3f}); média rede {rn:.1f}")
+    L.append(f"- CPU total: {sum(x['cpu_s'] for x in res):.0f}s")
     txt = "\n".join(L)
     open(os.path.join(AQUI, f"resultados{SUF}.md"), "w").write(txt + "\n")
     print(txt)
