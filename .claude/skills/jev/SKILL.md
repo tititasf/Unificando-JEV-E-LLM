@@ -13,6 +13,6 @@ description: Usar o JEV (TypeSafe System One) como S1 externo do laboratorio —
 
 - **Três papéis permitidos** (docs/JEV.md): sistema sob teste (experimento pré-registrado), S1 na arquitetura S1+S2+S3 (H24/H12/H26), triagem do laboratório (só sugestão).
 - **Proibido (regra 12):** JEV como avaliador, juiz ou métrica. Métrica vem de verificador exato.
-- **Credencial:** nunca no repositório. Vem do ambiente de nuvem (variável `TYPESAFE_API_KEY`) ou de `~/.config/typesafe/env` (fora do git, só na sessão).
+- **Credencial:** nunca no repositório. Vem do ambiente de nuvem (variável `TYPESAFE` ou `TYPESAFE_API_KEY`) ou de `~/.config/typesafe/env` (fora do git, só na sessão).
 - **Reprodutibilidade:** chamadas ao JEV não são determinísticas nem gratuitas. Todo experimento com JEV guarda as respostas brutas em `respostas_jev.jsonl` e a análise roda sobre esse arquivo; o `lab.reproduzir` reprocessa as respostas gravadas. Fixe a versão do modelo (ex.: `jev-1.13`), não `jev-latest`.
 - **Custo:** registre tokens (`usage`) e número de chamadas no resultados.json.

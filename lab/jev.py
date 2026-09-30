@@ -19,6 +19,7 @@ import urllib.error
 import urllib.request
 
 CREDENCIAIS = ("TYPESAFE_API_KEY", "OPENROUTER_API_KEY")
+ALIASES = {"TYPESAFE": "TYPESAFE_API_KEY"}   # nome usado nas configuracoes do ambiente de nuvem
 ARQ_ENV = os.path.expanduser("~/.config/typesafe/env")
 
 
@@ -45,6 +46,9 @@ def _carregar_env_local():
 
 def credencial():
     _carregar_env_local()
+    for apelido, nome in ALIASES.items():
+        if os.environ.get(apelido):
+            os.environ.setdefault(nome, os.environ[apelido])
     for nome in CREDENCIAIS:
         if os.environ.get(nome):
             return nome
