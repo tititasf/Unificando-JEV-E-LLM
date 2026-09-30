@@ -66,7 +66,7 @@ Status dos átomos: ⬜ não testado · 🟨 em teste · 🟩 evidência N1+ · 
 | 5.1 Canal latente vs. simbólico | hormônios (analógico) × linguagem (discreto) | JSON/texto × embeddings | mesma tarefa, canal contínuo vs. cristalizado, com ruído | acc × σ × d | 🟩 E003 (N2): simbólico vence por até +0,81, ~200× menos dados |
 | 5.2 Ontologia emergente | linguagem nasce do uso | comunicação emergente | agentes inventam o vocabulário discreto do zero | acc, tamanho do vocabulário, composicionalidade | ⬜ |
 | 5.3 Transferência de habilidade | ensino | destilação, cópia de pesos | agente A passa o "passo" a B por mensagens | exemplos até B aprender | ⬜ |
-| 5.4 Compressão | sinais mínimos | quantização | menor nº de bits por passo que mantém acc | bits × acc | ⬜ |
+| 5.4 Compressão | sinais mínimos | quantização | menor nº de bits por passo que mantém acc | bits × acc | 🟩 E015 (N2): canal de energia → N−1 dims vence, N/2 empata (Rankin); canal que satura → N/4 dims com 0,1–12% do erro |
 
 ## S6 — Hipertempo (simular futuros, raciocinar do fim)
 

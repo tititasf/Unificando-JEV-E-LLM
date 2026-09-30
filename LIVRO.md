@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 14 |
-| nós na árvore | 26 (RASCUNHO 6, META 6, MELHORAR 4, DIAGNOSTICAR 6, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.21 |
-| taxa de promoção/replicação | 0.64 |
-| previsões avaliadas / acerto | 74 / 0.70 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.13 |
-| degrau atual por tema | S2 D07, S3 D04, S5 D04, S6 D01, S1 D01 |
-| ciclos sem subir degrau | S2 0, S3 5, S5 11, S6 3, S1 2 |
-| novidade dos achados | replicacao 1, — 2, baixa 7, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
+| ciclos | 15 |
+| nós na árvore | 27 (RASCUNHO 6, META 6, MELHORAR 5, DIAGNOSTICAR 6, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.20 |
+| taxa de promoção/replicação | 0.67 |
+| previsões avaliadas / acerto | 79 / 0.71 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.14 |
+| degrau atual por tema | S2 D07, S3 D04, S5 D05, S6 D01, S1 D01 |
+| ciclos sem subir degrau | S2 1, S3 6, S5 0, S6 4, S1 3 |
+| novidade dos achados | replicacao 1, — 2, baixa 7, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1 |
 | registros antigos corrigidos | 7 |
-| CPU médio por nó (s) | 429.19 |
+| CPU médio por nó (s) | 461.50 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -31,6 +31,7 @@
             ▲ E009 [MELHORAR, S3] S3 em dois tempos: metacognicao legivel em qualquer escala → PROMOVER N2
     ↻ E003 [RASCUNHO, S5] Cristal Comum: mensagem simbolica vs analogica → PIVOTAR N2
         · E003d [DIAGNOSTICAR, S5] Diagnostico: N fixo e bracos cruzados → INFORMATIVO N1
+        ▲ E015 [MELHORAR, S5] Codigo minimo corretor: curva bits x robustez → PROMOVER N2
     ✖ E005 [REPLICAR, S2] Motor S2 na tarefa T2 sem atrator → MATAR N2
         · E005d [DIAGNOSTICAR, S2] Diagnostico: margem aprendida e lei N*=e^margem → INFORMATIVO N1
             ↻ E006 [REPLICAR, S2] Lei N*: o vazamento de um passo preve a dissolucao? → PIVOTAR N2 (negativo)
@@ -334,3 +335,15 @@
 - **Semeou:** H-sup-limiar, H-mist-treino, H-mist-JEV
 - **Arquivos:** [prereg](experimentos/E014_superposicao/PREREG.md) · [relatorio](experimentos/E014_superposicao/RELATORIO.md)
 - **Commits:** pré-registro `2a3cb34` · resultado `—`
+
+### E015 — Codigo minimo corretor: curva bits x robustez (ciclo 15, 2026-09-30)
+- **Operador:** MELHORAR · **pai:** E003 · **tema:** S5 · **degrau-alvo:** S5:D05
+- **Hipótese:** Codigo aprendido pelo canal ruidoso: no canal de energia N-1 dims vence o one-hot, N/2 empata (Rankin), N/4 perde; no canal que satura N/4 dims erra <= metade.
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** nenhuma
+- **Métrica principal:** razao de erro vs one-hot = E: N-1 0.83-0.99, N/2 0.95-1.07, N/4 1.18-1.86; P: N/4 0.001-0.12
+- **Previsões:** P1 ✅ (p=0.45); P2 🟥 (p=0.65); P3 ✅ (p=0.85); P4 ✅ (p=0.9); P5 ✅ (p=0.6)
+- **Lição:** O codigo otimo depende do recurso escasso: energia -> espalhar; amplitude -> comprimir.
+- **Lição:** Sob energia fixa, abaixo de N/2 dimensoes nao se empata com o one-hot (Rankin).
+- **Semeou:** H-codigo-agentes, H-custo-canal
+- **Arquivos:** [prereg](experimentos/E015_codigo/PREREG.md) · [relatorio](experimentos/E015_codigo/RELATORIO.md)
+- **Commits:** pré-registro `370354e` · resultado `—`

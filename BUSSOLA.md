@@ -11,7 +11,7 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 |---|---|---|---|
 | **G1** Pensador de tamanho livre, com prova | █████░░░ 5/8 | H11, H19, H23 | N4 |
 | **G2** Saber exatamente quando nao sabe | ████░░░ 4/7 | H08, H12, H24 | N3 |
-| **G3** Uma lingua que nasce, ensina e pensa | ███░░░ 3/6 | H13, H14, H15 | N4 |
+| **G3** Uma lingua que nasce, ensina e pensa | ████░░ 4/6 | H14, H15 | N4 |
 | **G4** Descobrir regras de um mundo desconhecido | ███████░░░ 7/10 | H08, H17, H20 | N4 |
 | **G5** Pensar com o custo certo | ████░░░ 4/7 | H12, H18, H24 | N3 |
 | **G6** Auto-aperfeicoamento recursivo demonstrado | █░ 1/2 | H21 | N3 |
@@ -25,9 +25,9 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 | 1 | 🟨 **H24** S2 compila S1 sob a corte do S3 (amortizacao verificada) (S1+S2+S3) | 4.5 | 2 | G2, G5 | H-compilar |
 | 2 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
 | 3 | 🟨 **H23** Protocolo CLRS reimplementado com linha de base (LAB) | 3.0 | 2 | G1 | — |
-| 4 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
-| 5 | 🟨 **H17** Planejar a partir da meta (S6) | 2.5 | 1 | G4 | H-Sigma4 |
-| 6 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 4 | 🟨 **H17** Planejar a partir da meta (S6) | 2.5 | 1 | G4 | H-Sigma4 |
+| 5 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 6 | 🟨 **H14** Lingua emergente composicional (S5) | 1.7 | 1 | G3 | H-Sigma6 |
 | 7 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
 | 8 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
 
@@ -44,7 +44,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 12: **H26** JEV medido como S1 externo real
 - ciclo 13: **H05** Nitidez em qualquer escala
 - ciclo 14: **H10** Varias hipoteses vivas (busca latente)
-- taxa: 11 habilidades em 14 ciclos = 0.79 por ciclo
+- ciclo 15: **H13** Codigo minimo corretor
+- taxa: 12 habilidades em 15 ciclos = 0.80 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -76,9 +77,9 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: BFS e caminho minimo: >=95% em 10x o tamanho do treino, batendo a linha de base Deep Thinking com IC (≥ N2)
 - ⬜ **H12** Chutar e verificar · S1+S3 · S3 D09 · requer: H07 + H24  
   critério: S1 chuta, S3 verifica com invariante barato, S2 so quando falha: domina a fronteira de Pareto acc x custo do S2 sozinho (≥ N2)
-- 🟨 **H13** Codigo minimo corretor · S5 · S5 D05 · requer: H02  
+- 🟩 **H13** Codigo minimo corretor · S5 · S5 D05 · requer: H02 — por E015  
   critério: Codigo com menos bits por passo que o one-hot e >= robustez sob ruido; curva bits x acc medida (≥ N2)
-- ⬜ **H14** Lingua emergente composicional · S5 · S5 D11-D12 · requer: H13  
+- 🟨 **H14** Lingua emergente composicional · S5 · S5 D11-D12 · requer: H13  
   critério: Agentes inventam do zero um codigo discreto que generaliza a combinacoes nunca vistas (>=90% zero-shot) (≥ N2)
 - ⬜ **H15** Ensinar um passo por mensagens · S5+S2 · S5 D16 / S2 D21 · requer: H14 + H06  
   critério: Agente A transmite seu passo latente a B so por mensagens discretas; B atinge >=95% com 10x menos exemplos que aprendendo sozinho (≥ N2)
@@ -138,8 +139,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   ◐ H24 S2 compila S1 sob a corte do S3 (amortizacao verificada) (↑ já mostrado)
   ✔ H26 JEV medido como S1 externo real
 ✔ H02 Mensagem simbolica robusta
-  ◐ H13 Codigo minimo corretor
-    · H14 Lingua emergente composicional
+  ✔ H13 Codigo minimo corretor
+    ◐ H14 Lingua emergente composicional
       · H15 Ensinar um passo por mensagens (↑ já mostrado)
   ◐ H25 Coexistencia: regra cooperativa emergente (S4)
 ✔ H03 Laboratorio com regua, laco e arvore

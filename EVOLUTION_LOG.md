@@ -862,3 +862,70 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **nível**: nenhuma possibilidade se ergue apagando as outras.
   - *Desbaste:* a crença de que afiar preserva alternativas.
   - *Polimento:* a crença conservada, passo a passo.
+
+## Ciclo 15 — Tema: S5 · comunicação entre agentes (código mínimo)
+
+### 1. Diagnóstico
+- **Degrau atual: D05** (subiu de D04, parado desde o ciclo 3). E015 (N2, reprodução IDÊNTICA): a curva bits × robustez medida com códigos aprendidos. No canal de energia (o do E003), o aprendido com N−1 dimensões supera o one-hot (razão 0,83–0,99); com N/2 empata; abaixo de N/2 perde (limite de Rankin). No canal que satura, N/4 dimensões erram 0,1–12% do one-hot. H13 desbloqueada.
+- O que funciona: o código ótimo depende do recurso escasso (energia × amplitude); o aprendizado acha o código certo para cada canal.
+- Barreira para D06: a mensagem ainda é um símbolo só; não carrega a confiança do emissor.
+
+### 2. Escada (D10 esclarecido; demais inalterados)
+- D01: agentes isolados, sem comunicação.
+- D02: compartilhar o estado bruto inteiro, sem ruído.
+- D03: canal analógico com ruído (E003, CONT).
+- D04: mensagem simbólica discreta com potência concentrada (E003, SIMB).
+- D05: código mínimo: bits por passo × robustez; curva medida e limite de Rankin (E015). ← **ESTAMOS AQUI**
+- D06: a mensagem carrega confiança (Protocolo Σ) e o receptor pondera. ← **PRÓXIMO ALVO do tema**
+- D07: o emissor escolhe entre cristal e distribuição conforme a própria dúvida.
+- D08: mais de 2 agentes, com roteamento de quem fala com quem.
+- D09: canal com perdas e atrasos, com reenvio.
+- D10: código aprendido **pela tarefa entre agentes** (não por um objetivo de decodificação), otimizado para o canal (o E015 aprendeu o código com objetivo explícito de decodificar).
+- D11: vocabulário que emerge do zero (Σ6).
+- D12: vocabulário composicional (símbolos combináveis, gramática mínima).
+- D13: metacomunicação ("não sei", "preciso de X").
+- D14: pergunta ativa: pedir exatamente o dado que falta.
+- D15: consenso robusto com agentes defeituosos (bizantinos).
+- D16: ensinar uma habilidade (um passo) por mensagens.
+- D17: compressão perto do limite de Shannon da tarefa.
+- D18: tradução entre agentes com ontologias diferentes.
+- D19: ontologia compartilhada que evolui sem quebrar a compatibilidade.
+- D20: modelo do receptor (teoria da mente mínima): mandar o que *ele* precisa.
+- D21: mensagens sobre futuros simulados (ponte com S6).
+- D22: negociação de recursos pelo protocolo (ponte com S0/S4).
+- D23: humano e máquina no mesmo protocolo tipado.
+- D24: mensagens com provas curtas verificáveis.
+- D25: 100+ agentes com coordenação emergente estável.
+- D26: a língua melhora o pensamento interno de quem fala.
+- D27: protocolo autodescritivo: um agente novo aprende a língua só pelo uso.
+- D28: custo de comunicação ≈ informação nova (zero redundância).
+- D29: fusão temporária: agentes pensam como um só quando útil e se separam depois.
+- D30: ômega. Comunicação sem perda nem atrito: cada agente sabe exatamente o que o outro precisa saber e transmite só isso, na forma que o outro já entende; a fronteira entre pensar junto e pensar sozinho desaparece.
+
+### 3. Transição D05 → D06
+1. Sacada: um símbolo espalhado (one-hot/simplex) é o código de energia mínima; a confiança pode ir na **amplitude** da mesma mensagem, sem dimensão extra.
+2. Subtrair: a suposição de que comprimir sempre ajuda: sob custo de energia, espalhar é ótimo.
+3. Testar: o emissor manda o índice com potência ∝ confiança (ou a distribuição inteira, forma de mistura do E014); o receptor pondera. Medir contra o SIMB do E003 em ruído alto.
+
+### 4. Visão vertical (o ciclo 15 lido em 10 níveis)
+- Nível 1: senso comum: falar alto e claro gasta energia; falar comprimido exige ouvidos finos.
+- Nível 2: instrumental: escolha o código pelo recurso que falta: energia → espalhado; canal saturável → denso.
+- Nível 3: arquitetural: o canal define a língua ótima, não o contrário.
+- Nível 4: computacional: N pontos numa esfera de L < N/2 dimensões não ficam todos ortogonais; cada dimensão cortada custa distância.
+- Nível 5: teoria da decisão: o erro de decodificação é o preço, e o custo do canal é o orçamento.
+- Nível 6: econômico: economizar dimensões sob energia fixa não compensa; sob amplitude fixa compensa muito.
+- Nível 7: composicional: a mesma geometria (softmax sobre produtos internos) decodifica mensagens e recupera memórias (S2, Hopfield).
+- Nível 8: ontológico: um símbolo é uma direção num espaço; a língua é a arrumação dessas direções.
+- Nível 9: epistemológico: uma meta de "menos bits" sem dizer o custo é mal posta; o experimento a tornou bem posta.
+- Nível 10: ser superior completo: uma comunicação que conhece o próprio custo e escolhe a forma de dizer que o minimiza.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Oikonomia*: a administração do que é escasso.
+- **Metanoia:** a boa língua não é a mais curta; é a que gasta o recurso mais barato.
+- **Aplicação:** todo canal entre sistemas do laboratório declara o custo (energia ou amplitude) antes de escolher o código.
+- **Hack:** meça a razão de erro contra o one-hot em L = N/2: empate = canal de energia; vitória grande = canal saturável.
+- **Visão maçônica:**
+  - *Planta baixa:* cada sinal no seu ângulo, com as distâncias medidas.
+  - *Ferramenta:* o **esquadro**: 90° entre sinais é o limite do espaço.
+  - *Desbaste:* a crença de que comprimir é sempre melhor.
+  - *Polimento:* o código certo para o custo certo.

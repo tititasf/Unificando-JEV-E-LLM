@@ -1,15 +1,15 @@
 # ESTADO — onde estamos
 
-Atualizado no fim de cada ciclo. Última atualização: ciclo 14 (2026-09-30).
+Atualizado no fim de cada ciclo. Última atualização: ciclo 15 (2026-09-30).
 
-> Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H24 → H08 → H23/H13 → H21).
+> Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H24 → H08 → H23 → H14/H17 → H21).
 
 ## Fase atual
 
 **Fase 1 — Micro (T1–T2): portão formalmente atingido no ciclo 5** (passo latente iterado com N2 em T1 e T2). Ressalva: mecanismo **conhecido** (replicação).
 Antes da Fase 2 (T3, algoritmos contra Deep Thinking): ~~fechar a lei de nitidez (H04)~~ ✅ ciclo 7; ~~validar as linhas de base publicadas (H22)~~ ✅ ciclo 8; protocolo CLRS reimplementado (H23, depende de H06).
 Infra disponível: T2 sem atrator (`experimentos/E005_t2_salto/tarefa_t2.py`), passo O(N) (`experimentos/E006_lei_margem/passo_rapido.py`), linhas de base (`lab/baselines.py`), tarefas CLRS (`lab/tarefas_clrs.py`), sementes derivadas do commit (`lab/sementes.py`), controle de qualidade (`lab/checar.py`).
-Calibração do pesquisador: ver `LIVRO.md` (Brier do último ciclo: 0,13).
+Calibração do pesquisador: ver `LIVRO.md` (Brier do último ciclo: 0,18).
 JEV (S1 externo real): **conectado e medido** (E012, 3.298 chamadas, `jev-1.13.0`); wrapper `lab/jev.py`, skill `/jev`, credencial persistente no ambiente. Ver `docs/JEV.md`.
 
 ## Placar de achados
@@ -34,12 +34,13 @@ JEV (S1 externo real): **conectado e medido** (E012, 3.298 chamadas, `jev-1.13.0
 | A17 | **JEV = S1 de um salto; S2∘S1 segue q^k; o JEV sabe quando não sabe:** uma passada acerta um salto (0,90→0,63 de N=8 a 64) e fica no acaso com k≥2; iterado um salto por chamada, acc(k) ≈ q^k (8/9 células); T1 com parada por ponto fixo 0,55 vs 0,06; p(escolha) 0,65 nos acertos vs 0,22 nos erros, **0/516 erros com p ≥ 0,9** | **N2** (respostas gravadas, reprodução idêntica) | baixa | E012 |
 | A18 | **Temperatura derivada da lei (nitidez em qualquer escala):** β(N) = 1 + ln((N−1)/11)/m, com a margem m medida sem rótulos, leva T1 e T2 de 17% e 0% (β=1) a **100% em N=4096** (341× o treino), 10/10 sementes; em T2 mantém o vazamento do treino (razão 0,91). **Ressalva (atalho):** qualquer afiação (β=3, Scalable-Softmax, argmax) também acerta; a TEORIA é a afiação mínima e prevista. Em T1 a razão fica ≈0,5 (o vazamento para o próprio nó também some) | **N2** (reproduzido limpo) | baixa (forma do Scalable-Softmax, coeficiente derivado) | E013 |
 | A19 | **Várias hipóteses vivas = forma do passo, não temperatura:** a mesma tabela treinada em uma hipótese, como **mistura** de softmaxes, recupera o conjunto em superposição (F ≤ 8, k ≤ 64) e BFS, 100% até N=4096, massa (1 − ε)^k em 120/120; a forma **global** falha em qualquer β (dissolve ou o vencedor leva tudo; 0/240 em SUP) | **N2** (reproduzido limpo) | baixa | E014 |
+| A20 | **Código mínimo = função do custo do canal:** com energia fixa por mensagem (canal do E003), o código aprendido com N−1 dimensões supera o one-hot (0,83–0,99), com N/2 empata (limite de Rankin) e abaixo perde; com amplitude fixa por canal, N/4 dimensões erram 0,1–12% do one-hot. O aprendido vence o sorteado (24/24) e o binário à mão | **N2** (reproduzido limpo) | nenhuma (replicação da teoria clássica) | E015 |
 | A12 | **O S2 é uma memória associativa tipo Hopfield:** teoria de campo médio (bifurcação sela-nó, m·a(1−a)=1) prevê N_c por modelo com ~9% de erro, sem parâmetros ajustados | N1 (pós-hoc, 30 sementes) | baixa (condição de separação de Hopfield moderno) | E007d |
 
 ## Fila de hipóteses (topo = próximo)
 
-Alvos N+1 atuais (EVOLUTION_LOG): S1 → D02 (H-JEV-seletivo, pendente de sinal novo) · S2 → D08 (H-pilha) · S3 → D05 (H-S3-fronteira) · S5 → D05 (H-5.4) · S6 → D02 (H-mundo-cru).
-Política: H05 fechada no ciclo 13 (E013). A bússola põe H24 e H08 no topo. S5 está parado há 10 ciclos: diversidade é devida (H-5.4) assim que H24/H08 derem um passo.
+Alvos N+1 atuais (EVOLUTION_LOG): S1 → D02 (H-JEV-seletivo, pendente de sinal novo) · S2 → D08 (H-pilha) · S3 → D05 (H-S3-fronteira) · S5 → D06 (mensagem com confiança) · S6 → D02 (H-mundo-cru).
+Política: H05 (c13), H10 (c14) e H13 (c15) fechadas. A bússola põe H24 e H08 no topo; ambas precisam de família nova (certificados, H23) ou de sinal novo (H-sup-limiar). S6 e S3 são os próximos candidatos de diversidade.
 
 | Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
@@ -55,7 +56,9 @@ Política: H05 fechada no ciclo 13 (E013). A bússola põe H24 e H08 no topo. S5
 | 5 | H-S3-T2 | O S3 em dois tempos transfere para T2 sem ajuste | E009 · REPLICAR | S3 D14 | baixo |
 | 6 | H-custo-ponder | PonderNet ajustada alcança o custo do CONV? | E008 · MELHORAR | G5 | baixo |
 | 7 | H-campo-médio-T2 | A teoria de campo médio prevê o N_c em T2 | E007d · REPLICAR | — | baixo |
-| 8 | H-5.4 (→ H13) | Código mínimo: bits por passo × robustez | E003 · MELHORAR | S5 D05 | médio |
+| 8 | ~~H-5.4~~ (→ H13) | **Feito no E015** (N2): curva bits × robustez medida | — | — | — |
+| 8b | **H-código-agentes** (→ H14) | O código emerge entre dois agentes treinados só pela tarefa (E003) e chega à curva do E015? | E015 · MELHORAR | S5 D10 | médio |
+| 8c | H-custo-canal | O S0 fixa o recurso escasso e o código aprendido muda de forma (espalhado × denso) | E015 · MELHORAR | S5/S0 | baixo |
 | 9 | H-latente-livre | Latente vetorial livre (bloqueado pelo teto do Python) | E005 · RASCUNHO | S2 D09 | alto |
 | 10 | H-pilha | Dois registros/pilha: siga π k vezes e depois σ j vezes | E010 · MELHORAR | S2 D07 | médio |
 | 11 | H-JEV-autoponteiro | `Noul` "x aponta para si?" separado corrige os 58 falsos/omitidos pontos fixos do ITER_PF | E012 · MELHORAR | S1 D07 | baixo |
@@ -66,4 +69,4 @@ Diversidade: S6 recebeu o primeiro nó no ciclo 11 (E011). Ainda sem nós: **S0,
 
 ## Átomos por status
 
-Ver `docs/SISTEMAS.md`. Resumo: 🟩 7 · 🟨 1 · 🟥 2 · ⬜ 19 (29 átomos).
+Ver `docs/SISTEMAS.md`. Resumo: 🟩 8 · 🟨 1 · 🟥 2 · ⬜ 18 (29 átomos).

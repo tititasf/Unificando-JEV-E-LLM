@@ -116,3 +116,13 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - 🟥 P7: com β = 3 em N = 4096, F = 8, o global se dissolve em vez de o vencedor levar tudo (a margem por hipótese ainda não vence ln N). Reforça a biestabilidade.
 - Meta: Brier 0,13.
 - Semeado: H-sup-limiar, H-mist-JEV, H-mist-treino.
+
+## Ciclo 15 — 2026-09-30 — E015 código mínimo corretor (pré-registrado)
+- Escolha pela regra de diversidade: S5 parado desde o ciclo 3; H13 era a habilidade dele na fronteira.
+- Hipótese: um código aprendido através do canal ruidoso usa menos dimensões que o one-hot com robustez igual ou maior; no canal de energia só até o limite de Rankin (N/2 empata, N−1 vence); no canal que satura, com folga.
+- Veredito: **PROMOVER** (N2, reprodução IDÊNTICA). 4/5. Canal E: N−1 dimensões → razão 0,83–0,99; N/2 → 0,95–1,07; N/4 → 1,18–1,86. Canal P: N/4 → 0,001–0,12. Aprendido > sorteado em 24/24; > binário à mão. **H13 desbloqueada; S5 → D05.**
+- 🟥 P2 por pouco: uma célula de N/4 perdeu por 1,18 (limiar 1,2).
+- Surpresa: nenhuma de mecanismo (é a teoria clássica); a lição é de formulação: "menos bits por passo" só tem resposta depois de dizer qual recurso é escasso.
+- Processo: o smoke pegou um sinal trocado no gradiente e dimensões duplicadas antes do pré-registro; o PREREG tem um número de poder errado (3458 em vez de 3679), anotado no relatório.
+- Meta: Brier 0,18.
+- Semeado: H-código-agentes, H-custo-canal.
