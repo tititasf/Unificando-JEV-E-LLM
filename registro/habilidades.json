@@ -402,7 +402,7 @@
    "nome": "JEV medido como S1 externo real",
    "sistema": "S1(JEV)+S2",
    "escada": "S1 1.x",
-   "criterio": "JEV respondendo T1 (raiz) e T2 (k saltos) codificadas como Choice, com respostas brutas gravadas, em >= 3 tamanhos e >= 10 sementes: curva acerto x tamanho, ECE e erros confiantes medidos por verificador exato, comparados ao S2 iterado e ao S1-MLP interno",
+   "criterio": "JEV respondendo T1 (raiz) e T2 (k saltos) como Choice, respostas brutas gravadas e reprocessaveis, em >= 3 tamanhos e >= 10 sementes: curva acerto x tamanho x profundidade, ECE e erros confiantes por verificador exato, contra acaso, atalho de um salto e o JEV iterado por um controlador S2 (referencia interna do S2 aprendido: A10/E005)",
    "nivel_minimo": 1,
    "prereqs": [
     "H01"
@@ -411,7 +411,8 @@
    "custo": 1,
    "hipoteses": [
     "E-JEV"
-   ]
+   ],
+   "criterio_antigo": "JEV respondendo T1 (raiz) e T2 (k saltos) codificadas como Choice, com respostas brutas gravadas, em >= 3 tamanhos e >= 10 sementes: curva acerto x tamanho, ECE e erros confiantes medidos por verificador exato, comparados ao S2 iterado e ao S1-MLP interno"
   }
  ],
  "goals": [

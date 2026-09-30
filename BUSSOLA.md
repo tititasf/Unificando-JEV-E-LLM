@@ -98,7 +98,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) · S4+S5 · S4 4.4 · requer: H02  
   critério: N agentes com recurso comum limitado e mensagens simbolicas convergem para uma regra de uso que atinge >= 90% do bem-estar social otimo, contra agentes egoistas (tragedia dos comuns), sem controle central (≥ N2)
 - 🟨 **H26** JEV medido como S1 externo real · S1(JEV)+S2 · S1 1.x · requer: H01  
-  critério: JEV respondendo T1 (raiz) e T2 (k saltos) codificadas como Choice, com respostas brutas gravadas, em >= 3 tamanhos e >= 10 sementes: curva acerto x tamanho, ECE e erros confiantes medidos por verificador exato, comparados ao S2 iterado e ao S1-MLP interno (≥ N1)
+  critério: JEV respondendo T1 (raiz) e T2 (k saltos) como Choice, respostas brutas gravadas e reprocessaveis, em >= 3 tamanhos e >= 10 sementes: curva acerto x tamanho x profundidade, ECE e erros confiantes por verificador exato, contra acaso, atalho de um salto e o JEV iterado por um controlador S2 (referencia interna do S2 aprendido: A10/E005) (≥ N1)
 
 ## Mapa de dependências
 

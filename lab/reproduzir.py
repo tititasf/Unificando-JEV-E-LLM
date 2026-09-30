@@ -6,7 +6,11 @@ Cria um worktree no commit do PREREG do experimento, roda o avaliador la
 (o codigo exatamente como pre-registrado) e compara o resultados.json com o
 da arvore de trabalho, ignorando campos de tempo.
 
-Uso: python3 -m lab.reproduzir experimentos/E010_memoria [--script=e010.py]
+Uso: python3 -m lab.reproduzir experimentos/E010_memoria [--script=e010.py] [--dados=respostas_jev.jsonl]
+
+--dados: arquivos da pasta do experimento copiados para o worktree antes de rodar
+(respostas brutas de sistemas externos nao deterministicos, como o JEV; o avaliador
+reprocessa essas respostas em vez de chamar o sistema de novo).
 """
 import glob
 import json
@@ -30,7 +34,7 @@ def _limpo(x):
     return x
 
 
-def reproduzir(pasta, script=None):
+def reproduzir(pasta, script=None, dados=()):
     pasta = os.path.normpath(pasta)
     rel = os.path.relpath(os.path.join(RAIZ, pasta), RAIZ) if not os.path.isabs(pasta) else os.path.relpath(pasta, RAIZ)
     commits = subprocess.run(["git", "log", "--format=%H", "--", os.path.join(rel, "PREREG.md")], cwd=RAIZ,
@@ -49,6 +53,8 @@ def reproduzir(pasta, script=None):
     wt = os.path.join(tmp, "wt")
     subprocess.run(["git", "worktree", "add", "-q", wt, commits[0]], cwd=RAIZ, check=True)
     try:
+        for d in dados:
+            shutil.copy(os.path.join(RAIZ, rel, d), os.path.join(wt, rel, d))
         subprocess.run([sys.executable, os.path.join(rel, script)], cwd=wt, check=True,
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         a = _limpo(json.load(open(os.path.join(wt, rel, "resultados.json"))))
@@ -64,7 +70,8 @@ def main(argv):
         print(__doc__)
         sys.exit(2)
     script = next((a.split("=", 1)[1] for a in argv if a.startswith("--script=")), None)
-    igual, c = reproduzir(argv[1], script)
+    dados = [x for a in argv if a.startswith("--dados=") for x in a.split("=", 1)[1].split(",")]
+    igual, c = reproduzir(argv[1], script, dados)
     print(f"reproducao a partir do commit do PREREG {c}: {'IDENTICA' if igual else 'DIFERENTE'}")
     sys.exit(0 if igual else 1)
 
