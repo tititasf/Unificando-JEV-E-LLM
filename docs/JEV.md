@@ -1,11 +1,12 @@
 # JEV no laboratório: estado real e plano de integração
 
-## Estado real (ciclo 11)
+## Estado real (30/09/2026, após o ciclo 11)
 
-- **O JEV ainda não respondeu a nenhuma chamada deste laboratório.** Nenhum ciclo até agora usou o JEV.
-  - SDK oficial instalado: `typesafe-sdk` 0.7.2 (`TypeSafeClient.system_one(state, questions)`; API em `https://api.typesafe.ai`, modelo padrão `jev-latest`).
-  - Credencial: o usuário forneceu uma chave (ciclo 11). Ela **não** vai para o git; nesta sessão fica em `~/.config/typesafe/env`. Para durar entre sessões, deve ser cadastrada como variável `TYPESAFE_API_KEY` nas configurações do ambiente de nuvem.
-  - **Bloqueio atual:** a política de rede do ambiente nega `api.typesafe.ai` (proxy responde 403). Falta liberar esse domínio em *Network access*.
+- **Acesso confirmado:** a rede passou a liberar `api.typesafe.ai`; `python3 -m lab.jev` → JEV ACESSIVEL. Modelos listados: `jev-latest` e `jev-preview` (ambos de 10/09/2026).
+  - SDK oficial: `typesafe-sdk` 0.7.2 (`TypeSafeClient.system_one(state, questions)`).
+  - Credencial: nesta sessão vem de `~/.config/typesafe/env` (fora do git). A variável `TYPESAFE_API_KEY` **ainda não** está nas configurações do ambiente; sem ela, uma sessão nova perde o acesso.
+- **Primeira fumaça (não é resultado; 2 perguntas, sem pré-registro):** Noul "o nó 3 aponta para si?" com pai = {1:3, 2:3, 3:3} → 0,53 (resposta certa: sim); Choice "raiz a partir do nó 1" com pai = {1:2, 2:3, 3:3} → "2" (certa: "3"). Só mostra que o protocolo funciona; o desempenho se mede no E-JEV pré-registrado (H26).
+- Nenhum resultado dos ciclos 1–11 usou o JEV.
 - Wrapper: `lab/jev.py` (`estado`, `escolher`, `sim_nao`); skill: `.claude/skills/jev/SKILL.md`.
 - O "S1" dos experimentos (E001 em diante) é **um modelo nosso**, pequeno, de uma passada, *inspirado* no conceito de modelo de decisão tipada. Onde a documentação diz "estilo JEV", leia "inspirado no conceito do JEV".
 - O S2 do laboratório é o Claude (o pesquisador que orquestra os ciclos).
