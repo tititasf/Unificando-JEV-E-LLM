@@ -101,3 +101,10 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 ## Ciclo 13 — 2026-09-30 — M007 (piloto negativo) + E013 temperatura derivada da lei (H05)
 - Piloto M007 (N0), sobre os saltos gravados do E012 e 150 chamadas `Noul` novas: nenhum escore de confiança do JEV (p1, margem, razão, entropia, `confidence`) nem a verificação `Noul` sustenta um limiar calibrado em N=8: o risco por salto de 2% vira 11–25% em N=64. É a lacuna do E004 num S1 externo. H-JEV-seletivo não foi pré-registrada.
 - Então o ciclo foi para o topo da bússola: H05 (nitidez em qualquer escala).
+- E013 (pré-registrado, commit `2accfb8`). Hipótese: β(N) = 1 + ln((N−1)/11)/m, com m medido sem rótulos, mantém o vazamento de um passo igual ao do treino e o S2 nítido até N=4096, em T1 e T2.
+- Veredito: **PROMOVER** (N2, reprodução IDÊNTICA). 5/6 previsões. B1 em 4096: 0,17 (T1) e 0,00 (T2); TEORIA: 1,00 e 1,00, 0 colapsos. T2 mantém o vazamento (razão 0,91). **H05 desbloqueada.**
+- 🟥 P3: em T1 a razão ficou ≈ 0,5 (6/10 e 5/10 na janela). Diagnóstico pós-hoc: a parte do vazamento que depende de N fica constante; o que some é o vazamento para o próprio nó (competidor específico, que o β > 1 também suprime).
+- Atalho trivial (regra 7): β = 3, Scalable-Softmax e argmax também acertam, porque o argmax do motor estruturado não depende de N. A dissolução do S2 (A9, A11) é da normalização, não do passo. O valor da TEORIA é ser a afiação mínima e prevista; que isso importe é argumento até D07/H10.
+- Processo: no fechamento do ciclo 12 commitei com o checar dando 1 erro (a cadeia usava `| tail -1`); corrigido (c9b0d1d). Agora o commit é condicionado ao código de saída do checar.
+- Meta: Brier ≈ 0,05.
+- Semeado: H-temp-S3, H-temp-mínima-D07, H-temp-JEV.

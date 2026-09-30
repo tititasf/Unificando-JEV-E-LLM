@@ -9,7 +9,7 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 
 | goal | progresso | faltam | nível exigido |
 |---|---|---|---|
-| **G1** Pensador de tamanho livre, com prova | ████░░░░ 4/8 | H05, H11, H19, H23 | N4 |
+| **G1** Pensador de tamanho livre, com prova | █████░░░ 5/8 | H11, H19, H23 | N4 |
 | **G2** Saber exatamente quando nao sabe | ████░░░ 4/7 | H08, H12, H24 | N3 |
 | **G3** Uma lingua que nasce, ensina e pensa | ███░░░ 3/6 | H13, H14, H15 | N4 |
 | **G4** Descobrir regras de um mundo desconhecido | ██████░░░░ 6/10 | H08, H10, H17, H20 | N4 |
@@ -22,15 +22,14 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 
 | # | habilidade | prioridade | abre | goals | hipóteses na fila |
 |---|---|---|---|---|---|
-| 1 | 🟨 **H05** Nitidez em qualquer escala (S2) | 6.0 | 2 | G1 | H-temperatura-logN, H-precisao-treino |
-| 2 | 🟨 **H24** S2 compila S1 sob a corte do S3 (amortizacao verificada) (S1+S2+S3) | 4.5 | 2 | G2, G5 | H-compilar |
-| 3 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
-| 4 | 🟨 **H23** Protocolo CLRS reimplementado com linha de base (LAB) | 3.0 | 2 | G1 | — |
-| 5 | 🟨 **H10** Varias hipoteses vivas (busca latente) (S2) | 3.0 | 2 | G4 | — |
-| 6 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
-| 7 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
-| 8 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
-| 9 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
+| 1 | 🟨 **H24** S2 compila S1 sob a corte do S3 (amortizacao verificada) (S1+S2+S3) | 4.5 | 2 | G2, G5 | H-compilar |
+| 2 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
+| 3 | 🟨 **H23** Protocolo CLRS reimplementado com linha de base (LAB) | 3.0 | 2 | G1 | — |
+| 4 | 🟨 **H10** Varias hipoteses vivas (busca latente) (S2) | 3.0 | 2 | G4 | — |
+| 5 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
+| 6 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 7 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
+| 8 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
 
 ## Linha do tempo de desbloqueios (meta-métrica do G6)
 
@@ -43,7 +42,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 10: **H06** Memoria de trabalho latente
 - ciclo 11: **H16** Modelo de mundo com o mesmo passo
 - ciclo 12: **H26** JEV medido como S1 externo real
-- taxa: 9 habilidades em 13 ciclos = 0.69 por ciclo
+- ciclo 13: **H05** Nitidez em qualquer escala
+- taxa: 10 habilidades em 13 ciclos = 0.77 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -59,7 +59,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Geradores e resolvedores exatos (BFS, Bellman-Ford) testados; um motor aprendido e a linha de base Deep Thinking avaliados no protocolo n=16 -> n=64 com acuracia de ponteiros e IC (≥ N1)
 - 🟩 **H04** Lei de nitidez validada · S2 · fronteira S2 D04 · requer: H01 — por E007  
   critério: Limiar de vazamento eps_c congelado preve N_c de >=30 sementes novas dentro de 1,5x, e o papel de d (por passo x acumulado) decidido (≥ N2)
-- 🟨 **H05** Nitidez em qualquer escala · S2 · S2 D05+ · requer: H04  
+- 🟩 **H05** Nitidez em qualquer escala · S2 · S2 D05+ · requer: H04 — por E013  
   critério: Um mecanismo (temperatura adaptativa, treino de precisao ou cristal) mantem eps < eps_c ate N=4096 sem re-treino, em T1 e T2 (≥ N2)
 - 🟩 **H06** Memoria de trabalho latente · S2 · S2 D06 · requer: H01 — por E010  
   critério: O proprio estado carrega um contador/pilha: resolve T2 com k na entrada (sem controlador contando) e extrapola k 16x (≥ N2)
@@ -113,7 +113,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
     · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H18 Orcamento como sentido
   ✔ H04 Lei de nitidez validada
-    ◐ H05 Nitidez em qualquer escala
+    ✔ H05 Nitidez em qualquer escala
       · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
       · H19 Programa extraido e provado (↑ já mostrado)
     ✔ H07 Metacognicao legivel em qualquer escala

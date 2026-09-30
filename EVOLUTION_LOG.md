@@ -726,3 +726,71 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **maço e o cinzel**: golpes curtos, um por vez, cada um conferido.
   - *Desbaste:* a pergunta única e composta.
   - *Polimento:* a confiança por golpe decidindo quando conferir.
+
+## Ciclo 13 — Tema: S2 · motor latente iterativo (nitidez em qualquer escala)
+
+### 1. Diagnóstico
+- **Degrau atual: D06 (mantido).** E013 (N2, reprodução IDÊNTICA) fecha a pendência de D04: β(N) = 1 + ln((N−1)/11)/m, sem parâmetros livres, leva T1 e T2 a 100% em N = 4096 (B1: 17% e 0%). H05 desbloqueada.
+- O que funciona: a lei de nitidez agora também **prescreve** (quanto afiar), não só diagnostica. Em T2, o vazamento fica no nível do treino (razão 0,91).
+- Barreira para D07: a afiação mínima deveria preservar várias hipóteses vivas; isso ainda não foi testado (H10).
+
+### 2. Escada (ordem inalterada; D04 ganhou a temperatura prevista)
+- D01: resposta direta em uma passada.
+- D02: passos fixos desenrolados.
+- D03: um passo compartilhado, iterado um número fixo de vezes.
+- D04: ponto fixo por treino multi-instante; extrapola enquanto a margem vence ~log N (E007); com a temperatura prevista pela lei, em qualquer N testado (E013, até 4096).
+- D05: extrapolação sem atrator com precisão por 64 passos (E005).
+- D06: memória de trabalho: o próprio estado conta e para sozinho (E010). ← **ESTAMOS AQUI**
+- D07: várias hipóteses vivas quando a tarefa exige (superposição útil; o regime difusivo usado de propósito). ← **PRÓXIMO ALVO do tema** (H10)
+- D08: passos compostos (sub-rotinas; dois registros, H-pilha).
+- D09: latente vetorial livre e atributos aprendidos da entrada crua.
+- D10: mesmo motor e mesmo treino em duas famílias de tarefas.
+- D11: algoritmos clássicos com extrapolação ≥ 10× contra Deep Thinking.
+- D12: labirinto/Sudoku no nível do TRM com menos parâmetros.
+- D13: parada e abstenção integradas (S3).
+- D14: robusto a ruído interno.
+- D15: ritmo duplo rápido/lento acionado pelo S3.
+- D16: algoritmo novo com ≤ 100 exemplos.
+- D17: composição de algoritmos sem treino.
+- D18: programa discreto extraído do passo.
+- D19: prova formal do programa extraído.
+- D20: autocurrículo.
+- D21: transmite um passo a outro agente (S5).
+- D22: subconjunto do ARC-AGI com ≤ 1M parâmetros.
+- D23: aprendizado contínuo sem esquecimento.
+- D24: o passo como modelo de mundo (S6). (H16 começa isto)
+- D25: custo ≈ mínimo teórico.
+- D26: descobre algoritmos mais eficientes que os conhecidos.
+- D27: biblioteca aberta de passos (ontologia de operações).
+- D28: domínios contínuos e físicos.
+- D29: aprende, compõe, verifica e explica em tempo linear.
+- D30: ômega: cada passo latente é um passo lógico necessário e nenhum a mais; o motor é o algoritmo ótimo de cada tarefa, descoberto e provado.
+
+### 3. Transição
+1. Sacada: a dissolução era da normalização, não do passo; a lei que a previa também a corrige.
+2. Subtrair: a ideia de que escalar exige re-treino ou arquitetura nova.
+3. Próximo: D07 (várias hipóteses vivas; H10) usando a afiação mínima, contra argmax e SSMAX que a destroem.
+
+### 4. Visão vertical (o ciclo 13 lido em 10 níveis)
+- Nível 1: senso comum: um "botão de foco" calculado deixa a máquina pensar certo em problemas 341× maiores.
+- Nível 2: instrumental: um número (a margem) e uma fórmula bastam; nada a treinar.
+- Nível 3: arquitetural: a temperatura é função do tamanho do problema, não um hiperparâmetro.
+- Nível 4: computacional: o denominador do softmax cresce com N; β·m tem de crescer com ln N; o coeficiente é 1/m.
+- Nível 5: teoria da decisão: afiar o mínimo necessário preserva a informação de incerteza que o S3 usa.
+- Nível 6: econômico: zero custo de treino para escalar três ordens de grandeza.
+- Nível 7: composicional: a mesma lei liga S2 (passo), S3 (regime) e agora o controle de escala.
+- Nível 8: ontológico: nitidez não é propriedade do pensamento, é da razão entre sinal e multidão.
+- Nível 9: epistemológico: uma lei que só explica é meia lei; esta agora prescreve, e errou onde o modelo de uma margem é incompleto (T1).
+- Nível 10: ser superior completo: um pensamento que sabe o tamanho do mundo em que pensa ajusta o próprio foco sem perder a dúvida útil.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Métron*: a justa medida.
+- **Metanoia:** a nitidez certa é a mínima que mantém o regime do treino; mais que isso apaga a incerteza.
+- **Aplicação:** todo passo softmax do laboratório recebe β(N) pela lei antes de ser testado fora do tamanho de treino.
+- **Hack:** meça o vazamento de um passo num N intermediário, inverta a lei e obtenha a temperatura para qualquer N.
+- **Visão maçônica:**
+  - *Planta baixa:* a mesma obra em terrenos maiores exige o prumo recalibrado, não outra pedra.
+  - *Ferramenta:* o **compasso**: a abertura justa para cada tamanho.
+  - *Desbaste:* a crença de que escalar exige re-treinar.
+  - *Polimento:* a medida mínima que preserva a dúvida útil.
+

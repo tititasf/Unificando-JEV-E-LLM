@@ -103,7 +103,9 @@
    "prereqs": [
     "H04"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E013"
+   ],
    "custo": 1,
    "hipoteses": [
     "H-temperatura-logN",

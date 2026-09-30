@@ -7,16 +7,16 @@
 | métrica | valor |
 |---|---|
 | ciclos | 13 |
-| nós na árvore | 24 (RASCUNHO 6, META 6, MELHORAR 2, DIAGNOSTICAR 6, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.25 |
-| taxa de promoção/replicação | 0.58 |
-| previsões avaliadas / acerto | 61 / 0.67 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.14 |
+| nós na árvore | 25 (RASCUNHO 6, META 6, MELHORAR 3, DIAGNOSTICAR 6, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.23 |
+| taxa de promoção/replicação | 0.62 |
+| previsões avaliadas / acerto | 67 / 0.69 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.13 |
 | degrau atual por tema | S2 D06, S3 D04, S5 D04, S6 D01, S1 D01 |
 | ciclos sem subir degrau | S2 3, S3 4, S5 10, S6 2, S1 1 |
-| novidade dos achados | replicacao 1, — 2, baixa 5, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
-| registros antigos corrigidos | 5 |
-| CPU médio por nó (s) | 429.68 |
+| novidade dos achados | replicacao 1, — 2, baixa 6, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
+| registros antigos corrigidos | 6 |
+| CPU médio por nó (s) | 415.80 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -37,6 +37,7 @@
                 · E006d [DIAGNOSTICAR, S2] Diagnostico: limiar real eps_c ~ 0,07 → INFORMATIVO N1
                     ▲ E007 [REPLICAR, S2] Lei de nitidez fora da amostra (eps_c congelado) → PROMOVER N2
                         · E007d [DIAGNOSTICAR, S2] Diagnostico: teoria de campo medio (bifurcacao sela-no) → INFORMATIVO N1
+                        ▲ E013 [MELHORAR, S2] Temperatura derivada da lei de nitidez: nitidez em qualquer escala → PROMOVER N2
         ▲ E010 [RASCUNHO, S2] Memoria de trabalho latente: pares (no x contador) → PROMOVER N2
             ▲ E011 [RASCUNHO, S6] Modelo de mundo com o mesmo passo: particula numa caixa → PROMOVER N2
         ▲ E012 [RASCUNHO, S1] JEV como S1 externo real: sozinho e iterado pelo S2 → PROMOVER N2
@@ -304,3 +305,17 @@
 - **Lição:** H-JEV-seletivo nao foi pre-registrada; precisa de um sinal novo (Mondrian por escala ou temperatura adaptativa).
 - **Arquivos:** [relatorio](experimentos/E012_jev/piloto_s3/LEIAME.md)
 - **Commits:** pré-registro `—` · resultado `—`
+
+### E013 — Temperatura derivada da lei de nitidez: nitidez em qualquer escala (ciclo 13, 2026-09-30)
+- **Operador:** MELHORAR · **pai:** E007 · **tema:** S2 · **degrau-alvo:** S2:D06
+- **Hipótese:** beta(N)=1+ln((N-1)/11)/m, com m medido sem rotulos, mantem o vazamento de um passo igual ao do treino e abaixo de eps_c ate N=4096 sem re-treino, em T1 e T2.
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** baixa
+- **Métrica principal:** acerto TEORIA em N=4096 (T1, T2) = 1.00, 1.00 (B1: 0.17, 0.00); T2 eps(4096)/eps(12)=0.91
+- **Previsões:** P1 ✅ (p=0.85); P2 ✅ (p=0.8); P3 🟥 (p=0.35); P4 ✅ (p=0.85); P5 ✅ (p=0.75); P6 ✅ (p=0.8)
+- **Lição:** A dissolucao do S2 e efeito da normalizacao do softmax; uma temperatura com zero parametros livres, prevista pela lei, a remove ate 341x o treino.
+- **Lição:** Em T2 a lei preve o vazamento quantitativamente (razao 0,91); em T1 so a parte dependente de N (competidor 'proprio no' tambem e suprimido).
+- **Lição:** Atalho: qualquer afiacao acerta; a TEORIA e a afiacao minima.
+- **Corrige:** H05 pendente desde o E006: a dissolucao nao exige re-treino, so a temperatura prevista pela lei
+- **Semeou:** H-temp-S3, H-temp-minima-D07, H-temp-JEV
+- **Arquivos:** [prereg](experimentos/E013_temperatura/PREREG.md) · [relatorio](experimentos/E013_temperatura/RELATORIO.md)
+- **Commits:** pré-registro `2accfb8` · resultado `—`
