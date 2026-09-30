@@ -13,6 +13,7 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 5. **A softmax já é um cristalizador suave.** Antes de adicionar um mecanismo, teste se o sistema já o tem embutido (E005: a cristalização explícita foi desnecessária).
 5b. **A tarefa de treino decide a precisão.** Tarefas-atrator produzem margens pequenas (erro não custa nada no treino).
 5b2. **Dissolução é normalização** (E013): o argmax do passo não depende de N; o que se perde é a nitidez da softmax. A lei dá a temperatura mínima (β = 1 + ln((N−1)/(N_tr−1))/m) sem re-treino. Antes de chamar uma afiação de mecanismo, compare com β constante e argmax.
+5b3. **Superposição é forma, não temperatura** (E014): softmax da soma (produto) é biestável para hipóteses desiguais (dissolve ou o vencedor leva tudo, em qualquer β); soma de softmaxes (mistura, normalizar por origem) guarda todas com os mesmos pesos. Normalize por origem para propagar crenças; por destino para escolher.
 5c. Nosso "contínuo" é uma distribuição sobre nós, quase simbólica. Conclusões sobre latente contínuo *livre* ainda não foram testadas.
 
 ## Sobre o S3 (metacognição)
@@ -36,12 +37,13 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 9. **Discretizar a mensagem dá robustez enorme; discretizar o pensamento não ajudou** (E003 vs E002).
 
 ## Sobre o processo
-10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25; no ciclo 7, com piloto, 0,11; no ciclo 8, 0,04; no ciclo 9, 0,07; ciclo 10, 0,05; ciclo 11, 0,03; ciclo 12, 0,12 (subestimei a queda do JEV com N); ciclo 13, 0,05. **Pilotos com o modelo completo são o que mais melhorou a calibração.** Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
+10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25; no ciclo 7, com piloto, 0,11; no ciclo 8, 0,04; no ciclo 9, 0,07; ciclo 10, 0,05; ciclo 11, 0,03; ciclo 12, 0,12 (subestimei a queda do JEV com N); ciclo 13, 0,05; ciclo 14, 0,13. **Pilotos com o modelo completo são o que mais melhorou a calibração.** Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
 11. Diagnósticos pós-hoc baratos (minutos) explicaram todas as surpresas até agora. Faça-os sempre que um resultado contradisser a expectativa.
 11b. **Grades que dependem de uma quantidade estimada (como N*) precisam de um smoke com o modelo completo antes de congelar** (E006: a grade começou alta demais e P5 nunca rodou).
 11c. Variáveis vêm da teoria; constantes vêm dos dados. Não congele um limiar intuitivo (0,5) sem medi-lo.
 11d. **Em tarefa-atrator, meça o regime (nitidez), não a acurácia**: a acurácia acerta "por sorte" com o estado dissolvido (E007: 25/30 pelo regime contra 16/30 pela acurácia).
 11e. **Antes de chamar algo de lei nova, procure a teoria clássica com a mesma forma** (E007d era Hopfield moderno).
 12. Quando um resultado contradisser um registro antigo, **corrija o registro antigo** na hora.
+12a. **Examine a pergunta antes de construir** (ciclo 14): se o verificador de uma solução é o próprio resolvedor exato, a questão de custo é vazia; troque de família.
 12b. **Guarda de commit pelo código de saída:** `python3 -m lab.checar >/dev/null && git commit ...`. Um `| tail` no meio engole o erro (ciclo 12).
 13. **Decisão compilada:** o que foi feito à mão 2 vezes vira ferramenta na terceira. O S2 (o pesquisador) compila reflexos para o laboratório; não repete deliberação.

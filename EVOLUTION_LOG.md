@@ -794,3 +794,71 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Desbaste:* a crença de que escalar exige re-treinar.
   - *Polimento:* a medida mínima que preserva a dúvida útil.
 
+
+## Ciclo 14 — Tema: S2 · motor latente iterativo (várias hipóteses vivas)
+
+### 1. Diagnóstico
+- **Degrau atual: D07.** E014 (N2, reprodução IDÊNTICA): a mesma tabela treinada em uma hipótese, aplicada como mistura de softmaxes, recupera o conjunto exato em superposição (F ≤ 8, k ≤ 64) e em BFS (até 32 alcançáveis), 100% até N = 4096; massa segue (1 − ε)^k em 120/120. A forma global falha em qualquer β (dissolve ou o vencedor leva tudo). H10 desbloqueada.
+- O que funciona: nitidez (E013, temperatura) e pluralidade (E014, mistura) são dois eixos independentes, e se compõem.
+- Barreira para D08: compor passos (sub-rotinas, dois registros) sem controlador externo.
+- Correção: a previsão do ciclo 13 (a afiação mínima preservaria a superposição) caiu.
+
+### 2. Escada (D07 redefinido pelo achado; demais inalterados)
+- D01: resposta direta em uma passada.
+- D02: passos fixos desenrolados.
+- D03: um passo compartilhado, iterado um número fixo de vezes.
+- D04: ponto fixo por treino multi-instante; extrapola enquanto a margem vence ~log N (E007); com a temperatura prevista pela lei, em qualquer N testado (E013, até 4096).
+- D05: extrapolação sem atrator com precisão por 64 passos (E005).
+- D06: memória de trabalho: o próprio estado conta e para sozinho (E010).
+- D07: várias hipóteses vivas quando a tarefa exige: o passo como **mistura** de softmaxes (E014; a forma global não serve em nenhum β). ← **ESTAMOS AQUI**
+- D08: passos compostos (sub-rotinas; dois registros, H-pilha). ← **PRÓXIMO ALVO do tema**
+- D09: latente vetorial livre e atributos aprendidos da entrada crua.
+- D10: mesmo motor e mesmo treino em duas famílias de tarefas.
+- D11: algoritmos clássicos com extrapolação ≥ 10× contra Deep Thinking.
+- D12: labirinto/Sudoku no nível do TRM com menos parâmetros.
+- D13: parada e abstenção integradas (S3).
+- D14: robusto a ruído interno.
+- D15: ritmo duplo rápido/lento acionado pelo S3.
+- D16: algoritmo novo com ≤ 100 exemplos.
+- D17: composição de algoritmos sem treino.
+- D18: programa discreto extraído do passo.
+- D19: prova formal do programa extraído.
+- D20: autocurrículo.
+- D21: transmite um passo a outro agente (S5).
+- D22: subconjunto do ARC-AGI com ≤ 1M parâmetros.
+- D23: aprendizado contínuo sem esquecimento.
+- D24: o passo como modelo de mundo (S6). (H16 começa isto)
+- D25: custo ≈ mínimo teórico.
+- D26: descobre algoritmos mais eficientes que os conhecidos.
+- D27: biblioteca aberta de passos (ontologia de operações).
+- D28: domínios contínuos e físicos.
+- D29: aprende, compõe, verifica e explica em tempo linear.
+- D30: ômega: cada passo latente é um passo lógico necessário e nenhum a mais; o motor é o algoritmo ótimo de cada tarefa, descoberto e provado.
+
+### 3. Transição
+1. Sacada: pluralidade não é questão de temperatura, é de **onde se normaliza**: por destino (produto, compete) ou por origem (mistura, conserva).
+2. Subtrair: a ideia de que o regime dissolvido seria "superposição útil"; ele não guarda hipóteses desiguais.
+3. Próximo: D08 (H-pilha: dois registros; siga π k vezes e depois σ j vezes), agora podendo usar mistura para carregar incerteza entre sub-rotinas.
+
+### 4. Visão vertical (o ciclo 14 lido em 10 níveis)
+- Nível 1: senso comum: pensar em várias possibilidades ao mesmo tempo depende de cada possibilidade guardar o próprio peso.
+- Nível 2: instrumental: trocar a ordem entre somar e normalizar transforma um motor de um caminho num BFS.
+- Nível 3: arquitetural: softmax da soma = produto de especialistas (compete); soma de softmaxes = mistura (coexiste).
+- Nível 4: computacional: logits lineares em z tornam a margem de cada hipótese proporcional ao seu peso; daí a biestabilidade.
+- Nível 5: teoria da decisão: manter a crença inteira (não o argmax) é o que permite ao S3 decidir depois.
+- Nível 6: econômico: um vetor faz o trabalho de F execuções (feixe).
+- Nível 7: composicional: a lei q^k do S1 externo (E012) reaparece dentro do S2 como (1 − ε)^k da mistura.
+- Nível 8: ontológico: uma hipótese é massa conservada, não um voto que compete.
+- Nível 9: epistemológico: a previsão errada do ciclo 13 foi derrubada pelo próprio piloto, antes do pré-registro.
+- Nível 10: ser superior completo: um pensamento que carrega todas as possibilidades com o peso certo, nítidas, até a evidência escolher.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Plêroma*: a plenitude que contém todas as possibilidades sem que uma apague a outra.
+- **Metanoia:** a dúvida não precisa ser borrão; pode ser nítida e plural ao mesmo tempo.
+- **Aplicação:** todo passo do laboratório que precise manter alternativas usa a forma de mistura; a global fica para decisões.
+- **Hack:** normalize por origem para propagar crenças; normalize por destino para escolher.
+- **Visão maçônica:**
+  - *Planta baixa:* vários caminhos traçados na mesma prancha, cada um com seu traço.
+  - *Ferramenta:* o **nível**: nenhuma possibilidade se ergue apagando as outras.
+  - *Desbaste:* a crença de que afiar preserva alternativas.
+  - *Polimento:* a crença conservada, passo a passo.

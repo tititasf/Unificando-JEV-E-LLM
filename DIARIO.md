@@ -108,3 +108,11 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Processo: no fechamento do ciclo 12 commitei com o checar dando 1 erro (a cadeia usava `| tail -1`); corrigido (c9b0d1d). Agora o commit é condicionado ao código de saída do checar.
 - Meta: Brier ≈ 0,05.
 - Semeado: H-temp-S3, H-temp-mínima-D07, H-temp-JEV.
+
+## Ciclo 14 — 2026-09-30 — E014 várias hipóteses vivas: produto × mistura de softmaxes (pré-registrado)
+- Escolha: H24 examinada e adiada: nas tarefas estruturadas, o verificador O(d) de uma trajetória **é** o resolvedor exato (atalho da regra 7); ela precisa de uma família em que verificar seja mais barato que resolver (certificados de Bellman-Ford, H23). H08 sem sinal (M007). Fui para H10 (S2 D07).
+- Pilotos (antes do PREREG): (1) atalho de grau de entrada no primeiro gerador, removido; (2) o passo global com hipóteses desiguais: nenhum β funciona (dissolve ou vencedor leva tudo), o que **derruba** a hipótese H-temp-mínima-D07 do ciclo 13; (3) a mesma tabela como mistura de softmaxes funciona.
+- Veredito: **PROMOVER** (N2, reprodução IDÊNTICA). 6/7 previsões. MIST_TEO 100% em 18/18 células (SUP F ≤ 8, k ≤ 64; BFS k ≤ 5; N até 4096); GLOBAL 0/240 em SUP em β = 1, β da lei e β = 3; CRIST 0. Massa da mistura = (1 − ε)^k em 120/120. **H10 desbloqueada; S2 → D07.**
+- 🟥 P7: com β = 3 em N = 4096, F = 8, o global se dissolve em vez de o vencedor levar tudo (a margem por hipótese ainda não vence ln N). Reforça a biestabilidade.
+- Meta: Brier 0,13.
+- Semeado: H-sup-limiar, H-mist-JEV, H-mist-treino.

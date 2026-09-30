@@ -12,7 +12,7 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 | **G1** Pensador de tamanho livre, com prova | █████░░░ 5/8 | H11, H19, H23 | N4 |
 | **G2** Saber exatamente quando nao sabe | ████░░░ 4/7 | H08, H12, H24 | N3 |
 | **G3** Uma lingua que nasce, ensina e pensa | ███░░░ 3/6 | H13, H14, H15 | N4 |
-| **G4** Descobrir regras de um mundo desconhecido | ██████░░░░ 6/10 | H08, H10, H17, H20 | N4 |
+| **G4** Descobrir regras de um mundo desconhecido | ███████░░░ 7/10 | H08, H17, H20 | N4 |
 | **G5** Pensar com o custo certo | ████░░░ 4/7 | H12, H18, H24 | N3 |
 | **G6** Auto-aperfeicoamento recursivo demonstrado | █░ 1/2 | H21 | N3 |
 
@@ -25,8 +25,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 | 1 | 🟨 **H24** S2 compila S1 sob a corte do S3 (amortizacao verificada) (S1+S2+S3) | 4.5 | 2 | G2, G5 | H-compilar |
 | 2 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
 | 3 | 🟨 **H23** Protocolo CLRS reimplementado com linha de base (LAB) | 3.0 | 2 | G1 | — |
-| 4 | 🟨 **H10** Varias hipoteses vivas (busca latente) (S2) | 3.0 | 2 | G4 | — |
-| 5 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
+| 4 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
+| 5 | 🟨 **H17** Planejar a partir da meta (S6) | 2.5 | 1 | G4 | H-Sigma4 |
 | 6 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
 | 7 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
 | 8 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
@@ -43,7 +43,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 11: **H16** Modelo de mundo com o mesmo passo
 - ciclo 12: **H26** JEV medido como S1 externo real
 - ciclo 13: **H05** Nitidez em qualquer escala
-- taxa: 10 habilidades em 13 ciclos = 0.77 por ciclo
+- ciclo 14: **H10** Varias hipoteses vivas (busca latente)
+- taxa: 11 habilidades em 14 ciclos = 0.79 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -69,7 +70,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Risco seletivo <= alfa garantido (conformal) sob mudanca de escala e de tarefa; E-AURC ~0 em 2 familias (≥ N2)
 - 🟨 **H09** Latente vetorial livre · S2 · S2 D09 · requer: H04 + H06  
   critério: Estado = vetor livre (nao distribuicao sobre nos); mede-se acumulo de ruido e o ganho da quantizacao em T2 (≥ N2)
-- 🟨 **H10** Varias hipoteses vivas (busca latente) · S2 · S2 D07 · requer: H06  
+- 🟩 **H10** Varias hipoteses vivas (busca latente) · S2 · S2 D07 · requer: H06 — por E014  
   critério: Tarefa com ramificacao (ex.: alcancabilidade com varios caminhos): o estado mantem >1 candidato e acerta onde o cristal falha (≥ N2)
 - ⬜ **H11** Algoritmos classicos extrapolam (T3) · S2 · S2 D11 · requer: H05 + H06 + H22 + H23  
   critério: BFS e caminho minimo: >=95% em 10x o tamanho do treino, batendo a linha de base Deep Thinking com IC (≥ N2)
@@ -83,7 +84,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Agente A transmite seu passo latente a B so por mensagens discretas; B atinge >=95% com 10x menos exemplos que aprendendo sozinho (≥ N2)
 - 🟩 **H16** Modelo de mundo com o mesmo passo · S6 · S6.1 / S2 D24 · requer: H06 — por E011  
   critério: O passo aprendido preve o proximo estado de um ambiente simples com erro < 1% por 16 passos (≥ N2)
-- ⬜ **H17** Planejar a partir da meta · S6 · S6.2-6.3 · requer: H16 + H10  
+- 🟨 **H17** Planejar a partir da meta · S6 · S6.2-6.3 · requer: H16 + H10  
   critério: Busca bidirecional/rollouts latentes: passos ~d/2 e >=95% em tarefas de planejamento com efeito atrasado (≥ N2)
 - ⬜ **H18** Orcamento como sentido · S0+S3 · S3 D11 · requer: H12 + H22  
   critério: Energia restante como entrada do S3 domina o limiar fixo na fronteira de Pareto acc x custo (≥ N2)
@@ -126,14 +127,14 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   ✔ H06 Memoria de trabalho latente
     ◐ H23 Protocolo CLRS reimplementado com linha de base (↑ já mostrado)
     ◐ H09 Latente vetorial livre (↑ já mostrado)
-    ◐ H10 Varias hipoteses vivas (busca latente)
-      · H17 Planejar a partir da meta
+    ✔ H10 Varias hipoteses vivas (busca latente)
+      ◐ H17 Planejar a partir da meta
         · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
       · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
     · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H15 Ensinar um passo por mensagens
     ✔ H16 Modelo de mundo com o mesmo passo
-      · H17 Planejar a partir da meta (↑ já mostrado)
+      ◐ H17 Planejar a partir da meta (↑ já mostrado)
   ◐ H24 S2 compila S1 sob a corte do S3 (amortizacao verificada) (↑ já mostrado)
   ✔ H26 JEV medido como S1 externo real
 ✔ H02 Mensagem simbolica robusta

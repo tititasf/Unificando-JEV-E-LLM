@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 13 |
-| nós na árvore | 25 (RASCUNHO 6, META 6, MELHORAR 3, DIAGNOSTICAR 6, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.23 |
-| taxa de promoção/replicação | 0.62 |
-| previsões avaliadas / acerto | 67 / 0.69 |
+| ciclos | 14 |
+| nós na árvore | 26 (RASCUNHO 6, META 6, MELHORAR 4, DIAGNOSTICAR 6, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.21 |
+| taxa de promoção/replicação | 0.64 |
+| previsões avaliadas / acerto | 74 / 0.70 |
 | Brier das previsões (menor = pesquisador mais calibrado) | 0.13 |
-| degrau atual por tema | S2 D06, S3 D04, S5 D04, S6 D01, S1 D01 |
-| ciclos sem subir degrau | S2 3, S3 4, S5 10, S6 2, S1 1 |
-| novidade dos achados | replicacao 1, — 2, baixa 6, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
-| registros antigos corrigidos | 6 |
-| CPU médio por nó (s) | 415.80 |
+| degrau atual por tema | S2 D07, S3 D04, S5 D04, S6 D01, S1 D01 |
+| ciclos sem subir degrau | S2 0, S3 5, S5 11, S6 3, S1 2 |
+| novidade dos achados | replicacao 1, — 2, baixa 7, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
+| registros antigos corrigidos | 7 |
+| CPU médio por nó (s) | 429.19 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -38,6 +38,7 @@
                     ▲ E007 [REPLICAR, S2] Lei de nitidez fora da amostra (eps_c congelado) → PROMOVER N2
                         · E007d [DIAGNOSTICAR, S2] Diagnostico: teoria de campo medio (bifurcacao sela-no) → INFORMATIVO N1
                         ▲ E013 [MELHORAR, S2] Temperatura derivada da lei de nitidez: nitidez em qualquer escala → PROMOVER N2
+                            ▲ E014 [MELHORAR, S2] Varias hipoteses vivas: produto x mistura de softmaxes → PROMOVER N2
         ▲ E010 [RASCUNHO, S2] Memoria de trabalho latente: pares (no x contador) → PROMOVER N2
             ▲ E011 [RASCUNHO, S6] Modelo de mundo com o mesmo passo: particula numa caixa → PROMOVER N2
         ▲ E012 [RASCUNHO, S1] JEV como S1 externo real: sozinho e iterado pelo S2 → PROMOVER N2
@@ -319,3 +320,17 @@
 - **Semeou:** H-temp-S3, H-temp-minima-D07, H-temp-JEV
 - **Arquivos:** [prereg](experimentos/E013_temperatura/PREREG.md) · [relatorio](experimentos/E013_temperatura/RELATORIO.md)
 - **Commits:** pré-registro `2accfb8` · resultado `—`
+
+### E014 — Varias hipoteses vivas: produto x mistura de softmaxes (ciclo 14, 2026-09-30)
+- **Operador:** MELHORAR · **pai:** E013 · **tema:** S2 · **degrau-alvo:** S2:D07
+- **Hipótese:** O passo global (softmax da soma) nao sustenta hipoteses desiguais em nenhum beta; a mesma tabela como mistura de softmaxes mantem todas e segue (1-eps)^k, sem re-treino.
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** baixa
+- **Métrica principal:** recuperacao do conjunto (SUP, BFS) = MIST_TEO 1.00 em 18/18 celulas; GLOBAL (beta 1, lei, 3) 0.00 em SUP; CRIST 0.00
+- **Previsões:** P1 ✅ (p=0.85); P2 ✅ (p=0.85); P3 ✅ (p=0.95); P4 ✅ (p=0.55); P5 ✅ (p=0.7); P6 ✅ (p=0.9); P7 🟥 (p=0.75)
+- **Lição:** Superposicao e decisao de forma: softmax global (produto) e biestavel (dissolve ou vencedor leva tudo) para pesos desiguais; mistura de softmaxes (Markov) guarda todas com os mesmos pesos.
+- **Lição:** A massa da mistura segue (1-eps)^k (120/120): a lei q^k do E012 dentro do S2.
+- **Lição:** Temperatura (E013) e mistura (E014) se compoem: estado nitido e plural.
+- **Corrige:** E013: 'a afiacao minima preserva a superposicao' e falso no passo global
+- **Semeou:** H-sup-limiar, H-mist-treino, H-mist-JEV
+- **Arquivos:** [prereg](experimentos/E014_superposicao/PREREG.md) · [relatorio](experimentos/E014_superposicao/RELATORIO.md)
+- **Commits:** pré-registro `2a3cb34` · resultado `—`

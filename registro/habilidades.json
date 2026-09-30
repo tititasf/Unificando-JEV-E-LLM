@@ -192,7 +192,9 @@
    "prereqs": [
     "H06"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E014"
+   ],
    "custo": 2
   },
   {

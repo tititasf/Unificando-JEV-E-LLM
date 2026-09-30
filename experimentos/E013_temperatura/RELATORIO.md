@@ -28,6 +28,7 @@ Nível: **N2** (pré-registrado, 10 sementes de treino × 10 instâncias por cé
 3. *"Motor com atributos dados."* Declarado desde o E001; H09 (latente livre) é onde isso cai.
 
 ## Correções
+- **(E014)** O argumento do revisor hostil 1 ("a TEORIA preserva a superposição que o D07 precisa") caiu: no passo global, nenhuma temperatura sustenta hipóteses de pesos desiguais; a superposição vem da forma de mistura (E014).
 - A frase "precisa de mecanismo para escalar" (H05 pendente desde o E006) está resolvida para o motor estruturado. A dissolução do S2 (A9, A11) é um efeito da normalização, removível por uma temperatura prevista pela própria lei.
 
 ## Hipóteses semeadas

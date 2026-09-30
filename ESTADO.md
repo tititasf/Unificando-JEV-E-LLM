@@ -1,15 +1,15 @@
 # ESTADO — onde estamos
 
-Atualizado no fim de cada ciclo. Última atualização: ciclo 13 (2026-09-30).
+Atualizado no fim de cada ciclo. Última atualização: ciclo 14 (2026-09-30).
 
-> Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H24 → H08 → H23/H10/H13 → H21).
+> Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H24 → H08 → H23/H13 → H21).
 
 ## Fase atual
 
 **Fase 1 — Micro (T1–T2): portão formalmente atingido no ciclo 5** (passo latente iterado com N2 em T1 e T2). Ressalva: mecanismo **conhecido** (replicação).
 Antes da Fase 2 (T3, algoritmos contra Deep Thinking): ~~fechar a lei de nitidez (H04)~~ ✅ ciclo 7; ~~validar as linhas de base publicadas (H22)~~ ✅ ciclo 8; protocolo CLRS reimplementado (H23, depende de H06).
 Infra disponível: T2 sem atrator (`experimentos/E005_t2_salto/tarefa_t2.py`), passo O(N) (`experimentos/E006_lei_margem/passo_rapido.py`), linhas de base (`lab/baselines.py`), tarefas CLRS (`lab/tarefas_clrs.py`), sementes derivadas do commit (`lab/sementes.py`), controle de qualidade (`lab/checar.py`).
-Calibração do pesquisador: ver `LIVRO.md` (Brier do último ciclo: 0,05).
+Calibração do pesquisador: ver `LIVRO.md` (Brier do último ciclo: 0,13).
 JEV (S1 externo real): **conectado e medido** (E012, 3.298 chamadas, `jev-1.13.0`); wrapper `lab/jev.py`, skill `/jev`, credencial persistente no ambiente. Ver `docs/JEV.md`.
 
 ## Placar de achados
@@ -33,18 +33,22 @@ JEV (S1 externo real): **conectado e medido** (E012, 3.298 chamadas, `jev-1.13.0
 | A16 | **Modelo de mundo com o mesmo passo (S6):** passo relacional sobre (posição × velocidade) prevê uma partícula numa caixa com paredes, 0 erros em 16 passos, treino L=8 → teste L=64; sem o atributo de parede, 13% de erro. **Ressalva:** os atributos dados tornam a física uma tabela local de 12 casos; a extrapolação em L vem do desenho | **N2** (reproduzido limpo) | baixa | E011 |
 | A17 | **JEV = S1 de um salto; S2∘S1 segue q^k; o JEV sabe quando não sabe:** uma passada acerta um salto (0,90→0,63 de N=8 a 64) e fica no acaso com k≥2; iterado um salto por chamada, acc(k) ≈ q^k (8/9 células); T1 com parada por ponto fixo 0,55 vs 0,06; p(escolha) 0,65 nos acertos vs 0,22 nos erros, **0/516 erros com p ≥ 0,9** | **N2** (respostas gravadas, reprodução idêntica) | baixa | E012 |
 | A18 | **Temperatura derivada da lei (nitidez em qualquer escala):** β(N) = 1 + ln((N−1)/11)/m, com a margem m medida sem rótulos, leva T1 e T2 de 17% e 0% (β=1) a **100% em N=4096** (341× o treino), 10/10 sementes; em T2 mantém o vazamento do treino (razão 0,91). **Ressalva (atalho):** qualquer afiação (β=3, Scalable-Softmax, argmax) também acerta; a TEORIA é a afiação mínima e prevista. Em T1 a razão fica ≈0,5 (o vazamento para o próprio nó também some) | **N2** (reproduzido limpo) | baixa (forma do Scalable-Softmax, coeficiente derivado) | E013 |
+| A19 | **Várias hipóteses vivas = forma do passo, não temperatura:** a mesma tabela treinada em uma hipótese, como **mistura** de softmaxes, recupera o conjunto em superposição (F ≤ 8, k ≤ 64) e BFS, 100% até N=4096, massa (1 − ε)^k em 120/120; a forma **global** falha em qualquer β (dissolve ou o vencedor leva tudo; 0/240 em SUP) | **N2** (reproduzido limpo) | baixa | E014 |
 | A12 | **O S2 é uma memória associativa tipo Hopfield:** teoria de campo médio (bifurcação sela-nó, m·a(1−a)=1) prevê N_c por modelo com ~9% de erro, sem parâmetros ajustados | N1 (pós-hoc, 30 sementes) | baixa (condição de separação de Hopfield moderno) | E007d |
 
 ## Fila de hipóteses (topo = próximo)
 
-Alvos N+1 atuais (EVOLUTION_LOG): S1 → D02 (H-JEV-seletivo, pendente de sinal novo) · S2 → D07 (várias hipóteses; H-temp-mínima-D07) · S3 → D05 (H-S3-fronteira) · S5 → D05 (H-5.4) · S6 → D02 (H-mundo-cru).
+Alvos N+1 atuais (EVOLUTION_LOG): S1 → D02 (H-JEV-seletivo, pendente de sinal novo) · S2 → D08 (H-pilha) · S3 → D05 (H-S3-fronteira) · S5 → D05 (H-5.4) · S6 → D02 (H-mundo-cru).
 Política: H05 fechada no ciclo 13 (E013). A bússola põe H24 e H08 no topo. S5 está parado há 10 ciclos: diversidade é devida (H-5.4) assim que H24/H08 derem um passo.
 
 | Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
 | 1 | ~~H-JEV-seletivo~~ (→ H08) | **Pilotado no ciclo 13 (M007): nenhum sinal do JEV transfere um limiar de N=8 para N=64** (risco por salto 2% → 11–25%). Precisa de sinal novo: Mondrian por escala ou temperatura | E012 · MELHORAR | S1 D02 | — |
 | 2 | **H-temp-S3** (→ H24/H08) | O S3 em dois tempos (E009) sobre o S2 com temperatura TEORIA: cobertura 100% até N=4096 sem abstenção e 0 erros confiantes | E013 · MELHORAR | S3 D05 | baixo |
-| 2b | H-temp-mínima-D07 (→ H10) | A afiação mínima preserva várias hipóteses vivas quando a tarefa as exige; argmax/SSMAX não | E013 · MELHORAR | S2 D07 | médio |
+| 2b | ~~H-temp-mínima-D07~~ | **Caiu no E014:** nenhuma temperatura do passo global preserva hipóteses desiguais; a superposição vem da mistura | — | — | — |
+| 2d | **H-sup-limiar** (→ H08) | O S3 lê R sem conhecer \|R\|: limiar pela lei da mistura (w·(1 − ε)^k), risco controlado | E014 · MELHORAR | S3 D05 | baixo |
+| 2e | H-mist-JEV | O S2 propaga a distribuição `Choice` do JEV como mistura em vez do argmax: acc(k) acima de q^k? | E012/E014 · MELHORAR | S1 D03 | baixo |
+| 2f | H-mist-treino | Treinar já na forma de mistura (T2) e testar T1 | E014 · MELHORAR | S2 | médio |
 | 2c | H-temp-JEV | Codificar o Choice do JEV em blocos (menos opções efetivas) recupera q(N) como a lei prevê | E012/E013 · MELHORAR | S1 D05 | baixo |
 | 3 | H-mundo-cru (→ S6 D02) | Modelo de mundo com atributos aprendidos da posição crua (sem distância à parede dada) | E011 · MELHORAR | S6 D02 | médio |
 | 4 | **H-S3-fronteira** (→ H08) | Predição conformal mantém risco seletivo ≤ α na zona de transição | E009 · MELHORAR | S3 D05 | médio |
@@ -62,4 +66,4 @@ Diversidade: S6 recebeu o primeiro nó no ciclo 11 (E011). Ainda sem nós: **S0,
 
 ## Átomos por status
 
-Ver `docs/SISTEMAS.md`. Resumo: 🟩 6 · 🟨 1 · 🟥 2 · ⬜ 20 (29 átomos).
+Ver `docs/SISTEMAS.md`. Resumo: 🟩 7 · 🟨 1 · 🟥 2 · ⬜ 19 (29 átomos).
