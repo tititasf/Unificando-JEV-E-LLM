@@ -43,7 +43,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 10: **H06** Memoria de trabalho latente
 - ciclo 11: **H16** Modelo de mundo com o mesmo passo
 - ciclo 12: **H26** JEV medido como S1 externo real
-- taxa: 9 habilidades em 12 ciclos = 0.75 por ciclo
+- taxa: 9 habilidades em 13 ciclos = 0.69 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
