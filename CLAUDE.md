@@ -14,7 +14,7 @@ rigor nas conclusões.
 
 ## Leia sempre, nesta ordem
 
-0. `GOALS.md` + `BUSSOLA.md` — as estrelas-guia, a árvore de habilidades e a fronteira (o que atacar agora).
+0. `docs/LITERATURA_G1.md` (o foco atual) + `GOALS.md` + `BUSSOLA.md` — as estrelas-guia, a árvore de habilidades e a fronteira (o que atacar agora).
 1. `ESTADO.md` — onde estamos, fila de hipóteses, placar dos átomos.
 2. Fim do `DIARIO.md` — o que o último ciclo aprendeu.
 3. `docs/VALIDACAO.md` — a régua (escada N0–N5, métricas, regras contra o autoengano).
@@ -33,9 +33,16 @@ CONSTRUIR → RODAR (smoke → completo) → MEDIR → ATACAR → DECIDIR → **
 SEMEAR → REGISTRAR (nó na árvore, LIVRO, LICOES, ESTADO, DIARIO) → commit → push.
 Se sobrar tempo, comece outro ciclo.
 
-**ESCALAR** = protocolo Scalata (`docs/ESCALA.md`): no fim de todo ciclo,
-escrever no `EVOLUTION_LOG.md` o diagnóstico do degrau atual (D01–D30),
-a escada completa de 30 degraus do tema e a transição para o próximo degrau.
+**ESCALAR** = entrada curta no `EVOLUTION_LOG.md` (formato em `docs/ESCALA.md`):
+degrau atual com evidência, o que o ciclo mostrou com números, barreira e próximo teste.
+Sem prosa metafórica (decisão do usuário, ciclo 18: só rigor).
+
+## Foco atual (decisão do usuário, ciclo 18)
+
+Caminho para um resultado **novo para o mundo**, não só para o laboratório. Alvo: a lacuna do G1
+descrita em `docs/LITERATURA_G1.md`: uma rede genérica, sem dicas, cuja regra é **extraída
+automaticamente** e **provada correta para todo n** em 2 ou mais famílias. Um tema por muitos ciclos
+(profundidade vence diversidade enquanto o foco durar). Comparar sempre com números publicados.
 
 ## Regras invioláveis
 
@@ -61,10 +68,9 @@ a escada completa de 30 degraus do tema e a transição para o próximo degrau.
 
 ## Ambiente e restrições
 
-- **Python 3 puro, só biblioteca padrão.** O usuário recusou `pip install` (numpy/torch). Não instale nada sem pedir. Use `multiprocessing` para paralelizar (4 CPUs).
+- **Stack (ciclo 18): PyTorch em CPU liberado pelo usuário** (`pip install torch --index-url https://download.pytorch.org/whl/cpu`; sem GPU nesta sessão). Também são permitidos numpy e os amostradores oficiais do CLRS (`dm-clrs`), quando necessários ao benchmark oficial. Os experimentos antigos continuam em Python puro. Outras instalações: pedir antes. 4 CPUs.
 - **Exceção autorizada: `typesafe-sdk`** (SDK oficial do JEV). Em sessão nova: `pip install typesafe-sdk`; depois `python3 -m lab.jev`. Uso só pela skill `/jev` e pelas regras de `docs/JEV.md` (sob teste ou triagem; nunca métrica). A chave nunca entra no git.
-- Ciclo típico: < 30 min de CPU. Experimento que não cabe → quebre-o.
-- Quando a estimativa de um experimento passar de 30 min de CPU (fórmula e tabela em `docs/STACK.md`; deve acontecer em H09/H11), **pergunte** ao usuário antes de mudar de stack.
+- Ciclo típico: < 60 min de CPU. Experimento que não cabe → quebre-o. Para GPU, pedir ao usuário.
 - Experimentos de S0 (autopreservação, orçamento) são **simulações fechadas**: agentes de brinquedo dentro de um script. Nada de ação real no mundo, aquisição de recursos, rede ou persistência fora do repositório.
 
 ## Estrutura

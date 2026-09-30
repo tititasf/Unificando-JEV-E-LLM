@@ -20,33 +20,17 @@ Os dois não se misturam. A escada diz **para onde** ir; a régua diz **onde est
 
 ```
 ## Ciclo N — Tema: <componente exato>
-
-### 1. Diagnóstico (onde estamos?)
-- Tema:
-- Degrau atual: DXX — sustentado por: <experimento, nível de evidência>
-- O que já funciona:
+- Degrau atual: DXX — sustentado por: <experimento, nível>  (ou: sem subir)
+- O que o ciclo mostrou (com números):
 - Barreira para DXX+1:
-
-### 2. Escada de 30 degraus
-- D01: <o estado mais primitivo>
-- ...
-- DXX: ← ESTAMOS AQUI
-- DXX+1: ← PRÓXIMO ALVO
-- ...
-- D30: <o ponto ômega do tema>
-
-### 3. Transição DXX → DXX+1
-1. Sacada / premissa a quebrar:
-2. O que subtrair:
-3. O que construir e testar (→ experimento ENNN):
-
-### 4. Visão vertical (10 níveis de leitura do ciclo)
-### 5. Deep insight (conceito · metanoia · aplicação · hack · visão maçônica)
+- Próximo teste (→ ENNN):
+- Escada: inalterada | reescrita (se reescrita, colar a nova D01–D30 inteira)
 ```
 
-As seções 4 e 5 são o espaço de reflexão livre. Elas podem inspirar
-hipóteses, mas uma hipótese só entra na fila do `ESTADO.md` se for testável
-por um experimento no degrau N+1.
+**Mudança do ciclo 18 (decisão do usuário: "corte o ritual poético, mantenha só o rigor"):**
+- As antigas seções 4 e 5 (visão vertical em 10 níveis e deep insight, com a visão maçônica) foram **removidas**. Elas custavam tempo e criavam uma sensação de profundidade que os dados não sustentavam.
+- A escada completa só é copiada quando muda.
+- As entradas antigas ficam no log como histórico.
 
 ## Como a escada se liga ao laço
 

@@ -30,3 +30,6 @@ CPU com 4 núcleos** mesmo com passo estruturado e amostras mínimas (pelo
 cálculo de `lab.estat.n_para_diferenca`), **parar e pedir ao usuário** a
 decisão de stack (numpy puro ou PyTorch CPU). Até lá, Python puro. Pela
 tabela acima, o gatilho deve disparar em **H09 ou H11**.
+
+## Decisão do ciclo 18
+O usuário liberou o PyTorch (CPU; sem GPU nesta sessão). Instalado: torch 2.14.0+cpu. Pedir ao usuário antes de GPU ou de outras bibliotecas pesadas.
