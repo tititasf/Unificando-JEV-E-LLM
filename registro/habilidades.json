@@ -212,8 +212,11 @@
     "H22",
     "H23"
    ],
-   "desbloqueada_por": [],
-   "custo": 3
+   "desbloqueada_por": [
+    "E017"
+   ],
+   "custo": 3,
+   "ressalva": "BFS (p=0,5, pai valido) satura: DT = LEI = 1,000; bater o DT so discrimina no caminho minimo."
   },
   {
    "id": "H12",

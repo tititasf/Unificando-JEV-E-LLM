@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 16 |
-| nós na árvore | 29 (RASCUNHO 7, META 6, MELHORAR 5, DIAGNOSTICAR 7, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.19 |
-| taxa de promoção/replicação | 0.69 |
-| previsões avaliadas / acerto | 84 / 0.70 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.14 |
+| ciclos | 17 |
+| nós na árvore | 31 (RASCUNHO 7, META 6, MELHORAR 6, DIAGNOSTICAR 8, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.18 |
+| taxa de promoção/replicação | 0.71 |
+| previsões avaliadas / acerto | 91 / 0.71 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.13 |
 | degrau atual por tema | S2 D07, S3 D04, S5 D05, S6 D01, S1 D01 |
-| ciclos sem subir degrau | S2 2, S3 7, S5 1, S6 5, S1 4 |
-| novidade dos achados | replicacao 1, — 2, baixa 8, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1 |
-| registros antigos corrigidos | 7 |
-| CPU médio por nó (s) | 428.92 |
+| ciclos sem subir degrau | S2 3, S3 8, S5 2, S6 6, S1 5 |
+| novidade dos achados | replicacao 1, — 2, baixa 9, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1 |
+| registros antigos corrigidos | 8 |
+| CPU médio por nó (s) | 429.00 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -47,6 +47,8 @@
             · M008 [DIAGNOSTICAR, S3] Piloto: escore da lei de nitidez sobre o JEV nao transfere → INFORMATIVO N0
     ≡ E008 [REPLICAR, S3] PonderNet reimplementada como linha de base → REPLICADO N2
         ▲ E016 [RASCUNHO, S2] Protocolo CLRS reimplementado: Bellman-Ford n=16->64, motor de relaxacao suave e Deep Thinking → PROMOVER N1
+            · M009 [DIAGNOSTICAR, S3] Piloto: H24 no caminho minimo (certificado O(E)) nao amortiza → INFORMATIVO N0
+            ▲ E017 [MELHORAR, S2] Lei de temperatura da relaxacao suave: BF e BFS, n=16 -> 320 → PROMOVER N2
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -370,3 +372,25 @@
 - **Semeou:** H-bf-lei, H-bf-cert
 - **Arquivos:** [prereg](experimentos/E016_clrs/PREREG.md) · [relatorio](experimentos/E016_clrs/RELATORIO.md)
 - **Commits:** pré-registro `32a42b0` · resultado `—`
+
+### M009 — Piloto: H24 no caminho minimo (certificado O(E)) nao amortiza (ciclo 17, 2026-09-30)
+- **Operador:** DIAGNOSTICAR · **pai:** E016 · **tema:** S3 · **degrau-alvo:** —
+- **Hipótese:** Um S1 barato + certificado O(E) do S3 + S2 so onde falha barateia o caminho minimo?
+- **Veredito:** INFORMATIVO · **nível:** N0 · **novidade:** —
+- **Lição:** Certificado global: 0/60 grafos aceitos com S1 local; reparo localizado custa 0,56-0,89x um SPFA frio.
+- **Lição:** Amortizacao verificada so paga quando resolver >> verificar; SSSP ja e quase linear. H24 precisa de familia de busca.
+- **Arquivos:** [relatorio](experimentos/E016_clrs/piloto_h24/LEIAME.md)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### E017 — Lei de temperatura da relaxacao suave: BF e BFS, n=16 -> 320 (ciclo 17, 2026-09-30)
+- **Operador:** MELHORAR · **pai:** E016 · **tema:** S2 · **degrau-alvo:** S2:D11
+- **Hipótese:** beta = kappa ln(g_max)/(a w_min) com b = 0 e kappa aprendido em n=16 elimina o dilema do vies e extrapola 10x-20x, batendo o DT.
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** baixa
+- **Métrica principal:** acuracia de ponteiros BF n=160 (IQM) = LEI 0.993, DT 0.615, CONST_B0 0.584, LEI_B 0.443; n=320 LEI 0.991; BFS 1.000 (DT e LEI)
+- **Previsões:** P1-BF ✅ (p=0.8); P1-BFS ✅ (p=0.85); P2-BF ✅ (p=0.85); P2-BFS 🟥 (p=0.1); P3 ✅ (p=0.75); P4 ✅ (p=0.65); P5 ✅ (p=0.7)
+- **Lição:** A descida do soft-min tem duas fontes mensuraveis sem rotulo: 1/w_min (2-ciclos) e ln(grau) (empates); beta pela lei + b=0 extrapola 20x.
+- **Lição:** Vies aditivo livre quebra a extrapolacao mesmo com a temperatura certa; o treino so nao acha a escala de beta.
+- **Corrige:** E016
+- **Semeou:** H-bf-prova, H-lei-unificada, H-busca-cert
+- **Arquivos:** [prereg](experimentos/E017_bf_lei/PREREG.md) · [relatorio](experimentos/E017_bf_lei/RELATORIO.md)
+- **Commits:** pré-registro `73c69f1` · resultado `—`

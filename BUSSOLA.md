@@ -9,7 +9,7 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 
 | goal | progresso | faltam | nível exigido |
 |---|---|---|---|
-| **G1** Pensador de tamanho livre, com prova | ██████░░ 6/8 | H11, H19 | N4 |
+| **G1** Pensador de tamanho livre, com prova | ███████░ 7/8 | H19 | N4 |
 | **G2** Saber exatamente quando nao sabe | ████░░░ 4/7 | H08, H12, H24 | N3 |
 | **G3** Uma lingua que nasce, ensina e pensa | ████░░ 4/6 | H14, H15 | N4 |
 | **G4** Descobrir regras de um mundo desconhecido | ███████░░░ 7/10 | H08, H17, H20 | N4 |
@@ -26,8 +26,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 | 2 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
 | 3 | 🟨 **H17** Planejar a partir da meta (S6) | 2.5 | 1 | G4 | H-Sigma4 |
 | 4 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
-| 5 | 🟨 **H11** Algoritmos classicos extrapolam (T3) (S2) | 1.7 | 1 | G1 | — |
-| 6 | 🟨 **H14** Lingua emergente composicional (S5) | 1.7 | 1 | G3 | H-Sigma6 |
+| 5 | 🟨 **H14** Lingua emergente composicional (S5) | 1.7 | 1 | G3 | H-Sigma6 |
+| 6 | 🟨 **H19** Programa extraido e provado (S2) | 1.3 | 0 | G1 | — |
 | 7 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
 | 8 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
 
@@ -46,7 +46,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 14: **H10** Varias hipoteses vivas (busca latente)
 - ciclo 15: **H13** Codigo minimo corretor
 - ciclo 16: **H23** Protocolo CLRS reimplementado com linha de base
-- taxa: 13 habilidades em 16 ciclos = 0.81 por ciclo
+- ciclo 17: **H11** Algoritmos classicos extrapolam (T3)
+- taxa: 14 habilidades em 17 ciclos = 0.82 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -74,7 +75,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Estado = vetor livre (nao distribuicao sobre nos); mede-se acumulo de ruido e o ganho da quantizacao em T2 (≥ N2)
 - 🟩 **H10** Varias hipoteses vivas (busca latente) · S2 · S2 D07 · requer: H06 — por E014  
   critério: Tarefa com ramificacao (ex.: alcancabilidade com varios caminhos): o estado mantem >1 candidato e acerta onde o cristal falha (≥ N2)
-- 🟨 **H11** Algoritmos classicos extrapolam (T3) · S2 · S2 D11 · requer: H05 + H06 + H22 + H23  
+- 🟩 **H11** Algoritmos classicos extrapolam (T3) · S2 · S2 D11 · requer: H05 + H06 + H22 + H23 — por E017  
   critério: BFS e caminho minimo: >=95% em 10x o tamanho do treino, batendo a linha de base Deep Thinking com IC (≥ N2)
 - ⬜ **H12** Chutar e verificar · S1+S3 · S3 D09 · requer: H07 + H24  
   critério: S1 chuta, S3 verifica com invariante barato, S2 so quando falha: domina a fronteira de Pareto acc x custo do S2 sozinho (≥ N2)
@@ -90,7 +91,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Busca bidirecional/rollouts latentes: passos ~d/2 e >=95% em tarefas de planejamento com efeito atrasado (≥ N2)
 - ⬜ **H18** Orcamento como sentido · S0+S3 · S3 D11 · requer: H12 + H22  
   critério: Energia restante como entrada do S3 domina o limiar fixo na fronteira de Pareto acc x custo (≥ N2)
-- ⬜ **H19** Programa extraido e provado · S2 · S2 D18-D19 · requer: H05 + H11  
+- 🟨 **H19** Programa extraido e provado · S2 · S2 D18-D19 · requer: H05 + H11  
   critério: Extracao automatica do automato equivalente ao passo aprendido + prova (verificador exaustivo/indutivo) de correcao para todo N (≥ N3)
 - ⬜ **H20** Aprendiz de regras desconhecidas · S2+S3+S6 · T6 · requer: H17 + H08 + H10  
   critério: Em ambientes interativos de brinquedo com regras ocultas (estilo ARC-AGI-3), descobre a regra e resolve >=80% com <=1M parametros (≥ N3)
@@ -109,16 +110,16 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 ✔ H01 Passo latente que extrapola
   ✔ H22 Linhas de base publicadas validadas
     ✔ H23 Protocolo CLRS reimplementado com linha de base
-      ◐ H11 Algoritmos classicos extrapolam (T3)
-        · H19 Programa extraido e provado
+      ✔ H11 Algoritmos classicos extrapolam (T3)
+        ◐ H19 Programa extraido e provado
     ◐ H08 Metacognicao calibrada com garantia
       · H20 Aprendiz de regras desconhecidas
-    ◐ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
+    ✔ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H18 Orcamento como sentido
   ✔ H04 Lei de nitidez validada
     ✔ H05 Nitidez em qualquer escala
-      ◐ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
-      · H19 Programa extraido e provado (↑ já mostrado)
+      ✔ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
+      ◐ H19 Programa extraido e provado (↑ já mostrado)
     ✔ H07 Metacognicao legivel em qualquer escala
       ◐ H08 Metacognicao calibrada com garantia (↑ já mostrado)
       · H12 Chutar e verificar
@@ -133,7 +134,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
       ◐ H17 Planejar a partir da meta
         · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
       · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
-    ◐ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
+    ✔ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H15 Ensinar um passo por mensagens
     ✔ H16 Modelo de mundo com o mesmo passo
       ◐ H17 Planejar a partir da meta (↑ já mostrado)

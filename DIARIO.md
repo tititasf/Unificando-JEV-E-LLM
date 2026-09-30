@@ -135,3 +135,20 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Surpresa (diagnóstico da semente 1601, com b ≈ 0): o motor **diverge** em n=64 (256 passos, d mínimo −3,15). O dilema é que b pequeno faz as distâncias descerem sem fim e b grande penaliza saltos. O ponto estável depende do grau, e isso é a lei do E013 reaparecendo nas distâncias.
 - Meta: Brier 0,16.
 - Semeado: H-bf-cert (→ H24), H-bf-lei (→ H11).
+
+## Ciclo 17 — 2026-09-30 — E017 lei de temperatura da relaxação suave (pré-registrado)
+- Escolha: a H24 foi pilotada no caminho mínimo (M009) e não amortiza. Verificar custa Ω(E), e o SPFA frio sai mais barato que S1 + certificado + reparo (0,56–0,89×). Ela vai para uma família de busca. A H08 segue sem sinal. Fui para a H11, seguindo o E016.
+- Pilotos (antes do PREREG):
+  - com b = 0 e β constante, o β necessário cresce muito rápido com n;
+  - a deriva vem dos 2-ciclos das arestas baratas, na escala 1/w_min;
+  - a primeira lei, κ/(a·w_min), divergiu em BFS, onde faltava o fator de empates ln(g), que é a lei do E013.
+- Veredito: **PROMOVER** (N2, reprodução IDÊNTICA), 6/7 previsões.
+  - BF: LEI 0,993 (n=160) e 0,991 (n=320), contra DT 0,615, p = 0,0002.
+  - Ablações: sem a lei 0,58; com b livre 0,44.
+  - BFS satura (1,000 nos dois), como declarado.
+  - **H11 desbloqueada.**
+- 🟥 P2-BFS, previsto com prob. 0,10.
+- Surpresa: o b livre estraga tudo **mesmo com a temperatura certa**. O treino em n = 16 prefere compensar com o viés.
+- Ressalva honesta: o β efetivo em n = 160 é quase o min duro. A lei diz quanto afiar, e o treino sozinho não chega lá.
+- Meta: Brier 0,05.
+- Semeado: H-bf-prova (→ H19/G1), H-lei-unificada, H-busca-cert (→ H24).

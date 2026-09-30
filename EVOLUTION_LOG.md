@@ -1005,3 +1005,78 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **prumo**: a descida sistemática medida e corrigida.
   - *Desbaste:* o viés que só vale num tamanho.
   - *Polimento:* a temperatura que cresce com o grau.
+
+## Ciclo 17 — Tema: S2 · motor latente iterativo (algoritmos clássicos: a lei da temperatura)
+
+### 1. Diagnóstico
+- **Degrau atual: D07** (a escada é sequencial; D08 continua sendo o alvo).
+- Em paralelo, pela trilha T3, o **critério do D11 foi cumprido** pelo E017 (N2, reprodução IDÊNTICA):
+  - o motor de relaxação suave com β = κ·ln(g_max)/(a·w_min) e b = 0 extrapola 20× no caminho mínimo (0,991);
+  - o DT fica em 0,615 em 10× (p = 0,0002);
+  - H11 desbloqueada.
+- O D11 só conta na escada do tema quando D08–D10 fecharem (regra 9).
+- O que funciona: medir no próprio dado quanto a normalização desce e afiar exatamente nessa medida. É a terceira família em que a lei do E013 aparece: salto, superposição e distância.
+- Barreira para D08: passos compostos (dois registros). Barreira para o G1: extrair e provar o programa (H19).
+
+### 2. Escada (inalterada; D11 cumprido fora de ordem pela trilha T3)
+- D01: resposta direta em uma passada.
+- D02: passos fixos desenrolados.
+- D03: um passo compartilhado, iterado um número fixo de vezes.
+- D04: ponto fixo por treino multi-instante; extrapola enquanto a margem vence ~log N (E007); com a temperatura prevista pela lei, em qualquer N testado (E013, até 4096).
+- D05: extrapolação sem atrator com precisão por 64 passos (E005).
+- D06: memória de trabalho: o próprio estado conta e para sozinho (E010).
+- D07: várias hipóteses vivas quando a tarefa exige: o passo como **mistura** de softmaxes (E014; a forma global não serve em nenhum β). ← **ESTAMOS AQUI**
+- D08: passos compostos (sub-rotinas; dois registros, H-pilha). ← **PRÓXIMO ALVO do tema**
+- D09: latente vetorial livre e atributos aprendidos da entrada crua.
+- D10: mesmo motor e mesmo treino em duas famílias de tarefas.
+- D11: algoritmos clássicos com extrapolação ≥ 10× contra Deep Thinking. ✔ **E017 (N2, trilha T3):** 20× no caminho mínimo; conta quando D08–D10 fecharem.
+- D12: labirinto/Sudoku no nível do TRM com menos parâmetros.
+- D13: parada e abstenção integradas (S3).
+- D14: robusto a ruído interno.
+- D15: ritmo duplo rápido/lento acionado pelo S3.
+- D16: algoritmo novo com ≤ 100 exemplos.
+- D17: composição de algoritmos sem treino.
+- D18: programa discreto extraído do passo.
+- D19: prova formal do programa extraído.
+- D20: autocurrículo.
+- D21: transmite um passo a outro agente (S5).
+- D22: subconjunto do ARC-AGI com ≤ 1M parâmetros.
+- D23: aprendizado contínuo sem esquecimento.
+- D24: o passo como modelo de mundo (S6). (H16 começa isto)
+- D25: custo ≈ mínimo teórico.
+- D26: descobre algoritmos mais eficientes que os conhecidos.
+- D27: biblioteca aberta de passos (ontologia de operações).
+- D28: domínios contínuos e físicos.
+- D29: aprende, compõe, verifica e explica em tempo linear.
+- D30: ômega: cada passo latente é um passo lógico necessário e nenhum a mais; o motor é o algoritmo ótimo de cada tarefa, descoberto e provado.
+
+### 3. Transição
+1. Sacada: o motor suave erra por duas descidas mensuráveis da normalização. A temperatura certa cancela as duas, e o viés aditivo precisa ser zero.
+2. Subtrair: o viés compensador. Ele é o atalho que o treino acha em n pequeno e que quebra em n grande.
+3. Testar:
+   - D08 (H-pilha, dois registros) na trilha A;
+   - H-bf-prova (extrair o min duro e verificar) rumo ao G1;
+   - H-lei-unificada em 3 famílias.
+
+### 4. Visão vertical (o ciclo 17 lido em 10 níveis)
+- Nível 1: senso comum: afie a ferramenta na medida da peça, nem mais nem menos.
+- Nível 2: instrumental: leia a menor aresta e o maior grau, e ajuste a temperatura por eles.
+- Nível 3: arquitetural: temperatura por instância, calculada da entrada; nenhum termo aditivo livre.
+- Nível 4: computacional: a descida do soft-min é ≤ ln(k)/β e, nos 2-ciclos, deriva se β·a·w_min ≲ 1; ambas se cancelam com β ∝ ln(g)/w_min.
+- Nível 5: teoria da decisão: dois erros opostos (divergir e errar por viés) somem quando o parâmetro que os trocava (b) é fixado em zero e a escala vai para β.
+- Nível 6: econômico: 12 passos em n = 320, contra 446 do DT em n = 160: nitidez também é velocidade.
+- Nível 7: composicional: a mesma lei nos três lugares do laboratório (E013, E014, E017).
+- Nível 8: ontológico: um algoritmo suave vira o algoritmo duro no limite certo, e esse limite é calculável.
+- Nível 9: epistemológico: o piloto que falhou em BFS revelou o segundo fator antes do pré-registro.
+- Nível 10: ser superior completo: um pensamento que sabe quão nítido precisa ser em cada problema e se afina sozinho.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Kairos*: a medida certa no momento certo.
+- **Metanoia:** extrapolar não é treinar mais; é tirar do motor o que só vale num tamanho.
+- **Aplicação:** todo motor suave do laboratório calcula a sua temperatura a partir da entrada e não aprende vieses aditivos livres.
+- **Hack:** se o motor deriva, olhe a menor aresta; se ele se dilui, olhe o grau.
+- **Visão maçônica:**
+  - *Planta baixa:* cada distância medida pelo seu próprio menor degrau.
+  - *Ferramenta:* o **compasso**: a abertura ajustada ao tamanho da obra.
+  - *Desbaste:* o viés que compensava.
+  - *Polimento:* a temperatura exata.

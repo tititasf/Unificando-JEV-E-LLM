@@ -1,15 +1,15 @@
 # ESTADO — onde estamos
 
-Atualizado no fim de cada ciclo. Última atualização: ciclo 16 (2026-09-30).
+Atualizado no fim de cada ciclo. Última atualização: ciclo 17 (2026-09-30).
 
-> Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H24 → H08 → H17 → H21 → H11/H14).
+> Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H24 → H08 → H17 → H21 → H14/H19).
 
 ## Fase atual
 
 **Fase 1 — Micro (T1–T2): portão formalmente atingido no ciclo 5** (passo latente iterado com N2 em T1 e T2). Ressalva: mecanismo **conhecido** (replicação).
 Antes da Fase 2 (T3, algoritmos contra Deep Thinking): ~~fechar a lei de nitidez (H04)~~ ✅ ciclo 7; ~~validar as linhas de base publicadas (H22)~~ ✅ ciclo 8; ~~protocolo CLRS reimplementado (H23)~~ ✅ ciclo 16 (E016).
 Infra disponível: T2 sem atrator (`experimentos/E005_t2_salto/tarefa_t2.py`), passo O(N) (`experimentos/E006_lei_margem/passo_rapido.py`), linhas de base (`lab/baselines.py`), tarefas CLRS (`lab/tarefas_clrs.py`), sementes derivadas do commit (`lab/sementes.py`), controle de qualidade (`lab/checar.py`).
-Calibração do pesquisador: ver `LIVRO.md` (Brier do último ciclo: 0,16).
+Calibração do pesquisador: ver `LIVRO.md` (Brier do último ciclo: 0,05).
 JEV (S1 externo real): **conectado e medido** (E012, 3.298 chamadas, `jev-1.13.0`); wrapper `lab/jev.py`, skill `/jev`, credencial persistente no ambiente. Ver `docs/JEV.md`.
 
 ## Placar de achados
@@ -36,17 +36,20 @@ JEV (S1 externo real): **conectado e medido** (E012, 3.298 chamadas, `jev-1.13.0
 | A19 | **Várias hipóteses vivas = forma do passo, não temperatura:** a mesma tabela treinada em uma hipótese, como **mistura** de softmaxes, recupera o conjunto em superposição (F ≤ 8, k ≤ 64) e BFS, 100% até N=4096, massa (1 − ε)^k em 120/120; a forma **global** falha em qualquer β (dissolve ou o vencedor leva tudo; 0/240 em SUP) | **N2** (reproduzido limpo) | baixa | E014 |
 | A20 | **Código mínimo = função do custo do canal:** com energia fixa por mensagem (canal do E003), o código aprendido com N−1 dimensões supera o one-hot (0,83–0,99), com N/2 empata (limite de Rankin) e abaixo perde; com amplitude fixa por canal, N/4 dimensões erram 0,1–12% do one-hot. O aprendido vence o sorteado (24/24) e o binário à mão | **N2** (reproduzido limpo) | nenhuma (replicação da teoria clássica) | E015 |
 | A21 | **Dilema do viés no Bellman-Ford suave (CLRS n=16→64):** o soft-min desce até ln(grau)/β abaixo do mínimo; o viés aprendido b > 0 compensa, mas b pequeno **diverge** (distâncias descem sem fim) e b grande penaliza saltos; o b estável cresce com n. Motor de 5 parâmetros: 0,91 → 0,62; o Bellman-Ford duro com a·w+b prevê o motor em 4/5 sementes; **Deep Thinking vence** (0,84 em n=64) porque a perda progressiva empurra b para a faixa estável | N1 (reproduzido limpo) | baixa | E016 |
+| A22 | **Lei de temperatura da relaxação suave (T3, 20× o treino):** a descida do soft-min tem duas fontes medidas sem rótulo, 1/w_min (deriva nos 2-ciclos) e ln(grau) (empates). Com β = κ·ln(g_max)/(a·w_min), b = 0 e κ aprendido em n=16, o caminho mínimo fica em 0,993 (n=160) e 0,991 (n=320), contra DT 0,615 (p = 0,0002). Ablações: sem a lei 0,58, com b livre 0,44. BFS satura (DT = LEI = 1). **Ressalva:** o β efetivo é quase o min duro; a lei diz quanto afiar, que o treino sozinho não acha | **N2** (reproduzido limpo) | baixa | E017 |
 | A12 | **O S2 é uma memória associativa tipo Hopfield:** teoria de campo médio (bifurcação sela-nó, m·a(1−a)=1) prevê N_c por modelo com ~9% de erro, sem parâmetros ajustados | N1 (pós-hoc, 30 sementes) | baixa (condição de separação de Hopfield moderno) | E007d |
 
 ## Fila de hipóteses (topo = próximo)
 
 Alvos N+1 atuais (EVOLUTION_LOG): S1 → D02 (H-JEV-seletivo, pendente de sinal novo) · S2 → D08 (H-pilha) · S3 → D05 (H-S3-fronteira) · S5 → D06 (mensagem com confiança) · S6 → D02 (H-mundo-cru).
-Política: H05 (c13), H10 (c14), H13 (c15) e H23 (c16) fechadas. A H24 agora tem família com certificado (Bellman-Ford, E016): H-bf-cert. A H08 segue sem sinal que transfira (M007, M008). S6 e S3 são os próximos candidatos de diversidade.
+Política: H05 (c13), H10 (c14), H13 (c15), H23 (c16) e H11 (c17) fechadas. A H24 precisa de uma família de busca (M009: no caminho mínimo não amortiza). A H08 segue sem sinal que transfira (M007, M008). S6 e S3 são os próximos candidatos de diversidade.
 
 | Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
-| 0 | **H-bf-cert** (→ H24) | Bellman-Ford: S1 (motor do E016 ou JEV) chuta distâncias; o S3 verifica o certificado (d_v ≤ d_u + w em toda aresta, igualdade no ponteiro) em O(E); o S2 exato só roda quando falha. Acerto 100% com custo < Bellman-Ford | E016 · MELHORAR | S3/S2 | baixo |
-| 0b | **H-bf-lei** (→ H11, S2 D11) | Temperatura da lei por grau, b = 0: sem o dilema do viés; APREND ≥ DT em n=64 | E016/E013 · MELHORAR | S2 D11 | baixo |
+| 0 | ~~H-bf-cert~~ → **H-busca-cert** (→ H24) | **Piloto M009:** no caminho mínimo o chute não se paga (verificar Ω(E), e o SPFA já é quase linear). Levar a H24 para uma família de busca (SAT, quebra-cabeça), em que resolver ≫ verificar: o S1 ordena, o S3 verifica em O(tamanho), o S2 busca | M009 · RASCUNHO | S3 D08 | médio |
+| 0b | ~~H-bf-lei~~ | **Feito no E017 (N2): H11 desbloqueada** (a lei certa inclui 1/w_min) | — | — | — |
+| 0c | **H-bf-prova** (→ H19, G1) | Extrair o programa do motor LEI e verificar automaticamente que é o Bellman-Ford (para todo n) | E017 · MELHORAR | S2 D18–D19 | médio |
+| 0d | **H-lei-unificada** | A mesma receita (β pela descida da normalização medida no dado) em BFS esparso, árvore geradora mínima e T1/T2 | E017/E013 · MELHORAR | S2 D10 | médio |
 | 1 | ~~H-JEV-seletivo~~ (→ H08) | **Pilotado no ciclo 13 (M007): nenhum sinal do JEV transfere um limiar de N=8 para N=64** (risco por salto 2% → 11–25%); no ciclo 16 (M008) a margem da lei de nitidez piora (0,28 em N=64). Precisa de sinal novo: Mondrian por escala ou temperatura | E012 · MELHORAR | S1 D02 | — |
 | 2 | **H-temp-S3** (→ H24/H08) | O S3 em dois tempos (E009) sobre o S2 com temperatura TEORIA: cobertura 100% até N=4096 sem abstenção e 0 erros confiantes | E013 · MELHORAR | S3 D05 | baixo |
 | 2b | ~~H-temp-mínima-D07~~ | **Caiu no E014:** nenhuma temperatura do passo global preserva hipóteses desiguais; a superposição vem da mistura | — | — | — |

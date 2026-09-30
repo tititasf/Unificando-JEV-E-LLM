@@ -69,3 +69,6 @@ Wittig et al., *Which Algorithms Can GNNs Learn?* (ICML 2026, arXiv 2602.13106),
 ## Hipóteses semeadas
 - **H-bf-lei (→ S2 D11):** usar a temperatura da lei, β(grau) ∝ ln(grau), com b = 0. A descida do soft-min fica abaixo de metade do menor intervalo entre caminhos em qualquer n e remove o dilema. Prever APREND ≥ DT em n = 64.
 - **H-bf-cert (→ H24):** o S1 (motor ou JEV) chuta distâncias, o S3 verifica o certificado (d_v ≤ d_u + w para toda aresta, com igualdade no ponteiro) em O(E), e o S2 (Bellman-Ford) só roda quando o certificado falha.
+
+## Correção (ciclo 17, E017)
+A H-bf-lei acima (β ∝ ln(grau)) estava incompleta. No caminho mínimo, o fator dominante é 1/w_min, a deriva nos 2-ciclos das arestas baratas. A lei que funcionou é β = κ·ln(g_max)/(a·w_min) com b = 0: 0,993 em n = 160 e 0,991 em n = 320 (E017, N2).

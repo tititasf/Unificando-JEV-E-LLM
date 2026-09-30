@@ -14,6 +14,7 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 5b. **A tarefa de treino decide a precisão.** Tarefas-atrator produzem margens pequenas (erro não custa nada no treino).
 5b2. **Dissolução é normalização** (E013): o argmax do passo não depende de N; o que se perde é a nitidez da softmax. A lei dá a temperatura mínima (β = 1 + ln((N−1)/(N_tr−1))/m) sem re-treino. Antes de chamar uma afiação de mecanismo, compare com β constante e argmax.
 5b3. **Superposição é forma, não temperatura** (E014): softmax da soma (produto) é biestável para hipóteses desiguais (dissolve ou o vencedor leva tudo, em qualquer β); soma de softmaxes (mistura, normalizar por origem) guarda todas com os mesmos pesos. Normalize por origem para propagar crenças; por destino para escolher.
+5b4. **Extrapolar = cancelar a descida da normalização, medida no próprio dado** (E016, E017): o soft-min desce por ln(grau)/β (empates) e deriva nas arestas baratas (1/w_min). Com β = κ·ln(g)/(a·w_min) e **nenhum viés aditivo livre**, o caminho mínimo extrapola 20×. O treino em n pequeno prefere compensar com viés, e o viés quebra em n grande.
 5c. Nosso "contínuo" é uma distribuição sobre nós, quase simbólica. Conclusões sobre latente contínuo *livre* ainda não foram testadas.
 
 ## Sobre o S3 (metacognição)
@@ -39,7 +40,7 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 9b. **O código ótimo depende do recurso escasso** (E015): com energia fixa por mensagem, espalhar (one-hot/simplex) é quase ótimo e comprimir abaixo de N/2 dimensões custa robustez (Rankin); com amplitude fixa por canal, comprimir ganha com folga. Declare o custo antes de pedir "menos bits".
 
 ## Sobre o processo
-10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25; no ciclo 7, com piloto, 0,11; no ciclo 8, 0,04; no ciclo 9, 0,07; ciclo 10, 0,05; ciclo 11, 0,03; ciclo 12, 0,12 (subestimei a queda do JEV com N); ciclo 13, 0,05; ciclo 14, 0,13; ciclo 15, 0,18. **Pilotos com o modelo completo são o que mais melhorou a calibração.** Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
+10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25; no ciclo 7, com piloto, 0,11; no ciclo 8, 0,04; no ciclo 9, 0,07; ciclo 10, 0,05; ciclo 11, 0,03; ciclo 12, 0,12 (subestimei a queda do JEV com N); ciclo 13, 0,05; ciclo 14, 0,13; ciclo 15, 0,18; ciclo 16, 0,16 (subestimei o DT); ciclo 17, 0,05. **Pilotos com o modelo completo são o que mais melhorou a calibração.** Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
 11. Diagnósticos pós-hoc baratos (minutos) explicaram todas as surpresas até agora. Faça-os sempre que um resultado contradisser a expectativa.
 11b. **Grades que dependem de uma quantidade estimada (como N*) precisam de um smoke com o modelo completo antes de congelar** (E006: a grade começou alta demais e P5 nunca rodou).
 11c. Variáveis vêm da teoria; constantes vêm dos dados. Não congele um limiar intuitivo (0,5) sem medi-lo.
@@ -47,5 +48,6 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 11e. **Antes de chamar algo de lei nova, procure a teoria clássica com a mesma forma** (E007d era Hopfield moderno).
 12. Quando um resultado contradisser um registro antigo, **corrija o registro antigo** na hora.
 12a. **Examine a pergunta antes de construir** (ciclo 14): se o verificador de uma solução é o próprio resolvedor exato, a questão de custo é vazia; troque de família.
+12c. **Amortização verificada só paga quando resolver ≫ verificar** (M009): verificar custa Ω(entrada). Se o resolvedor clássico já é quase linear (caminho mínimo), o chute do S1 não tem o que economizar. A H24 pertence à busca.
 12b. **Guarda de commit pelo código de saída:** `python3 -m lab.checar >/dev/null && git commit ...`. Um `| tail` no meio engole o erro (ciclo 12).
 13. **Decisão compilada:** o que foi feito à mão 2 vezes vira ferramenta na terceira. O S2 (o pesquisador) compila reflexos para o laboratório; não repete deliberação.
