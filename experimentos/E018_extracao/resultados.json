@@ -1,0 +1,992 @@
+[
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.043317
+  ],
+  "comportamental|ptr": [
+   0.921875,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": true,
+  "comportamental|reconhece_regra": true,
+  "cpu_s": 703.6254122257233,
+  "erro_semianel_vs_rede": 0.043316833674907684,
+  "fam": "SP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.043317
+  ],
+  "mecanistica|ptr": [
+   0.921875,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": true,
+  "mecanistica|reconhece_regra": true,
+  "rede|16|erro_val": 0.055548399686813354,
+  "rede|16|ptr": 0.9365234375,
+  "rede|32|erro_val": 0.04533115401864052,
+  "rede|32|ptr": 0.87060546875,
+  "rede|64|erro_val": 0.035105150192976,
+  "rede|64|ptr": 0.7666015625,
+  "seed": 1800,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "media",
+    "minf",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.044407
+  ],
+  "comportamental|ptr": [
+   0.878906,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": false,
+  "comportamental|reconhece_regra": false,
+  "cpu_s": 722.5965511798859,
+  "erro_semianel_vs_rede": 0.10564698278903961,
+  "fam": "WP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "media",
+    "minf",
+    false
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.044407
+  ],
+  "mecanistica|ptr": [
+   0.878906,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": false,
+  "mecanistica|reconhece_regra": false,
+  "rede|16|erro_val": 0.07497468590736389,
+  "rede|16|ptr": 0.994140625,
+  "rede|32|erro_val": 0.08384528011083603,
+  "rede|32|ptr": 0.98291015625,
+  "rede|64|erro_val": 0.12103289365768433,
+  "rede|64|ptr": 0.954833984375,
+  "seed": 1800,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   1.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.016325
+  ],
+  "comportamental|ptr": [
+   0.875,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": true,
+  "comportamental|reconhece_regra": true,
+  "cpu_s": 702.9045209884644,
+  "erro_semianel_vs_rede": 0.01632501929998398,
+  "fam": "SP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.016325
+  ],
+  "mecanistica|ptr": [
+   0.875,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": true,
+  "mecanistica|reconhece_regra": true,
+  "rede|16|erro_val": 0.028654539957642555,
+  "rede|16|ptr": 0.9541015625,
+  "rede|32|erro_val": 0.01887708529829979,
+  "rede|32|ptr": 0.92431640625,
+  "rede|64|erro_val": 0.012765197083353996,
+  "rede|64|ptr": 0.83740234375,
+  "seed": 1801,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 0.996875,
+  "comportamental|256|ptr": 0.1431640625,
+  "comportamental|64|ptr": 0.61484375,
+  "comportamental|prog": [
+   [
+    "media",
+    "minf",
+    true
+   ],
+   [
+    0.5,
+    1.5,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.039579
+  ],
+  "comportamental|ptr": [
+   0.777344,
+   "argmax",
+   "minf",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": false,
+  "comportamental|reconhece_regra": false,
+  "cpu_s": 721.6267087459564,
+  "erro_semianel_vs_rede": 0.05014627426862717,
+  "fam": "WP",
+  "mecanistica|16|ptr": 0.996875,
+  "mecanistica|256|ptr": 0.1431640625,
+  "mecanistica|64|ptr": 0.61484375,
+  "mecanistica|prog": [
+   [
+    "media",
+    "minf",
+    false
+   ],
+   [
+    0.5,
+    1.5,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.039579
+  ],
+  "mecanistica|ptr": [
+   0.777344,
+   "argmax",
+   "minf",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": false,
+  "mecanistica|reconhece_regra": false,
+  "rede|16|erro_val": 0.09191981703042984,
+  "rede|16|ptr": 0.87890625,
+  "rede|32|erro_val": 0.0451582670211792,
+  "rede|32|ptr": 0.849609375,
+  "rede|64|erro_val": 0.04140186682343483,
+  "rede|64|ptr": 0.67578125,
+  "seed": 1801,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   1.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.025484
+  ],
+  "comportamental|ptr": [
+   0.917969,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": true,
+  "comportamental|reconhece_regra": true,
+  "cpu_s": 673.1772902011871,
+  "erro_semianel_vs_rede": 0.025484152138233185,
+  "fam": "SP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.025484
+  ],
+  "mecanistica|ptr": [
+   0.917969,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": true,
+  "mecanistica|reconhece_regra": true,
+  "rede|16|erro_val": 0.02820265293121338,
+  "rede|16|ptr": 0.9541015625,
+  "rede|32|erro_val": 0.023475175723433495,
+  "rede|32|ptr": 0.93310546875,
+  "rede|64|erro_val": 0.20496833324432373,
+  "rede|64|ptr": 0.797119140625,
+  "seed": 1802,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "media",
+    "minf",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.04325
+  ],
+  "comportamental|ptr": [
+   0.882812,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": false,
+  "comportamental|reconhece_regra": false,
+  "cpu_s": 701.7291095256805,
+  "erro_semianel_vs_rede": 0.0892072319984436,
+  "fam": "WP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "media",
+    "minf",
+    false
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.04325
+  ],
+  "mecanistica|ptr": [
+   0.882812,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": false,
+  "mecanistica|reconhece_regra": false,
+  "rede|16|erro_val": 0.06802816689014435,
+  "rede|16|ptr": 0.9931640625,
+  "rede|32|erro_val": 0.08280202746391296,
+  "rede|32|ptr": 0.978515625,
+  "rede|64|erro_val": 0.10652848333120346,
+  "rede|64|ptr": 0.932861328125,
+  "seed": 1802,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   1.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.018133
+  ],
+  "comportamental|ptr": [
+   0.925781,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": true,
+  "comportamental|reconhece_regra": true,
+  "cpu_s": 670.817526102066,
+  "erro_semianel_vs_rede": 0.018132824450731277,
+  "fam": "SP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.018133
+  ],
+  "mecanistica|ptr": [
+   0.925781,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": true,
+  "mecanistica|reconhece_regra": true,
+  "rede|16|erro_val": 0.019310418516397476,
+  "rede|16|ptr": 0.94921875,
+  "rede|32|erro_val": 0.015229030512273312,
+  "rede|32|ptr": 0.908203125,
+  "rede|64|erro_val": 0.02822006680071354,
+  "rede|64|ptr": 0.786865234375,
+  "seed": 1803,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "media",
+    "lin",
+    true
+   ],
+   [
+    0.0,
+    0.5,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.043806
+  ],
+  "comportamental|ptr": [
+   0.761719,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": false,
+  "comportamental|reconhece_regra": false,
+  "cpu_s": 680.8906843662262,
+  "erro_semianel_vs_rede": 0.0910639539361,
+  "fam": "WP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "media",
+    "maxf",
+    true
+   ],
+   [
+    0.0,
+    0.5,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.043806
+  ],
+  "mecanistica|ptr": [
+   0.761719,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": false,
+  "mecanistica|reconhece_regra": false,
+  "rede|16|erro_val": 0.06740079820156097,
+  "rede|16|ptr": 0.9677734375,
+  "rede|32|erro_val": 0.08893222361803055,
+  "rede|32|ptr": 0.90771484375,
+  "rede|64|erro_val": 0.13387537002563477,
+  "rede|64|ptr": 0.787841796875,
+  "seed": 1803,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   1.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.026255
+  ],
+  "comportamental|ptr": [
+   0.953125,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": true,
+  "comportamental|reconhece_regra": true,
+  "cpu_s": 694.2127540111542,
+  "erro_semianel_vs_rede": 0.026255488395690918,
+  "fam": "SP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.026255
+  ],
+  "mecanistica|ptr": [
+   0.953125,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": true,
+  "mecanistica|reconhece_regra": true,
+  "rede|16|erro_val": 0.029258565977215767,
+  "rede|16|ptr": 0.9716796875,
+  "rede|32|erro_val": 0.028126735240221024,
+  "rede|32|ptr": 0.93017578125,
+  "rede|64|erro_val": 0.03294320032000542,
+  "rede|64|ptr": 0.81396484375,
+  "seed": 1804,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ },
+ {
+  "comportamental|16|ptr": 1.0,
+  "comportamental|256|ptr": 1.0,
+  "comportamental|64|ptr": 1.0,
+  "comportamental|prog": [
+   [
+    "media",
+    "minf",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.036788
+  ],
+  "comportamental|ptr": [
+   0.90625,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "comportamental|reconhece": false,
+  "comportamental|reconhece_regra": false,
+  "cpu_s": 725.9128708839417,
+  "erro_semianel_vs_rede": 0.07305988669395447,
+  "fam": "WP",
+  "mecanistica|16|ptr": 1.0,
+  "mecanistica|256|ptr": 1.0,
+  "mecanistica|64|ptr": 1.0,
+  "mecanistica|prog": [
+   [
+    "media",
+    "minf",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   -10000.0,
+   1.0,
+   0.036788
+  ],
+  "mecanistica|ptr": [
+   0.90625,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "mecanistica|reconhece": false,
+  "mecanistica|reconhece_regra": false,
+  "rede|16|erro_val": 0.06418155878782272,
+  "rede|16|ptr": 0.9912109375,
+  "rede|32|erro_val": 0.07795988768339157,
+  "rede|32|ptr": 0.98583984375,
+  "rede|64|erro_val": 0.11353643983602524,
+  "rede|64|ptr": 0.96826171875,
+  "seed": 1804,
+  "sintese|16|ptr": 1.0,
+  "sintese|256|ptr": 1.0,
+  "sintese|64|ptr": 1.0,
+  "sintese|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   1.0,
+   0.0
+  ],
+  "sintese|ptr": [
+   1.0,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "sintese|reconhece": true,
+  "sintese|reconhece_regra": true
+ }
+]

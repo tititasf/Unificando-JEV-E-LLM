@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 17 |
-| nós na árvore | 31 (RASCUNHO 7, META 6, MELHORAR 6, DIAGNOSTICAR 8, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.18 |
-| taxa de promoção/replicação | 0.71 |
-| previsões avaliadas / acerto | 91 / 0.71 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.13 |
+| ciclos | 18 |
+| nós na árvore | 33 (RASCUNHO 8, META 6, MELHORAR 6, DIAGNOSTICAR 9, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.17 |
+| taxa de promoção/replicação | 0.67 |
+| previsões avaliadas / acerto | 101 / 0.72 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.12 |
 | degrau atual por tema | S2 D07, S3 D04, S5 D05, S6 D01, S1 D01 |
-| ciclos sem subir degrau | S2 3, S3 8, S5 2, S6 6, S1 5 |
-| novidade dos achados | replicacao 1, — 2, baixa 9, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1 |
+| ciclos sem subir degrau | S2 4, S3 9, S5 3, S6 7, S1 6 |
+| novidade dos achados | replicacao 1, — 2, baixa 9, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1, baixa (a rota da rede funciona no SP, mas a sintese direta faz o mesmo sem rede) 1 |
 | registros antigos corrigidos | 8 |
-| CPU médio por nó (s) | 429.00 |
+| CPU médio por nó (s) | 755.39 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -49,6 +49,8 @@
         ▲ E016 [RASCUNHO, S2] Protocolo CLRS reimplementado: Bellman-Ford n=16->64, motor de relaxacao suave e Deep Thinking → PROMOVER N1
             · M009 [DIAGNOSTICAR, S3] Piloto: H24 no caminho minimo (certificado O(E)) nao amortiza → INFORMATIVO N0
             ▲ E017 [MELHORAR, S2] Lei de temperatura da relaxacao suave: BF e BFS, n=16 -> 320 → PROMOVER N2
+                · M010 [DIAGNOSTICAR, S2] Pilotos G1: rede generica sem dicas, sonda e extracao (SP/WP) → INFORMATIVO N0
+                · E018 [RASCUNHO, S2] Extrair da rede generica ou sintetizar direto? (SP min-plus, WP max-min) → INFORMATIVO N1
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -394,3 +396,25 @@
 - **Semeou:** H-bf-prova, H-lei-unificada, H-busca-cert
 - **Arquivos:** [prereg](experimentos/E017_bf_lei/PREREG.md) · [relatorio](experimentos/E017_bf_lei/RELATORIO.md)
 - **Commits:** pré-registro `73c69f1` · resultado `—`
+
+### M010 — Pilotos G1: rede generica sem dicas, sonda e extracao (SP/WP) (ciclo 18, 2026-09-30)
+- **Operador:** DIAGNOSTICAR · **pai:** E017 · **tema:** S2 · **degrau-alvo:** —
+- **Hipótese:** Um MPNN generico sem dicas extrapola em SP/WP e sua regra pode ser extraida automaticamente?
+- **Veredito:** INFORMATIVO · **nível:** N0 · **novidade:** —
+- **Lição:** MPNN generico (agregacao max, lr 5e-4, corte 1,0) extrapola: SP 0,94->0,82, WP 0,98->0,95 (n=16->64); soma explode.
+- **Lição:** A sintese direta sem rede acha o programa: o braco que o revisor pediria virou parte do E018.
+- **Lição:** WP: aresta mais pesada = pai valido (arvore geradora maxima); ponteiro trivial.
+- **Arquivos:** [relatorio](experimentos/E018_extracao/pilotos/LEIAME.md)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### E018 — Extrair da rede generica ou sintetizar direto? (SP min-plus, WP max-min) (ciclo 18, 2026-09-30)
+- **Operador:** RASCUNHO · **pai:** E017 · **tema:** S2 · **degrau-alvo:** S2:D18
+- **Hipótese:** H-rede-superflua: na mesma linguagem de regras, a sintese direta (sem rede) recupera a relaxacao do semianel em >=80% das sementes, e a extracao da rede generica sem dicas recupera menos.
+- **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** baixa (a rota da rede funciona no SP, mas a sintese direta faz o mesmo sem rede)
+- **Métrica principal:** programas reconhecidos como relaxacao exata (regra+ponteiro+inicio) = SP: mecanistica 5/5, comportamental 5/5, sintese 5/5; WP: 0/5, 0/5, 5/5; sintese 10/10 vs 5/10 (Fisher p=0,033); programa 1,000 em n=256; rede 0,799 (SP) e 0,892 (WP) em n=64
+- **Previsões:** P1-SP ✅ (p=0.9); P1-WP ✅ (p=0.9); P2-SP ✅ (p=0.55); P2-WP 🟥 (p=0.2); P3-SP ✅ (p=0.45); P3-WP 🟥 (p=0.15); P4 ✅ (p=0.95); P5-SP ✅ (p=0.97); P5-WP ✅ (p=0.9); P6 ✅ (p=0.75)
+- **Lição:** Rede generica sem dicas guarda a relaxacao exata do BF nas transicoes (SP 5/5, prova por reducao para todo n), mas a sintese direta sem rede faz o mesmo: a rede e superflua nestas familias.
+- **Lição:** Rede boa em ponteiro pode ser infiel nos valores (WP): a extracao herda os erros; acuracia de ponteiro nao mede fidelidade.
+- **Semeou:** H-G1-busca, H-mec-pura, H-G1-externo
+- **Arquivos:** [prereg](experimentos/E018_extracao/PREREG.md) · [relatorio](experimentos/E018_extracao/RELATORIO.md)
+- **Commits:** pré-registro `8b5da77` · resultado `—`

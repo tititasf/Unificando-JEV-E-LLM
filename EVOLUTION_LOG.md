@@ -1080,3 +1080,17 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **compasso**: a abertura ajustada ao tamanho da obra.
   - *Desbaste:* o viés que compensava.
   - *Polimento:* a temperatura exata.
+
+## Ciclo 18 — Tema: S2 · motor latente iterativo (foco G1: extrair e provar)
+- **Degrau atual:** D07 (sequencial). Pela trilha G1, o **D18 foi atingido em uma família e em N1** (E018):
+  - no caminho mínimo, a extração automática a partir de uma rede genérica sem dicas dá o programa exato do BF em 5/5 sementes;
+  - a prova por redução ao teorema do semianel vale para todo n (D19 parcial: não é assistente de provas).
+- **O que o ciclo mostrou:**
+  - SP: 5/5 com a rota da rede; o programa acerta 1,000 em n = 256; a rede fica em 0,80 em n = 64.
+  - WP: 0/5 com a rota da rede.
+  - A síntese direta, sem rede, faz 10/10 (p = 0,033 contra a rede): **a rede é supérflua** nestas duas famílias.
+- **Barreira:** o D18 só tem valor para o mundo onde a síntese direta não alcança o programa. Nas famílias de relaxação de semianel, uma linguagem de 18 formas já basta.
+- **Próximo teste:**
+  - H-G1-busca: família com estado auxiliar ou linguagem grande demais para enumerar, medindo se as transições da rede encurtam a síntese;
+  - H-mec-pura: a escolha só pelo interior da rede, que responde se o WP falhou na saída ou no interior.
+- **Escada:** inalterada.

@@ -152,3 +152,20 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Ressalva honesta: o β efetivo em n = 160 é quase o min duro. A lei diz quanto afiar, e o treino sozinho não chega lá.
 - Meta: Brier 0,05.
 - Semeado: H-bf-prova (→ H19/G1), H-lei-unificada, H-busca-cert (→ H24).
+
+## Ciclo 18 — 2026-09-30 — CRITICA (PIVOTAR) + E018 extrair da rede genérica ou sintetizar direto? (pré-registrado)
+- **Crítica (regra 19, nova):** nada novo para o mundo desde o ciclo 6 e 0/22 nós comparados com número publicado.
+  - Decisão: PIVOTAR para a lacuna do G1.
+  - PyTorch CPU liberado. Ritual poético cortado do ESCALAR.
+- **Pilotos (M010):**
+  - o MPNN genérico sem dicas extrapola (SP 0,94 → 0,82; WP 0,98 → 0,95, de n = 16 a 64);
+  - a extração v1 falhou (escala da sonda);
+  - a v2 mostrou que a síntese direta, sem rede, acha o programa: o teste que um revisor faria primeiro. Ele virou braço pré-registrado.
+  - O smoke achou o atalho do WP: aresta mais pesada = pai válido (árvore geradora máxima).
+- **Veredito: INFORMATIVO (N1).** 8/10 previsões; as duas 🟥 tinham prob. baixa.
+  - **SP:** as rotas mecanística e comportamental recuperam a relaxação exata do BF com início correto em **5/5**, e o programa acerta 1,000 em n = 256 (a rede: 0,80 em n = 64).
+  - **WP: 0/5.** A rede imprecisa puxa a extração para uma regra de média.
+  - **Síntese direta 10/10 contra 5/10** (p = 0,033): a rede é supérflua nestas famílias.
+- **Surpresa:** a rede WP é melhor em ponteiro que a SP, mas menos fiel ao algoritmo nos valores. Acurácia de ponteiro não mede fidelidade.
+- **Custo:** 117 min de CPU, acima do teto de 60, declarado.
+- **Semeado:** H-G1-busca (a família em que a síntese falha), H-mec-pura, H-G1-externo (CLRS-30 oficial).

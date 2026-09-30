@@ -1,8 +1,8 @@
 # ESTADO — onde estamos
 
-Atualizado no fim de cada ciclo. Última atualização: ciclo 17 (2026-09-30).
+Atualizado no fim de cada ciclo. Última atualização: ciclo 18 (2026-09-30).
 
-> Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H24 → H08 → H17 → H21 → H14/H19).
+> Norte (ciclo 18, regra 19): a **lacuna do G1** ([`docs/LITERATURA_G1.md`](docs/LITERATURA_G1.md)), decidida em [`CRITICA.md`](CRITICA.md). A bússola ([`BUSSOLA.md`](BUSSOLA.md)) passou a ser consultiva.
 
 ## Fase atual
 
@@ -37,6 +37,7 @@ JEV (S1 externo real): **conectado e medido** (E012, 3.298 chamadas, `jev-1.13.0
 | A20 | **Código mínimo = função do custo do canal:** com energia fixa por mensagem (canal do E003), o código aprendido com N−1 dimensões supera o one-hot (0,83–0,99), com N/2 empata (limite de Rankin) e abaixo perde; com amplitude fixa por canal, N/4 dimensões erram 0,1–12% do one-hot. O aprendido vence o sorteado (24/24) e o binário à mão | **N2** (reproduzido limpo) | nenhuma (replicação da teoria clássica) | E015 |
 | A21 | **Dilema do viés no Bellman-Ford suave (CLRS n=16→64):** o soft-min desce até ln(grau)/β abaixo do mínimo; o viés aprendido b > 0 compensa, mas b pequeno **diverge** (distâncias descem sem fim) e b grande penaliza saltos; o b estável cresce com n. Motor de 5 parâmetros: 0,91 → 0,62; o Bellman-Ford duro com a·w+b prevê o motor em 4/5 sementes; **Deep Thinking vence** (0,84 em n=64) porque a perda progressiva empurra b para a faixa estável | N1 (reproduzido limpo) | baixa | E016 |
 | A22 | **Lei de temperatura da relaxação suave (T3, 20× o treino):** a descida do soft-min tem duas fontes medidas sem rótulo, 1/w_min (deriva nos 2-ciclos) e ln(grau) (empates). Com β = κ·ln(g_max)/(a·w_min), b = 0 e κ aprendido em n=16, o caminho mínimo fica em 0,993 (n=160) e 0,991 (n=320), contra DT 0,615 (p = 0,0002). Ablações: sem a lei 0,58, com b livre 0,44. BFS satura (DT = LEI = 1). **Ressalva:** o β efetivo é quase o min duro; a lei diz quanto afiar, que o treino sozinho não acha | **N2** (reproduzido limpo) | baixa | E017 |
+| A23 | **Rede genérica sem dicas → programa provado (SP), mas a rede é supérflua:** um MPNN genérico (mensagem MLP, agregação max), treinado só com entrada → saída em n=16, guarda nas transições internas a relaxação exata do Bellman-Ford. A extração automática a recupera com início correto em **5/5** sementes, e o programa acerta 1,000 em n=256 (a rede: 0,80 em n=64). **No caminho mais largo, 0/5:** a rede imprecisa puxa a extração para uma regra de média. A **síntese direta sem rede acha os dois (10/10 contra 5/10, Fisher p=0,033)**. O ponteiro do WP é trivial (aresta mais pesada) | N1 | baixa (a síntese basta) | E018 |
 | A12 | **O S2 é uma memória associativa tipo Hopfield:** teoria de campo médio (bifurcação sela-nó, m·a(1−a)=1) prevê N_c por modelo com ~9% de erro, sem parâmetros ajustados | N1 (pós-hoc, 30 sementes) | baixa (condição de separação de Hopfield moderno) | E007d |
 
 ## Fila de hipóteses (topo = próximo)
@@ -46,6 +47,10 @@ Política: H05 (c13), H10 (c14), H13 (c15), H23 (c16) e H11 (c17) fechadas. A H2
 
 | Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
+| G1a | **H-G1-busca** (foco G1) | Achar uma família em que a síntese direta **falha** (linguagem grande demais para enumerar, ou estado auxiliar invisível na entrada → saída: MST/Prim com chave, fluxo, DFS com pilha) e medir se as transições da rede encurtam a busca da síntese (candidatos mecanísticos contra enumeração cega, com o mesmo orçamento) | E018 · RASCUNHO | S2 D18 | alto |
+| G1b | **H-mec-pura** | Isolar a contribuição mecanística: escolher a regra só pelo ajuste nas transições, sem circuito fechado contra a saída; mede se o interior da rede é mais fiel ao algoritmo que a saída (WP: 0/5 pela saída) | E018 · ABLAR | S2 D18 | baixo |
+| G1c | **H-G1-externo** | Rodar a rede genérica no CLRS-30 oficial (dm-clrs) em BF/Dijkstra/MST e comparar com os números publicados (MINAR, Triplet-GMPNN), com `externo: true` | E018 · REPLICAR | — | médio |
+| 0c′ | ~~H-bf-prova~~ | **Coberta pelo E018** na forma forte: rede genérica, não o motor LEI | — | — | — |
 | 0 | ~~H-bf-cert~~ → **H-busca-cert** (→ H24) | **Piloto M009:** no caminho mínimo o chute não se paga (verificar Ω(E), e o SPFA já é quase linear). Levar a H24 para uma família de busca (SAT, quebra-cabeça), em que resolver ≫ verificar: o S1 ordena, o S3 verifica em O(tamanho), o S2 busca | M009 · RASCUNHO | S3 D08 | médio |
 | 0b | ~~H-bf-lei~~ | **Feito no E017 (N2): H11 desbloqueada** (a lei certa inclui 1/w_min) | — | — | — |
 | 0c | **H-bf-prova** (→ H19, G1) | Extrair o programa do motor LEI e verificar automaticamente que é o Bellman-Ford (para todo n) | E017 · MELHORAR | S2 D18–D19 | médio |
