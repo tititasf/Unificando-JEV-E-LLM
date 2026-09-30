@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 11 |
-| nós na árvore | 22 (RASCUNHO 5, META 6, MELHORAR 2, DIAGNOSTICAR 5, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.27 |
-| taxa de promoção/replicação | 0.55 |
-| previsões avaliadas / acerto | 52 / 0.65 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.15 |
-| degrau atual por tema | S2 D06, S3 D04, S5 D04, S6 D01 |
-| ciclos sem subir degrau | S2 1, S3 2, S5 8, S6 0 |
-| novidade dos achados | replicacao 1, — 2, baixa 4, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
+| ciclos | 12 |
+| nós na árvore | 23 (RASCUNHO 6, META 6, MELHORAR 2, DIAGNOSTICAR 5, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.25 |
+| taxa de promoção/replicação | 0.58 |
+| previsões avaliadas / acerto | 61 / 0.67 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.14 |
+| degrau atual por tema | S2 D06, S3 D04, S5 D04, S6 D01, S1 D01 |
+| ciclos sem subir degrau | S2 2, S3 3, S5 9, S6 1, S1 0 |
+| novidade dos achados | replicacao 1, — 2, baixa 5, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
 | registros antigos corrigidos | 5 |
-| CPU médio por nó (s) | 473.71 |
+| CPU médio por nó (s) | 451.89 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -39,6 +39,7 @@
                         · E007d [DIAGNOSTICAR, S2] Diagnostico: teoria de campo medio (bifurcacao sela-no) → INFORMATIVO N1
         ▲ E010 [RASCUNHO, S2] Memoria de trabalho latente: pares (no x contador) → PROMOVER N2
             ▲ E011 [RASCUNHO, S6] Modelo de mundo com o mesmo passo: particula numa caixa → PROMOVER N2
+        ▲ E012 [RASCUNHO, S1] JEV como S1 externo real: sozinho e iterado pelo S2 → PROMOVER N2
     ≡ E008 [REPLICAR, S3] PonderNet reimplementada como linha de base → REPLICADO N2
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
@@ -278,3 +279,17 @@
 - **Semeou:** H-mundo-cru, H-mundo-2p, H-imaginar
 - **Arquivos:** [prereg](experimentos/E011_mundo/PREREG.md) · [relatorio](experimentos/E011_mundo/RELATORIO.md)
 - **Commits:** pré-registro `078a745` · resultado `—`
+
+### E012 — JEV como S1 externo real: sozinho e iterado pelo S2 (ciclo 12, 2026-09-30)
+- **Operador:** RASCUNHO · **pai:** E005 · **tema:** S1 · **degrau-alvo:** S1:D01
+- **Hipótese:** O JEV e um S1 de um salto (k=1 ok, k>=2 ~acaso); um controlador S2 que o chama um salto por vez recupera o acerto segundo acc(k)~q^k; em T1, iterar com parada por ponto fixo (S3) supera a passada unica.
+- **Veredito:** PROMOVER · **nível:** N2 · **novidade:** baixa
+- **Métrica principal:** T2 k=4: ITER vs UMA = 48/90 vs 7/90 (p=1.6e-11); lei q^k em 8/9 celulas; 0/516 erros confiantes
+- **Previsões:** P1 🟥 (p=0.45); P2 ✅ (p=0.75); P3 🟥 (p=0.25); P4 ✅ (p=0.85); P5 ✅ (p=0.45); P6 ✅ (p=0.8); P7 ✅ (p=0.7); P8 ✅ (p=0.6); P9 ✅ (p=0.6)
+- **Lição:** O JEV e um S1 de um salto; composicao em uma passada ~acaso.
+- **Lição:** Ate o salto unico se dissolve com N (0,94->0,71 de N=8 a 64): lei de nitidez num S1 comercial.
+- **Lição:** S2 iterando S1 segue acc(k)~q^k: o custo de confiabilidade e calculavel antes de rodar.
+- **Lição:** O JEV sabe quando nao sabe: 0/516 erros com p>=0,9; ECE 0,074.
+- **Semeou:** H-JEV-seletivo, H-JEV-autoponteiro, H-JEV-nitidez
+- **Arquivos:** [prereg](experimentos/E012_jev/PREREG.md) · [relatorio](experimentos/E012_jev/RELATORIO.md)
+- **Commits:** pré-registro `3d70ea0` · resultado `—`

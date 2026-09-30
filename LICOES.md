@@ -27,11 +27,15 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 
 8e. **Extrapolação perfeita é suspeita:** procure o atributo que a garante (E011: distância à parede truncada tornou a física uma tabela local; a extrapolação em L veio do desenho).
 
+8f. **Um S1 rápido não compõe; decomponha e meça q.** Com o acerto por passo q, o acerto de k passos é ≈ q^k (E012, JEV). Investir em q vale mais que em k.
+8g. **Confiança calibrada é o recurso mais valioso de um S1** (E012: 0/516 erros com p ≥ 0,9). O S3 deve ler a confiança antes de ler a resposta.
+8h. Sistemas externos não determinísticos: grave as respostas brutas, analise do arquivo e reproduza reprocessando (`lab.reproduzir --dados`).
+
 ## Sobre comunicação (S5)
 9. **Discretizar a mensagem dá robustez enorme; discretizar o pensamento não ajudou** (E003 vs E002).
 
 ## Sobre o processo
-10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25; no ciclo 7, com piloto, 0,11; no ciclo 8, 0,04; no ciclo 9, 0,07; ciclo 10, 0,05; ciclo 11, 0,03. **Pilotos com o modelo completo são o que mais melhorou a calibração.** Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
+10. **Estou superconfiante.** Acerto de previsões 38% (21 previsões); Brier 0,42 no ciclo 5, **pior que responder sempre 50%** (0,25); no ciclo 6, com probabilidades moderadas, caiu para 0,25; no ciclo 7, com piloto, 0,11; no ciclo 8, 0,04; no ciclo 9, 0,07; ciclo 10, 0,05; ciclo 11, 0,03; ciclo 12, 0,12 (subestimei a queda do JEV com N). **Pilotos com o modelo completo são o que mais melhorou a calibração.** Até o Brier cair abaixo de 0,25, use probabilidades entre 0,35 e 0,65 salvo evidência direta, e escreva *por que* o resultado pode sair ao contrário.
 11. Diagnósticos pós-hoc baratos (minutos) explicaram todas as surpresas até agora. Faça-os sempre que um resultado contradisser a expectativa.
 11b. **Grades que dependem de uma quantidade estimada (como N*) precisam de um smoke com o modelo completo antes de congelar** (E006: a grade começou alta demais e P5 nunca rodou).
 11c. Variáveis vêm da teoria; constantes vêm dos dados. Não congele um limiar intuitivo (0,5) sem medi-lo.

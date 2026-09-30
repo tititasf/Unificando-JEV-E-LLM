@@ -88,3 +88,12 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - JEV: SDK oficial `typesafe-sdk`, `lab/jev.py` e skill `/jev` prontos; o usuário forneceu a chave (fora do git). **Bloqueio: a rede nega `api.typesafe.ai`.** Nenhum resultado usa o JEV. Orientação "Ultra-Sistema 1" traduzida em átomos (SISTEMAS), H26 criada.
 - Meta: Brier 0,03.
 - Semeado: H-mundo-cru, H-mundo-2p, H-imaginar.
+
+## Ciclo 12 — 2026-09-30 — E012 o JEV como S1 externo real (pré-registrado)
+- Acesso ao JEV confirmado (rede liberada; credencial `TYPESAFE` persistente no ambiente). Critério da H26 revisto antes do pré-registro. `lab/reproduzir` ganhou `--dados` (reprocessar respostas gravadas de sistemas não determinísticos).
+- Escolha: H26 sobrepondo H05 (política "infra que desbloqueia"): o JEV é o S1 real do laboratório e destrava a H24.
+- Hipótese: o JEV é um S1 de um salto; um controlador S2 que o chama um salto por vez recupera o acerto segundo q^k; em T1, parada por ponto fixo (S3) supera a passada única.
+- Veredito: **PROMOVER** (N2, reprodução IDÊNTICA). 7/9 previsões. Uma passada: um salto 0,90/0,83/0,63; k≥2 no acaso; T1 falha até com d=1. Iterado: k=4 0,53 vs 0,08 (p=1,6e-11); lei q^k em 8/9 células; T1 0,55 vs 0,06. **0/516 erros confiantes**, ECE 0,074. **H26 desbloqueada; S1 → D01.**
+- Surpresas: (1) até o salto único se dissolve com N (0,94 → 0,71): a lei de nitidez aparece num S1 comercial; (2) o atalho não é π(s) (só 19%); em N=8 k=8 o acerto de 0,40 vem de responder o início com ciclos curtos (11/12); (3) as falhas do ITER_PF são metade de reconhecimento de auto-ponteiro.
+- Meta: Brier 0,12. Errei P1 (subestimei a queda com N) e P3.
+- Semeado: H-JEV-seletivo, H-JEV-autoponteiro, H-JEV-nitidez.

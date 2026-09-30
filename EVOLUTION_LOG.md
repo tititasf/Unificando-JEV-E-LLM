@@ -659,3 +659,70 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **nível**: a mesma regra vale em qualquer comprimento.
   - *Desbaste:* os atributos dados à mão (próximo degrau).
   - *Polimento:* raciocinar e simular com a mesma pedra.
+
+## Ciclo 12 — Tema: S1 · intuição de uma passada (JEV, o S1 externo real; tema novo nesta forma)
+
+### 1. Diagnóstico
+- **Degrau atual: D01.** Sustentado por E012 (N2, reprodução IDÊNTICA das respostas gravadas): o JEV foi medido como S1 externo em T1/T2, em 3 tamanhos e 10 sementes. É um S1 de um salto (0,90 → 0,63 de N=8 a 64); a composição em uma passada fica no acaso; iterado por um controlador S2 segue acc(k) ≈ q^k; sabe quando não sabe (0/516 erros com p ≥ 0,9). H26 desbloqueada.
+- O que funciona: a divisão de trabalho S2 (procedimento) ∘ S1 (passo) e a confiança do JEV como sinal.
+- Barreira para D02: q cai com N, e o erro se compõe como q^k. Nada ainda usa a confiança para cortar o erro por salto.
+
+### 2. Escada de 30 degraus (S1)
+- D01: um S1 externo real medido: acerto × tamanho × profundidade, calibração, atalhos (E012). ← **ESTAMOS AQUI**
+- D02: o S3 lê a confiança do S1 por passo e decide (repetir, abster, escalar ao S2): zero erros confiantes com cobertura útil (H-JEV-seletivo). ← **PRÓXIMO ALVO do tema**
+- D03: roteamento S1 ↔ S2 aprendido pelo custo: o S1 responde o que sabe, o S2 só o resto (Pareto acerto × custo; H24).
+- D04: o S2 compila reflexos no S1 (amortização verificada; H24).
+- D05: a lei de nitidez do S1 medida: q(N) previsto antes de rodar (H-JEV-nitidez).
+- D06: codificação do problema escolhida pelo S2 para maximizar q (o S2 como tradutor de interface).
+- D07: S1 com várias perguntas tipadas por passo (Noul + Choice) combinadas pelo S3 (H-JEV-autoponteiro).
+- D08: S1 sob mudança de família de tarefa (T1 → T2 → CLRS) sem reajuste.
+- D09: S1 como verificador barato de soluções do S2 (a direção inversa).
+- D10: S1 externo + S1 interno aprendido como comitê calibrado.
+- D11: o S1 propõe candidatos que o S2 checa (busca guiada por intuição).
+- D12: o S1 como heurística de busca em algoritmos clássicos (A*, BFS) com ganho medido.
+- D13: auto-currículo: o S2 escolhe as perguntas que mais informam sobre o S1.
+- D14: modelo do S1 (o S2 prevê onde o S1 erra antes de perguntar).
+- D15: S1 em mundos interativos (S6) como política rápida com veto do S3.
+- D16: S1 em comunicação (S5): mensagens tipadas entre agentes.
+- D17: S1 como sentido de energia (S0): "vale pensar mais?" respondido em O(1).
+- D18: destilação do S2 em S1 que generaliza em tamanho (quebra a lei q^k).
+- D19: S1 com garantia estatística de risco (conformal) sob mudança de escala 10×.
+- D20: a união S1+S2+S3 domina PonderNet e limiar fixo na fronteira de Pareto em 3 famílias (G5).
+- D21: subconjunto de ARC-AGI com o S1 propondo e o S2 verificando.
+- D22: S1 que aprende no uso (atualização contínua do reflexo) sem perder calibração.
+- D23: hiper-heurística: o S1 escolhe qual procedimento o S2 deve rodar.
+- D24: o S1 percebe estrutura global (não local) em uma passada, medida por tarefas desenhadas para isso.
+- D25: custo por decisão correta no mínimo teórico da tarefa.
+- D26: S1 + S2 descobrem juntos um procedimento que nenhum dos dois achava sozinho.
+- D27: biblioteca de reflexos compilados, compartilhada entre tarefas.
+- D28: o S1 como interface universal (qualquer estado tipado, qualquer pergunta tipada) com calibração garantida.
+- D29: raciocínio completo em que o S2 só intervém onde a matemática exige.
+- D30: ômega: a intuição sabe exatamente o que sabe; tudo o que é reflexo é reflexo, tudo o que exige pensar é pensado, e a fronteira entre os dois é calculada, não adivinhada.
+
+### 3. Transição
+1. Sacada: o JEV não compõe, mas é previsível e sabe quando erra. Previsibilidade + confiança bastam para o S2 planejar e o S3 cortar.
+2. Subtrair: a passada única em problemas compostos (sempre decompor) e a confiança cega no passo.
+3. Próximo: H-JEV-seletivo, o S3 usa p(escolha) por salto para repetir ou abster, medindo cobertura e erros confiantes.
+
+### 4. Visão vertical (o ciclo 12 lido em 10 níveis)
+- Nível 1: senso comum: o JEV acerta uma consulta, mas não uma cadeia; em cadeia, é preciso perguntar um elo por vez.
+- Nível 2: instrumental: "um salto por chamada" transforma acaso em 53–87% de acerto.
+- Nível 3: arquitetural: S2 = laço, S1 = passo, S3 = parada; três peças, três responsabilidades.
+- Nível 4: computacional: a composição é uma potência (q^k); logo, o investimento certo é em q, não em k.
+- Nível 5: teoria da decisão: com q e a confiança conhecidos, decidir quanto verificar vira cálculo.
+- Nível 6: econômico: 3.298 chamadas por 81 s de parede; o gargalo é confiabilidade, não custo.
+- Nível 7: composicional: o mesmo controlador serve ao nosso S2 aprendido e a um S1 comercial.
+- Nível 8: ontológico: a intuição não compõe; compor é o que define o pensamento deliberado.
+- Nível 9: epistemológico: o JEV sabe quando não sabe; a humildade calibrada é a matéria-prima do S3.
+- Nível 10: ser superior completo: um pensamento que conhece a própria taxa de erro por passo sabe quanto pode andar antes de conferir.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Métis* (a inteligência astuta do instante) guiada pelo *Logos* (a sequência): cada uma no seu lugar.
+- **Metanoia:** não é preciso um S1 que pense longe; basta um S1 honesto sobre o próprio erro e um S2 que conte os passos.
+- **Aplicação:** decompor todo problema do laboratório em passos que o S1 responde com q alto, e gastar o S3 onde a confiança cai.
+- **Hack:** antes de perguntar algo composto a um modelo rápido, pergunte um elo e meça q; a lei q^k diz o resto.
+- **Visão maçônica:**
+  - *Planta baixa:* o aprendiz (S1) assenta uma pedra de cada vez; o mestre (S2) segura a planta; o vigilante (S3) confere o prumo.
+  - *Ferramenta:* o **maço e o cinzel**: golpes curtos, um por vez, cada um conferido.
+  - *Desbaste:* a pergunta única e composta.
+  - *Polimento:* a confiança por golpe decidindo quando conferir.

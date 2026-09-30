@@ -29,9 +29,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 | 5 | 🟨 **H10** Varias hipoteses vivas (busca latente) (S2) | 3.0 | 2 | G4 | — |
 | 6 | 🟨 **H13** Codigo minimo corretor (S5) | 3.0 | 2 | G3 | H-5.4 |
 | 7 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
-| 8 | 🟨 **H26** JEV medido como S1 externo real (S1(JEV)+S2) | 1.0 | 0 | — | E-JEV |
-| 9 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
-| 10 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
+| 8 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
+| 9 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
 
 ## Linha do tempo de desbloqueios (meta-métrica do G6)
 
@@ -43,7 +42,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 9: **H07** Metacognicao legivel em qualquer escala
 - ciclo 10: **H06** Memoria de trabalho latente
 - ciclo 11: **H16** Modelo de mundo com o mesmo passo
-- taxa: 8 habilidades em 11 ciclos = 0.73 por ciclo
+- ciclo 12: **H26** JEV medido como S1 externo real
+- taxa: 9 habilidades em 12 ciclos = 0.75 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -97,7 +97,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Um S1 de uma passada destilado das respostas do S2 responde com latencia O(1); o S3 verifica/roteia e so aciona o S2 quando o S1 nao e confiavel. Custo medio >= 5x menor que o S2 sozinho, mantendo 0 erros confiantes (inclusive fora da distribuicao), em 2 familias de tarefas (≥ N2)
 - 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) · S4+S5 · S4 4.4 · requer: H02  
   critério: N agentes com recurso comum limitado e mensagens simbolicas convergem para uma regra de uso que atinge >= 90% do bem-estar social otimo, contra agentes egoistas (tragedia dos comuns), sem controle central (≥ N2)
-- 🟨 **H26** JEV medido como S1 externo real · S1(JEV)+S2 · S1 1.x · requer: H01  
+- 🟩 **H26** JEV medido como S1 externo real · S1(JEV)+S2 · S1 1.x · requer: H01 — por E012  
   critério: JEV respondendo T1 (raiz) e T2 (k saltos) como Choice, respostas brutas gravadas e reprocessaveis, em >= 3 tamanhos e >= 10 sementes: curva acerto x tamanho x profundidade, ECE e erros confiantes por verificador exato, contra acaso, atalho de um salto e o JEV iterado por um controlador S2 (referencia interna do S2 aprendido: A10/E005) (≥ N1)
 
 ## Mapa de dependências
@@ -135,7 +135,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
     ✔ H16 Modelo de mundo com o mesmo passo
       · H17 Planejar a partir da meta (↑ já mostrado)
   ◐ H24 S2 compila S1 sob a corte do S3 (amortizacao verificada) (↑ já mostrado)
-  ◐ H26 JEV medido como S1 externo real
+  ✔ H26 JEV medido como S1 externo real
 ✔ H02 Mensagem simbolica robusta
   ◐ H13 Codigo minimo corretor
     · H14 Lingua emergente composicional

@@ -26,7 +26,7 @@ Status dos átomos: ⬜ não testado · 🟨 em teste · 🟩 evidência N1+ · 
 | Átomo | Biologia | IA hoje | Átomo testável | Métrica | Status |
 |---|---|---|---|---|---|
 | 1.1 Reconhecimento | córtex visual feedforward | classificadores, "modelos de decisão" tipo JEV | MLP de 1 passada | acc por dificuldade | 🟩 E001: bom só em d=0 |
-| 1.5 S1 externo real (JEV) | — | JEV (TypeSafe System One) | JEV respondendo T1/T2 como Choice, respostas gravadas | acc × tamanho, ECE, erros confiantes | ⬜ H26 (SDK e wrapper prontos; rede bloqueada, `docs/JEV.md`) |
+| 1.5 S1 externo real (JEV) | — | JEV (TypeSafe System One) | JEV respondendo T1/T2 como Choice, respostas gravadas | acc × tamanho, ECE, erros confiantes | 🟩 E012: S1 de um salto (0,90→0,63 com N), composição no acaso; iterado segue q^k; 0/516 erros confiantes |
 | 1.2 Hábito / amortização | prática vira automático (gânglios da base) | destilação | S2 ensina S1 ao longo da "vida" | custo médio × tempo de vida | ⬜ |
 | 1.3 Saliência | amígdala, pulvinar | roteadores MoE | decidir o que merece S2 | E-AURC do roteador | 🟥 E001: roteador por confiança piora |
 | 1.4 Categorização / colapso | percepção categórica | argmax, VQ | cristalização do estado | colapso de sementes, ruído | 🟥 E002: não estabiliza o pensamento em T1 (retestar com ruído interno, H-Σ1b) |

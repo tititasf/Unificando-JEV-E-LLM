@@ -407,7 +407,9 @@
    "prereqs": [
     "H01"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E012"
+   ],
    "custo": 1,
    "hipoteses": [
     "E-JEV"

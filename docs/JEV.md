@@ -6,7 +6,7 @@
   - SDK oficial: `typesafe-sdk` 0.7.2 (`TypeSafeClient.system_one(state, questions)`).
   - Credencial **persistente**: variável `TYPESAFE` nas configurações do ambiente de nuvem (o `lab/jev.py` a copia para `TYPESAFE_API_KEY`, que é o nome que o SDK lê). Setup do ambiente: `pip install typesafe-sdk`. Testado sem o arquivo local: JEV ACESSIVEL.
 - **Primeira fumaça (não é resultado; 2 perguntas, sem pré-registro):** Noul "o nó 3 aponta para si?" com pai = {1:3, 2:3, 3:3} → 0,53 (resposta certa: sim); Choice "raiz a partir do nó 1" com pai = {1:2, 2:3, 3:3} → "2" (certa: "3"). Repetindo a fumaça minutos depois: Noul 0,51 e Choice "3" (certa). **As respostas variam entre chamadas iguais**: o E-JEV precisa gravar cada resposta bruta e medir a variação (várias chamadas por instância). Só mostra que o protocolo funciona; o desempenho se mede no E-JEV pré-registrado (H26).
-- Nenhum resultado dos ciclos 1–11 usou o JEV.
+- Nenhum resultado dos ciclos 1–11 usou o JEV. **Ciclo 12 (E012):** primeira medida pré-registrada. O JEV é um S1 de um salto; iterado pelo S2 segue q^k; sabe quando não sabe (0/516 erros com p ≥ 0,9). Ver `experimentos/E012_jev/RELATORIO.md`.
 - Wrapper: `lab/jev.py` (`estado`, `escolher`, `sim_nao`); skill: `.claude/skills/jev/SKILL.md`.
 - O "S1" dos experimentos (E001 em diante) é **um modelo nosso**, pequeno, de uma passada, *inspirado* no conceito de modelo de decisão tipada. Onde a documentação diz "estilo JEV", leia "inspirado no conceito do JEV".
 - O S2 do laboratório é o Claude (o pesquisador que orquestra os ciclos).
