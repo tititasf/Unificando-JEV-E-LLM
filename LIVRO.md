@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 19 |
-| nós na árvore | 34 (RASCUNHO 8, META 6, MELHORAR 7, DIAGNOSTICAR 9, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.16 |
-| taxa de promoção/replicação | 0.63 |
-| previsões avaliadas / acerto | 107 / 0.71 |
-| Brier das previsões (menor = pesquisador mais calibrado) | 0.12 |
+| ciclos | 20 |
+| nós na árvore | 35 (RASCUNHO 8, META 6, MELHORAR 8, DIAGNOSTICAR 9, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.20 |
+| taxa de promoção/replicação | 0.60 |
+| previsões avaliadas / acerto | 114 / 0.68 |
+| Brier das previsões (menor = pesquisador mais calibrado) | 0.13 |
 | degrau atual por tema | S2 D07, S3 D04, S5 D05, S6 D01, S1 D01 |
-| ciclos sem subir degrau | S2 5, S3 10, S5 4, S6 8, S1 7 |
-| novidade dos achados | replicacao 1, — 2, baixa 9, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1, baixa (a rota da rede funciona no SP, mas a sintese direta faz o mesmo sem rede) 1, baixa (3/5 abaixo do criterio de 4/5; candidata a media se replicar em N2) 1 |
-| registros antigos corrigidos | 8 |
-| CPU médio por nó (s) | 1008.79 |
+| ciclos sem subir degrau | S2 6, S3 11, S5 5, S6 9, S1 8 |
+| novidade dos achados | replicacao 1, — 2, baixa 9, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1, baixa (a rota da rede funciona no SP, mas a sintese direta faz o mesmo sem rede) 1, baixa (3/5 abaixo do criterio de 4/5; candidata a media se replicar em N2) 1, nenhuma (negativo; a linha de leitura nao supervisionada foi encerrada pela regra de parada) 1 |
+| registros antigos corrigidos | 9 |
+| CPU médio por nó (s) | 1601.90 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -52,6 +52,7 @@
                 · M010 [DIAGNOSTICAR, S2] Pilotos G1: rede generica sem dicas, sonda e extracao (SP/WP) → INFORMATIVO N0
                 · E018 [RASCUNHO, S2] Extrair da rede generica ou sintetizar direto? (SP min-plus, WP max-min) → INFORMATIVO N1
                     · E019 [MELHORAR, S2] Variavel oculta: rede generica so com ponteiro e leitura por fechamento dinamico (SP, controle WP) → INFORMATIVO N1
+                        ✖ E020 [MELHORAR, S2] Leitura robusta da variavel oculta: escolha pelo residuo de fechamento (N2, regra de parada) → MATAR N2 (negativo)
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -432,3 +433,17 @@
 - **Semeou:** H-mec-robusta, H-G1-busca, H-G1-externo
 - **Arquivos:** [prereg](experimentos/E019_variavel_oculta/PREREG.md) · [relatorio](experimentos/E019_variavel_oculta/RELATORIO.md)
 - **Commits:** pré-registro `01ce56f` · resultado `—`
+
+### E020 — Leitura robusta da variavel oculta: escolha pelo residuo de fechamento (N2, regra de parada) (ciclo 20, 2026-09-30)
+- **Operador:** MELHORAR · **pai:** E019 · **tema:** S2 · **degrau-alvo:** S2:D18
+- **Hipótese:** Escolher a regra pelo residuo de fechamento da regra arredondada (em vez da concordancia de ponteiro) recupera o min-plus da rede so com ponteiro em >=8/10 sementes.
+- **Veredito:** MATAR · **nível:** N2 (negativo) · **novidade:** nenhuma (negativo; a linha de leitura nao supervisionada foi encerrada pela regra de parada)
+- **Métrica principal:** SP programa min-plus reconhecido sem verdade = escolha nova 0/10, antiga 6/10 (Fisher p=0,011; E019+E020 antiga 9/15, IC95% [0,36;0,80]); max |r| pos-hoc SP >=0,93 em 9/10, WP <=0,65 em 10/10; rede SP n=64 0,754
+- **Previsões:** P1 🟥 (p=0.35); P2 🟥 (p=0.45); P3 🟥 (p=0.35); P4 🟥 (p=0.5); P5 🟥 (p=0.45); P6 ✅ (p=0.95); P7 ✅ (p=0.55)
+- **Lição:** A rede generica sem dicas chega ao ponto fixo do Bellman-Ford por outra dinamica: ler a regra pelos passos internos falha (0/10); pelo comportamento, 60% (e a sintese direta faz isso sem rede).
+- **Lição:** A distancia existe no estado final (pos-hoc SP >=0,93 vs WP <=0,65), mas o algoritmo como sequencia de passos nao esta la para ser lido.
+- **Lição:** Regra de parada pre-registrada funcionou: um ciclo, veredito sem negociacao.
+- **Corrige:** E019
+- **Semeou:** H-G1-externo, H-sonda-prereg
+- **Arquivos:** [prereg](experimentos/E020_leitura_robusta/PREREG.md) · [relatorio](experimentos/E020_leitura_robusta/RELATORIO.md)
+- **Commits:** pré-registro `8937229` · resultado `—`

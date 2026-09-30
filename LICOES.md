@@ -17,6 +17,10 @@ acrescentar**: se uma lição nova contradiz uma antiga, trocar. Máximo ~15 ite
 5b4. **Extrapolar = cancelar a descida da normalização, medida no próprio dado** (E016, E017): o soft-min desce por ln(grau)/β (empates) e deriva nas arestas baratas (1/w_min). Com β = κ·ln(g)/(a·w_min) e **nenhum viés aditivo livre**, o caminho mínimo extrapola 20×. O treino em n pequeno prefere compensar com viés, e o viés quebra em n grande.
 5b5. **Antes de extrair da rede, tente sintetizar sem ela** (E018). Na mesma linguagem de regras, a síntese direta dos pares entrada → verdade achou os programas prováveis do SP e do WP (10/10). A rota da rede acertou 5/10: SP sim, WP não. Uma rede boa em ponteiro pode ser infiel nos valores, e a extração herda os erros dela. A rota "rede → extração → prova" só vale onde a síntese não alcança. Acurácia de ponteiro não mede fidelidade ao algoritmo; meça o erro da regra contra a rede.
 5b6. **Sem alvo de valor, a rede inventa a variável oculta** (E019). Treinada só com o ponteiro, a GNN guarda a distância numa direção linear (|r| ≥ 0,95 em 5/5). Ela pode ser achada sem verdade, exigindo que a leitura feche numa regra simbólica (z^{t+1} ≈ R(z^t)). O gargalo é escolher a regra, não achar a variável. E previsão pré-piloto é outra coisa: Brier 0,127 contra 0,05–0,11 das pós-piloto.
+5b7. **A rede chega ao mesmo ponto fixo por outro caminho** (E020). A GNN sem dicas guarda a distância no estado final, mas a dinâmica dos passos não é a relaxação do Bellman-Ford.
+  - Ler a regra pelos passos internos falhou (0/10); pelo comportamento, 60%, que a síntese direta já faz sem rede.
+  - "Alinhamento algorítmico" no ponto fixo não implica alinhamento passo a passo.
+  - Regra de parada pré-registrada: um ciclo, veredito sem negociação.
 5c. Nosso "contínuo" é uma distribuição sobre nós, quase simbólica. Conclusões sobre latente contínuo *livre* ainda não foram testadas.
 
 ## Sobre o S3 (metacognição)

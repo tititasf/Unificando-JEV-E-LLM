@@ -181,3 +181,14 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - **Surpresa:** o gargalo é escolher a regra, não achar a variável. Nas 2 falhas a leitura era a distância.
 - **Meta:** Brier só pré-piloto de 0,127, pior que os pós-piloto. A calibração antiga estava inflada, como a crítica suspeitava.
 - **Semeado:** H-mec-robusta (escolha pelo resíduo de fechamento, reinícios, N2), H-G1-busca, H-G1-externo.
+
+## Ciclo 20 — 2026-09-30 — CRITICA (APROFUNDAR, com regra de parada) + E020 leitura robusta (pré-registrado)
+- **Hipótese:** escolher a regra pelo resíduo de fechamento recupera o min-plus em ≥ 8/10. Previsões commitadas antes de qualquer piloto.
+- **Veredito: MATAR (N2, negativo).**
+  - escolha nova: **0/10**; escolha antiga: 6/10, nas mesmas redes (p = 0,011);
+  - **regra de parada disparou (< 7/10): a linha de leitura não supervisionada está encerrada.**
+- **Aprendemos:**
+  - a rede chega ao ponto fixo do BF **por outra dinâmica**, e o algoritmo passo a passo não está lá para ser lido;
+  - a distância está no estado final (pós-hoc: SP ≥ 0,93 em 9/10, WP ≤ 0,65 em 10/10).
+- **Surpresa:** errei a direção do efeito (P5: 0 contra 6). Brier pré-piloto 0,158.
+- **Semeado:** H-G1-externo (CLRS-30 oficial), H-sonda-prereg (a variável oculta como resultado pré-registrado).

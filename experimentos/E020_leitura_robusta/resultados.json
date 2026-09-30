@@ -1,0 +1,1322 @@
+[
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    false
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.875,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": true,
+  "corr_antiga": 0.9203031063079834,
+  "corr_max_18": 0.9268676042556763,
+  "corr_nova": -0.7942821383476257,
+  "cpu_s": 951.7598097324371,
+  "fam": "SP",
+  "nova|16|ptr": 0.51875,
+  "nova|256|ptr": 0.509765625,
+  "nova|64|ptr": 0.525,
+  "nova|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.480469,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.92578125,
+  "rede|32|ptr": 0.83544921875,
+  "rede|64|ptr": 0.583984375,
+  "residuo_nova": 0.026466402421417477,
+  "seed": 2000
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "minf",
+    true
+   ],
+   [
+    0.0,
+    1.0,
+    1.0
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.757812,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": -0.588145911693573,
+  "corr_max_18": 0.5920377969741821,
+  "corr_nova": -0.588145911693573,
+  "cpu_s": 952.4139804840088,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "min",
+    "minf",
+    true
+   ],
+   [
+    0.0,
+    1.0,
+    1.0
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.757812,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.9921875,
+  "rede|32|ptr": 0.8125,
+  "rede|64|ptr": 0.111572265625,
+  "residuo_nova": 0.04848364971147913,
+  "seed": 2000
+ },
+ {
+  "antiga|16|ptr": 0.6375,
+  "antiga|256|ptr": 0.12578125,
+  "antiga|64|ptr": 0.36640625,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   1.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.597656,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": false,
+  "corr_antiga": -0.8878876566886902,
+  "corr_max_18": 0.9664111733436584,
+  "corr_nova": -0.8175833821296692,
+  "cpu_s": 945.4360220432281,
+  "fam": "SP",
+  "nova|16|ptr": 0.55,
+  "nova|256|ptr": 0.50703125,
+  "nova|64|ptr": 0.49140625,
+  "nova|prog": [
+   [
+    "min",
+    "maxf",
+    true
+   ],
+   [
+    1.5,
+    1.0,
+    0.5
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.46875,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.958984375,
+  "rede|32|ptr": 0.89599609375,
+  "rede|64|ptr": 0.72900390625,
+  "residuo_nova": 0.017820646368379718,
+  "seed": 2001
+ },
+ {
+  "antiga|16|ptr": 0.95,
+  "antiga|256|ptr": 0.996484375,
+  "antiga|64|ptr": 0.9828125,
+  "antiga|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    -1.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.699219,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": -0.36476603150367737,
+  "corr_max_18": 0.41248515248298645,
+  "corr_nova": -0.36476603150367737,
+  "cpu_s": 956.4448850154877,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    -1.0
+   ],
+   -10000.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.664062,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.9580078125,
+  "rede|32|ptr": 0.8037109375,
+  "rede|64|ptr": 0.302001953125,
+  "residuo_nova": 0.03356162301636599,
+  "seed": 2001
+ },
+ {
+  "antiga|16|ptr": 0.6,
+  "antiga|256|ptr": 0.3021484375,
+  "antiga|64|ptr": 0.42421875,
+  "antiga|prog": [
+   [
+    "media",
+    "lin",
+    false
+   ],
+   [
+    1.0,
+    1.0,
+    -0.5
+   ],
+   1.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.546875,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": false,
+  "corr_antiga": 0.9765334725379944,
+  "corr_max_18": 0.9827749133110046,
+  "corr_nova": 0.9637990593910217,
+  "cpu_s": 1083.8907239437103,
+  "fam": "SP",
+  "nova|16|ptr": 0.565625,
+  "nova|256|ptr": 0.508984375,
+  "nova|64|ptr": 0.50625,
+  "nova|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    -0.5
+   ],
+   1.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.488281,
+   "argmin",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.94140625,
+  "rede|32|ptr": 0.89013671875,
+  "rede|64|ptr": 0.767333984375,
+  "residuo_nova": 0.025714831968450605,
+  "seed": 2002
+ },
+ {
+  "antiga|16|ptr": 0.896875,
+  "antiga|256|ptr": 0.940625,
+  "antiga|64|ptr": 0.9234375,
+  "antiga|prog": [
+   [
+    "max",
+    "maxf",
+    true
+   ],
+   [
+    0.0,
+    1.0,
+    11.5
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.773438,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": -0.5851792693138123,
+  "corr_max_18": 0.5943805575370789,
+  "corr_nova": -0.5676443576812744,
+  "cpu_s": 970.6207048892975,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "min",
+    "minf",
+    true
+   ],
+   [
+    0.0,
+    1.0,
+    1.0
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.765625,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.986328125,
+  "rede|32|ptr": 0.89453125,
+  "rede|64|ptr": 0.171630859375,
+  "residuo_nova": 0.03157156019358726,
+  "seed": 2002
+ },
+ {
+  "antiga|16|ptr": 0.74375,
+  "antiga|256|ptr": 0.536328125,
+  "antiga|64|ptr": 0.59609375,
+  "antiga|prog": [
+   [
+    "min",
+    "maxf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.570312,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": false,
+  "corr_antiga": -0.97747802734375,
+  "corr_max_18": 0.9846210479736328,
+  "corr_nova": -0.97747802734375,
+  "cpu_s": 956.5618283748627,
+  "fam": "SP",
+  "nova|16|ptr": 0.590625,
+  "nova|256|ptr": 0.50703125,
+  "nova|64|ptr": 0.528125,
+  "nova|prog": [
+   [
+    "min",
+    "maxf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.511719,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.94140625,
+  "rede|32|ptr": 0.90771484375,
+  "rede|64|ptr": 0.791748046875,
+  "residuo_nova": 0.02168634175820095,
+  "seed": 2003
+ },
+ {
+  "antiga|16|ptr": 0.803125,
+  "antiga|256|ptr": 0.6056640625,
+  "antiga|64|ptr": 0.68671875,
+  "antiga|prog": [
+   [
+    "min",
+    "maxf",
+    false
+   ],
+   [
+    2.0,
+    1.0,
+    -0.5
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.675781,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": -0.521730899810791,
+  "corr_max_18": 0.5554226040840149,
+  "corr_nova": 0.5054921507835388,
+  "cpu_s": 1096.9752142429352,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "media",
+    "lin",
+    true
+   ],
+   [
+    1.5,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.605469,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.9609375,
+  "rede|32|ptr": 0.6806640625,
+  "rede|64|ptr": 0.157958984375,
+  "residuo_nova": 0.049679942488440994,
+  "seed": 2003
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    false
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.890625,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": true,
+  "corr_antiga": 0.9796295762062073,
+  "corr_max_18": 0.9802365303039551,
+  "corr_nova": -0.9410118460655212,
+  "cpu_s": 938.2506308555603,
+  "fam": "SP",
+  "nova|16|ptr": 0.51875,
+  "nova|256|ptr": 0.504296875,
+  "nova|64|ptr": 0.52734375,
+  "nova|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.585938,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.9365234375,
+  "rede|32|ptr": 0.9072265625,
+  "rede|64|ptr": 0.785888671875,
+  "residuo_nova": 0.018542887607577954,
+  "seed": 2004
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    0.0,
+    1.0,
+    0.5
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.871094,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": -0.385968416929245,
+  "corr_max_18": 0.5290723443031311,
+  "corr_nova": -0.4527323842048645,
+  "cpu_s": 881.8984198570251,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "max",
+    "minf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   1.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.871094,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.994140625,
+  "rede|32|ptr": 0.9765625,
+  "rede|64|ptr": 0.946044921875,
+  "residuo_nova": 0.017539168313493,
+  "seed": 2004
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    false
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.914062,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": true,
+  "corr_antiga": 0.9791960120201111,
+  "corr_max_18": 0.9848544001579285,
+  "corr_nova": -0.43248996138572693,
+  "cpu_s": 935.9672739505768,
+  "fam": "SP",
+  "nova|16|ptr": 0.590625,
+  "nova|256|ptr": 0.5,
+  "nova|64|ptr": 0.50859375,
+  "nova|prog": [
+   [
+    "min",
+    "maxf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.523438,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.95703125,
+  "rede|32|ptr": 0.92138671875,
+  "rede|64|ptr": 0.825927734375,
+  "residuo_nova": 0.019306723161565217,
+  "seed": 2005
+ },
+ {
+  "antiga|16|ptr": 0.95,
+  "antiga|256|ptr": 0.9962890625,
+  "antiga|64|ptr": 0.98671875,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    false
+   ],
+   [
+    0.5,
+    1.0,
+    1.0
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.730469,
+   "argmax",
+   "minf",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": -0.39578938484191895,
+  "corr_max_18": 0.40120142698287964,
+  "corr_nova": -0.3955114483833313,
+  "cpu_s": 892.2752902507782,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "min",
+    "maxf",
+    true
+   ],
+   [
+    1.5,
+    1.0,
+    0.5
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.726562,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.98046875,
+  "rede|32|ptr": 0.77880859375,
+  "rede|64|ptr": 0.128173828125,
+  "residuo_nova": 0.06983984472663567,
+  "seed": 2005
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    false
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.933594,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": true,
+  "corr_antiga": 0.9794531464576721,
+  "corr_max_18": 0.9858825206756592,
+  "corr_nova": 0.9794531464576721,
+  "cpu_s": 1040.4133186340332,
+  "fam": "SP",
+  "nova|16|ptr": 0.959375,
+  "nova|256|ptr": 0.8775390625,
+  "nova|64|ptr": 0.95,
+  "nova|prog": [
+   [
+    "min",
+    "lin",
+    false
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.890625,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.9697265625,
+  "rede|32|ptr": 0.9296875,
+  "rede|64|ptr": 0.773193359375,
+  "residuo_nova": 0.02906489857127479,
+  "seed": 2006
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "media",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    0.0,
+    -0.5
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.867188,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": -0.2661937177181244,
+  "corr_max_18": 0.2737821340560913,
+  "corr_nova": -0.2639806270599365,
+  "cpu_s": 962.9158835411072,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "min",
+    "minf",
+    true
+   ],
+   [
+    0.0,
+    1.0,
+    1.0
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.867188,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.990234375,
+  "rede|32|ptr": 0.96142578125,
+  "rede|64|ptr": 0.344970703125,
+  "residuo_nova": 0.09314261636902393,
+  "seed": 2006
+ },
+ {
+  "antiga|16|ptr": 0.525,
+  "antiga|256|ptr": 0.4814453125,
+  "antiga|64|ptr": 0.51328125,
+  "antiga|prog": [
+   [
+    "media",
+    "maxf",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    -0.5
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.566406,
+   "argmin",
+   "maxf",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": false,
+  "corr_antiga": -0.45498982071876526,
+  "corr_max_18": 0.8387793302536011,
+  "corr_nova": -0.5175078511238098,
+  "cpu_s": 955.2509431838989,
+  "fam": "SP",
+  "nova|16|ptr": 0.525,
+  "nova|256|ptr": 0.502734375,
+  "nova|64|ptr": 0.509375,
+  "nova|prog": [
+   [
+    "min",
+    "maxf",
+    true
+   ],
+   [
+    1.5,
+    1.0,
+    0.5
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.539062,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.966796875,
+  "rede|32|ptr": 0.8935546875,
+  "rede|64|ptr": 0.654296875,
+  "residuo_nova": 0.018005134829437563,
+  "seed": 2007
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "max",
+    "minf",
+    false
+   ],
+   [
+    0.5,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.871094,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": 0.09414627403020859,
+  "corr_max_18": 0.34457242488861084,
+  "corr_nova": 0.2813602089881897,
+  "cpu_s": 880.8503983020782,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "min",
+    "minf",
+    false
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.871094,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.9892578125,
+  "rede|32|ptr": 0.96728515625,
+  "rede|64|ptr": 0.90966796875,
+  "residuo_nova": 0.043612397589168066,
+  "seed": 2007
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    false
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.90625,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": true,
+  "corr_antiga": 0.9881231784820557,
+  "corr_max_18": 0.9881231784820557,
+  "corr_nova": -0.7438502311706543,
+  "cpu_s": 838.9861981868744,
+  "fam": "SP",
+  "nova|16|ptr": 0.546875,
+  "nova|256|ptr": 0.4986328125,
+  "nova|64|ptr": 0.50546875,
+  "nova|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.480469,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.9462890625,
+  "rede|32|ptr": 0.8916015625,
+  "rede|64|ptr": 0.80322265625,
+  "residuo_nova": 0.015957326426324293,
+  "seed": 2008
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "max",
+    "maxf",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.847656,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": -0.13839448988437653,
+  "corr_max_18": 0.2868729829788208,
+  "corr_nova": -0.1786668747663498,
+  "cpu_s": 854.5715827941895,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.5
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.847656,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.990234375,
+  "rede|32|ptr": 0.97216796875,
+  "rede|64|ptr": 0.92578125,
+  "residuo_nova": 0.030550387829537784,
+  "seed": 2008
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    1.0,
+    1.0,
+    0.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.894531,
+   "argmin",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": true,
+  "corr_antiga": 0.9305208325386047,
+  "corr_max_18": 0.9305208325386047,
+  "corr_nova": -0.47895607352256775,
+  "cpu_s": 846.2026610374451,
+  "fam": "SP",
+  "nova|16|ptr": 0.578125,
+  "nova|256|ptr": 0.4939453125,
+  "nova|64|ptr": 0.49296875,
+  "nova|prog": [
+   [
+    "min",
+    "minf",
+    true
+   ],
+   [
+    0.0,
+    1.0,
+    1.0
+   ],
+   10000.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.484375,
+   "argmin",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": false,
+  "rede|16|ptr": 0.947265625,
+  "rede|32|ptr": 0.88818359375,
+  "rede|64|ptr": 0.678466796875,
+  "residuo_nova": 0.022450173146223013,
+  "seed": 2009
+ },
+ {
+  "antiga|16|ptr": 1.0,
+  "antiga|256|ptr": 1.0,
+  "antiga|64|ptr": 1.0,
+  "antiga|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.0
+   ],
+   -10000.0,
+   0.0
+  ],
+  "antiga|ptr": [
+   0.835938,
+   "argmax",
+   "lin",
+   [
+    0.0,
+    1.0
+   ]
+  ],
+  "antiga|reconhece": null,
+  "corr_antiga": 0.34800758957862854,
+  "corr_max_18": 0.6532983779907227,
+  "corr_nova": 0.34800758957862854,
+  "cpu_s": 860.3812165260315,
+  "fam": "WP",
+  "nova|16|ptr": 1.0,
+  "nova|256|ptr": 1.0,
+  "nova|64|ptr": 1.0,
+  "nova|prog": [
+   [
+    "min",
+    "lin",
+    true
+   ],
+   [
+    0.5,
+    1.0,
+    0.0
+   ],
+   0.0,
+   0.0
+  ],
+  "nova|ptr": [
+   0.835938,
+   "argmax",
+   "lin",
+   [
+    1.0,
+    1.0
+   ]
+  ],
+  "nova|reconhece": null,
+  "rede|16|ptr": 0.9931640625,
+  "rede|32|ptr": 0.96337890625,
+  "rede|64|ptr": 0.782958984375,
+  "residuo_nova": 0.014666033119381833,
+  "seed": 2009
+ }
+]

@@ -1,6 +1,6 @@
 # ESTADO — onde estamos
 
-Atualizado no fim de cada ciclo. Última atualização: ciclo 19 (2026-09-30).
+Atualizado no fim de cada ciclo. Última atualização: ciclo 20 (2026-09-30).
 
 > Norte (ciclo 18, regra 19): a **lacuna do G1** ([`docs/LITERATURA_G1.md`](docs/LITERATURA_G1.md)), decidida em [`CRITICA.md`](CRITICA.md). A bússola ([`BUSSOLA.md`](BUSSOLA.md)) passou a ser consultiva.
 
@@ -39,6 +39,7 @@ JEV (S1 externo real): **conectado e medido** (E012, 3.298 chamadas, `jev-1.13.0
 | A22 | **Lei de temperatura da relaxação suave (T3, 20× o treino):** a descida do soft-min tem duas fontes medidas sem rótulo, 1/w_min (deriva nos 2-ciclos) e ln(grau) (empates). Com β = κ·ln(g_max)/(a·w_min), b = 0 e κ aprendido em n=16, o caminho mínimo fica em 0,993 (n=160) e 0,991 (n=320), contra DT 0,615 (p = 0,0002). Ablações: sem a lei 0,58, com b livre 0,44. BFS satura (DT = LEI = 1). **Ressalva:** o β efetivo é quase o min duro; a lei diz quanto afiar, que o treino sozinho não acha | **N2** (reproduzido limpo) | baixa | E017 |
 | A23 | **Rede genérica sem dicas → programa provado (SP), mas a rede é supérflua:** um MPNN genérico (mensagem MLP, agregação max), treinado só com entrada → saída em n=16, guarda nas transições internas a relaxação exata do Bellman-Ford. A extração automática a recupera com início correto em **5/5** sementes, e o programa acerta 1,000 em n=256 (a rede: 0,80 em n=64). **No caminho mais largo, 0/5:** a rede imprecisa puxa a extração para uma regra de média. A **síntese direta sem rede acha os dois (10/10 contra 5/10, Fisher p=0,033)**. O ponteiro do WP é trivial (aresta mais pesada) | N1 | baixa (a síntese basta) | E018 |
 | A24 | **A rede só com o ponteiro inventa a distância:** um MPNN genérico treinado só com o ponteiro (protocolo CLRS, sem dicas nem valor) guarda a distância numa direção linear do estado (melhor leitura com \|r\| ≥ 0,95 em 5/5, pós-hoc). A leitura achada **sem verdade**, por fechamento dinâmico z^{t+1} ≈ R(z^t), dá o programa min-plus exato em **3/5** (critério 4/5; síntese direta 5/5), avaliando 72 programas contra 10.800. Controle WP (ponteiro trivial): variável fraca (≤ 0,78) | N1 | baixa (candidata a média se replicar) | E019 |
+| A25 | **Mesmo ponto fixo, outra dinâmica (negativo):** escolher a regra pelo resíduo de fechamento da leitura dá 0/10; pela concordância de ponteiro, 6/10 (9/15 com o E019). A rede sem dicas guarda a distância no estado final (pós-hoc: SP ≥ 0,93 em 9/10, WP ≤ 0,65 em 10/10), mas a dinâmica dos passos não é a relaxação do BF. Linha encerrada pela regra de parada | N2 (negativo) | — | E020 |
 | A12 | **O S2 é uma memória associativa tipo Hopfield:** teoria de campo médio (bifurcação sela-nó, m·a(1−a)=1) prevê N_c por modelo com ~9% de erro, sem parâmetros ajustados | N1 (pós-hoc, 30 sementes) | baixa (condição de separação de Hopfield moderno) | E007d |
 
 ## Fila de hipóteses (topo = próximo)
@@ -48,7 +49,8 @@ Política: H05 (c13), H10 (c14), H13 (c15), H23 (c16) e H11 (c17) fechadas. A H2
 
 | Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
-| G1-0 | **H-mec-robusta** (E020) | Escolher a regra pelo resíduo de fechamento (não pelo ponteiro da rede), com 3 reinícios por forma, 10 sementes (N2), SP + controle WP; critério de candidato: ≥ 8/10 | E019 · MELHORAR | S2 D18 | médio |
+| G1-0 | ~~H-mec-robusta~~ **MORTA no E020 (0/10); linha de leitura não supervisionada encerrada pela regra de parada** | Escolher a regra pelo resíduo de fechamento (não pelo ponteiro da rede), com 3 reinícios por forma, 10 sementes (N2), SP + controle WP; critério de candidato: ≥ 8/10 | E019 · MELHORAR | S2 D18 | médio |
+| G1-1 | **H-sonda-prereg** | A variável oculta como resultado pré-registrado: sonda linear da distância (SP) contra a largura (WP) em redes só com ponteiro, com linha de base de rede aleatória e comparação com a literatura de sondas em NAR | E020 · REPLICAR | — | médio |
 | G1a | **H-G1-busca** (foco G1) | Achar uma família em que a síntese direta **falha** (linguagem grande demais para enumerar, ou estado auxiliar invisível na entrada → saída: MST/Prim com chave, fluxo, DFS com pilha) e medir se as transições da rede encurtam a busca da síntese (candidatos mecanísticos contra enumeração cega, com o mesmo orçamento) | E018 · RASCUNHO | S2 D18 | alto |
 | G1b | ~~H-mec-pura~~ → parte do E020 | Isolar a contribuição mecanística: escolher a regra só pelo ajuste nas transições, sem circuito fechado contra a saída; mede se o interior da rede é mais fiel ao algoritmo que a saída (WP: 0/5 pela saída) | E018 · ABLAR | S2 D18 | baixo |
 | G1c | **H-G1-externo** | Rodar a rede genérica no CLRS-30 oficial (dm-clrs) em BF/Dijkstra/MST e comparar com os números publicados (MINAR, Triplet-GMPNN), com `externo: true` | E018 · REPLICAR | — | médio |

@@ -5,3 +5,4 @@ cristalização → 100% em 128 nós
 Calibração do pesquisador: Brier 0,42
 S3 com limiar absoluto de confiança não escala
 Limiares absolutos não escalam
+o resíduo de fechamento escolhe a regra certa

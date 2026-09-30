@@ -68,3 +68,6 @@ Brier deste ciclo, só com previsões pré-piloto: 0,127. É pior que os ciclos 
 ## Próximo (E020, pré-registrado antes de qualquer piloto)
 - **H-mec-robusta:** escolha pelo resíduo de fechamento em vez do ponteiro da rede; 3 reinícios por forma; 10 sementes (N2).
 - Critério para candidato a novo: reconhecimento ≥ 8/10 no SP e controle WP separado.
+
+> **Correção (E020, ciclo 20).** A saída proposta acima, escolher a regra pelo resíduo de fechamento, foi **refutada**: 0/10, contra 6/10 da escolha pelo ponteiro, nas mesmas redes.
+> A rede chega ao ponto fixo do Bellman-Ford por outra dinâmica. Pela regra de parada, a linha de leitura não supervisionada está encerrada.

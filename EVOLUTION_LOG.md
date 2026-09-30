@@ -1106,3 +1106,15 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
 - **Barreira:** a escolha da regra depois de achar a variável, pela concordância com o ponteiro da rede.
 - **Próximo teste:** E020 (H-mec-robusta), com escolha pelo resíduo de fechamento, reinícios e 10 sementes.
 - **Escada:** inalterada.
+
+## Ciclo 20 — Tema: S2 · motor latente iterativo (foco G1: leitura robusta)
+- **Degrau atual:** D07 (sequencial). Trilha G1: o D18 fica em N1 com uma família (E018, extração com valor supervisionado).
+  - A rota sem supervisão (E019 e E020) foi **encerrada**.
+- **O que o ciclo mostrou:**
+  - escolha pelo resíduo de fechamento: 0/10; pela concordância de ponteiro: 6/10 (9/15 somando o E019);
+  - a variável distância existe no estado final (pós-hoc), mas a dinâmica interna não é a relaxação do BF.
+- **Barreira:** a rede generaliza por outro caminho. A extração passo a passo não tem o que ler, e a comportamental não supera a síntese direta.
+- **Próximo teste:** reavaliar o foco na CRITICA do ciclo 21.
+  - H-G1-externo: número publicado, CLRS-30.
+  - Ou um pivô para outra lacuna.
+- **Escada:** inalterada.
