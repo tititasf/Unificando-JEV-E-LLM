@@ -1094,3 +1094,15 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - H-G1-busca: família com estado auxiliar ou linguagem grande demais para enumerar, medindo se as transições da rede encurtam a síntese;
   - H-mec-pura: a escolha só pelo interior da rede, que responde se o WP falhou na saída ou no interior.
 - **Escada:** inalterada.
+
+## Ciclo 19 — Tema: S2 · motor latente iterativo (foco G1: variável oculta)
+- **Degrau atual:** D07 (sequencial). Trilha G1: o D18 segue em N1 com uma família (E018).
+  - O E019 estende ao protocolo só com o ponteiro: a variável oculta existe (5/5, pós-hoc) e a regra é lida sem supervisão em 3/5.
+- **O que o ciclo mostrou:**
+  - rede só com o ponteiro: 0,758 em n = 64;
+  - leitura escolhida: |r| com a distância de 0,75 a 0,98;
+  - programa exato em 3/5 contra 5/5 da síntese;
+  - 72 contra 10.800 programas avaliados.
+- **Barreira:** a escolha da regra depois de achar a variável, pela concordância com o ponteiro da rede.
+- **Próximo teste:** E020 (H-mec-robusta), com escolha pelo resíduo de fechamento, reinícios e 10 sementes.
+- **Escada:** inalterada.

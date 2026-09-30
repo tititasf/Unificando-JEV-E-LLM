@@ -169,3 +169,15 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - **Surpresa:** a rede WP é melhor em ponteiro que a SP, mas menos fiel ao algoritmo nos valores. Acurácia de ponteiro não mede fidelidade.
 - **Custo:** 117 min de CPU, acima do teto de 60, declarado.
 - **Semeado:** H-G1-busca (a família em que a síntese falha), H-mec-pura, H-G1-externo (CLRS-30 oficial).
+
+## Ciclo 19 — 2026-09-30 — CRITICA (APROFUNDAR) + E019 variável oculta: rede só com ponteiro (pré-registrado)
+- **Crítica:** faltava a pergunta 9 ("qual é o atalho não neural e ele já rodou?"), que teria antecipado o E018. Ela foi acrescentada ao `lab.critica`.
+  - Previsões do E019 commitadas **antes de qualquer piloto** (c412a7f).
+- **Veredito: INFORMATIVO (N1).** 3/6 previsões.
+  - **A rede treinada só com o ponteiro inventa a distância:** melhor leitura linear com |r| ≥ 0,95 em 5/5 (pós-hoc).
+  - **A leitura sem verdade recupera o programa min-plus exato em 3/5** (critério: 4/5). A síntese direta fica em 5/5.
+  - Rede SP em n = 64: 0,758.
+  - O controle WP separa no máximo das leituras (≤ 0,78), mas não no limiar.
+- **Surpresa:** o gargalo é escolher a regra, não achar a variável. Nas 2 falhas a leitura era a distância.
+- **Meta:** Brier só pré-piloto de 0,127, pior que os pós-piloto. A calibração antiga estava inflada, como a crítica suspeitava.
+- **Semeado:** H-mec-robusta (escolha pelo resíduo de fechamento, reinícios, N2), H-G1-busca, H-G1-externo.

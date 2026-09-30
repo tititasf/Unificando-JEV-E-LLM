@@ -47,7 +47,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 15: **H13** Codigo minimo corretor
 - ciclo 16: **H23** Protocolo CLRS reimplementado com linha de base
 - ciclo 17: **H11** Algoritmos classicos extrapolam (T3)
-- taxa: 14 habilidades em 18 ciclos = 0.78 por ciclo
+- taxa: 14 habilidades em 19 ciclos = 0.74 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 

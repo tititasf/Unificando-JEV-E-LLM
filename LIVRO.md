@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 18 |
-| nós na árvore | 33 (RASCUNHO 8, META 6, MELHORAR 6, DIAGNOSTICAR 9, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.17 |
-| taxa de promoção/replicação | 0.67 |
-| previsões avaliadas / acerto | 101 / 0.72 |
+| ciclos | 19 |
+| nós na árvore | 34 (RASCUNHO 8, META 6, MELHORAR 7, DIAGNOSTICAR 9, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.16 |
+| taxa de promoção/replicação | 0.63 |
+| previsões avaliadas / acerto | 107 / 0.71 |
 | Brier das previsões (menor = pesquisador mais calibrado) | 0.12 |
 | degrau atual por tema | S2 D07, S3 D04, S5 D05, S6 D01, S1 D01 |
-| ciclos sem subir degrau | S2 4, S3 9, S5 3, S6 7, S1 6 |
-| novidade dos achados | replicacao 1, — 2, baixa 9, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1, baixa (a rota da rede funciona no SP, mas a sintese direta faz o mesmo sem rede) 1 |
+| ciclos sem subir degrau | S2 5, S3 10, S5 4, S6 8, S1 7 |
+| novidade dos achados | replicacao 1, — 2, baixa 9, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1, baixa (a rota da rede funciona no SP, mas a sintese direta faz o mesmo sem rede) 1, baixa (3/5 abaixo do criterio de 4/5; candidata a media se replicar em N2) 1 |
 | registros antigos corrigidos | 8 |
-| CPU médio por nó (s) | 755.39 |
+| CPU médio por nó (s) | 1008.79 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -51,6 +51,7 @@
             ▲ E017 [MELHORAR, S2] Lei de temperatura da relaxacao suave: BF e BFS, n=16 -> 320 → PROMOVER N2
                 · M010 [DIAGNOSTICAR, S2] Pilotos G1: rede generica sem dicas, sonda e extracao (SP/WP) → INFORMATIVO N0
                 · E018 [RASCUNHO, S2] Extrair da rede generica ou sintetizar direto? (SP min-plus, WP max-min) → INFORMATIVO N1
+                    · E019 [MELHORAR, S2] Variavel oculta: rede generica so com ponteiro e leitura por fechamento dinamico (SP, controle WP) → INFORMATIVO N1
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -418,3 +419,16 @@
 - **Semeou:** H-G1-busca, H-mec-pura, H-G1-externo
 - **Arquivos:** [prereg](experimentos/E018_extracao/PREREG.md) · [relatorio](experimentos/E018_extracao/RELATORIO.md)
 - **Commits:** pré-registro `8b5da77` · resultado `—`
+
+### E019 — Variavel oculta: rede generica so com ponteiro e leitura por fechamento dinamico (SP, controle WP) (ciclo 19, 2026-09-30)
+- **Operador:** MELHORAR · **pai:** E018 · **tema:** S2 · **degrau-alvo:** S2:D18
+- **Hipótese:** Uma GNN generica treinada so com o ponteiro (protocolo CLRS, sem dicas) inventa a distancia como variavel oculta, e leitura linear + regra achadas por fechamento dinamico (sem verdade) recuperam o programa min-plus.
+- **Veredito:** INFORMATIVO · **nível:** N1 · **novidade:** baixa (3/5 abaixo do criterio de 4/5; candidata a media se replicar em N2)
+- **Métrica principal:** SP: programa min-plus recuperado sem verdade; |r| leitura x distancia = mecanistica 3/5 (sintese 5/5); |r| da leitura escolhida 0,94/0,98/0,75/0,87/0,95; max das 18 >=0,95 em 5/5 (pos-hoc); rede n=64 0,758; WP controle |r|<0,5 em 3/5; 72 vs 10800 programas avaliados
+- **Previsões:** P1 ✅ (p=0.6); P2 🟥 (p=0.35); P3 🟥 (p=0.45); P4 🟥 (p=0.5); P5 ✅ (p=0.85); P6 ✅ (p=0.95)
+- **Lição:** Sem alvo de valor, a GNN generica inventa a distancia como direcao linear do estado (max |r|>=0,95 em 5/5, pos-hoc); no WP (ponteiro trivial) a variavel e fraca.
+- **Lição:** Na extracao nao supervisionada o gargalo e escolher a regra, nao achar a variavel: nas 2 falhas a leitura era a distancia (|r|>=0,87) e a regra saiu errada.
+- **Lição:** Primeiro Brier so pre-piloto: 0,127 (os ciclos pos-piloto ficavam em 0,05-0,11: calibracao inflada).
+- **Semeou:** H-mec-robusta, H-G1-busca, H-G1-externo
+- **Arquivos:** [prereg](experimentos/E019_variavel_oculta/PREREG.md) · [relatorio](experimentos/E019_variavel_oculta/RELATORIO.md)
+- **Commits:** pré-registro `01ce56f` · resultado `—`
