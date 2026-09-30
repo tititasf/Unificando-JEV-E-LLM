@@ -54,3 +54,20 @@ Painel: 23 experimentos, a última candidata a nova foi no ciclo 6, **0/23 exter
 8. **Crítica anterior** (PIVOTAR para o G1): foi seguida e deu um resultado claro em um ciclo. Faltava uma pergunta que teria antecipado o E018: **"qual é o atalho não neural (síntese/enumeração) e ele já foi rodado?"**. Acrescentada ao `lab/critica.py` (pergunta 9).
 
 Decisão: APROFUNDAR
+
+## Ciclo 20 — 2026-09-30
+Painel: 24 experimentos, última candidata no ciclo 6, 0/24 externos, Brier só pré-piloto 0,127 (E019).
+
+1. **Novo para o mundo?** Ainda não. O E019 deu um indício (variável oculta inventada, 5/5 pós-hoc; regra lida sem verdade em 3/5), abaixo do critério.
+2. **Trabalho mais próximo:** Rodionov & Prokhorenkova 2023 (sem dicas, sem extração) e MINAR (circuitos). Superar = mostrar leitura e regra exatas em ≥ 8/10 sementes, com controle negativo separado.
+3. **Escolha honesta:** importa. É o elo fraco identificado no E019 (a escolha da regra); o usuário pediu para aprofundar.
+4. **Profundidade:** a hipótese está viva, com chance de ~35% de passar o critério. **Regra de parada, combinada com o usuário:** se o E020 falhar (< 7/10), a linha de leitura não supervisionada é encerrada.
+5. **Autoengano:**
+   - a nova escolha pelo resíduo de fechamento nasceu da análise das falhas do E019. É pós-hoc no desenho, mas as previsões saem antes de qualquer piloto;
+   - a escolha antiga roda nas mesmas redes como ablação pareada.
+6. **Revisor hostil:** "3/5 foi sorte". O E020 tem 10 sementes novas (N2).
+7. **Norte:** mantido.
+8. **Crítica anterior:** a pergunta 9 funcionou (a síntese direta entrou como braço no E019). As previsões pré-piloto revelaram a calibração real (0,127).
+9. **Atalho não neural:** a síntese direta (5/5 em E018 e E019) sai do E020 por custo e está declarado. A pergunta aqui é outra: se a variável e a regra da rede podem ser lidas, não se o programa pode ser achado.
+
+Decisão: APROFUNDAR
