@@ -110,6 +110,15 @@ def verificar():
     if exps_ciclo and f"## Ciclo {ciclo_max} " not in _ler("EVOLUTION_LOG.md"):
         erros.append(f"EVOLUTION_LOG.md sem entrada do ciclo {ciclo_max} (passo ESCALAR)")
 
+    # 6b. autocritica do norte (regra 19): uma entrada por ciclo a partir do 18, com decisao
+    if ciclo_max >= 18:
+        crit = _ler("CRITICA.md")
+        bloco = crit.split(f"## Ciclo {ciclo_max} ")[1].split("\n## Ciclo ")[0] if f"## Ciclo {ciclo_max} " in crit else ""
+        if not bloco:
+            erros.append(f"CRITICA.md sem entrada do ciclo {ciclo_max} (regra 19: rode python3 -m lab.critica)")
+        elif not re.search(r"Decis[aã]o:\s*(APROFUNDAR|VARIAR|ENDURECER|PIVOTAR)", bloco):
+            erros.append(f"CRITICA.md ciclo {ciclo_max}: falta 'Decisao: APROFUNDAR|VARIAR|ENDURECER|PIVOTAR'")
+
     # 7. fila do ESTADO aponta para habilidades validas e ainda trancadas
     for hid in re.findall(r"\(→ (H\d+)", _ler("ESTADO.md")):
         if hid not in hab:

@@ -14,7 +14,7 @@ rigor nas conclusões.
 
 ## Leia sempre, nesta ordem
 
-0. `docs/LITERATURA_G1.md` (o foco atual) + `GOALS.md` + `BUSSOLA.md` — as estrelas-guia, a árvore de habilidades e a fronteira (o que atacar agora).
+0. `CRITICA.md` (última entrada) + `docs/LITERATURA_G1.md` (o foco atual) + `GOALS.md` + `BUSSOLA.md` — as estrelas-guia, a árvore de habilidades e a fronteira (o que atacar agora).
 1. `ESTADO.md` — onde estamos, fila de hipóteses, placar dos átomos.
 2. Fim do `DIARIO.md` — o que o último ciclo aprendeu.
 3. `docs/VALIDACAO.md` — a régua (escada N0–N5, métricas, regras contra o autoengano).
@@ -59,12 +59,15 @@ automaticamente** e **provada correta para todo n** em 2 ou mais famílias. Um t
 11. **Todo experimento vira um nó** em `registro/arvore.jsonl` (via `lab.registro.adicionar`), com operador, pai, previsões e veredito. O `LIVRO.md` é gerado, nunca editado à mão.
 12. **Só verificadores exatos.** Toda métrica vem de verdade calculável (topo da hierarquia de autoavaliação). Nada de juiz-LLM nem autoavaliação do modelo como métrica.
 13. **Previsões com probabilidade.** Cada previsão do PREREG leva a probabilidade que você dá a ela. É assim que se mede a calibração do pesquisador (Brier no LIVRO).
-14. **Todo ciclo ataca uma habilidade da fronteira da bússola** (`python3 -m lab.bussola fronteira`) e declara `Habilidade: Hxx` no PREREG. Quando o critério é cumprido no nível mínimo, o id do experimento entra em `desbloqueada_por` em `registro/habilidades.json` e a `BUSSOLA.md` é regerada. Marcos só são anunciados no patamar que a evidência sustenta (`GOALS.md §2`).
+14. **(Subordinada à regra 19.) Todo ciclo ataca, por padrão, uma habilidade da fronteira da bússola** (`python3 -m lab.bussola fronteira`) e declara `Habilidade: Hxx` no PREREG. Quando o critério é cumprido no nível mínimo, o id do experimento entra em `desbloqueada_por` em `registro/habilidades.json` e a `BUSSOLA.md` é regerada. Marcos só são anunciados no patamar que a evidência sustenta (`GOALS.md §2`).
 
 15. **Sementes de teste ninguém escolhe.** O teste congelado usa `lab.sementes.derivar(lab.sementes.base_teste(__file__), n)`: sementes derivadas do hash do commit do PREREG. O PREREG tem exatamente um commit (verificado). O tamanho das células é justificado no PREREG com `lab.estat.n_para_diferenca` ou `n_para_largura`.
 16. **Controle de qualidade antes de todo commit:** `python3 -m lab.checar` tem de dar 0 erros (coerência entre árvore, habilidades, ESTADO, DIARIO, EVOLUTION_LOG, LIVRO, BUSSOLA e afirmações obsoletas em `registro/obsoletos.txt`). Afirmação refutada entra em `obsoletos.txt`.
 17. **Linha de base publicada = `lab/baselines.py`** (Deep Thinking com progressive loss; PonderNet) sempre que a pergunta envolver extrapolação ou parada. Declarar que são reimplementações mínimas.
 18. **Decisão compilada.** Todo procedimento manual que o pesquisador repetiu 2 vezes vira ferramenta em `lab/` na terceira (ex.: a reprodução limpa virou `python3 -m lab.reproduzir experimentos/ENNN_x`). O S2 do laboratório gasta deliberação para compilar reflexos, não para repetir.
+
+19. **Autocrítica do norte (S3 do laboratório; RSI da autoguia).** Todo ciclo começa com `python3 -m lab.critica` e uma entrada em `CRITICA.md` que responde às 8 perguntas e termina com `Decisão: APROFUNDAR | VARIAR | ENDURECER | PIVOTAR`. **Ela decide o tema e está acima da bússola (regra 14) e da regra de diversidade.** A pergunta 8 avalia se a crítica anterior acertou; se errou, o pesquisador corrige `lab/critica.py`. O pesquisador tem autonomia (dada pelo usuário) para mudar qualquer regra deste arquivo, **exceto**: 1 (pré-registro), 2 (estatística), 5 (negativos), 10 (guarda), 12 (sem juiz-LLM), a chave fora do git e o S0 só em simulação fechada. Essas são o que dá valor a qualquer resultado.
+20. **Novo para o mundo > novo para nós.** Resultado só conta como candidato a novo se o trabalho publicado mais próximo foi identificado e superado num número mensurável. Nós com comparação a número publicado levam `externo: true`. Previsão feita depois de piloto é marcada como `pos_piloto: true`.
 
 ## Ambiente e restrições
 

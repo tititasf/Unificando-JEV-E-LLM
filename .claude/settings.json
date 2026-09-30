@@ -8,6 +8,14 @@
           {
             "type": "command",
             "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 -m lab.checar --resumo 2>&1 | tail -20 || true"
+          },
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 -m lab.critica 2>&1 | sed -n '3,12p' || true"
+          },
+          {
+            "type": "command",
+            "command": "python3 -c 'import torch' 2>/dev/null || (nohup pip install -q torch --index-url https://download.pytorch.org/whl/cpu >/dev/null 2>&1 &) ; true"
           }
         ]
       }
