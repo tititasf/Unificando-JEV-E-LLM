@@ -1,6 +1,6 @@
 # ESTADO — onde estamos
 
-Atualizado no fim de cada ciclo. Última atualização: ciclo 12 (2026-09-30).
+Atualizado no fim de cada ciclo. Última atualização: ciclo 13 (2026-09-30).
 
 > Norte: [`GOALS.md`](GOALS.md) · o que atacar agora: [`BUSSOLA.md`](BUSSOLA.md) (fronteira: H05 → H24 → H08 → H23/H10/H13/H16 → H21 → H26).
 
@@ -41,7 +41,7 @@ Política: a bússola põe H05 e H24 no topo; H-Σ3 é a ponte para o JEV (H26) 
 
 | Pri | Id | Hipótese | Nó pai · operador | Degrau-alvo | Custo |
 |---|---|---|---|---|---|
-| 1 | **H-JEV-seletivo** (→ H24/H08) | S3 lê p(escolha) do JEV por salto: repete ou se abstém abaixo do limiar; zero erros confiantes com cobertura útil; q_efetivo > q | E012 · MELHORAR | S1 D02 | baixo |
+| 1 | ~~H-JEV-seletivo~~ (→ H08) | **Pilotado no ciclo 13 (M007): nenhum sinal do JEV transfere um limiar de N=8 para N=64** (risco por salto 2% → 11–25%). Precisa de sinal novo: Mondrian por escala ou temperatura | E012 · MELHORAR | S1 D02 | — |
 | 2 | **H-temperatura-logN** (→ H05) | β(N) ∝ log(N−1) nos logits mantém a nitidez em qualquer N sem re-treino | E007d · MELHORAR | S2 | baixo |
 | 3 | H-mundo-cru (→ S6 D02) | Modelo de mundo com atributos aprendidos da posição crua (sem distância à parede dada) | E011 · MELHORAR | S6 D02 | médio |
 | 4 | **H-S3-fronteira** (→ H08) | Predição conformal mantém risco seletivo ≤ α na zona de transição | E009 · MELHORAR | S3 D05 | médio |

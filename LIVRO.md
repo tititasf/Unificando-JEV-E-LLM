@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 12 |
-| nós na árvore | 23 (RASCUNHO 6, META 6, MELHORAR 2, DIAGNOSTICAR 5, REPLICAR 4) |
+| ciclos | 13 |
+| nós na árvore | 24 (RASCUNHO 6, META 6, MELHORAR 2, DIAGNOSTICAR 6, REPLICAR 4) |
 | taxa de morte de hipóteses | 0.25 |
 | taxa de promoção/replicação | 0.58 |
 | previsões avaliadas / acerto | 61 / 0.67 |
 | Brier das previsões (menor = pesquisador mais calibrado) | 0.14 |
 | degrau atual por tema | S2 D06, S3 D04, S5 D04, S6 D01, S1 D01 |
-| ciclos sem subir degrau | S2 2, S3 3, S5 9, S6 1, S1 0 |
+| ciclos sem subir degrau | S2 3, S3 4, S5 10, S6 2, S1 1 |
 | novidade dos achados | replicacao 1, — 2, baixa 5, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1 |
 | registros antigos corrigidos | 5 |
-| CPU médio por nó (s) | 451.89 |
+| CPU médio por nó (s) | 429.68 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -40,6 +40,7 @@
         ▲ E010 [RASCUNHO, S2] Memoria de trabalho latente: pares (no x contador) → PROMOVER N2
             ▲ E011 [RASCUNHO, S6] Modelo de mundo com o mesmo passo: particula numa caixa → PROMOVER N2
         ▲ E012 [RASCUNHO, S1] JEV como S1 externo real: sozinho e iterado pelo S2 → PROMOVER N2
+            · M007 [DIAGNOSTICAR, S3] Piloto: S3 seletivo sobre o JEV nao transfere entre escalas → INFORMATIVO N0
     ≡ E008 [REPLICAR, S3] PonderNet reimplementada como linha de base → REPLICADO N2
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
@@ -293,3 +294,13 @@
 - **Semeou:** H-JEV-seletivo, H-JEV-autoponteiro, H-JEV-nitidez
 - **Arquivos:** [prereg](experimentos/E012_jev/PREREG.md) · [relatorio](experimentos/E012_jev/RELATORIO.md)
 - **Commits:** pré-registro `3d70ea0` · resultado `—`
+
+### M007 — Piloto: S3 seletivo sobre o JEV nao transfere entre escalas (ciclo 13, 2026-09-30)
+- **Operador:** DIAGNOSTICAR · **pai:** E012 · **tema:** S3 · **degrau-alvo:** —
+- **Hipótese:** Algum sinal de confianca do JEV (p1, margem, razao, entropia, confidence, ou verificacao Noul) sustenta um limiar calibrado em N=8 que mantem o risco seletivo por salto em N=64 e em T1?
+- **Veredito:** INFORMATIVO · **nível:** N0 · **novidade:** —
+- **Lição:** Nenhum dos 5 escores do Choice transfere: risco por salto 2% em N=8 vira 11-25% em N=64.
+- **Lição:** A verificacao Noul separa mal (0,42 vs 0,22) e aceita errados em N=64.
+- **Lição:** H-JEV-seletivo nao foi pre-registrada; precisa de um sinal novo (Mondrian por escala ou temperatura adaptativa).
+- **Arquivos:** [relatorio](experimentos/E012_jev/piloto_s3/LEIAME.md)
+- **Commits:** pré-registro `—` · resultado `—`

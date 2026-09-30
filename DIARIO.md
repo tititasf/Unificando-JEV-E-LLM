@@ -97,3 +97,7 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Surpresas: (1) até o salto único se dissolve com N (0,94 → 0,71): a lei de nitidez aparece num S1 comercial; (2) o atalho não é π(s) (só 19%); em N=8 k=8 o acerto de 0,40 vem de responder o início com ciclos curtos (11/12); (3) as falhas do ITER_PF são metade de reconhecimento de auto-ponteiro.
 - Meta: Brier 0,12. Errei P1 (subestimei a queda com N) e P3.
 - Semeado: H-JEV-seletivo, H-JEV-autoponteiro, H-JEV-nitidez.
+
+## Ciclo 13 — 2026-09-30 — M007 (piloto negativo) + E013 temperatura derivada da lei (H05)
+- Piloto M007 (N0), sobre os saltos gravados do E012 e 150 chamadas `Noul` novas: nenhum escore de confiança do JEV (p1, margem, razão, entropia, `confidence`) nem a verificação `Noul` sustenta um limiar calibrado em N=8: o risco por salto de 2% vira 11–25% em N=64. É a lacuna do E004 num S1 externo. H-JEV-seletivo não foi pré-registrada.
+- Então o ciclo foi para o topo da bússola: H05 (nitidez em qualquer escala).
