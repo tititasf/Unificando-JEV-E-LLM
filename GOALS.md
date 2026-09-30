@@ -103,6 +103,17 @@ H03 Laboratório ✔ ─ H21 RSI medido ─► G6
 | G5 | Sim | — |
 | G6 | Parcialmente preenchida: AI4AI-Bench (2608.20318) mede RSI em 10 repositórios congelados; AIDE² (2609.26457) | medir nosso G6 também contra uma tarefa congelada externa, não só meta-métricas internas |
 
+## 5c. Radar de lacunas (ciclo 16)
+
+| Goal | A lacuna ainda existe? | Mudança |
+|---|---|---|
+| G1 | **Estreitou.** Wittig et al., *Which Algorithms Can GNNs Learn?* (ICML 2026, oral), provam a generalização de tamanho para Bellman-Ford, caminho mínimo, árvore geradora mínima e programação dinâmica. As condições são: alinhamento algorítmico, conjunto de treino pequeno e curado, e regularização diferenciável. Há também resultados de impossibilidade para MPNNs padrão. | O marco sobe em precisão: o motor precisa ser aprendido **sem** o conjunto curado à mão, e a prova precisa ser **automática, feita pelo laboratório**. A H-bf-lei passa a comparar com a regularização deles (o E016 mostrou por que o viés precisa ir a 0). |
+| G2 | Sim. SCoRE (mar/2026) controla o risco seletivo com e-valores sob troca de distribuição, mas exige dados calibrados da distribuição-alvo. | O marco "zero erros confiantes sob 10× sem reajuste" continua sem dono. |
+| G3 | Sim. O CtD (jan/2026) trata de composição em descrição de imagens; a transferência de linguagem para MDPs multi-passo existe, mas não a transmissão de um algoritmo. | — |
+| G4 | Sim. O topo do ARC-AGI-3 é 30,2% (set/2026, modelo de fronteira); nada achado com ≤ 1M parâmetros. | — |
+| G5 | Parcialmente. O PonderLM-3 e os Equilibrium Reasoners definem fronteiras de Pareto FLOPs × acerto, mas com mecanismos distintos por família. | O marco "mesmo mecanismo em 3 famílias" fica. |
+| G6 | Sim. AI4AI-Bench: média 0,166, melhor 0,25. RSIBench-Data (jul/2026). | — |
+
 ## Fontes das lacunas
 
 - Veličković et al., *Softmax Is Not Enough (for Sharp Size Generalisation)*, ICML 2025 — https://mlanthology.org/icml/2025/velickovic2025icml-softmax
@@ -112,3 +123,4 @@ H03 Laboratório ✔ ─ H21 RSI medido ─► G6
 - ARC-AGI-3 — https://arcprize.org/results
 - AIDE² — https://arxiv.org/abs/2609.26457 · Survey RSI — https://arxiv.org/abs/2607.07663 · AI4AI-Bench — https://arxiv.org/pdf/2608.20318
 - Radar do ciclo 11: SCoRE / seleção sob mudança — https://arxiv.org/pdf/2508.07556 · https://arxiv.org/pdf/2608.16614 · ARC-AGI-3 — https://arcprize.org/results/anthropic-claude-opus-5 · https://www.datalearner.com/en/benchmarks/arc-agi-3
+- Radar do ciclo 16: Wittig et al. (ICML 2026) — https://arxiv.org/abs/2602.13106 · SCoRE — https://arxiv.org/pdf/2603.24704 · CtD — https://arxiv.org/abs/2601.10169v1 · Equilibrium Reasoners — https://arxiv.org/pdf/2605.21488 · RSIBench-Data — https://arxiv.org/pdf/2607.25886 · ARC-AGI-3 — https://arcprize.org/results

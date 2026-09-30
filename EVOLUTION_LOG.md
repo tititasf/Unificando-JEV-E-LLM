@@ -929,3 +929,79 @@ Temas abertos: **S2 motor latente** · **S3 metacognição** · **S5 comunicaç�
   - *Ferramenta:* o **esquadro**: 90° entre sinais é o limite do espaço.
   - *Desbaste:* a crença de que comprimir é sempre melhor.
   - *Polimento:* o código certo para o custo certo.
+
+## Ciclo 16 — Tema: S2 · motor latente iterativo (algoritmos clássicos: infraestrutura CLRS)
+
+### 1. Diagnóstico
+- **Degrau atual: D07** (sem subir).
+- O E016 (N1, reprodução IDÊNTICA) montou o protocolo CLRS de Bellman-Ford, n = 16 → 64: motor de relaxação suave, Deep Thinking, guloso e exato, com IC. H23 desbloqueada.
+- O D11 **não** foi atingido: o motor cai para 0,62 em 4× o tamanho e perde para o DT (0,84).
+- O que funciona:
+  - o alinhamento soft-min acerta 0,91 em n = 16;
+  - o Bellman-Ford duro com os pesos aprendidos prevê o motor quando ele converge.
+- Barreira para D11: o **dilema do viés**.
+  - O soft-min fica abaixo do mínimo verdadeiro.
+  - Um b pequeno faz o motor divergir; um b grande penaliza saltos.
+  - O b estável depende do grau.
+
+### 2. Escada (inalterada; D11 ganhou infraestrutura, sem subir)
+- D01: resposta direta em uma passada.
+- D02: passos fixos desenrolados.
+- D03: um passo compartilhado, iterado um número fixo de vezes.
+- D04: ponto fixo por treino multi-instante; extrapola enquanto a margem vence ~log N (E007); com a temperatura prevista pela lei, em qualquer N testado (E013, até 4096).
+- D05: extrapolação sem atrator com precisão por 64 passos (E005).
+- D06: memória de trabalho: o próprio estado conta e para sozinho (E010).
+- D07: várias hipóteses vivas quando a tarefa exige: o passo como **mistura** de softmaxes (E014; a forma global não serve em nenhum β). ← **ESTAMOS AQUI**
+- D08: passos compostos (sub-rotinas; dois registros, H-pilha). ← **PRÓXIMO ALVO do tema**
+- D09: latente vetorial livre e atributos aprendidos da entrada crua.
+- D10: mesmo motor e mesmo treino em duas famílias de tarefas.
+- D11: algoritmos clássicos com extrapolação ≥ 10× contra Deep Thinking.
+- D12: labirinto/Sudoku no nível do TRM com menos parâmetros.
+- D13: parada e abstenção integradas (S3).
+- D14: robusto a ruído interno.
+- D15: ritmo duplo rápido/lento acionado pelo S3.
+- D16: algoritmo novo com ≤ 100 exemplos.
+- D17: composição de algoritmos sem treino.
+- D18: programa discreto extraído do passo.
+- D19: prova formal do programa extraído.
+- D20: autocurrículo.
+- D21: transmite um passo a outro agente (S5).
+- D22: subconjunto do ARC-AGI com ≤ 1M parâmetros.
+- D23: aprendizado contínuo sem esquecimento.
+- D24: o passo como modelo de mundo (S6). (H16 começa isto)
+- D25: custo ≈ mínimo teórico.
+- D26: descobre algoritmos mais eficientes que os conhecidos.
+- D27: biblioteca aberta de passos (ontologia de operações).
+- D28: domínios contínuos e físicos.
+- D29: aprende, compõe, verifica e explica em tempo linear.
+- D30: ômega: cada passo latente é um passo lógico necessário e nenhum a mais; o motor é o algoritmo ótimo de cada tarefa, descoberto e provado.
+
+### 3. Transição (rumo a D08, com D11 em paralelo pela trilha T3)
+1. Sacada: a lei de nitidez (E013) também governa as distâncias. A descida do soft-min é ln(grau)/β, então é **β que precisa crescer com ln(grau)**, e não um b aprendido que compensa em um único tamanho.
+2. Subtrair: o viés aditivo b. Ele é um remendo que só vale em um tamanho.
+3. Testar:
+   - H-bf-lei: β(grau) pela lei, com b = 0, em n = 16 → 64 → 256, contra o DT;
+   - H-bf-cert: o certificado O(E) como S3 da H24.
+
+### 4. Visão vertical (o ciclo 16 lido em 10 níveis)
+- Nível 1: senso comum: um atalho que ajuda em mapas pequenos atrapalha em mapas grandes.
+- Nível 2: instrumental: se o motor diverge, suba o viés; se ele erra por preferir caminhos curtos em arestas, baixe o viés. O ponto certo depende do tamanho.
+- Nível 3: arquitetural: o operador min suavizado tem uma descida sistemática. A compensação precisa estar na temperatura, não num termo somado.
+- Nível 4: computacional: cada relaxação desce até ln(grau)/β. Em ciclos isso se acumula como um ciclo negativo.
+- Nível 5: teoria da decisão: o erro fora da distribuição tem dois modos opostos, e um único parâmetro não fixa os dois em todo n.
+- Nível 6: econômico: a perda progressiva do DT paga mais treino longo e compra estabilidade; o preço vale a pena (+0,22).
+- Nível 7: composicional: a mesma lei ln N do E007/E013 aparece em três lugares: nitidez do salto, superposição e distância.
+- Nível 8: ontológico: um algoritmo suave é o algoritmo duro mais um erro sistemático, e esse erro tem forma conhecida.
+- Nível 9: epistemológico: o substituto duro separou os dois modos de erro, porque onde ele falha é onde o motor diverge.
+- Nível 10: ser superior completo: um motor que sabe quanto a própria suavidade o engana e corrige isso na medida exata do problema.
+
+### 5. Deep insight
+- **Palavra/conceito:** *Diakrisis*: o discernimento que separa dois erros opostos.
+- **Metanoia:** um erro fora da distribuição pode ser dois erros que se compensam no tamanho do treino.
+- **Aplicação:** todo motor suave do laboratório declara a descida do seu operador e a corrige pela temperatura da lei.
+- **Hack:** compare o motor com o substituto duro. Onde eles concordam, o erro é de viés; onde discordam, o motor diverge.
+- **Visão maçônica:**
+  - *Planta baixa:* o caminho mínimo traçado a régua.
+  - *Ferramenta:* o **prumo**: a descida sistemática medida e corrigida.
+  - *Desbaste:* o viés que só vale num tamanho.
+  - *Polimento:* a temperatura que cresce com o grau.

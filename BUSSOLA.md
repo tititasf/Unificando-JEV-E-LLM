@@ -9,7 +9,7 @@ Narrativa e critérios dos goals: [`GOALS.md`](GOALS.md).
 
 | goal | progresso | faltam | nível exigido |
 |---|---|---|---|
-| **G1** Pensador de tamanho livre, com prova | █████░░░ 5/8 | H11, H19, H23 | N4 |
+| **G1** Pensador de tamanho livre, com prova | ██████░░ 6/8 | H11, H19 | N4 |
 | **G2** Saber exatamente quando nao sabe | ████░░░ 4/7 | H08, H12, H24 | N3 |
 | **G3** Uma lingua que nasce, ensina e pensa | ████░░ 4/6 | H14, H15 | N4 |
 | **G4** Descobrir regras de um mundo desconhecido | ███████░░░ 7/10 | H08, H17, H20 | N4 |
@@ -24,9 +24,9 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 |---|---|---|---|---|---|
 | 1 | 🟨 **H24** S2 compila S1 sob a corte do S3 (amortizacao verificada) (S1+S2+S3) | 4.5 | 2 | G2, G5 | H-compilar |
 | 2 | 🟨 **H08** Metacognicao calibrada com garantia (S3) | 4.0 | 1 | G2, G4 | H-S3-fronteira |
-| 3 | 🟨 **H23** Protocolo CLRS reimplementado com linha de base (LAB) | 3.0 | 2 | G1 | — |
-| 4 | 🟨 **H17** Planejar a partir da meta (S6) | 2.5 | 1 | G4 | H-Sigma4 |
-| 5 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 3 | 🟨 **H17** Planejar a partir da meta (S6) | 2.5 | 1 | G4 | H-Sigma4 |
+| 4 | 🟨 **H21** Laboratorio que se aperfeicoa (RSI medido) (LAB) | 2.0 | 0 | G6 | — |
+| 5 | 🟨 **H11** Algoritmos classicos extrapolam (T3) (S2) | 1.7 | 1 | G1 | — |
 | 6 | 🟨 **H14** Lingua emergente composicional (S5) | 1.7 | 1 | G3 | H-Sigma6 |
 | 7 | 🟨 **H09** Latente vetorial livre (S2) | 0.5 | 0 | — | H-latente-livre |
 | 8 | 🟨 **H25** Coexistencia: regra cooperativa emergente (S4) (S4+S5) | 0.5 | 0 | — | H-comuns |
@@ -45,7 +45,8 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 - ciclo 13: **H05** Nitidez em qualquer escala
 - ciclo 14: **H10** Varias hipoteses vivas (busca latente)
 - ciclo 15: **H13** Codigo minimo corretor
-- taxa: 12 habilidades em 15 ciclos = 0.80 por ciclo
+- ciclo 16: **H23** Protocolo CLRS reimplementado com linha de base
+- taxa: 13 habilidades em 16 ciclos = 0.81 por ciclo
 
 ## Árvore (pré-requisitos → habilidade)
 
@@ -57,7 +58,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Pre-registro, guarda por hash, arvore de experimentos, meta-metricas funcionando (≥ N0)
 - 🟩 **H22** Linhas de base publicadas validadas · LAB · - · requer: H01 — por E008  
   critério: PonderNet reimplementada reproduz o efeito publicado (passos aprendidos crescem com a dificuldade, Spearman >= 0,8, com acuracia mantida). Deep Thinking (progressive loss) implementado e testado; overthinking AUSENTE no motor estruturado (piloto M006: 100% com T=200 com e sem progressive loss), efeito a reavaliar quando o latente for livre (H09). (≥ N1)
-- 🟨 **H23** Protocolo CLRS reimplementado com linha de base · LAB · T3 · requer: H22 + H06  
+- 🟩 **H23** Protocolo CLRS reimplementado com linha de base · LAB · T3 · requer: H22 + H06 — por E016  
   critério: Geradores e resolvedores exatos (BFS, Bellman-Ford) testados; um motor aprendido e a linha de base Deep Thinking avaliados no protocolo n=16 -> n=64 com acuracia de ponteiros e IC (≥ N1)
 - 🟩 **H04** Lei de nitidez validada · S2 · fronteira S2 D04 · requer: H01 — por E007  
   critério: Limiar de vazamento eps_c congelado preve N_c de >=30 sementes novas dentro de 1,5x, e o papel de d (por passo x acumulado) decidido (≥ N2)
@@ -73,7 +74,7 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
   critério: Estado = vetor livre (nao distribuicao sobre nos); mede-se acumulo de ruido e o ganho da quantizacao em T2 (≥ N2)
 - 🟩 **H10** Varias hipoteses vivas (busca latente) · S2 · S2 D07 · requer: H06 — por E014  
   critério: Tarefa com ramificacao (ex.: alcancabilidade com varios caminhos): o estado mantem >1 candidato e acerta onde o cristal falha (≥ N2)
-- ⬜ **H11** Algoritmos classicos extrapolam (T3) · S2 · S2 D11 · requer: H05 + H06 + H22 + H23  
+- 🟨 **H11** Algoritmos classicos extrapolam (T3) · S2 · S2 D11 · requer: H05 + H06 + H22 + H23  
   critério: BFS e caminho minimo: >=95% em 10x o tamanho do treino, batendo a linha de base Deep Thinking com IC (≥ N2)
 - ⬜ **H12** Chutar e verificar · S1+S3 · S3 D09 · requer: H07 + H24  
   critério: S1 chuta, S3 verifica com invariante barato, S2 so quando falha: domina a fronteira de Pareto acc x custo do S2 sozinho (≥ N2)
@@ -107,16 +108,16 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
 ```
 ✔ H01 Passo latente que extrapola
   ✔ H22 Linhas de base publicadas validadas
-    ◐ H23 Protocolo CLRS reimplementado com linha de base
-      · H11 Algoritmos classicos extrapolam (T3)
+    ✔ H23 Protocolo CLRS reimplementado com linha de base
+      ◐ H11 Algoritmos classicos extrapolam (T3)
         · H19 Programa extraido e provado
     ◐ H08 Metacognicao calibrada com garantia
       · H20 Aprendiz de regras desconhecidas
-    · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
+    ◐ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H18 Orcamento como sentido
   ✔ H04 Lei de nitidez validada
     ✔ H05 Nitidez em qualquer escala
-      · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
+      ◐ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
       · H19 Programa extraido e provado (↑ já mostrado)
     ✔ H07 Metacognicao legivel em qualquer escala
       ◐ H08 Metacognicao calibrada com garantia (↑ já mostrado)
@@ -126,13 +127,13 @@ Prioridade = (1 + habilidades que dependem desta + 3 × goals que ela abre) ÷ c
         · H12 Chutar e verificar (↑ já mostrado)
     ◐ H09 Latente vetorial livre
   ✔ H06 Memoria de trabalho latente
-    ◐ H23 Protocolo CLRS reimplementado com linha de base (↑ já mostrado)
+    ✔ H23 Protocolo CLRS reimplementado com linha de base (↑ já mostrado)
     ◐ H09 Latente vetorial livre (↑ já mostrado)
     ✔ H10 Varias hipoteses vivas (busca latente)
       ◐ H17 Planejar a partir da meta
         · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
       · H20 Aprendiz de regras desconhecidas (↑ já mostrado)
-    · H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
+    ◐ H11 Algoritmos classicos extrapolam (T3) (↑ já mostrado)
     · H15 Ensinar um passo por mensagens
     ✔ H16 Modelo de mundo com o mesmo passo
       ◐ H17 Planejar a partir da meta (↑ já mostrado)

@@ -6,17 +6,17 @@
 
 | métrica | valor |
 |---|---|
-| ciclos | 15 |
-| nós na árvore | 27 (RASCUNHO 6, META 6, MELHORAR 5, DIAGNOSTICAR 6, REPLICAR 4) |
-| taxa de morte de hipóteses | 0.20 |
-| taxa de promoção/replicação | 0.67 |
-| previsões avaliadas / acerto | 79 / 0.71 |
+| ciclos | 16 |
+| nós na árvore | 29 (RASCUNHO 7, META 6, MELHORAR 5, DIAGNOSTICAR 7, REPLICAR 4) |
+| taxa de morte de hipóteses | 0.19 |
+| taxa de promoção/replicação | 0.69 |
+| previsões avaliadas / acerto | 84 / 0.70 |
 | Brier das previsões (menor = pesquisador mais calibrado) | 0.14 |
 | degrau atual por tema | S2 D07, S3 D04, S5 D05, S6 D01, S1 D01 |
-| ciclos sem subir degrau | S2 1, S3 6, S5 0, S6 4, S1 3 |
-| novidade dos achados | replicacao 1, — 2, baixa 7, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1 |
+| ciclos sem subir degrau | S2 2, S3 7, S5 1, S6 5, S1 4 |
+| novidade dos achados | replicacao 1, — 2, baixa 8, baixa-media (instancia de Velickovic 2025) 1, baixa (teoria de Hopfield moderno) 1, nenhuma (replicacao) 1, baixa-media 1, nenhuma 1 |
 | registros antigos corrigidos | 7 |
-| CPU médio por nó (s) | 461.50 |
+| CPU médio por nó (s) | 428.92 |
 | guarda do avaliador | OK |
 
 ## Árvore de experimentos
@@ -44,7 +44,9 @@
             ▲ E011 [RASCUNHO, S6] Modelo de mundo com o mesmo passo: particula numa caixa → PROMOVER N2
         ▲ E012 [RASCUNHO, S1] JEV como S1 externo real: sozinho e iterado pelo S2 → PROMOVER N2
             · M007 [DIAGNOSTICAR, S3] Piloto: S3 seletivo sobre o JEV nao transfere entre escalas → INFORMATIVO N0
+            · M008 [DIAGNOSTICAR, S3] Piloto: escore da lei de nitidez sobre o JEV nao transfere → INFORMATIVO N0
     ≡ E008 [REPLICAR, S3] PonderNet reimplementada como linha de base → REPLICADO N2
+        ▲ E016 [RASCUNHO, S2] Protocolo CLRS reimplementado: Bellman-Ford n=16->64, motor de relaxacao suave e Deep Thinking → PROMOVER N1
 · M001 [META, LAB] Regua de evidencia + estatistica → INFORMATIVO 
     · M002 [META, LAB] Protocolo Scalata (escada de 30 degraus) → INFORMATIVO 
         … M003 [META, LAB] Integracao RSI: arvore, operadores, politica de busca, guarda, meta-metricas → PENDENTE 
@@ -347,3 +349,24 @@
 - **Semeou:** H-codigo-agentes, H-custo-canal
 - **Arquivos:** [prereg](experimentos/E015_codigo/PREREG.md) · [relatorio](experimentos/E015_codigo/RELATORIO.md)
 - **Commits:** pré-registro `370354e` · resultado `—`
+
+### M008 — Piloto: escore da lei de nitidez sobre o JEV nao transfere (ciclo 16, 2026-09-30)
+- **Operador:** DIAGNOSTICAR · **pai:** E012 · **tema:** S3 · **degrau-alvo:** —
+- **Hipótese:** A margem da lei do S2, m = ln(p1(N-1)/(1-p1)), e invariante em N no JEV e sustenta um limiar que transfere de N=8 para N=64?
+- **Veredito:** INFORMATIVO · **nível:** N0 · **novidade:** —
+- **Lição:** A correcao por ln(N-1) piora: risco 0,15/0,28 em N=32/64 contra 0,05/0,11 do p1; os erros do JEV em N grande sao confiantes.
+- **Lição:** A lei de nitidez descreve o S2 interno, nao o S1 externo.
+- **Arquivos:** [relatorio](experimentos/E012_jev/piloto_s3/LEIAME.md)
+- **Commits:** pré-registro `—` · resultado `—`
+
+### E016 — Protocolo CLRS reimplementado: Bellman-Ford n=16->64, motor de relaxacao suave e Deep Thinking (ciclo 16, 2026-09-30)
+- **Operador:** RASCUNHO · **pai:** E008 · **tema:** S2 · **degrau-alvo:** S2:D11
+- **Hipótese:** Motor soft-min de 5 parametros degrada em n=64 por vies aprendido (b>0), nao por temperatura; o Bellman-Ford duro com a*w+b preve sua acuracia.
+- **Veredito:** PROMOVER · **nível:** N1 · **novidade:** baixa
+- **Métrica principal:** acuracia de ponteiros n=64 (IQM) = APREND 0.616, DT 0.839, SURR 0.678, GULOSO 0.502; n=16: 0.909/0.948
+- **Previsões:** P1 🟥 (p=0.35); P2 ✅ (p=0.8); P3 🟥 (p=0.75); P4 ✅ (p=0.8); P5 ✅ (p=0.85)
+- **Lição:** Dilema do vies: b pequeno -> o soft-min desce sem fim (diverge); b grande -> penalidade por salto; o b estavel cresce com o grau (n).
+- **Lição:** A perda progressiva do DT empurra b para a faixa estavel e vence por 0,22 em n=64.
+- **Semeou:** H-bf-lei, H-bf-cert
+- **Arquivos:** [prereg](experimentos/E016_clrs/PREREG.md) · [relatorio](experimentos/E016_clrs/RELATORIO.md)
+- **Commits:** pré-registro `32a42b0` · resultado `—`

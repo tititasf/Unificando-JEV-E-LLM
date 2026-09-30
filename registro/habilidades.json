@@ -72,7 +72,9 @@
     "H22",
     "H06"
    ],
-   "desbloqueada_por": [],
+   "desbloqueada_por": [
+    "E016"
+   ],
    "custo": 2
   },
   {
@@ -487,5 +489,5 @@
    "nivel_exigido": 3
   }
  ],
- "ultimo_radar_ciclo": 11
+ "ultimo_radar_ciclo": 16
 }

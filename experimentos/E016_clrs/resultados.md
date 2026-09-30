@@ -1,0 +1,32 @@
+# E016 - resultados 
+
+5 sementes x 20 grafos por n (Erdos-Renyi p = 0,5, pesos U(0,1)); treino n = 16, 300 iteracoes.
+
+| n | braço | acurácia de ponteiros IQM [IC95%] | passos até o ponto fixo |
+|---|---|---|---|
+| 16 | EXATO | 1.000 | - |
+| 16 | APREND | 0.909 [0.828,0.941] | 9.3 |
+| 16 | DT | 0.948 [0.930,0.969] | 13.6 |
+| 16 | SURR | 0.913 [0.827,0.950] | - |
+| 16 | GULOSO | 0.552 [0.519,0.588] | - |
+| 32 | EXATO | 1.000 | - |
+| 32 | APREND | 0.765 [0.676,0.880] | 11.7 |
+| 32 | DT | 0.914 [0.873,0.941] | 19.4 |
+| 32 | SURR | 0.830 [0.709,0.922] | - |
+| 32 | GULOSO | 0.529 [0.518,0.539] | - |
+| 64 | EXATO | 1.000 | - |
+| 64 | APREND | 0.616 [0.530,0.749] | 14.8 |
+| 64 | DT | 0.839 [0.744,0.879] | 35.5 |
+| 64 | SURR | 0.678 [0.542,0.879] | - |
+| 64 | GULOSO | 0.502 [0.492,0.522] | - |
+
+Parâmetros aprendidos (beta, a, b, D0, beta_p) por semente (APREND): 3.73 1.00 0.03 3.96 3.93; 3.88 0.88 0.00 3.85 3.04; 3.75 0.80 0.06 3.96 2.41; 3.92 1.15 0.10 3.91 2.10; 3.75 1.03 0.06 3.98 3.52
+
+## Checagem das previsões
+
+- P1 FALHOU: APREND em n=16 >= 0,95: 0.909
+- P2 OK: APREND em n=64 <= n=16 - 0,05: 0.616 vs 0.909
+- P3 FALHOU: DT em n=64 não supera APREND por mais de 0,03: 0.839 vs 0.616
+- P4 OK: SURR prevê APREND em n=64 (±0,03) em >= 80% das sementes: 4/5
+- P5 OK: GULOSO < APREND em n=16: 0.552 vs 0.909
+- CPU total: 136s

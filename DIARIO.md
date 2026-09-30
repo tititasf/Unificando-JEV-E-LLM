@@ -126,3 +126,12 @@ Uma entrada por ciclo. A mais recente fica embaixo. Resultados negativos têm o 
 - Processo: o smoke pegou um sinal trocado no gradiente e dimensões duplicadas antes do pré-registro; o PREREG tem um número de poder errado (3458 em vez de 3679), anotado no relatório.
 - Meta: Brier 0,18.
 - Semeado: H-código-agentes, H-custo-canal.
+
+## Ciclo 16 — 2026-09-30 — E016 protocolo CLRS reimplementado: Bellman-Ford n=16→64 (pré-registrado)
+- Escolha: a H24 precisa de uma família com certificado barato, e a H08 ficou sem sinal no piloto M008 (a margem da lei de nitidez aplicada ao JEV **piora** a transferência: risco 0,28 em N=64). A H23 é a infraestrutura que abre as duas.
+- Hipótese: o motor soft-min de 5 parâmetros degrada em n=64 por causa do viés aprendido (b > 0), não da temperatura. O Bellman-Ford duro com a·w+b prevê o motor.
+- Veredito: **PROMOVER** (N1, reprodução IDÊNTICA), 3/5 previsões. APREND: 0,909 → 0,765 → 0,616. DT: 0,948 → 0,839. GULOSO ≈ 0,5. O SURR prevê o APREND em 4/5 sementes. **H23 desbloqueada.**
+- 🟥 P3: o Deep Thinking vence por 0,22 em n=64, porque a perda progressiva empurra b para a faixa estável (0,015–0,043) e D0 para perto de 0.
+- Surpresa (diagnóstico da semente 1601, com b ≈ 0): o motor **diverge** em n=64 (256 passos, d mínimo −3,15). O dilema é que b pequeno faz as distâncias descerem sem fim e b grande penaliza saltos. O ponto estável depende do grau, e isso é a lei do E013 reaparecendo nas distâncias.
+- Meta: Brier 0,16.
+- Semeado: H-bf-cert (→ H24), H-bf-lei (→ H11).
