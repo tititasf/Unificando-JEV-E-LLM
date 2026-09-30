@@ -56,7 +56,7 @@ Política: H05 (c13), H10 (c14) e H13 (c15) fechadas. A bússola põe H24 e H08 
 | 5 | H-S3-T2 | O S3 em dois tempos transfere para T2 sem ajuste | E009 · REPLICAR | S3 D14 | baixo |
 | 6 | H-custo-ponder | PonderNet ajustada alcança o custo do CONV? | E008 · MELHORAR | G5 | baixo |
 | 7 | H-campo-médio-T2 | A teoria de campo médio prevê o N_c em T2 | E007d · REPLICAR | — | baixo |
-| 8 | ~~H-5.4~~ (→ H13) | **Feito no E015** (N2): curva bits × robustez medida | — | — | — |
+| 8 | ~~H-5.4~~ | **Feito no E015** (N2): curva bits × robustez medida | — | — | — |
 | 8b | **H-código-agentes** (→ H14) | O código emerge entre dois agentes treinados só pela tarefa (E003) e chega à curva do E015? | E015 · MELHORAR | S5 D10 | médio |
 | 8c | H-custo-canal | O S0 fixa o recurso escasso e o código aprendido muda de forma (espalhado × denso) | E015 · MELHORAR | S5/S0 | baixo |
 | 9 | H-latente-livre | Latente vetorial livre (bloqueado pelo teto do Python) | E005 · RASCUNHO | S2 D09 | alto |
