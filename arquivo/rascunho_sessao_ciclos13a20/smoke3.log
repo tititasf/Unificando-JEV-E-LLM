@@ -1,0 +1,65 @@
+/usr/local/lib/python3.11/dist-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+WP semente 1891 ok (195s)
+WP semente 1890 ok (198s)
+SP semente 1890 ok (240s)
+SP semente 1891 ok (282s)
+# E018 - resultados (SMOKE, nao vale)
+
+2 sementes por familia; rede: 16 grafos por n; programa: 4 grafos por n.
+
+| família | quem | n | ponteiro IQM [IC95%] |
+|---|---|---|---|
+| SP | rede | 16 | 0.299 [0.066,0.531] |
+| SP | rede | 32 | 0.179 [0.035,0.322] |
+| SP | rede | 64 | 0.124 [0.022,0.226] |
+| SP | programa (mecanistica) | 16 | 0.336 [0.109,0.562] |
+| SP | programa (mecanistica) | 64 | 0.273 [0.035,0.512] |
+| SP | programa (mecanistica) | 256 | 0.254 [0.009,0.499] |
+| SP | programa (comportamental) | 16 | 0.352 [0.141,0.562] |
+| SP | programa (comportamental) | 64 | 0.289 [0.066,0.512] |
+| SP | programa (comportamental) | 256 | 0.256 [0.015,0.498] |
+| SP | programa (sintese) | 16 | 1.000 [1.000,1.000] |
+| SP | programa (sintese) | 64 | 1.000 [1.000,1.000] |
+| SP | programa (sintese) | 256 | 1.000 [1.000,1.000] |
+| WP | rede | 16 | 0.719 [0.711,0.727] |
+| WP | rede | 32 | 0.639 [0.605,0.672] |
+| WP | rede | 64 | 0.510 [0.501,0.520] |
+| WP | programa (mecanistica) | 16 | 0.969 [0.938,1.000] |
+| WP | programa (mecanistica) | 64 | 0.666 [0.332,1.000] |
+| WP | programa (mecanistica) | 256 | 0.542 [0.085,1.000] |
+| WP | programa (comportamental) | 16 | 0.984 [0.984,0.984] |
+| WP | programa (comportamental) | 64 | 0.410 [0.391,0.430] |
+| WP | programa (comportamental) | 256 | 0.100 [0.092,0.107] |
+| WP | programa (sintese) | 16 | 1.000 [1.000,1.000] |
+| WP | programa (sintese) | 64 | 1.000 [1.000,1.000] |
+| WP | programa (sintese) | 256 | 1.000 [1.000,1.000] |
+
+| família | método | reconhecido (regra+ponteiro+início) | só a regra |
+|---|---|---|---|
+| SP | mecanistica | 0/2 | 0/2 |
+| SP | comportamental | 0/2 | 0/2 |
+| SP | sintese | 2/2 | 2/2 |
+| WP | mecanistica | 1/2 | 1/2 |
+| WP | comportamental | 0/2 | 0/2 |
+| WP | sintese | 2/2 | 2/2 |
+
+- SP 1890: mecanistica: [['media', 'maxf', True], [1.0, 0.5, 0.0], -10000.0, 0.5, 0.049762] ptr [0.746094, 'argmin', 'lin', [1.0, 0.0]] | comportamental: [['max', 'minf', True], [1.0, 0.5, 0.0], -10000.0, 0.5, 0.043776] ptr [0.746094, 'argmin', 'lin', [1.0, 0.0]] | sintese: [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0, 0.0] ptr [1.0, 'argmin', 'lin', [1.0, 1.0]] | erro do semianel contra a rede 0.1948
+- WP 1890: mecanistica: [['media', 'minf', True], [1.0, 0.5, 0.5], 10000.0, 1.0, 0.089722] ptr [0.585938, 'argmax', 'minf', [1.0, 1.0]] | comportamental: [['media', 'minf', True], [0.5, 1.0, 0.5], -10000.0, 1.0, 0.065626] ptr [0.585938, 'argmax', 'minf', [1.0, 1.0]] | sintese: [['max', 'minf', True], [1.0, 1.0, 0.0], -10000.0, 1.0, 0.0] ptr [1.0, 'argmax', 'lin', [0.0, 1.0]] | erro do semianel contra a rede 0.0776
+- SP 1891: mecanistica: [['media', 'maxf', True], [1.0, 0.5, 0.0], -10000.0, 0.5, 0.088793] ptr [0.046875, 'argmin', 'lin', [1.0, 1.0]] | comportamental: [['media', 'maxf', False], [1.0, 0.0, 0.0], -10000.0, 0.5, 0.043047] ptr [0.046875, 'argmin', 'lin', [1.0, 1.0]] | sintese: [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0, 0.0] ptr [1.0, 'argmin', 'lin', [1.0, 1.0]] | erro do semianel contra a rede 0.1702
+- WP 1891: mecanistica: [['max', 'minf', True], [1.0, 1.0, 0.0], -10000.0, 1.0, 0.106735] ptr [0.722656, 'argmax', 'minf', [1.0, 1.0]] | comportamental: [['media', 'lin', True], [0.0, 0.5, 0.5], -10000.0, 1.0, 0.052708] ptr [0.722656, 'argmax', 'minf', [1.0, 1.0]] | sintese: [['max', 'minf', True], [1.0, 1.0, 0.0], -10000.0, 1.0, 0.0] ptr [1.0, 'argmax', 'lin', [0.0, 1.0]] | erro do semianel contra a rede 0.1067
+
+## Checagem das previsões
+
+- P1 SP OK: síntese direta (sem rede) reconhecida em >= 80%: 2/2
+- P1 WP OK: síntese direta (sem rede) reconhecida em >= 80%: 2/2
+- P2 SP FALHOU: extração comportamental da rede reconhecida em >= 80%: 0/2
+- P2 WP FALHOU: extração comportamental da rede reconhecida em >= 80%: 0/2
+- P3 SP FALHOU: extração mecanística da rede reconhecida em >= 80%: 0/2
+- P3 WP FALHOU: extração mecanística da rede reconhecida em >= 80%: 1/2
+- P4 OK: todo programa reconhecido acerta 1,000 em n=256: min 1.0 (5 programas)
+- P5 SP OK: a própria rede fica < 0,99 em n=64: 0.124
+- P5 WP OK: a própria rede fica < 0,99 em n=64: 0.510
+- P6 OK: a síntese direta reconhece mais que a melhor extração da rede (comportamental), somando as famílias: 4/4 contra 0/4 (Fisher p = 0.029); média rede 0.5
+- CPU total: 915s
+FIM

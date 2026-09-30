@@ -1,0 +1,51 @@
+semente 1791 ok (12s)
+semente 1790 ok (12s)
+# E017 - resultados (SMOKE, nao vale)
+
+2 sementes; grafos por n: {16: 3, 64: 2, 160: 1, 320: 1}; Erdos-Renyi p = 0,5; treino n = 16, 40 iteracoes, progressive loss.
+
+| família | n | braço | acerto IQM [IC95%] | passos |
+|---|---|---|---|---|
+| BF | 16 | DT | 0.510 [0.500,0.521] | 6.0 |
+| BF | 16 | LEI | 0.979 [0.958,1.000] | 6.3 |
+| BF | 16 | LEI_B | 0.917 [0.875,0.958] | 5.0 |
+| BF | 16 | CONST_B0 | 0.719 [0.646,0.792] | 37.3 |
+| BF | 16 | GULOSO | 0.594 [0.583,0.604] | - |
+| BF | 64 | DT | 0.262 [0.258,0.266] | 7.0 |
+| BF | 64 | LEI | 0.957 [0.922,0.992] | 7.5 |
+| BF | 64 | LEI_B | 0.742 [0.703,0.781] | 5.2 |
+| BF | 64 | CONST_B0 | 0.477 [0.438,0.516] | 256.0 |
+| BF | 64 | GULOSO | 0.484 [0.477,0.492] | - |
+| BF | 160 | DT | 0.119 [0.087,0.150] | 7.0 |
+| BF | 160 | LEI | 0.978 [0.956,1.000] | 10.5 |
+| BF | 160 | LEI_B | 0.472 [0.381,0.562] | 5.0 |
+| BF | 160 | CONST_B0 | 0.519 [0.481,0.556] | 640.0 |
+| BF | 160 | GULOSO | 0.494 [0.487,0.500] | - |
+| BF | 320 | LEI | 0.972 [0.959,0.984] | 12.5 |
+| BFS | 16 | DT | 1.000 [1.000,1.000] | 4.0 |
+| BFS | 16 | LEI | 1.000 [1.000,1.000] | 9.5 |
+| BFS | 16 | GULOSO | 0.302 [0.208,0.396] | - |
+| BFS | 64 | DT | 1.000 [1.000,1.000] | 4.0 |
+| BFS | 64 | LEI | 1.000 [1.000,1.000] | 8.0 |
+| BFS | 64 | GULOSO | 0.262 [0.250,0.273] | - |
+| BFS | 160 | DT | 1.000 [1.000,1.000] | 4.0 |
+| BFS | 160 | LEI | 1.000 [1.000,1.000] | 7.0 |
+| BFS | 160 | GULOSO | 0.303 [0.256,0.350] | - |
+
+- BF DT (log kappa|log beta, a, b, D0, log beta_p): 1.87 1.74 0.93 1.23 0.20; 1.82 1.72 0.90 2.10 0.26
+- BF LEI (log kappa|log beta, a, b, D0, log beta_p): 0.39 1.16 0.00 2.51 -1.51; 0.62 0.99 0.00 2.04 -1.51
+- BF LEI_B (log kappa|log beta, a, b, D0, log beta_p): 0.40 0.78 0.04 2.56 -2.28; 0.02 0.55 0.06 2.34 -3.22
+- BF CONST_B0 (log kappa|log beta, a, b, D0, log beta_p): 2.60 2.73 0.00 2.09 0.72; 2.53 2.61 0.00 3.00 0.37
+- BFS DT (log kappa|log beta, a, b, D0, log beta_p): 1.68 1.63 1.13 3.92 0.98; 1.67 1.60 1.10 4.10 0.88
+- BFS LEI (log kappa|log beta, a, b, D0, log beta_p): 0.48 0.60 0.00 4.48 -1.13; 0.48 0.51 0.00 4.73 -1.22
+
+## Checagem das previsões
+
+- P1 BF OK: LEI em n=160 IQM >= 0,95: 0.978 (IC inf 0.956)
+- P2 BF FALHOU: LEI > DT em n=160 (permutacao p < 0,05): 0.978 vs 0.119; p = 0.3401; P(LEI>DT) = 1.00
+- P1 BFS OK: LEI em n=160 IQM >= 0,95: 1.000 (IC inf 1.000)
+- P2 BFS FALHOU: LEI > DT em n=160 (permutacao p < 0,05): 1.000 vs 1.000; p = 1.0000; P(LEI>DT) = 0.50
+- P3 OK: CONST_B0 em n=160 <= 0,90: 0.519
+- P4 OK: LEI_B < LEI - 0,03 em n=160: 0.472 vs 0.978
+- P5 OK: LEI em n=320 >= 0,95: 0.972
+- CPU total: 25s

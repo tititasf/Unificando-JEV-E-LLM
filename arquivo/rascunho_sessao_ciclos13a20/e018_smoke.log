@@ -1,0 +1,36 @@
+semente 1891 ok (281s)
+semente 1890 ok (285s)
+# E018 - resultados (SMOKE, nao vale)
+
+2 sementes; rede: 16 grafos por n; programa: 4 grafos por n.
+
+| família | quem | n | ponteiro IQM [IC95%] |
+|---|---|---|---|
+| SP | rede | 16 | 0.299 [0.066,0.531] |
+| SP | rede | 32 | 0.179 [0.035,0.322] |
+| SP | rede | 64 | 0.124 [0.022,0.226] |
+| SP | programa extraído | 16 | 0.531 [0.484,0.578] |
+| SP | programa extraído | 64 | 0.316 [0.125,0.508] |
+| SP | programa extraído | 256 | 0.217 [0.032,0.402] |
+| WP | rede | 16 | 0.719 [0.711,0.727] |
+| WP | rede | 32 | 0.639 [0.605,0.672] |
+| WP | rede | 64 | 0.510 [0.501,0.520] |
+| WP | programa extraído | 16 | 0.969 [0.938,1.000] |
+| WP | programa extraído | 64 | 0.395 [0.379,0.410] |
+| WP | programa extraído | 256 | 0.088 [0.064,0.111] |
+
+- SP semente 1890: regra [['media', 'maxf', True], [1.0, 0.5, 0.0], 0.011674923822283745] | 2a [['min', 'minf', False], [0.0, 1.0, 0.5], 0.01614581048488617] | ponteiro [0.771484375, 'argmin', 'lin', [1.0, 0.0]] | reconhece regra False ptr False
+- SP semente 1891: regra [['media', 'maxf', True], [1.0, 0.5, 0.0], 0.025339728221297264] | 2a [['media', 'maxf', False], [1.0, 0.5, 0.0], 0.02587124891579151] | ponteiro [0.986328125, 'argmin', 'lin', [1.0, 1.0]] | reconhece regra False ptr True
+- WP semente 1890: regra [['media', 'minf', True], [1.0, 0.5, 0.5], 0.10215559601783752] | 2a [['min', 'maxf', False], [0.5, 0.5, 0.5], 0.10391698032617569] | ponteiro [0.6171875, 'argmax', 'minf', [1.0, 1.0]] | reconhece regra False ptr True
+- WP semente 1891: regra [['min', 'minf', True], [1.0, 1.5, 1.0], 0.01450425572693348] | 2a [['max', 'lin', True], [0.5, 0.5, -0.5], 0.01450425572693348] | ponteiro [0.751953125, 'argmax', 'minf', [1.0, 1.0]] | reconhece regra False ptr True
+
+## Checagem das previsões
+
+- P1 SP FALHOU: regra e ponteiro reconhecidos como a relaxação do semianel em >= 80% das sementes: 0/2
+- P1 WP FALHOU: regra e ponteiro reconhecidos como a relaxação do semianel em >= 80% das sementes: 0/2
+- P2 SP FALHOU: programa reconhecido acerta 1,000 em n=256 em toda semente reconhecida: []
+- P2 WP FALHOU: programa reconhecido acerta 1,000 em n=256 em toda semente reconhecida: []
+- P3 SP OK: a própria rede fica < 0,99 em n=64 (o programa extraído supera a rede): 0.124
+- P3 WP OK: a própria rede fica < 0,99 em n=64 (o programa extraído supera a rede): 0.510
+- P4 FALHOU: rede SP em n=64 >= 0,75 (a rede genérica aprendeu algo extrapolável): 0.124
+- CPU total: 565s

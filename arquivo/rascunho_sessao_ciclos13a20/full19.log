@@ -1,0 +1,73 @@
+/usr/local/lib/python3.11/dist-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/user/Unificando-JEV-E-LLM/experimentos/E019_variavel_oculta/e019.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return a.detach(), b0.detach(), float(perda)
+/home/user/Unificando-JEV-E-LLM/experimentos/E019_variavel_oculta/e019.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return a.detach(), b0.detach(), float(perda)
+/home/user/Unificando-JEV-E-LLM/experimentos/E019_variavel_oculta/e019.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return a.detach(), b0.detach(), float(perda)
+/home/user/Unificando-JEV-E-LLM/experimentos/E019_variavel_oculta/e019.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return a.detach(), b0.detach(), float(perda)
+WP semente 1901 ok (777s)
+SP semente 1900 ok (784s)
+SP semente 1901 ok (792s)
+WP semente 1900 ok (893s)
+SP semente 1902 ok (817s)
+SP semente 1903 ok (815s)
+WP semente 1902 ok (826s)
+WP semente 1903 ok (811s)
+SP semente 1904 ok (792s)
+WP semente 1904 ok (798s)
+# E019 - resultados 
+
+5 sementes por familia; rede so com ponteiro; rede: 64 grafos por n; programa: 20 grafos por n.
+
+| família | quem | n | ponteiro IQM [IC95%] |
+|---|---|---|---|
+| SP | rede (só ponteiro) | 16 | 0.940 [0.905,0.957] |
+| SP | rede (só ponteiro) | 32 | 0.868 [0.770,0.904] |
+| SP | rede (só ponteiro) | 64 | 0.758 [0.545,0.768] |
+| SP | programa (mecanistica) | 16 | 0.905 [0.672,1.000] |
+| SP | programa (mecanistica) | 64 | 0.850 [0.509,1.000] |
+| SP | programa (mecanistica) | 256 | 0.845 [0.465,1.000] |
+| SP | programa (sintese) | 16 | 1.000 [1.000,1.000] |
+| SP | programa (sintese) | 64 | 1.000 [1.000,1.000] |
+| SP | programa (sintese) | 256 | 1.000 [1.000,1.000] |
+| WP | rede (só ponteiro) | 16 | 0.990 [0.986,0.992] |
+| WP | rede (só ponteiro) | 32 | 0.964 [0.910,0.981] |
+| WP | rede (só ponteiro) | 64 | 0.713 [0.294,0.925] |
+| WP | programa (mecanistica) | 16 | 1.000 [1.000,1.000] |
+| WP | programa (mecanistica) | 64 | 1.000 [1.000,1.000] |
+| WP | programa (mecanistica) | 256 | 1.000 [1.000,1.000] |
+| WP | programa (sintese) | 16 | 1.000 [1.000,1.000] |
+| WP | programa (sintese) | 64 | 1.000 [1.000,1.000] |
+| WP | programa (sintese) | 256 | 1.000 [1.000,1.000] |
+
+| família | semente | regra mecanística | ponteiro | r(leitura, verdade) | max \|r\| nas 18 | síntese | avaliados (mec / sín) |
+|---|---|---|---|---|---|---|---|
+| SP | 1900 | [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0] | [0.78125, 'argmin', 'lin', [1.0, 1.0]] | 0.942 | 0.953 | [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0] [1.0, 'argmin', 'lin', [1.0, 1.0]] | 72 / 10800 |
+| WP | 1900 | [['media', 'lin', False], [1.0, 0.0, 0.5], -10000.0, 0.0] | [0.804688, 'argmax', 'lin', [0.0, 1.0]] | -0.407 | 0.545 | [['min', 'lin', True], [0.0, 0.0, 0.0], -10000.0, 0.0] [1.0, 'argmax', 'lin', [0.0, 1.0]] | 72 / 10800 |
+| SP | 1901 | [['min', 'maxf', True], [1.0, 1.0, 0.0], 10000.0, 0.0] | [0.585938, 'argmin', 'lin', [1.0, 1.0]] | -0.980 | 0.983 | [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0] [1.0, 'argmin', 'lin', [1.0, 1.0]] | 72 / 10800 |
+| WP | 1901 | [['max', 'minf', False], [0.5, 1.0, 0.0], -10000.0, 0.0] | [0.832031, 'argmax', 'lin', [1.0, 1.0]] | 0.186 | 0.413 | [['min', 'lin', True], [0.0, 0.0, 0.0], -10000.0, 0.0] [1.0, 'argmax', 'lin', [0.0, 1.0]] | 72 / 10800 |
+| SP | 1902 | [['min', 'lin', False], [1.0, 1.0, 0.0], 10000.0, 0.0] | [0.863281, 'argmin', 'lin', [1.0, 1.0]] | -0.751 | 0.986 | [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0] [1.0, 'argmin', 'lin', [1.0, 1.0]] | 72 / 10800 |
+| WP | 1902 | [['max', 'maxf', True], [0.0, 0.0, -1.0], -10000.0, 0.0] | [0.796875, 'argmax', 'lin', [0.0, 1.0]] | -0.284 | 0.300 | [['min', 'lin', True], [0.0, 0.0, 0.0], -10000.0, 0.0] [1.0, 'argmax', 'lin', [0.0, 1.0]] | 72 / 10800 |
+| SP | 1903 | [['min', 'lin', True], [0.0, 1.0, 0.5], 10000.0, 0.0] | [0.527344, 'argmin', 'lin', [1.0, 1.0]] | 0.870 | 0.979 | [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0] [1.0, 'argmin', 'lin', [1.0, 1.0]] | 72 / 10800 |
+| WP | 1903 | [['min', 'lin', True], [0.5, 1.0, 0.5], -10000.0, 0.0] | [0.84375, 'argmax', 'lin', [0.0, 1.0]] | 0.661 | 0.668 | [['min', 'lin', True], [0.0, 0.0, 0.0], -10000.0, 0.0] [1.0, 'argmax', 'lin', [0.0, 1.0]] | 72 / 10800 |
+| SP | 1904 | [['min', 'lin', False], [1.0, 1.0, 0.0], 10000.0, 0.0] | [0.890625, 'argmin', 'lin', [1.0, 1.0]] | 0.949 | 0.954 | [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0] [1.0, 'argmin', 'lin', [1.0, 1.0]] | 72 / 10800 |
+| WP | 1904 | [['max', 'lin', False], [0.5, 1.0, 0.0], -10000.0, 0.0] | [0.878906, 'argmax', 'lin', [0.0, 1.0]] | -0.651 | 0.776 | [['min', 'lin', True], [0.0, 0.0, 0.0], -10000.0, 0.0] [1.0, 'argmax', 'lin', [0.0, 1.0]] | 72 / 10800 |
+
+## Checagem das previsões (PREVISOES.md, commitadas antes de qualquer piloto)
+
+- P1 OK: rede SP só com ponteiro em n=64 >= 0,75: 0.758
+- P2 FALHOU: SP mecanística reconhecida em >= 4/5: 3/5
+- P3 FALHOU: SP |r(leitura, distância)| >= 0,9 em >= 4/5: 3/5 ([0.942, -0.98, -0.751, 0.87, 0.949])
+- P4 FALHOU: WP (controle) |r(leitura, largura)| < 0,5 em >= 4/5: 3/5 ([-0.407, 0.186, -0.284, 0.661, -0.651])
+- P5 OK: SP síntese direta (ponteiros verdadeiros) reconhecida em >= 4/5: 5/5
+- P6 OK: todo programa reconhecido acerta 1,000 em n=256: min 1.0 (8)
+- Fisher (reconhecimento SP, síntese × mecanística): p = 0.444
+- CPU total: 8104s
+FIM

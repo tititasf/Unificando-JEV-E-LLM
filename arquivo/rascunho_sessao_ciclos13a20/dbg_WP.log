@@ -1,0 +1,12 @@
+/usr/local/lib/python3.11/dist-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+WP treino 568.9732403755188
+16 0.98046875 0.06162406504154205
+32 0.974609375 0.0838543102145195
+64 0.9482421875 0.12254494428634644
+(0.05664676055312157, ('media', 'minf', True), [0.5, 1.0, 0.5])
+(0.056646816432476044, ('media', 'minf', False), [0.5, 1.0, 0.5])
+(0.057383906096220016, ('media', 'maxf', True), [1.0, 1.0, 0.0])
+(0.058743562549352646, ('media', 'maxf', False), [1.0, 1.0, 0.0])
+(0.06410754472017288, ('min', 'maxf', False), [0.5, 0.5, 0.5])
+(0.837890625, 'argmax', 'lin', (0.0, 1.0)) -0.20385079085826874 -0.28698620200157166 644.3564546108246

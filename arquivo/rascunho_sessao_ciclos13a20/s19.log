@@ -1,0 +1,61 @@
+/usr/local/lib/python3.11/dist-packages/torch/_subclasses/functional_tensor.py:368: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:84.)
+  cpu = _conversion_method_template(device=torch.device("cpu"))
+/home/user/Unificando-JEV-E-LLM/experimentos/E019_variavel_oculta/e019.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return a.detach(), b0.detach(), float(perda)
+/home/user/Unificando-JEV-E-LLM/experimentos/E019_variavel_oculta/e019.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return a.detach(), b0.detach(), float(perda)
+/home/user/Unificando-JEV-E-LLM/experimentos/E019_variavel_oculta/e019.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return a.detach(), b0.detach(), float(perda)
+/home/user/Unificando-JEV-E-LLM/experimentos/E019_variavel_oculta/e019.py:103: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return a.detach(), b0.detach(), float(perda)
+SP semente 1990 ok (175s)
+WP semente 1991 ok (175s)
+WP semente 1990 ok (176s)
+SP semente 1991 ok (177s)
+# E019 - resultados (SMOKE, nao vale)
+
+2 sementes por familia; rede so com ponteiro; rede: 16 grafos por n; programa: 4 grafos por n.
+
+| família | quem | n | ponteiro IQM [IC95%] |
+|---|---|---|---|
+| SP | rede (só ponteiro) | 16 | 0.539 [0.477,0.602] |
+| SP | rede (só ponteiro) | 32 | 0.324 [0.309,0.340] |
+| SP | rede (só ponteiro) | 64 | 0.146 [0.141,0.151] |
+| SP | programa (mecanistica) | 16 | 0.516 [0.469,0.562] |
+| SP | programa (mecanistica) | 64 | 0.150 [0.141,0.160] |
+| SP | programa (mecanistica) | 256 | 0.045 [0.042,0.049] |
+| SP | programa (sintese) | 16 | 1.000 [1.000,1.000] |
+| SP | programa (sintese) | 64 | 1.000 [1.000,1.000] |
+| SP | programa (sintese) | 256 | 1.000 [1.000,1.000] |
+| WP | rede (só ponteiro) | 16 | 0.512 [0.488,0.535] |
+| WP | rede (só ponteiro) | 32 | 0.694 [0.686,0.703] |
+| WP | rede (só ponteiro) | 64 | 0.688 [0.614,0.763] |
+| WP | programa (mecanistica) | 16 | 0.930 [0.906,0.953] |
+| WP | programa (mecanistica) | 64 | 0.959 [0.918,1.000] |
+| WP | programa (mecanistica) | 256 | 0.974 [0.947,1.000] |
+| WP | programa (sintese) | 16 | 1.000 [1.000,1.000] |
+| WP | programa (sintese) | 64 | 1.000 [1.000,1.000] |
+| WP | programa (sintese) | 256 | 1.000 [1.000,1.000] |
+
+| família | semente | regra mecanística | ponteiro | r(leitura, verdade) | max \|r\| nas 18 | síntese | avaliados (mec / sín) |
+|---|---|---|---|---|---|---|---|
+| SP | 1990 | [['min', 'maxf', False], [1.5, 1.0, 0.5], -10000.0, 0.0] | [0.769531, 'argmin', 'lin', [1.0, 0.0]] | 0.483 | 0.514 | [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0] [1.0, 'argmin', 'lin', [1.0, 1.0]] | 72 / 10800 |
+| WP | 1990 | [['max', 'lin', True], [0.5, 1.0, -1.0], -10000.0, 0.0] | [0.472656, 'argmax', 'lin', [1.0, 1.0]] | -0.358 | 0.370 | [['min', 'lin', True], [0.0, 0.0, 0.0], -10000.0, 0.0] [1.0, 'argmax', 'lin', [0.0, 1.0]] | 72 / 10800 |
+| SP | 1991 | [['min', 'lin', True], [0.5, 1.0, 0.5], 10000.0, 0.0] | [0.84375, 'argmin', 'lin', [1.0, 0.0]] | -0.533 | 0.535 | [['min', 'lin', True], [1.0, 1.0, 0.0], 10000.0, 0.0] [1.0, 'argmin', 'lin', [1.0, 1.0]] | 72 / 10800 |
+| WP | 1991 | [['min', 'minf', True], [0.5, 1.0, 0.5], 10000.0, 0.0] | [0.59375, 'argmax', 'maxf', [1.0, 1.0]] | 0.205 | 0.314 | [['min', 'lin', True], [0.0, 0.0, 0.0], -10000.0, 0.0] [1.0, 'argmax', 'lin', [0.0, 1.0]] | 72 / 10800 |
+
+## Checagem das previsões (PREVISOES.md, commitadas antes de qualquer piloto)
+
+- P1 FALHOU: rede SP só com ponteiro em n=64 >= 0,75: 0.146
+- P2 FALHOU: SP mecanística reconhecida em >= 4/5: 0/2
+- P3 FALHOU: SP |r(leitura, distância)| >= 0,9 em >= 4/5: 0/2 ([0.483, -0.533])
+- P4 OK: WP (controle) |r(leitura, largura)| < 0,5 em >= 4/5: 2/2 ([-0.358, 0.205])
+- P5 OK: SP síntese direta (ponteiros verdadeiros) reconhecida em >= 4/5: 2/2
+- P6 OK: todo programa reconhecido acerta 1,000 em n=256: min 1.0 (2)
+- Fisher (reconhecimento SP, síntese × mecanística): p = 0.333
+- CPU total: 703s
+FIM
